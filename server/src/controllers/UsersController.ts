@@ -1,12 +1,14 @@
 import * as winston from "winston";
 import { Express, Request, Response } from "express";
 import IController from "./IController";
-export default class UsersController implements IController {
+
+// SKkkrrrt
+export class UsersController implements IController {
     public constructor(
         public readonly route: string,
         private readonly usersRepo: any,
         readonly logger: winston.Logger
-    ) {}
+    ) { }
 
     registerEndpoins(app: Express): void {
         // Register the endpoints
@@ -14,8 +16,8 @@ export default class UsersController implements IController {
     }
 
     getUsers(req: Request, res: Response) {
-        res.status(200).send({message: "lol"});
+        res.status(200).send({ message: "lol" });
     }
 
-    
+
 }

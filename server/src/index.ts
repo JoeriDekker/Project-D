@@ -2,7 +2,7 @@ import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import logger from "./logger";
-import UsersController from "./controllers/UsersController";
+import {UsersController} from "./controllers/UsersController";
 import IController from "./controllers/IController";
 
 // Loads the dotenv variables
@@ -33,3 +33,6 @@ for (const controller of controllers) {
 app.listen(port, () => {
     logger.log('info', `Server successfully started at port ${port}`)
 });
+
+// The app instance is exported to be used in the tests
+export const appInstance = app;
