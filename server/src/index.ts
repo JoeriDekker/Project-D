@@ -4,9 +4,13 @@ import cors from "cors";
 import logger from "./logger";
 import {UsersController} from "./controllers/UsersController";
 import IController from "./controllers/IController";
+import { Sequelize } from "sequelize";
 
 // Loads the dotenv variables
 dotenv.config();
+
+// Prepare ORM
+
 
 const app: Express = express();
 const port = process.env.PORT || 5000;
