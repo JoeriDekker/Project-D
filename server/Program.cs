@@ -1,3 +1,5 @@
+using WAMServer;
+
 public class Program
 {
     /// <summary>

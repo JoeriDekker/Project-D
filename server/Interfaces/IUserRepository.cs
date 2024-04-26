@@ -1,9 +1,16 @@
-public interface IUserRepository
+using WAMServer.DTO;
+using WAMServer.Models;
+
+namespace WAMServer.Interfaces
 {
-    Task<UserDTO> GetUserAsync(int id);
-    Task<UserDTO> GetUserAsync(string email);
-    Task<IEnumerable<UserDTO>> GetUsersAsync();
-    Task<UserDTO> AddUserAsync(User user);
-    Task<UserDTO> UpdateUserAsync(User user);
-    Task<UserDTO> DeleteUserAsync(int id);
+    public interface IUserRepository
+    {
+        User? GetUser(Guid id);
+        User? GetUser(string email);
+        User? GetUserIncludingAddress(User? user);
+        Task<IEnumerable<User>> GetUsersAsync();
+        Task<User> AddUserAsync(User user);
+        Task<User> UpdateUserAsync(User user);
+        Task<User> DeleteUserAsync(int id);
+    }
 }

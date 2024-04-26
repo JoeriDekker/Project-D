@@ -1,42 +1,55 @@
 
+using Microsoft.EntityFrameworkCore;
+using WAMServer.DTO;
+using WAMServer.Interfaces;
+using WAMServer.Models;
 
-public class DbUserRepository : IUserRepository
+namespace WAMServer.Repositories
 {
-    private readonly WamDBContext _context;
-
-    public DbUserRepository(WamDBContext context)
+    public class DbUserRepository : IUserRepository
     {
-        _context = context;
-    }
+        private readonly WamDBContext _context;
 
-    public async Task<UserDTO> AddUserAsync(User user)
-    {
-        await _context.Users.AddAsync(user);
-        return new UserDTO(user.Id, user.FirstName, user.LastName, user.Email, user.Address);
-    }
+        public DbUserRepository(WamDBContext context)
+        {
+            _context = context;
+        }
 
-    public Task<UserDTO> DeleteUserAsync(int id)
-    {
-        throw new NotImplementedException();
-    }
+        public async Task<User> AddUserAsync(User user)
+        {
+            throw new NotImplementedException();
+        }
 
-    public Task<UserDTO> GetUserAsync(int id)
-    {
-        throw new NotImplementedException();
-    }
 
-    public Task<UserDTO> GetUserAsync(string email)
-    {
-        throw new NotImplementedException();
-    }
+        public Task<User> DeleteUserAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
 
-    public Task<IEnumerable<UserDTO>> GetUsersAsync()
-    {
-        throw new NotImplementedException();
-    }
+        public User? GetUser(Guid id)
+        {
+            return _context.Users.Where(u => u.Id == id).FirstOrDefault();
+        }
 
-    public Task<UserDTO> UpdateUserAsync(User user)
-    {
-        throw new NotImplementedException();
+        public User? GetUser(string email)
+        {
+            return _context.Users.Where(u => u.Email == email).FirstOrDefault();
+        }
+
+        public User? GetUserIncludingAddress(User? user)
+        {
+            return _context.Users.Include(u => u.Address).Where(u => u.Id == user.Id).FirstOrDefault();
+        }
+
+        public Task<IEnumerable<User>> GetUsersAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<User> UpdateUserAsync(User user)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
