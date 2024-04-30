@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: WAMServer.Interfaces
+  commentId: N:WAMServer.Interfaces
+  id: WAMServer.Interfaces
+  children:
+  - WAMServer.Interfaces.IUserRepository
+  langs:
+  - csharp
+  - vb
+  name: WAMServer.Interfaces
+  nameWithType: WAMServer.Interfaces
+  fullName: WAMServer.Interfaces
+  type: Namespace
+  assemblies:
+  - server
+references:
+- uid: WAMServer.Interfaces.IUserRepository
+  commentId: T:WAMServer.Interfaces.IUserRepository
+  parent: WAMServer.Interfaces
+  href: WAMServer.Interfaces.IUserRepository.html
+  name: IUserRepository
+  nameWithType: IUserRepository
+  fullName: WAMServer.Interfaces.IUserRepository
+- uid: WAMServer.Interfaces
+  commentId: N:WAMServer.Interfaces
+  href: WAMServer.html
+  name: WAMServer.Interfaces
+  nameWithType: WAMServer.Interfaces
+  fullName: WAMServer.Interfaces
+  spec.csharp:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Interfaces
+    name: Interfaces
+    href: WAMServer.Interfaces.html
+  spec.vb:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Interfaces
+    name: Interfaces
+    href: WAMServer.Interfaces.html

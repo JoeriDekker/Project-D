@@ -1,0 +1,62 @@
+### YamlMime:ManagedReference
+items:
+- uid: WAMServer.Models
+  commentId: N:WAMServer.Models
+  id: WAMServer.Models
+  children:
+  - WAMServer.Models.Address
+  - WAMServer.Models.User
+  - WAMServer.Models.WamDBContext
+  langs:
+  - csharp
+  - vb
+  name: WAMServer.Models
+  nameWithType: WAMServer.Models
+  fullName: WAMServer.Models
+  type: Namespace
+  assemblies:
+  - server
+references:
+- uid: WAMServer.Models.Address
+  commentId: T:WAMServer.Models.Address
+  parent: WAMServer.Models
+  href: WAMServer.Models.Address.html
+  name: Address
+  nameWithType: Address
+  fullName: WAMServer.Models.Address
+- uid: WAMServer.Models.User
+  commentId: T:WAMServer.Models.User
+  parent: WAMServer.Models
+  href: WAMServer.Models.User.html
+  name: User
+  nameWithType: User
+  fullName: WAMServer.Models.User
+- uid: WAMServer.Models.WamDBContext
+  commentId: T:WAMServer.Models.WamDBContext
+  parent: WAMServer.Models
+  href: WAMServer.Models.WamDBContext.html
+  name: WamDBContext
+  nameWithType: WamDBContext
+  fullName: WAMServer.Models.WamDBContext
+- uid: WAMServer.Models
+  commentId: N:WAMServer.Models
+  href: WAMServer.html
+  name: WAMServer.Models
+  nameWithType: WAMServer.Models
+  fullName: WAMServer.Models
+  spec.csharp:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Models
+    name: Models
+    href: WAMServer.Models.html
+  spec.vb:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Models
+    name: Models
+    href: WAMServer.Models.html

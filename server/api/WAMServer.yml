@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: WAMServer
+  commentId: N:WAMServer
+  id: WAMServer
+  children:
+  - WAMServer.Startup
+  langs:
+  - csharp
+  - vb
+  name: WAMServer
+  nameWithType: WAMServer
+  fullName: WAMServer
+  type: Namespace
+  assemblies:
+  - server
+references:
+- uid: WAMServer.Startup
+  commentId: T:WAMServer.Startup
+  href: WAMServer.Startup.html
+  name: Startup
+  nameWithType: Startup
+  fullName: WAMServer.Startup

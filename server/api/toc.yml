@@ -1,0 +1,49 @@
+### YamlMime:TableOfContent
+items:
+- uid: WAMServer
+  name: WAMServer
+  items:
+  - uid: WAMServer.Startup
+    name: Startup
+- uid: WAMServer.Controllers
+  name: WAMServer.Controllers
+  items:
+  - uid: WAMServer.Controllers.LoginController
+    name: LoginController
+  - uid: WAMServer.Controllers.UsersController
+    name: UsersController
+- uid: WAMServer.DTO
+  name: WAMServer.DTO
+  items:
+  - uid: WAMServer.DTO.UserDTO
+    name: UserDTO
+- uid: WAMServer.Interfaces
+  name: WAMServer.Interfaces
+  items:
+  - uid: WAMServer.Interfaces.IUserRepository
+    name: IUserRepository
+- uid: WAMServer.Models
+  name: WAMServer.Models
+  items:
+  - uid: WAMServer.Models.Address
+    name: Address
+  - uid: WAMServer.Models.User
+    name: User
+  - uid: WAMServer.Models.WamDBContext
+    name: WamDBContext
+- uid: WAMServer.Records
+  name: WAMServer.Records
+  items:
+  - uid: WAMServer.Records.LoginBody
+    name: LoginBody
+- uid: WAMServer.Repositories
+  name: WAMServer.Repositories
+  items:
+  - uid: WAMServer.Repositories.DbUserRepository
+    name: DbUserRepository
+- uid: server.Migrations
+  name: server.Migrations
+  items:
+  - uid: server.Migrations.init
+    name: init
+memberLayout: SamePage

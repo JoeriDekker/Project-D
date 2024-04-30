@@ -10,25 +10,45 @@ using WAMServer.Records;
 
 namespace WAMServer.Controllers
 {
+    /// <summary>
+    /// The login controller. Responsible for logging in the user.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class LoginController : ControllerBase
     {
+        /// <summary>
+        /// The configuration of the application.
+        /// </summary>
         private IConfiguration _config;
+        /// <summary>
+        /// The user repository.
+        /// </summary>
         private IUserRepository _userRepository;
 
+        /// <summary>
+        /// The constructor of the login controller.
+        /// </summary>
+        /// <param name="userRepository">The user repository.</param>
+        /// <param name="config">The configuration of the application.</param>
         public LoginController(IUserRepository userRepository, IConfiguration config)
         {
             _config = config;
             _userRepository = userRepository;
         }
 
+        /// <summary>
+        /// Logs in the user.
+        /// </summary>
+        /// <param name="body">The login body. Requires email and password</param>
+        /// <returns>The result of the login.</returns>
         [AllowAnonymous]
         [HttpPost]
         public IActionResult Login([FromBody] LoginBody body)
         {
             IActionResult response = Unauthorized();
-            var user = AuthenticateUser(body.Email, body.Password);
+            // Authenticate the user. If the user is authenticated, generate a token. Otherwise (user is null), return Unauthorized.
+            var user = AuthenticateUserReturnNullIfUnable(body.Email, body.Password);
 
             if (user != null)
             {
@@ -39,6 +59,11 @@ namespace WAMServer.Controllers
             return response;
         }
 
+        /// <summary>
+        /// Generates a JSON web token.
+        /// </summary>
+        /// <param name="userInfo">The user information.</param>
+        /// <returns>The JSON web token.</returns>
         private string GenerateJSONWebToken(User userInfo)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"] ?? "WamsSuperSecretKey"));
@@ -56,7 +81,13 @@ namespace WAMServer.Controllers
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        private User? AuthenticateUser(string email, string password)
+        /// <summary>
+        /// Authenticates the user. Returns null if unable to authenticate.
+        /// </summary>
+        /// <param name="email">The email of the user.</param>
+        /// <param name="password">The password of the user.</param>
+        /// <returns>The user if authenticated, null otherwise.</returns>
+        private User? AuthenticateUserReturnNullIfUnable(string email, string password)
         {
             User? user = null;
             //TODO: Add encryption

@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: server.Migrations
+  commentId: N:server.Migrations
+  id: server.Migrations
+  children:
+  - server.Migrations.init
+  langs:
+  - csharp
+  - vb
+  name: server.Migrations
+  nameWithType: server.Migrations
+  fullName: server.Migrations
+  type: Namespace
+  assemblies:
+  - server
+references:
+- uid: server.Migrations.init
+  commentId: T:server.Migrations.init
+  href: server.Migrations.init.html
+  name: init
+  nameWithType: init
+  fullName: server.Migrations.init

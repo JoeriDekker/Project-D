@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: WAMServer.DTO
+  commentId: N:WAMServer.DTO
+  id: WAMServer.DTO
+  children:
+  - WAMServer.DTO.UserDTO
+  langs:
+  - csharp
+  - vb
+  name: WAMServer.DTO
+  nameWithType: WAMServer.DTO
+  fullName: WAMServer.DTO
+  type: Namespace
+  assemblies:
+  - server
+references:
+- uid: WAMServer.DTO.UserDTO
+  commentId: T:WAMServer.DTO.UserDTO
+  href: WAMServer.DTO.UserDTO.html
+  name: UserDTO
+  nameWithType: UserDTO
+  fullName: WAMServer.DTO.UserDTO

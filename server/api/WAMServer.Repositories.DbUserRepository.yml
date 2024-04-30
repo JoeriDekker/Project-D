@@ -1,0 +1,1053 @@
+### YamlMime:ManagedReference
+items:
+- uid: WAMServer.Repositories.DbUserRepository
+  commentId: T:WAMServer.Repositories.DbUserRepository
+  id: DbUserRepository
+  parent: WAMServer.Repositories
+  children:
+  - WAMServer.Repositories.DbUserRepository.#ctor(WAMServer.Models.WamDBContext)
+  - WAMServer.Repositories.DbUserRepository.AddUserAsync(WAMServer.Models.User)
+  - WAMServer.Repositories.DbUserRepository.DeleteUserAsync(System.Int32)
+  - WAMServer.Repositories.DbUserRepository.GetUser(System.Guid)
+  - WAMServer.Repositories.DbUserRepository.GetUser(System.String)
+  - WAMServer.Repositories.DbUserRepository.GetUserIncludingAddress(WAMServer.Models.User)
+  - WAMServer.Repositories.DbUserRepository.GetUsersAsync
+  - WAMServer.Repositories.DbUserRepository.UpdateUserAsync(WAMServer.Models.User)
+  langs:
+  - csharp
+  - vb
+  name: DbUserRepository
+  nameWithType: DbUserRepository
+  fullName: WAMServer.Repositories.DbUserRepository
+  type: Class
+  source:
+    remote:
+      path: server/Repositories/DbUserRepository.cs
+      branch: main
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: DbUserRepository
+    path: Repositories/DbUserRepository.cs
+    startLine: 8
+  assemblies:
+  - server
+  namespace: WAMServer.Repositories
+  syntax:
+    content: 'public class DbUserRepository : IUserRepository'
+    content.vb: Public Class DbUserRepository Implements IUserRepository
+  inheritance:
+  - System.Object
+  implements:
+  - WAMServer.Interfaces.IUserRepository
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: WAMServer.Repositories.DbUserRepository.#ctor(WAMServer.Models.WamDBContext)
+  commentId: M:WAMServer.Repositories.DbUserRepository.#ctor(WAMServer.Models.WamDBContext)
+  id: '#ctor(WAMServer.Models.WamDBContext)'
+  parent: WAMServer.Repositories.DbUserRepository
+  langs:
+  - csharp
+  - vb
+  name: DbUserRepository(WamDBContext)
+  nameWithType: DbUserRepository.DbUserRepository(WamDBContext)
+  fullName: WAMServer.Repositories.DbUserRepository.DbUserRepository(WAMServer.Models.WamDBContext)
+  type: Constructor
+  source:
+    remote:
+      path: server/Repositories/DbUserRepository.cs
+      branch: main
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: .ctor
+    path: Repositories/DbUserRepository.cs
+    startLine: 12
+  assemblies:
+  - server
+  namespace: WAMServer.Repositories
+  syntax:
+    content: public DbUserRepository(WamDBContext context)
+    parameters:
+    - id: context
+      type: WAMServer.Models.WamDBContext
+    content.vb: Public Sub New(context As WamDBContext)
+  overload: WAMServer.Repositories.DbUserRepository.#ctor*
+  nameWithType.vb: DbUserRepository.New(WamDBContext)
+  fullName.vb: WAMServer.Repositories.DbUserRepository.New(WAMServer.Models.WamDBContext)
+  name.vb: New(WamDBContext)
+- uid: WAMServer.Repositories.DbUserRepository.AddUserAsync(WAMServer.Models.User)
+  commentId: M:WAMServer.Repositories.DbUserRepository.AddUserAsync(WAMServer.Models.User)
+  id: AddUserAsync(WAMServer.Models.User)
+  parent: WAMServer.Repositories.DbUserRepository
+  langs:
+  - csharp
+  - vb
+  name: AddUserAsync(User)
+  nameWithType: DbUserRepository.AddUserAsync(User)
+  fullName: WAMServer.Repositories.DbUserRepository.AddUserAsync(WAMServer.Models.User)
+  type: Method
+  source:
+    remote:
+      path: server/Repositories/DbUserRepository.cs
+      branch: main
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: AddUserAsync
+    path: Repositories/DbUserRepository.cs
+    startLine: 17
+  assemblies:
+  - server
+  namespace: WAMServer.Repositories
+  example: []
+  syntax:
+    content: public Task<User> AddUserAsync(User user)
+    parameters:
+    - id: user
+      type: WAMServer.Models.User
+    return:
+      type: System.Threading.Tasks.Task{WAMServer.Models.User}
+    content.vb: Public Function AddUserAsync(user As User) As Task(Of User)
+  overload: WAMServer.Repositories.DbUserRepository.AddUserAsync*
+  implements:
+  - WAMServer.Interfaces.IUserRepository.AddUserAsync(WAMServer.Models.User)
+- uid: WAMServer.Repositories.DbUserRepository.DeleteUserAsync(System.Int32)
+  commentId: M:WAMServer.Repositories.DbUserRepository.DeleteUserAsync(System.Int32)
+  id: DeleteUserAsync(System.Int32)
+  parent: WAMServer.Repositories.DbUserRepository
+  langs:
+  - csharp
+  - vb
+  name: DeleteUserAsync(int)
+  nameWithType: DbUserRepository.DeleteUserAsync(int)
+  fullName: WAMServer.Repositories.DbUserRepository.DeleteUserAsync(int)
+  type: Method
+  source:
+    remote:
+      path: server/Repositories/DbUserRepository.cs
+      branch: main
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: DeleteUserAsync
+    path: Repositories/DbUserRepository.cs
+    startLine: 23
+  assemblies:
+  - server
+  namespace: WAMServer.Repositories
+  example: []
+  syntax:
+    content: public Task<User> DeleteUserAsync(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: System.Threading.Tasks.Task{WAMServer.Models.User}
+    content.vb: Public Function DeleteUserAsync(id As Integer) As Task(Of User)
+  overload: WAMServer.Repositories.DbUserRepository.DeleteUserAsync*
+  implements:
+  - WAMServer.Interfaces.IUserRepository.DeleteUserAsync(System.Int32)
+  nameWithType.vb: DbUserRepository.DeleteUserAsync(Integer)
+  fullName.vb: WAMServer.Repositories.DbUserRepository.DeleteUserAsync(Integer)
+  name.vb: DeleteUserAsync(Integer)
+- uid: WAMServer.Repositories.DbUserRepository.GetUser(System.Guid)
+  commentId: M:WAMServer.Repositories.DbUserRepository.GetUser(System.Guid)
+  id: GetUser(System.Guid)
+  parent: WAMServer.Repositories.DbUserRepository
+  langs:
+  - csharp
+  - vb
+  name: GetUser(Guid)
+  nameWithType: DbUserRepository.GetUser(Guid)
+  fullName: WAMServer.Repositories.DbUserRepository.GetUser(System.Guid)
+  type: Method
+  source:
+    remote:
+      path: server/Repositories/DbUserRepository.cs
+      branch: main
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: GetUser
+    path: Repositories/DbUserRepository.cs
+    startLine: 28
+  assemblies:
+  - server
+  namespace: WAMServer.Repositories
+  example: []
+  syntax:
+    content: public User? GetUser(Guid id)
+    parameters:
+    - id: id
+      type: System.Guid
+    return:
+      type: WAMServer.Models.User
+    content.vb: Public Function GetUser(id As Guid) As User
+  overload: WAMServer.Repositories.DbUserRepository.GetUser*
+  implements:
+  - WAMServer.Interfaces.IUserRepository.GetUser(System.Guid)
+- uid: WAMServer.Repositories.DbUserRepository.GetUser(System.String)
+  commentId: M:WAMServer.Repositories.DbUserRepository.GetUser(System.String)
+  id: GetUser(System.String)
+  parent: WAMServer.Repositories.DbUserRepository
+  langs:
+  - csharp
+  - vb
+  name: GetUser(string)
+  nameWithType: DbUserRepository.GetUser(string)
+  fullName: WAMServer.Repositories.DbUserRepository.GetUser(string)
+  type: Method
+  source:
+    remote:
+      path: server/Repositories/DbUserRepository.cs
+      branch: main
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: GetUser
+    path: Repositories/DbUserRepository.cs
+    startLine: 33
+  assemblies:
+  - server
+  namespace: WAMServer.Repositories
+  example: []
+  syntax:
+    content: public User? GetUser(string email)
+    parameters:
+    - id: email
+      type: System.String
+    return:
+      type: WAMServer.Models.User
+    content.vb: Public Function GetUser(email As String) As User
+  overload: WAMServer.Repositories.DbUserRepository.GetUser*
+  implements:
+  - WAMServer.Interfaces.IUserRepository.GetUser(System.String)
+  nameWithType.vb: DbUserRepository.GetUser(String)
+  fullName.vb: WAMServer.Repositories.DbUserRepository.GetUser(String)
+  name.vb: GetUser(String)
+- uid: WAMServer.Repositories.DbUserRepository.GetUserIncludingAddress(WAMServer.Models.User)
+  commentId: M:WAMServer.Repositories.DbUserRepository.GetUserIncludingAddress(WAMServer.Models.User)
+  id: GetUserIncludingAddress(WAMServer.Models.User)
+  parent: WAMServer.Repositories.DbUserRepository
+  langs:
+  - csharp
+  - vb
+  name: GetUserIncludingAddress(User?)
+  nameWithType: DbUserRepository.GetUserIncludingAddress(User?)
+  fullName: WAMServer.Repositories.DbUserRepository.GetUserIncludingAddress(WAMServer.Models.User?)
+  type: Method
+  source:
+    remote:
+      path: server/Repositories/DbUserRepository.cs
+      branch: main
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: GetUserIncludingAddress
+    path: Repositories/DbUserRepository.cs
+    startLine: 38
+  assemblies:
+  - server
+  namespace: WAMServer.Repositories
+  example: []
+  syntax:
+    content: public User? GetUserIncludingAddress(User? user)
+    parameters:
+    - id: user
+      type: WAMServer.Models.User
+    return:
+      type: WAMServer.Models.User
+    content.vb: Public Function GetUserIncludingAddress(user As User) As User
+  overload: WAMServer.Repositories.DbUserRepository.GetUserIncludingAddress*
+  implements:
+  - WAMServer.Interfaces.IUserRepository.GetUserIncludingAddress(WAMServer.Models.User)
+  nameWithType.vb: DbUserRepository.GetUserIncludingAddress(User)
+  fullName.vb: WAMServer.Repositories.DbUserRepository.GetUserIncludingAddress(WAMServer.Models.User)
+  name.vb: GetUserIncludingAddress(User)
+- uid: WAMServer.Repositories.DbUserRepository.GetUsersAsync
+  commentId: M:WAMServer.Repositories.DbUserRepository.GetUsersAsync
+  id: GetUsersAsync
+  parent: WAMServer.Repositories.DbUserRepository
+  langs:
+  - csharp
+  - vb
+  name: GetUsersAsync()
+  nameWithType: DbUserRepository.GetUsersAsync()
+  fullName: WAMServer.Repositories.DbUserRepository.GetUsersAsync()
+  type: Method
+  source:
+    remote:
+      path: server/Repositories/DbUserRepository.cs
+      branch: main
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: GetUsersAsync
+    path: Repositories/DbUserRepository.cs
+    startLine: 43
+  assemblies:
+  - server
+  namespace: WAMServer.Repositories
+  example: []
+  syntax:
+    content: public Task<IEnumerable<User>> GetUsersAsync()
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{WAMServer.Models.User}}
+    content.vb: Public Function GetUsersAsync() As Task(Of IEnumerable(Of User))
+  overload: WAMServer.Repositories.DbUserRepository.GetUsersAsync*
+  implements:
+  - WAMServer.Interfaces.IUserRepository.GetUsersAsync
+- uid: WAMServer.Repositories.DbUserRepository.UpdateUserAsync(WAMServer.Models.User)
+  commentId: M:WAMServer.Repositories.DbUserRepository.UpdateUserAsync(WAMServer.Models.User)
+  id: UpdateUserAsync(WAMServer.Models.User)
+  parent: WAMServer.Repositories.DbUserRepository
+  langs:
+  - csharp
+  - vb
+  name: UpdateUserAsync(User)
+  nameWithType: DbUserRepository.UpdateUserAsync(User)
+  fullName: WAMServer.Repositories.DbUserRepository.UpdateUserAsync(WAMServer.Models.User)
+  type: Method
+  source:
+    remote:
+      path: server/Repositories/DbUserRepository.cs
+      branch: main
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: UpdateUserAsync
+    path: Repositories/DbUserRepository.cs
+    startLine: 48
+  assemblies:
+  - server
+  namespace: WAMServer.Repositories
+  example: []
+  syntax:
+    content: public Task<User> UpdateUserAsync(User user)
+    parameters:
+    - id: user
+      type: WAMServer.Models.User
+    return:
+      type: System.Threading.Tasks.Task{WAMServer.Models.User}
+    content.vb: Public Function UpdateUserAsync(user As User) As Task(Of User)
+  overload: WAMServer.Repositories.DbUserRepository.UpdateUserAsync*
+  implements:
+  - WAMServer.Interfaces.IUserRepository.UpdateUserAsync(WAMServer.Models.User)
+references:
+- uid: WAMServer.Repositories
+  commentId: N:WAMServer.Repositories
+  href: WAMServer.html
+  name: WAMServer.Repositories
+  nameWithType: WAMServer.Repositories
+  fullName: WAMServer.Repositories
+  spec.csharp:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Repositories
+    name: Repositories
+    href: WAMServer.Repositories.html
+  spec.vb:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Repositories
+    name: Repositories
+    href: WAMServer.Repositories.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: WAMServer.Interfaces.IUserRepository
+  commentId: T:WAMServer.Interfaces.IUserRepository
+  parent: WAMServer.Interfaces
+  href: WAMServer.Interfaces.IUserRepository.html
+  name: IUserRepository
+  nameWithType: IUserRepository
+  fullName: WAMServer.Interfaces.IUserRepository
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: WAMServer.Interfaces
+  commentId: N:WAMServer.Interfaces
+  href: WAMServer.html
+  name: WAMServer.Interfaces
+  nameWithType: WAMServer.Interfaces
+  fullName: WAMServer.Interfaces
+  spec.csharp:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Interfaces
+    name: Interfaces
+    href: WAMServer.Interfaces.html
+  spec.vb:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Interfaces
+    name: Interfaces
+    href: WAMServer.Interfaces.html
+- uid: WAMServer.Repositories.DbUserRepository.#ctor*
+  commentId: Overload:WAMServer.Repositories.DbUserRepository.#ctor
+  href: WAMServer.Repositories.DbUserRepository.html#WAMServer_Repositories_DbUserRepository__ctor_WAMServer_Models_WamDBContext_
+  name: DbUserRepository
+  nameWithType: DbUserRepository.DbUserRepository
+  fullName: WAMServer.Repositories.DbUserRepository.DbUserRepository
+  nameWithType.vb: DbUserRepository.New
+  fullName.vb: WAMServer.Repositories.DbUserRepository.New
+  name.vb: New
+- uid: WAMServer.Models.WamDBContext
+  commentId: T:WAMServer.Models.WamDBContext
+  parent: WAMServer.Models
+  href: WAMServer.Models.WamDBContext.html
+  name: WamDBContext
+  nameWithType: WamDBContext
+  fullName: WAMServer.Models.WamDBContext
+- uid: WAMServer.Models
+  commentId: N:WAMServer.Models
+  href: WAMServer.html
+  name: WAMServer.Models
+  nameWithType: WAMServer.Models
+  fullName: WAMServer.Models
+  spec.csharp:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Models
+    name: Models
+    href: WAMServer.Models.html
+  spec.vb:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Models
+    name: Models
+    href: WAMServer.Models.html
+- uid: WAMServer.Repositories.DbUserRepository.AddUserAsync*
+  commentId: Overload:WAMServer.Repositories.DbUserRepository.AddUserAsync
+  href: WAMServer.Repositories.DbUserRepository.html#WAMServer_Repositories_DbUserRepository_AddUserAsync_WAMServer_Models_User_
+  name: AddUserAsync
+  nameWithType: DbUserRepository.AddUserAsync
+  fullName: WAMServer.Repositories.DbUserRepository.AddUserAsync
+- uid: WAMServer.Interfaces.IUserRepository.AddUserAsync(WAMServer.Models.User)
+  commentId: M:WAMServer.Interfaces.IUserRepository.AddUserAsync(WAMServer.Models.User)
+  parent: WAMServer.Interfaces.IUserRepository
+  href: WAMServer.Interfaces.IUserRepository.html#WAMServer_Interfaces_IUserRepository_AddUserAsync_WAMServer_Models_User_
+  name: AddUserAsync(User)
+  nameWithType: IUserRepository.AddUserAsync(User)
+  fullName: WAMServer.Interfaces.IUserRepository.AddUserAsync(WAMServer.Models.User)
+  spec.csharp:
+  - uid: WAMServer.Interfaces.IUserRepository.AddUserAsync(WAMServer.Models.User)
+    name: AddUserAsync
+    href: WAMServer.Interfaces.IUserRepository.html#WAMServer_Interfaces_IUserRepository_AddUserAsync_WAMServer_Models_User_
+  - name: (
+  - uid: WAMServer.Models.User
+    name: User
+    href: WAMServer.Models.User.html
+  - name: )
+  spec.vb:
+  - uid: WAMServer.Interfaces.IUserRepository.AddUserAsync(WAMServer.Models.User)
+    name: AddUserAsync
+    href: WAMServer.Interfaces.IUserRepository.html#WAMServer_Interfaces_IUserRepository_AddUserAsync_WAMServer_Models_User_
+  - name: (
+  - uid: WAMServer.Models.User
+    name: User
+    href: WAMServer.Models.User.html
+  - name: )
+- uid: WAMServer.Models.User
+  commentId: T:WAMServer.Models.User
+  parent: WAMServer.Models
+  href: WAMServer.Models.User.html
+  name: User
+  nameWithType: User
+  fullName: WAMServer.Models.User
+- uid: System.Threading.Tasks.Task{WAMServer.Models.User}
+  commentId: T:System.Threading.Tasks.Task{WAMServer.Models.User}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<User>
+  nameWithType: Task<User>
+  fullName: System.Threading.Tasks.Task<WAMServer.Models.User>
+  nameWithType.vb: Task(Of User)
+  fullName.vb: System.Threading.Tasks.Task(Of WAMServer.Models.User)
+  name.vb: Task(Of User)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: WAMServer.Models.User
+    name: User
+    href: WAMServer.Models.User.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: WAMServer.Models.User
+    name: User
+    href: WAMServer.Models.User.html
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: WAMServer.Repositories.DbUserRepository.DeleteUserAsync*
+  commentId: Overload:WAMServer.Repositories.DbUserRepository.DeleteUserAsync
+  href: WAMServer.Repositories.DbUserRepository.html#WAMServer_Repositories_DbUserRepository_DeleteUserAsync_System_Int32_
+  name: DeleteUserAsync
+  nameWithType: DbUserRepository.DeleteUserAsync
+  fullName: WAMServer.Repositories.DbUserRepository.DeleteUserAsync
+- uid: WAMServer.Interfaces.IUserRepository.DeleteUserAsync(System.Int32)
+  commentId: M:WAMServer.Interfaces.IUserRepository.DeleteUserAsync(System.Int32)
+  parent: WAMServer.Interfaces.IUserRepository
+  isExternal: true
+  href: WAMServer.Interfaces.IUserRepository.html#WAMServer_Interfaces_IUserRepository_DeleteUserAsync_System_Int32_
+  name: DeleteUserAsync(int)
+  nameWithType: IUserRepository.DeleteUserAsync(int)
+  fullName: WAMServer.Interfaces.IUserRepository.DeleteUserAsync(int)
+  nameWithType.vb: IUserRepository.DeleteUserAsync(Integer)
+  fullName.vb: WAMServer.Interfaces.IUserRepository.DeleteUserAsync(Integer)
+  name.vb: DeleteUserAsync(Integer)
+  spec.csharp:
+  - uid: WAMServer.Interfaces.IUserRepository.DeleteUserAsync(System.Int32)
+    name: DeleteUserAsync
+    href: WAMServer.Interfaces.IUserRepository.html#WAMServer_Interfaces_IUserRepository_DeleteUserAsync_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: WAMServer.Interfaces.IUserRepository.DeleteUserAsync(System.Int32)
+    name: DeleteUserAsync
+    href: WAMServer.Interfaces.IUserRepository.html#WAMServer_Interfaces_IUserRepository_DeleteUserAsync_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: WAMServer.Repositories.DbUserRepository.GetUser*
+  commentId: Overload:WAMServer.Repositories.DbUserRepository.GetUser
+  href: WAMServer.Repositories.DbUserRepository.html#WAMServer_Repositories_DbUserRepository_GetUser_System_Guid_
+  name: GetUser
+  nameWithType: DbUserRepository.GetUser
+  fullName: WAMServer.Repositories.DbUserRepository.GetUser
+- uid: WAMServer.Interfaces.IUserRepository.GetUser(System.Guid)
+  commentId: M:WAMServer.Interfaces.IUserRepository.GetUser(System.Guid)
+  parent: WAMServer.Interfaces.IUserRepository
+  isExternal: true
+  href: WAMServer.Interfaces.IUserRepository.html#WAMServer_Interfaces_IUserRepository_GetUser_System_Guid_
+  name: GetUser(Guid)
+  nameWithType: IUserRepository.GetUser(Guid)
+  fullName: WAMServer.Interfaces.IUserRepository.GetUser(System.Guid)
+  spec.csharp:
+  - uid: WAMServer.Interfaces.IUserRepository.GetUser(System.Guid)
+    name: GetUser
+    href: WAMServer.Interfaces.IUserRepository.html#WAMServer_Interfaces_IUserRepository_GetUser_System_Guid_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: )
+  spec.vb:
+  - uid: WAMServer.Interfaces.IUserRepository.GetUser(System.Guid)
+    name: GetUser
+    href: WAMServer.Interfaces.IUserRepository.html#WAMServer_Interfaces_IUserRepository_GetUser_System_Guid_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: )
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: WAMServer.Interfaces.IUserRepository.GetUser(System.String)
+  commentId: M:WAMServer.Interfaces.IUserRepository.GetUser(System.String)
+  parent: WAMServer.Interfaces.IUserRepository
+  isExternal: true
+  href: WAMServer.Interfaces.IUserRepository.html#WAMServer_Interfaces_IUserRepository_GetUser_System_String_
+  name: GetUser(string)
+  nameWithType: IUserRepository.GetUser(string)
+  fullName: WAMServer.Interfaces.IUserRepository.GetUser(string)
+  nameWithType.vb: IUserRepository.GetUser(String)
+  fullName.vb: WAMServer.Interfaces.IUserRepository.GetUser(String)
+  name.vb: GetUser(String)
+  spec.csharp:
+  - uid: WAMServer.Interfaces.IUserRepository.GetUser(System.String)
+    name: GetUser
+    href: WAMServer.Interfaces.IUserRepository.html#WAMServer_Interfaces_IUserRepository_GetUser_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: WAMServer.Interfaces.IUserRepository.GetUser(System.String)
+    name: GetUser
+    href: WAMServer.Interfaces.IUserRepository.html#WAMServer_Interfaces_IUserRepository_GetUser_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: WAMServer.Repositories.DbUserRepository.GetUserIncludingAddress*
+  commentId: Overload:WAMServer.Repositories.DbUserRepository.GetUserIncludingAddress
+  href: WAMServer.Repositories.DbUserRepository.html#WAMServer_Repositories_DbUserRepository_GetUserIncludingAddress_WAMServer_Models_User_
+  name: GetUserIncludingAddress
+  nameWithType: DbUserRepository.GetUserIncludingAddress
+  fullName: WAMServer.Repositories.DbUserRepository.GetUserIncludingAddress
+- uid: WAMServer.Interfaces.IUserRepository.GetUserIncludingAddress(WAMServer.Models.User)
+  commentId: M:WAMServer.Interfaces.IUserRepository.GetUserIncludingAddress(WAMServer.Models.User)
+  parent: WAMServer.Interfaces.IUserRepository
+  href: WAMServer.Interfaces.IUserRepository.html#WAMServer_Interfaces_IUserRepository_GetUserIncludingAddress_WAMServer_Models_User_
+  name: GetUserIncludingAddress(User)
+  nameWithType: IUserRepository.GetUserIncludingAddress(User)
+  fullName: WAMServer.Interfaces.IUserRepository.GetUserIncludingAddress(WAMServer.Models.User)
+  spec.csharp:
+  - uid: WAMServer.Interfaces.IUserRepository.GetUserIncludingAddress(WAMServer.Models.User)
+    name: GetUserIncludingAddress
+    href: WAMServer.Interfaces.IUserRepository.html#WAMServer_Interfaces_IUserRepository_GetUserIncludingAddress_WAMServer_Models_User_
+  - name: (
+  - uid: WAMServer.Models.User
+    name: User
+    href: WAMServer.Models.User.html
+  - name: )
+  spec.vb:
+  - uid: WAMServer.Interfaces.IUserRepository.GetUserIncludingAddress(WAMServer.Models.User)
+    name: GetUserIncludingAddress
+    href: WAMServer.Interfaces.IUserRepository.html#WAMServer_Interfaces_IUserRepository_GetUserIncludingAddress_WAMServer_Models_User_
+  - name: (
+  - uid: WAMServer.Models.User
+    name: User
+    href: WAMServer.Models.User.html
+  - name: )
+- uid: WAMServer.Repositories.DbUserRepository.GetUsersAsync*
+  commentId: Overload:WAMServer.Repositories.DbUserRepository.GetUsersAsync
+  href: WAMServer.Repositories.DbUserRepository.html#WAMServer_Repositories_DbUserRepository_GetUsersAsync
+  name: GetUsersAsync
+  nameWithType: DbUserRepository.GetUsersAsync
+  fullName: WAMServer.Repositories.DbUserRepository.GetUsersAsync
+- uid: WAMServer.Interfaces.IUserRepository.GetUsersAsync
+  commentId: M:WAMServer.Interfaces.IUserRepository.GetUsersAsync
+  parent: WAMServer.Interfaces.IUserRepository
+  href: WAMServer.Interfaces.IUserRepository.html#WAMServer_Interfaces_IUserRepository_GetUsersAsync
+  name: GetUsersAsync()
+  nameWithType: IUserRepository.GetUsersAsync()
+  fullName: WAMServer.Interfaces.IUserRepository.GetUsersAsync()
+  spec.csharp:
+  - uid: WAMServer.Interfaces.IUserRepository.GetUsersAsync
+    name: GetUsersAsync
+    href: WAMServer.Interfaces.IUserRepository.html#WAMServer_Interfaces_IUserRepository_GetUsersAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: WAMServer.Interfaces.IUserRepository.GetUsersAsync
+    name: GetUsersAsync
+    href: WAMServer.Interfaces.IUserRepository.html#WAMServer_Interfaces_IUserRepository_GetUsersAsync
+  - name: (
+  - name: )
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{WAMServer.Models.User}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{WAMServer.Models.User}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IEnumerable<User>>
+  nameWithType: Task<IEnumerable<User>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<WAMServer.Models.User>>
+  nameWithType.vb: Task(Of IEnumerable(Of User))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of WAMServer.Models.User))
+  name.vb: Task(Of IEnumerable(Of User))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: WAMServer.Models.User
+    name: User
+    href: WAMServer.Models.User.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: WAMServer.Models.User
+    name: User
+    href: WAMServer.Models.User.html
+  - name: )
+  - name: )
+- uid: WAMServer.Repositories.DbUserRepository.UpdateUserAsync*
+  commentId: Overload:WAMServer.Repositories.DbUserRepository.UpdateUserAsync
+  href: WAMServer.Repositories.DbUserRepository.html#WAMServer_Repositories_DbUserRepository_UpdateUserAsync_WAMServer_Models_User_
+  name: UpdateUserAsync
+  nameWithType: DbUserRepository.UpdateUserAsync
+  fullName: WAMServer.Repositories.DbUserRepository.UpdateUserAsync
+- uid: WAMServer.Interfaces.IUserRepository.UpdateUserAsync(WAMServer.Models.User)
+  commentId: M:WAMServer.Interfaces.IUserRepository.UpdateUserAsync(WAMServer.Models.User)
+  parent: WAMServer.Interfaces.IUserRepository
+  href: WAMServer.Interfaces.IUserRepository.html#WAMServer_Interfaces_IUserRepository_UpdateUserAsync_WAMServer_Models_User_
+  name: UpdateUserAsync(User)
+  nameWithType: IUserRepository.UpdateUserAsync(User)
+  fullName: WAMServer.Interfaces.IUserRepository.UpdateUserAsync(WAMServer.Models.User)
+  spec.csharp:
+  - uid: WAMServer.Interfaces.IUserRepository.UpdateUserAsync(WAMServer.Models.User)
+    name: UpdateUserAsync
+    href: WAMServer.Interfaces.IUserRepository.html#WAMServer_Interfaces_IUserRepository_UpdateUserAsync_WAMServer_Models_User_
+  - name: (
+  - uid: WAMServer.Models.User
+    name: User
+    href: WAMServer.Models.User.html
+  - name: )
+  spec.vb:
+  - uid: WAMServer.Interfaces.IUserRepository.UpdateUserAsync(WAMServer.Models.User)
+    name: UpdateUserAsync
+    href: WAMServer.Interfaces.IUserRepository.html#WAMServer_Interfaces_IUserRepository_UpdateUserAsync_WAMServer_Models_User_
+  - name: (
+  - uid: WAMServer.Models.User
+    name: User
+    href: WAMServer.Models.User.html
+  - name: )

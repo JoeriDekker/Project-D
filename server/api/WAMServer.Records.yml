@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: WAMServer.Records
+  commentId: N:WAMServer.Records
+  id: WAMServer.Records
+  children:
+  - WAMServer.Records.LoginBody
+  langs:
+  - csharp
+  - vb
+  name: WAMServer.Records
+  nameWithType: WAMServer.Records
+  fullName: WAMServer.Records
+  type: Namespace
+  assemblies:
+  - server
+references:
+- uid: WAMServer.Records.LoginBody
+  commentId: T:WAMServer.Records.LoginBody
+  parent: WAMServer.Records
+  href: WAMServer.Records.LoginBody.html
+  name: LoginBody
+  nameWithType: LoginBody
+  fullName: WAMServer.Records.LoginBody
+- uid: WAMServer.Records
+  commentId: N:WAMServer.Records
+  href: WAMServer.html
+  name: WAMServer.Records
+  nameWithType: WAMServer.Records
+  fullName: WAMServer.Records
+  spec.csharp:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Records
+    name: Records
+    href: WAMServer.Records.html
+  spec.vb:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Records
+    name: Records
+    href: WAMServer.Records.html

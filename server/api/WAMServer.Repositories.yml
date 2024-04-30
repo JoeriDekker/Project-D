@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: WAMServer.Repositories
+  commentId: N:WAMServer.Repositories
+  id: WAMServer.Repositories
+  children:
+  - WAMServer.Repositories.DbUserRepository
+  langs:
+  - csharp
+  - vb
+  name: WAMServer.Repositories
+  nameWithType: WAMServer.Repositories
+  fullName: WAMServer.Repositories
+  type: Namespace
+  assemblies:
+  - server
+references:
+- uid: WAMServer.Repositories.DbUserRepository
+  commentId: T:WAMServer.Repositories.DbUserRepository
+  href: WAMServer.Repositories.DbUserRepository.html
+  name: DbUserRepository
+  nameWithType: DbUserRepository
+  fullName: WAMServer.Repositories.DbUserRepository
