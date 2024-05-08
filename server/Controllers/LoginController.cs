@@ -64,7 +64,7 @@ namespace WAMServer.Controllers
         /// </summary>
         /// <param name="userInfo">The user information.</param>
         /// <returns>The JSON web token.</returns>
-        private string GenerateJSONWebToken(User userInfo)
+        public string GenerateJSONWebToken(User userInfo)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"] ?? "WamsSuperSecretKey"));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -87,7 +87,7 @@ namespace WAMServer.Controllers
         /// <param name="email">The email of the user.</param>
         /// <param name="password">The password of the user.</param>
         /// <returns>The user if authenticated, null otherwise.</returns>
-        private User? AuthenticateUserReturnNullIfUnable(string email, string password)
+        public User? AuthenticateUserReturnNullIfUnable(string email, string password)
         {
             User? user = null;
             //TODO: Add encryption
