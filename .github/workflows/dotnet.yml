@@ -17,7 +17,7 @@ jobs:
     - uses: nikeee/docfx-action@v1.0.0
       name: Build Documentation
       with:
-        args: ./server
+        args: ./server/docfx.json
   build:
 
     runs-on: ubuntu-latest
