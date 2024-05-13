@@ -1,11 +1,11 @@
 import React from "react";
 
-import './index.css';
+// import '../style/index.css';
 
 
 
-function LoginScreen(){
-    return(
+function LoginScreen() {
+    return (
         <h1 className="text-3xl font-bold underline">
             Hello world!
         </h1>
