@@ -1,4 +1,3 @@
-
 using WAMServer.Models;
 
 namespace WAMServer.DTO

@@ -58,7 +58,8 @@ namespace WAMServer
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey ?? "WamsSuper$ecretKey"))
                     };
                 });
-            services.AddTransient<IUserRepository, DbUserRepository>();
+            services.AddTransient<IRepository<User>, DbUserRepository>();
+            services.AddTransient<IRepository<Address>, DbAddressRepository>();
         }
 
         /// <summary>

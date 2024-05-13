@@ -18,9 +18,11 @@ namespace WAMServer.Repositories
             _context = context;
         }
 
-        public Task<User> AddAsync(User entity)
+        public async Task<User> AddAsync(User entity)
         {
-            throw new NotImplementedException();
+            await _context.Users.AddAsync(entity);
+            await _context.SaveChangesAsync();
+            return entity;
         }
 
         public Task<User> DeleteAsync(Guid id)
