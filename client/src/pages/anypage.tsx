@@ -1,14 +1,14 @@
 import React from "react";
 
-import '../style/index.css';
-
-
+import Navbar from '../components/navbar/navbar'
 
 function AnyPage() {
     return (
-        <h1 className="text-3xl font-bold underline">
-            Hello PP
-        </h1>
+
+        Navbar()
+        // <h1 className="text-3xl font-bold underline">
+        //     Hello PP
+        // </h1>
     );
 }
 
