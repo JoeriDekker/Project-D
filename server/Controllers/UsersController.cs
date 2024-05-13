@@ -12,14 +12,20 @@ namespace WAMServer.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserRepository _userRepository;
-
-        public UsersController(IUserRepository userRepository)
+        private readonly IRepository<Address> _addressRepository;
+        public UsersController(IUserRepository userRepository, IRepository<Address> addressRepo)
         {
             _userRepository = userRepository;
+            _addressRepository = addressRepo;
         }
 
+        // TODO: Remove me!
+        /// <summary>
+        /// Did something, felt cute, might delete later
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
-        public IActionResult GetUser()
+        public ActionResult<UserDTO> GetUser()
         {
             var currentUser = HttpContext.User;
             if (!currentUser.HasClaim(c => c.Type == "Id"))

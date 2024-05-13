@@ -3,6 +3,7 @@ using Moq;
 using WAMServer.Controllers;
 using WAMServer.Interfaces;
 using WAMServer.Models;
+using Xunit;
 
 namespace WAMServer.Tests.Controllers
 {

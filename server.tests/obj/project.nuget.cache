@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jpu6YBocP9VjWS468flA8DBPEAwMlAJPwHyng94RUJ3ooAkE9NTw1YklmzYfzfEbjE0rcDmdoJyRhsAcxJZTvQ==",
+  "dgSpecHash": "yPUyH6/9Ykmi8gp3nEvWiRXSyt9wzZNMP1nWO+B1Eagjo2VgB69hRWlEw4M8U8/nRduMGnRrt3PUEcqZzPKHww==",
   "success": true,
-  "projectFilePath": "/home/rens/Project-D/server.tests/server.tests.csproj",
+  "projectFilePath": "/home/rens/school/Project-D/server.tests/server.tests.csproj",
   "expectedPackageFiles": [
     "/home/rens/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/home/rens/.nuget/packages/coverlet.collector/6.0.0/coverlet.collector.6.0.0.nupkg.sha512",
