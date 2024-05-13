@@ -1,0 +1,7 @@
+{
+    "Navigation": {
+        "dashboard": "Dashboard",
+        "settings": "Settings",
+        "logout": "Logout"
+    }
+}

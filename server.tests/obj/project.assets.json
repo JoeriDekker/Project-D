@@ -7123,19 +7123,19 @@
     ]
   },
   "packageFolders": {
-    "/home/rens/.nuget/packages/": {}
+    "C:\\Users\\erikm\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/rens/school/Project-D/server.tests/server.tests.csproj",
+      "projectUniqueName": "C:\\Users\\erikm\\Documents\\Github repo's\\Project-D\\server.tests\\server.tests.csproj",
       "projectName": "server.tests",
-      "projectPath": "/home/rens/school/Project-D/server.tests/server.tests.csproj",
-      "packagesPath": "/home/rens/.nuget/packages/",
-      "outputPath": "/home/rens/school/Project-D/server.tests/obj/",
+      "projectPath": "C:\\Users\\erikm\\Documents\\Github repo's\\Project-D\\server.tests\\server.tests.csproj",
+      "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\erikm\\Documents\\Github repo's\\Project-D\\server.tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/rens/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -7147,8 +7147,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/rens/school/Project-D/server/server.csproj": {
-              "projectPath": "/home/rens/school/Project-D/server/server.csproj"
+            "C:\\Users\\erikm\\Documents\\Github repo's\\Project-D\\server\\server.csproj": {
+              "projectPath": "C:\\Users\\erikm\\Documents\\Github repo's\\Project-D\\server\\server.csproj"
             }
           }
         }
@@ -7157,11 +7157,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -7205,7 +7200,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

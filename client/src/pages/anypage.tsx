@@ -4,11 +4,9 @@ import Navbar from '../components/navbar/navbar'
 
 function AnyPage() {
     return (
-
-        Navbar()
-        // <h1 className="text-3xl font-bold underline">
-        //     Hello PP
-        // </h1>
+        <div className="bg-background-color w-screen h-screen py-5">
+            <Navbar />
+        </div>
     );
 }
 
