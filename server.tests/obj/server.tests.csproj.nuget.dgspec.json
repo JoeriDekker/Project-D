@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/rens/Project-D/server.tests/server.tests.csproj": {}
+    "/home/rens/school/Project-D/server.tests/server.tests.csproj": {}
   },
   "projects": {
-    "/home/rens/Project-D/server.tests/server.tests.csproj": {
+    "/home/rens/school/Project-D/server.tests/server.tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/rens/Project-D/server.tests/server.tests.csproj",
+        "projectUniqueName": "/home/rens/school/Project-D/server.tests/server.tests.csproj",
         "projectName": "server.tests",
-        "projectPath": "/home/rens/Project-D/server.tests/server.tests.csproj",
+        "projectPath": "/home/rens/school/Project-D/server.tests/server.tests.csproj",
         "packagesPath": "/home/rens/.nuget/packages/",
-        "outputPath": "/home/rens/Project-D/server.tests/obj/",
+        "outputPath": "/home/rens/school/Project-D/server.tests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/rens/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/rens/Project-D/server/server.csproj": {
-                "projectPath": "/home/rens/Project-D/server/server.csproj"
+              "/home/rens/school/Project-D/server/server.csproj": {
+                "projectPath": "/home/rens/school/Project-D/server/server.csproj"
               }
             }
           }
@@ -88,14 +88,14 @@
         }
       }
     },
-    "/home/rens/Project-D/server/server.csproj": {
+    "/home/rens/school/Project-D/server/server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/rens/Project-D/server/server.csproj",
+        "projectUniqueName": "/home/rens/school/Project-D/server/server.csproj",
         "projectName": "server",
-        "projectPath": "/home/rens/Project-D/server/server.csproj",
+        "projectPath": "/home/rens/school/Project-D/server/server.csproj",
         "packagesPath": "/home/rens/.nuget/packages/",
-        "outputPath": "/home/rens/Project-D/server/obj/",
+        "outputPath": "/home/rens/school/Project-D/server/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/rens/.nuget/NuGet/NuGet.Config"
