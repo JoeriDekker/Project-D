@@ -1,15 +1,15 @@
 import React from "react";
 
-import './index.css';
+import './css/index.css';
 
 
 
-function LoginScreen(){
+function DashboardScreen(){
     return(
         <h1 className="text-3xl font-bold underline">
-            Hello world!
+            Hello DashboardScreen!
         </h1>
     );
 }
 
-export default LoginScreen;
+export default DashboardScreen;
