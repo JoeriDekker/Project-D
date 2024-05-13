@@ -4,6 +4,7 @@ items:
   commentId: N:WAMServer.Repositories
   id: WAMServer.Repositories
   children:
+  - WAMServer.Repositories.DbAddressRepository
   - WAMServer.Repositories.DbUserRepository
   langs:
   - csharp
@@ -15,6 +16,12 @@ items:
   assemblies:
   - server
 references:
+- uid: WAMServer.Repositories.DbAddressRepository
+  commentId: T:WAMServer.Repositories.DbAddressRepository
+  href: WAMServer.Repositories.DbAddressRepository.html
+  name: DbAddressRepository
+  nameWithType: DbAddressRepository
+  fullName: WAMServer.Repositories.DbAddressRepository
 - uid: WAMServer.Repositories.DbUserRepository
   commentId: T:WAMServer.Repositories.DbUserRepository
   href: WAMServer.Repositories.DbUserRepository.html

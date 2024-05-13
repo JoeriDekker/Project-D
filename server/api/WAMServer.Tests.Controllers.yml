@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: WAMServer.Tests.Controllers
+  commentId: N:WAMServer.Tests.Controllers
+  id: WAMServer.Tests.Controllers
+  children:
+  - WAMServer.Tests.Controllers.LoginControllerTests
+  langs:
+  - csharp
+  - vb
+  name: WAMServer.Tests.Controllers
+  nameWithType: WAMServer.Tests.Controllers
+  fullName: WAMServer.Tests.Controllers
+  type: Namespace
+  assemblies:
+  - server.tests
+references:
+- uid: WAMServer.Tests.Controllers.LoginControllerTests
+  commentId: T:WAMServer.Tests.Controllers.LoginControllerTests
+  href: WAMServer.Tests.Controllers.LoginControllerTests.html
+  name: LoginControllerTests
+  nameWithType: LoginControllerTests
+  fullName: WAMServer.Tests.Controllers.LoginControllerTests

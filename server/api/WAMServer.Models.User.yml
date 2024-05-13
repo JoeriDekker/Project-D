@@ -23,7 +23,7 @@ items:
   source:
     remote:
       path: server/Models/User.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: User
     path: Models/User.cs
@@ -60,7 +60,7 @@ items:
   source:
     remote:
       path: server/Models/User.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Id
     path: Models/User.cs
@@ -99,7 +99,7 @@ items:
   source:
     remote:
       path: server/Models/User.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: FirstName
     path: Models/User.cs
@@ -149,7 +149,7 @@ items:
   source:
     remote:
       path: server/Models/User.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: LastName
     path: Models/User.cs
@@ -199,7 +199,7 @@ items:
   source:
     remote:
       path: server/Models/User.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Email
     path: Models/User.cs
@@ -249,7 +249,7 @@ items:
   source:
     remote:
       path: server/Models/User.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Password
     path: Models/User.cs
@@ -299,7 +299,7 @@ items:
   source:
     remote:
       path: server/Models/User.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: AddressId
     path: Models/User.cs
@@ -328,7 +328,7 @@ items:
   source:
     remote:
       path: server/Models/User.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Address
     path: Models/User.cs
@@ -369,7 +369,7 @@ items:
   source:
     remote:
       path: server/Models/User.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: .ctor
     path: Models/User.cs

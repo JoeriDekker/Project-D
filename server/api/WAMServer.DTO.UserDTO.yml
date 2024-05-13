@@ -22,11 +22,11 @@ items:
   source:
     remote:
       path: server/DTO/UserDTO.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: UserDTO
     path: DTO/UserDTO.cs
-    startLine: 5
+    startLine: 4
   assemblies:
   - server
   namespace: WAMServer.DTO
@@ -57,11 +57,11 @@ items:
   source:
     remote:
       path: server/DTO/UserDTO.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Id
     path: DTO/UserDTO.cs
-    startLine: 7
+    startLine: 6
   assemblies:
   - server
   namespace: WAMServer.DTO
@@ -86,11 +86,11 @@ items:
   source:
     remote:
       path: server/DTO/UserDTO.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: FirstName
     path: DTO/UserDTO.cs
-    startLine: 8
+    startLine: 7
   assemblies:
   - server
   namespace: WAMServer.DTO
@@ -115,11 +115,11 @@ items:
   source:
     remote:
       path: server/DTO/UserDTO.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: LastName
     path: DTO/UserDTO.cs
-    startLine: 9
+    startLine: 8
   assemblies:
   - server
   namespace: WAMServer.DTO
@@ -144,11 +144,11 @@ items:
   source:
     remote:
       path: server/DTO/UserDTO.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Email
     path: DTO/UserDTO.cs
-    startLine: 10
+    startLine: 9
   assemblies:
   - server
   namespace: WAMServer.DTO
@@ -173,11 +173,11 @@ items:
   source:
     remote:
       path: server/DTO/UserDTO.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Address
     path: DTO/UserDTO.cs
-    startLine: 11
+    startLine: 10
   assemblies:
   - server
   namespace: WAMServer.DTO
@@ -202,11 +202,11 @@ items:
   source:
     remote:
       path: server/DTO/UserDTO.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: .ctor
     path: DTO/UserDTO.cs
-    startLine: 13
+    startLine: 12
   assemblies:
   - server
   namespace: WAMServer.DTO
@@ -242,11 +242,11 @@ items:
   source:
     remote:
       path: server/DTO/UserDTO.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: .ctor
     path: DTO/UserDTO.cs
-    startLine: 22
+    startLine: 21
   assemblies:
   - server
   namespace: WAMServer.DTO

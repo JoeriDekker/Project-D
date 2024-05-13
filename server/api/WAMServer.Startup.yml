@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: server/Startup.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Startup
     path: Startup.cs
@@ -53,7 +53,7 @@ items:
   source:
     remote:
       path: server/Startup.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Start
     path: Startup.cs

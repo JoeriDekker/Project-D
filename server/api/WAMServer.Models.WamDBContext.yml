@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: server/Models/WamDBContext.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: WamDBContext
     path: Models/WamDBContext.cs
@@ -111,7 +111,7 @@ items:
   source:
     remote:
       path: server/Models/WamDBContext.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: .ctor
     path: Models/WamDBContext.cs
@@ -143,7 +143,7 @@ items:
   source:
     remote:
       path: server/Models/WamDBContext.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Users
     path: Models/WamDBContext.cs
@@ -172,7 +172,7 @@ items:
   source:
     remote:
       path: server/Models/WamDBContext.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Addresses
     path: Models/WamDBContext.cs

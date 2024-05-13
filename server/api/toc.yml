@@ -20,6 +20,8 @@ items:
 - uid: WAMServer.Interfaces
   name: WAMServer.Interfaces
   items:
+  - uid: WAMServer.Interfaces.IRepository`1
+    name: IRepository<T>
   - uid: WAMServer.Interfaces.IUserRepository
     name: IUserRepository
 - uid: WAMServer.Models
@@ -39,11 +41,23 @@ items:
 - uid: WAMServer.Repositories
   name: WAMServer.Repositories
   items:
+  - uid: WAMServer.Repositories.DbAddressRepository
+    name: DbAddressRepository
   - uid: WAMServer.Repositories.DbUserRepository
     name: DbUserRepository
+- uid: WAMServer.Tests.Controllers
+  name: WAMServer.Tests.Controllers
+  items:
+  - uid: WAMServer.Tests.Controllers.LoginControllerTests
+    name: LoginControllerTests
 - uid: server.Migrations
   name: server.Migrations
   items:
   - uid: server.Migrations.init
     name: init
+- uid: server.tests
+  name: server.tests
+  items:
+  - uid: server.tests.UnitTest1
+    name: UnitTest1
 memberLayout: SamePage

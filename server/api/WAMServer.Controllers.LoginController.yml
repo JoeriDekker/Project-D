@@ -6,6 +6,8 @@ items:
   parent: WAMServer.Controllers
   children:
   - WAMServer.Controllers.LoginController.#ctor(WAMServer.Interfaces.IUserRepository,Microsoft.Extensions.Configuration.IConfiguration)
+  - WAMServer.Controllers.LoginController.AuthenticateUserReturnNullIfUnable(System.String,System.String)
+  - WAMServer.Controllers.LoginController.GenerateJSONWebToken(WAMServer.Models.User)
   - WAMServer.Controllers.LoginController.Login(WAMServer.Records.LoginBody)
   langs:
   - csharp
@@ -17,7 +19,7 @@ items:
   source:
     remote:
       path: server/Controllers/LoginController.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: LoginController
     path: Controllers/LoginController.cs
@@ -247,7 +249,7 @@ items:
   source:
     remote:
       path: server/Controllers/LoginController.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: .ctor
     path: Controllers/LoginController.cs
@@ -285,7 +287,7 @@ items:
   source:
     remote:
       path: server/Controllers/LoginController.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Login
     path: Controllers/LoginController.cs
@@ -327,6 +329,82 @@ items:
   - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
     ctor: Microsoft.AspNetCore.Mvc.HttpPostAttribute.#ctor
     arguments: []
+- uid: WAMServer.Controllers.LoginController.GenerateJSONWebToken(WAMServer.Models.User)
+  commentId: M:WAMServer.Controllers.LoginController.GenerateJSONWebToken(WAMServer.Models.User)
+  id: GenerateJSONWebToken(WAMServer.Models.User)
+  parent: WAMServer.Controllers.LoginController
+  langs:
+  - csharp
+  - vb
+  name: GenerateJSONWebToken(User)
+  nameWithType: LoginController.GenerateJSONWebToken(User)
+  fullName: WAMServer.Controllers.LoginController.GenerateJSONWebToken(WAMServer.Models.User)
+  type: Method
+  source:
+    remote:
+      path: server/Controllers/LoginController.cs
+      branch: development
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: GenerateJSONWebToken
+    path: Controllers/LoginController.cs
+    startLine: 66
+  assemblies:
+  - server
+  namespace: WAMServer.Controllers
+  summary: Generates a JSON web token.
+  example: []
+  syntax:
+    content: public string GenerateJSONWebToken(User userInfo)
+    parameters:
+    - id: userInfo
+      type: WAMServer.Models.User
+      description: The user information.
+    return:
+      type: System.String
+      description: The JSON web token.
+    content.vb: Public Function GenerateJSONWebToken(userInfo As User) As String
+  overload: WAMServer.Controllers.LoginController.GenerateJSONWebToken*
+- uid: WAMServer.Controllers.LoginController.AuthenticateUserReturnNullIfUnable(System.String,System.String)
+  commentId: M:WAMServer.Controllers.LoginController.AuthenticateUserReturnNullIfUnable(System.String,System.String)
+  id: AuthenticateUserReturnNullIfUnable(System.String,System.String)
+  parent: WAMServer.Controllers.LoginController
+  langs:
+  - csharp
+  - vb
+  name: AuthenticateUserReturnNullIfUnable(string, string)
+  nameWithType: LoginController.AuthenticateUserReturnNullIfUnable(string, string)
+  fullName: WAMServer.Controllers.LoginController.AuthenticateUserReturnNullIfUnable(string, string)
+  type: Method
+  source:
+    remote:
+      path: server/Controllers/LoginController.cs
+      branch: development
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: AuthenticateUserReturnNullIfUnable
+    path: Controllers/LoginController.cs
+    startLine: 89
+  assemblies:
+  - server
+  namespace: WAMServer.Controllers
+  summary: Authenticates the user. Returns null if unable to authenticate.
+  example: []
+  syntax:
+    content: public User? AuthenticateUserReturnNullIfUnable(string email, string password)
+    parameters:
+    - id: email
+      type: System.String
+      description: The email of the user.
+    - id: password
+      type: System.String
+      description: The password of the user.
+    return:
+      type: WAMServer.Models.User
+      description: The user if authenticated, null otherwise.
+    content.vb: Public Function AuthenticateUserReturnNullIfUnable(email As String, password As String) As User
+  overload: WAMServer.Controllers.LoginController.AuthenticateUserReturnNullIfUnable*
+  nameWithType.vb: LoginController.AuthenticateUserReturnNullIfUnable(String, String)
+  fullName.vb: WAMServer.Controllers.LoginController.AuthenticateUserReturnNullIfUnable(String, String)
+  name.vb: AuthenticateUserReturnNullIfUnable(String, String)
 references:
 - uid: WAMServer.Controllers
   commentId: N:WAMServer.Controllers
@@ -9441,3 +9519,55 @@ references:
   - uid: WAMServer.Records
     name: Records
     href: WAMServer.Records.html
+- uid: WAMServer.Controllers.LoginController.GenerateJSONWebToken*
+  commentId: Overload:WAMServer.Controllers.LoginController.GenerateJSONWebToken
+  href: WAMServer.Controllers.LoginController.html#WAMServer_Controllers_LoginController_GenerateJSONWebToken_WAMServer_Models_User_
+  name: GenerateJSONWebToken
+  nameWithType: LoginController.GenerateJSONWebToken
+  fullName: WAMServer.Controllers.LoginController.GenerateJSONWebToken
+- uid: WAMServer.Models.User
+  commentId: T:WAMServer.Models.User
+  parent: WAMServer.Models
+  href: WAMServer.Models.User.html
+  name: User
+  nameWithType: User
+  fullName: WAMServer.Models.User
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: WAMServer.Models
+  commentId: N:WAMServer.Models
+  href: WAMServer.html
+  name: WAMServer.Models
+  nameWithType: WAMServer.Models
+  fullName: WAMServer.Models
+  spec.csharp:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Models
+    name: Models
+    href: WAMServer.Models.html
+  spec.vb:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Models
+    name: Models
+    href: WAMServer.Models.html
+- uid: WAMServer.Controllers.LoginController.AuthenticateUserReturnNullIfUnable*
+  commentId: Overload:WAMServer.Controllers.LoginController.AuthenticateUserReturnNullIfUnable
+  href: WAMServer.Controllers.LoginController.html#WAMServer_Controllers_LoginController_AuthenticateUserReturnNullIfUnable_System_String_System_String_
+  name: AuthenticateUserReturnNullIfUnable
+  nameWithType: LoginController.AuthenticateUserReturnNullIfUnable
+  fullName: WAMServer.Controllers.LoginController.AuthenticateUserReturnNullIfUnable

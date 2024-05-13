@@ -1,0 +1,425 @@
+### YamlMime:ManagedReference
+items:
+- uid: WAMServer.Interfaces.IRepository`1
+  commentId: T:WAMServer.Interfaces.IRepository`1
+  id: IRepository`1
+  parent: WAMServer.Interfaces
+  children:
+  - WAMServer.Interfaces.IRepository`1.AddAsync(`0)
+  - WAMServer.Interfaces.IRepository`1.DeleteAsync(System.Guid)
+  - WAMServer.Interfaces.IRepository`1.Get(System.Guid)
+  - WAMServer.Interfaces.IRepository`1.GetAllAsync
+  - WAMServer.Interfaces.IRepository`1.UpdateAsync(`0)
+  langs:
+  - csharp
+  - vb
+  name: IRepository<T>
+  nameWithType: IRepository<T>
+  fullName: WAMServer.Interfaces.IRepository<T>
+  type: Interface
+  source:
+    remote:
+      path: server/Interfaces/IRepository.cs
+      branch: development
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: IRepository
+    path: Interfaces/IRepository.cs
+    startLine: 2
+  assemblies:
+  - server
+  namespace: WAMServer.Interfaces
+  syntax:
+    content: public interface IRepository<T>
+    typeParameters:
+    - id: T
+    content.vb: Public Interface IRepository(Of T)
+  nameWithType.vb: IRepository(Of T)
+  fullName.vb: WAMServer.Interfaces.IRepository(Of T)
+  name.vb: IRepository(Of T)
+- uid: WAMServer.Interfaces.IRepository`1.Get(System.Guid)
+  commentId: M:WAMServer.Interfaces.IRepository`1.Get(System.Guid)
+  id: Get(System.Guid)
+  parent: WAMServer.Interfaces.IRepository`1
+  langs:
+  - csharp
+  - vb
+  name: Get(Guid)
+  nameWithType: IRepository<T>.Get(Guid)
+  fullName: WAMServer.Interfaces.IRepository<T>.Get(System.Guid)
+  type: Method
+  source:
+    remote:
+      path: server/Interfaces/IRepository.cs
+      branch: development
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: Get
+    path: Interfaces/IRepository.cs
+    startLine: 4
+  assemblies:
+  - server
+  namespace: WAMServer.Interfaces
+  syntax:
+    content: T? Get(Guid id)
+    parameters:
+    - id: id
+      type: System.Guid
+    return:
+      type: '{T}'
+    content.vb: Function [Get](id As Guid) As T
+  overload: WAMServer.Interfaces.IRepository`1.Get*
+  nameWithType.vb: IRepository(Of T).Get(Guid)
+  fullName.vb: WAMServer.Interfaces.IRepository(Of T).Get(System.Guid)
+- uid: WAMServer.Interfaces.IRepository`1.GetAllAsync
+  commentId: M:WAMServer.Interfaces.IRepository`1.GetAllAsync
+  id: GetAllAsync
+  parent: WAMServer.Interfaces.IRepository`1
+  langs:
+  - csharp
+  - vb
+  name: GetAllAsync()
+  nameWithType: IRepository<T>.GetAllAsync()
+  fullName: WAMServer.Interfaces.IRepository<T>.GetAllAsync()
+  type: Method
+  source:
+    remote:
+      path: server/Interfaces/IRepository.cs
+      branch: development
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: GetAllAsync
+    path: Interfaces/IRepository.cs
+    startLine: 5
+  assemblies:
+  - server
+  namespace: WAMServer.Interfaces
+  syntax:
+    content: Task<IEnumerable<T>> GetAllAsync()
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{{T}}}
+    content.vb: Function GetAllAsync() As Task(Of IEnumerable(Of T))
+  overload: WAMServer.Interfaces.IRepository`1.GetAllAsync*
+  nameWithType.vb: IRepository(Of T).GetAllAsync()
+  fullName.vb: WAMServer.Interfaces.IRepository(Of T).GetAllAsync()
+- uid: WAMServer.Interfaces.IRepository`1.AddAsync(`0)
+  commentId: M:WAMServer.Interfaces.IRepository`1.AddAsync(`0)
+  id: AddAsync(`0)
+  parent: WAMServer.Interfaces.IRepository`1
+  langs:
+  - csharp
+  - vb
+  name: AddAsync(T)
+  nameWithType: IRepository<T>.AddAsync(T)
+  fullName: WAMServer.Interfaces.IRepository<T>.AddAsync(T)
+  type: Method
+  source:
+    remote:
+      path: server/Interfaces/IRepository.cs
+      branch: development
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: AddAsync
+    path: Interfaces/IRepository.cs
+    startLine: 6
+  assemblies:
+  - server
+  namespace: WAMServer.Interfaces
+  syntax:
+    content: Task<T> AddAsync(T entity)
+    parameters:
+    - id: entity
+      type: '{T}'
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+    content.vb: Function AddAsync(entity As T) As Task(Of T)
+  overload: WAMServer.Interfaces.IRepository`1.AddAsync*
+  nameWithType.vb: IRepository(Of T).AddAsync(T)
+  fullName.vb: WAMServer.Interfaces.IRepository(Of T).AddAsync(T)
+- uid: WAMServer.Interfaces.IRepository`1.UpdateAsync(`0)
+  commentId: M:WAMServer.Interfaces.IRepository`1.UpdateAsync(`0)
+  id: UpdateAsync(`0)
+  parent: WAMServer.Interfaces.IRepository`1
+  langs:
+  - csharp
+  - vb
+  name: UpdateAsync(T)
+  nameWithType: IRepository<T>.UpdateAsync(T)
+  fullName: WAMServer.Interfaces.IRepository<T>.UpdateAsync(T)
+  type: Method
+  source:
+    remote:
+      path: server/Interfaces/IRepository.cs
+      branch: development
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: UpdateAsync
+    path: Interfaces/IRepository.cs
+    startLine: 7
+  assemblies:
+  - server
+  namespace: WAMServer.Interfaces
+  syntax:
+    content: Task<T> UpdateAsync(T entity)
+    parameters:
+    - id: entity
+      type: '{T}'
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+    content.vb: Function UpdateAsync(entity As T) As Task(Of T)
+  overload: WAMServer.Interfaces.IRepository`1.UpdateAsync*
+  nameWithType.vb: IRepository(Of T).UpdateAsync(T)
+  fullName.vb: WAMServer.Interfaces.IRepository(Of T).UpdateAsync(T)
+- uid: WAMServer.Interfaces.IRepository`1.DeleteAsync(System.Guid)
+  commentId: M:WAMServer.Interfaces.IRepository`1.DeleteAsync(System.Guid)
+  id: DeleteAsync(System.Guid)
+  parent: WAMServer.Interfaces.IRepository`1
+  langs:
+  - csharp
+  - vb
+  name: DeleteAsync(Guid)
+  nameWithType: IRepository<T>.DeleteAsync(Guid)
+  fullName: WAMServer.Interfaces.IRepository<T>.DeleteAsync(System.Guid)
+  type: Method
+  source:
+    remote:
+      path: server/Interfaces/IRepository.cs
+      branch: development
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: DeleteAsync
+    path: Interfaces/IRepository.cs
+    startLine: 8
+  assemblies:
+  - server
+  namespace: WAMServer.Interfaces
+  syntax:
+    content: Task<T> DeleteAsync(Guid id)
+    parameters:
+    - id: id
+      type: System.Guid
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+    content.vb: Function DeleteAsync(id As Guid) As Task(Of T)
+  overload: WAMServer.Interfaces.IRepository`1.DeleteAsync*
+  nameWithType.vb: IRepository(Of T).DeleteAsync(Guid)
+  fullName.vb: WAMServer.Interfaces.IRepository(Of T).DeleteAsync(System.Guid)
+references:
+- uid: WAMServer.Interfaces
+  commentId: N:WAMServer.Interfaces
+  href: WAMServer.html
+  name: WAMServer.Interfaces
+  nameWithType: WAMServer.Interfaces
+  fullName: WAMServer.Interfaces
+  spec.csharp:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Interfaces
+    name: Interfaces
+    href: WAMServer.Interfaces.html
+  spec.vb:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Interfaces
+    name: Interfaces
+    href: WAMServer.Interfaces.html
+- uid: WAMServer.Interfaces.IRepository`1.Get*
+  commentId: Overload:WAMServer.Interfaces.IRepository`1.Get
+  href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_Get_System_Guid_
+  name: Get
+  nameWithType: IRepository<T>.Get
+  fullName: WAMServer.Interfaces.IRepository<T>.Get
+  nameWithType.vb: IRepository(Of T).Get
+  fullName.vb: WAMServer.Interfaces.IRepository(Of T).Get
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: WAMServer.Interfaces.IRepository`1.GetAllAsync*
+  commentId: Overload:WAMServer.Interfaces.IRepository`1.GetAllAsync
+  href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_GetAllAsync
+  name: GetAllAsync
+  nameWithType: IRepository<T>.GetAllAsync
+  fullName: WAMServer.Interfaces.IRepository<T>.GetAllAsync
+  nameWithType.vb: IRepository(Of T).GetAllAsync
+  fullName.vb: WAMServer.Interfaces.IRepository(Of T).GetAllAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{{T}}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{`0}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IEnumerable<T>>
+  nameWithType: Task<IEnumerable<T>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<T>>
+  nameWithType.vb: Task(Of IEnumerable(Of T))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of T))
+  name.vb: Task(Of IEnumerable(Of T))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: WAMServer.Interfaces.IRepository`1.AddAsync*
+  commentId: Overload:WAMServer.Interfaces.IRepository`1.AddAsync
+  href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_AddAsync__0_
+  name: AddAsync
+  nameWithType: IRepository<T>.AddAsync
+  fullName: WAMServer.Interfaces.IRepository<T>.AddAsync
+  nameWithType.vb: IRepository(Of T).AddAsync
+  fullName.vb: WAMServer.Interfaces.IRepository(Of T).AddAsync
+- uid: System.Threading.Tasks.Task{{T}}
+  commentId: T:System.Threading.Tasks.Task{`0}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<T>
+  nameWithType: Task<T>
+  fullName: System.Threading.Tasks.Task<T>
+  nameWithType.vb: Task(Of T)
+  fullName.vb: System.Threading.Tasks.Task(Of T)
+  name.vb: Task(Of T)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: WAMServer.Interfaces.IRepository`1.UpdateAsync*
+  commentId: Overload:WAMServer.Interfaces.IRepository`1.UpdateAsync
+  href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_UpdateAsync__0_
+  name: UpdateAsync
+  nameWithType: IRepository<T>.UpdateAsync
+  fullName: WAMServer.Interfaces.IRepository<T>.UpdateAsync
+  nameWithType.vb: IRepository(Of T).UpdateAsync
+  fullName.vb: WAMServer.Interfaces.IRepository(Of T).UpdateAsync
+- uid: WAMServer.Interfaces.IRepository`1.DeleteAsync*
+  commentId: Overload:WAMServer.Interfaces.IRepository`1.DeleteAsync
+  href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_DeleteAsync_System_Guid_
+  name: DeleteAsync
+  nameWithType: IRepository<T>.DeleteAsync
+  fullName: WAMServer.Interfaces.IRepository<T>.DeleteAsync
+  nameWithType.vb: IRepository(Of T).DeleteAsync
+  fullName.vb: WAMServer.Interfaces.IRepository(Of T).DeleteAsync

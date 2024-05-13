@@ -21,14 +21,16 @@ items:
   source:
     remote:
       path: server/Models/Address.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Address
     path: Models/Address.cs
-    startLine: 5
+    startLine: 8
   assemblies:
   - server
   namespace: WAMServer.Models
+  summary: Address model
+  example: []
   syntax:
     content: public class Address
     content.vb: Public Class Address
@@ -56,14 +58,16 @@ items:
   source:
     remote:
       path: server/Models/Address.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Id
     path: Models/Address.cs
-    startLine: 7
+    startLine: 13
   assemblies:
   - server
   namespace: WAMServer.Models
+  summary: The unique identifier of the address.
+  example: []
   syntax:
     content: >-
       [Key]
@@ -95,14 +99,16 @@ items:
   source:
     remote:
       path: server/Models/Address.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Street
     path: Models/Address.cs
-    startLine: 9
+    startLine: 18
   assemblies:
   - server
   namespace: WAMServer.Models
+  summary: The street of the address.
+  example: []
   syntax:
     content: public string Street { get; set; }
     parameters: []
@@ -124,14 +130,16 @@ items:
   source:
     remote:
       path: server/Models/Address.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: City
     path: Models/Address.cs
-    startLine: 10
+    startLine: 22
   assemblies:
   - server
   namespace: WAMServer.Models
+  summary: The city of the address.
+  example: []
   syntax:
     content: public string City { get; set; }
     parameters: []
@@ -153,14 +161,16 @@ items:
   source:
     remote:
       path: server/Models/Address.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Zip
     path: Models/Address.cs
-    startLine: 11
+    startLine: 26
   assemblies:
   - server
   namespace: WAMServer.Models
+  summary: The state of the address.
+  example: []
   syntax:
     content: public string Zip { get; set; }
     parameters: []
@@ -182,14 +192,16 @@ items:
   source:
     remote:
       path: server/Models/Address.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: UserId
     path: Models/Address.cs
-    startLine: 12
+    startLine: 30
   assemblies:
   - server
   namespace: WAMServer.Models
+  summary: The country of the address.
+  example: []
   syntax:
     content: public Guid? UserId { get; set; }
     parameters: []
@@ -211,14 +223,16 @@ items:
   source:
     remote:
       path: server/Models/Address.cs
-      branch: main
+      branch: development
       repo: https://github.com/JoeriDekker/Project-D.git
     id: User
     path: Models/Address.cs
-    startLine: 13
+    startLine: 34
   assemblies:
   - server
   namespace: WAMServer.Models
+  summary: The user of the address.
+  example: []
   syntax:
     content: >-
       [ForeignKey("UserId")]
