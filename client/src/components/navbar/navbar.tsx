@@ -1,7 +1,4 @@
-import React from "react";
-
 import NavItem from '../navbar-navitem/navitem'
-
 import { useLanguage } from "../../language/languagecontext";
 
 function Navbar() {
@@ -14,26 +11,26 @@ function Navbar() {
             </a>
 
             <div className="content-center h-full">
-                <nav className="h-full flex flex-col justify-start">
-                    <div className="space-y-3 flex-grow">
-                        <label className="px-3 text-xs text-black-500 dark:text-gray-400">{language.Navigation.dashboard}</label>
+                <nav className="pt-20 pb-20 h-full flex flex-col justify-start">
+                    <div className="space-y-3 flex flex-grow flex-col">
+                        <label className="px-14 text-sm text-gray-500">{language.Navigation.dashboard}</label>
 
-                        <NavItem icon="Home" text="pp" link="gfu" />
-                        <NavItem icon="Home" text="sumting" link="gfu" />
+                        <NavItem icon="Home" text={language.Navigation.overview} link="/home" />
+                        <NavItem icon="Home" text={language.Navigation.waterdata} link="/hoi" />
+                        <NavItem icon="Home" text={language.Navigation.logbooks} link="/" />
                     </div>
 
-                    <div className="space-y-3">
-                        <label className="px-3 text-xs text-gray-500 dark:text-gray-400">{language.Navigation.dashboard}</label>
+                    <div className="space-y-3 pb-8 flex flex-col">
+                        <label className="px-14 text-sm text-gray-500">{language.Navigation.settings}</label>
 
-                        <NavItem icon="Home" text="sumting" link="gfu" />
-                        <NavItem icon="Home" text="sumting" link="gfu" />
+                        <NavItem icon="Home" text={language.Navigation.neighbourhood} link="/" />
+                        <NavItem icon="Home" text={language.Navigation.account} link="/" />
                     </div>
 
-                    <div className="space-y-3 ">
-                        <label className="px-3 text-xs text-gray-500 dark:text-gray-400">{language.Navigation.dashboard}</label>
+                    <div className="space-y-3 flex flex-col">
+                        <label className="px-14 text-sm text-gray-500">{language.Navigation.contact}</label>
 
-                        <NavItem icon="Home" text="sumting" link="gfu" />
-                        <NavItem icon="Home" text="sumting" link="gfu" />
+                        <NavItem icon="Home" text="06-72984721" link="/" />
                     </div>
                 </nav>
             </div>

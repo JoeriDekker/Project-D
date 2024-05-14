@@ -2,6 +2,12 @@
     "Navigation": {
         "dashboard": "Bedieningspaneel",
         "settings": "Instellingen",
-        "logout": "Uitloggen"
+        "contact": "Onzekerheden? bel ons",
+        "logout": "Uitloggen",
+        "overview": "Overzicht",
+        "waterdata": "Meetgegevens",
+        "logbooks": "Logboeken",
+        "neighbourhood": "Mijn buurt",
+        "account": "Account"
     }
 }

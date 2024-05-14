@@ -7128,11 +7128,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\erikm\\Documents\\Github repo's\\Project-D\\server.tests\\server.tests.csproj",
+      "projectUniqueName": "C:\\Users\\erikm\\Documents\\Opdrachten GitHub\\Project-D\\server.tests\\server.tests.csproj",
       "projectName": "server.tests",
-      "projectPath": "C:\\Users\\erikm\\Documents\\Github repo's\\Project-D\\server.tests\\server.tests.csproj",
+      "projectPath": "C:\\Users\\erikm\\Documents\\Opdrachten GitHub\\Project-D\\server.tests\\server.tests.csproj",
       "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\erikm\\Documents\\Github repo's\\Project-D\\server.tests\\obj\\",
+      "outputPath": "C:\\Users\\erikm\\Documents\\Opdrachten GitHub\\Project-D\\server.tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -7147,8 +7147,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\erikm\\Documents\\Github repo's\\Project-D\\server\\server.csproj": {
-              "projectPath": "C:\\Users\\erikm\\Documents\\Github repo's\\Project-D\\server\\server.csproj"
+            "C:\\Users\\erikm\\Documents\\Opdrachten GitHub\\Project-D\\server\\server.csproj": {
+              "projectPath": "C:\\Users\\erikm\\Documents\\Opdrachten GitHub\\Project-D\\server\\server.csproj"
             }
           }
         }

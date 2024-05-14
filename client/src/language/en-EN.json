@@ -2,6 +2,12 @@
     "Navigation": {
         "dashboard": "Dashboard",
         "settings": "Settings",
-        "logout": "Logout"
+        "contact": "Uncertainties? Contact us!",
+        "logout": "Logout",
+        "overview": "Overview",
+        "waterdata": "Measurement data",
+        "logbooks": "Logbooks",
+        "neighbourhood": "My neighbourhood",
+        "account": "Account"
     }
 }
