@@ -1,25 +1,28 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import enTranslation from './en-EN.json';
-import nlTranslation from './nl-NL.json';
+import translationEN from './en-EN.json';
+import translationNL from './nl-NL.json';
 
-const resources = {
-    en: {
-        translation: enTranslation
-    },
-    nl: {
-        translation: nlTranslation
-    }
-};
 
+// Configure i18next
 i18n
-    .use(initReactI18next)
+    .use(initReactI18next) // Pass initReactI18next
     .init({
-        resources,
-        lng: 'en', // default language
+        lng: 'en', // Set default language
+        fallbackLng: 'en', // Set fallback language
+        debug: true, // Enable debug mode
+        resources: {
+            en: {
+                translation: translationEN, // English translations
+            },
+            nl: {
+                translation: translationNL, // French translations
+            },
+            // Add resources for other languages if needed
+        },
         interpolation: {
-            escapeValue: false
-        }
+            escapeValue: false, // React already does escaping
+        },
     });
 
 export default i18n;
