@@ -23,13 +23,19 @@ namespace WAMServer.Data
                         City = "Gouda",
                         Id = Guid.NewGuid(),
                         Street = "Karnemelksloot",
-                        HouseNumber = "207"
+                        HouseNumber = "207",
+                        Zip = "2806BE"
                     };
                     var user = new User("Jan", "Waterpeil", "admin@email.com", "geheim");
-                    user.AddressId = address.Id;
                     address.UserId = user.Id;
-                    context.Addresses.Add(address);
                     context.Users.Add(user);
+                    context.SaveChanges();
+                    context.Addresses.Add(address);
+                    var editUser = context.Users.Where(_ => user.Id == _.Id).FirstOrDefault();
+                    if (editUser != null)
+                    {
+                        editUser.AddressId = address.Id;
+                    }
                     context.SaveChanges();
                 }
             }

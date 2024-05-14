@@ -18,9 +18,9 @@ namespace WAMServer.Models
         public string Email { get; set; } = null!;
         [Required, Column(TypeName = "varchar(100)")]
         public string Password { get; set; } = null!;
-        public Guid AddressId { get; set; }
+        public Guid? AddressId { get; set; }
         [ForeignKey("AddressId")]
-        public Address Address { get; set; } = null!;
+        public Address? Address { get; set; }
 
         /// <summary>
         /// The default constructor.

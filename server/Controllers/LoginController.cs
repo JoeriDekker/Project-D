@@ -24,17 +24,17 @@ namespace WAMServer.Controllers
         /// <summary>
         /// The user repository.
         /// </summary>
-        private IUserRepository _userRepository;
+        private ILoginService loginService;
 
         /// <summary>
         /// The constructor of the login controller.
         /// </summary>
         /// <param name="userRepository">The user repository.</param>
         /// <param name="config">The configuration of the application.</param>
-        public LoginController(IUserRepository userRepository, IConfiguration config)
+        public LoginController(ILoginService loginService, IConfiguration config)
         {
             _config = config;
-            _userRepository = userRepository;
+            this.loginService = loginService;
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace WAMServer.Controllers
         {
             User? user = null;
             //TODO: Add encryption
-            User? userQueryResult = _userRepository.GetUser(email);
+            User? userQueryResult = loginService.GetUser(email);
             if (userQueryResult?.Password == password)
             {
                 user = userQueryResult;
