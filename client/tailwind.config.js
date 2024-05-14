@@ -16,7 +16,7 @@ module.exports = {
         'background-color': secondaryColor,
       },
       width: {
-        '20r': '20rem'
+        '20r': '25em'
       },
     },
   },
