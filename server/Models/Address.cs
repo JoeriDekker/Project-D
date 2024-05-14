@@ -18,6 +18,10 @@ namespace WAMServer.Models
         /// </summary>
         public string Street { get; set; } = null!;
         /// <summary>
+        /// The number of the house address.
+        /// </summary>
+        public string HouseNumber { get; set; } = null!;
+        /// <summary>
         /// The city of the address.
         /// </summary>
         public string City { get; set; } = null!;

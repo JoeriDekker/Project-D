@@ -1,8 +1,12 @@
 import { useFormik } from "formik";
 import React from "react";
 import * as Yup from "yup"; // Import Yup package
+import useSignIn from 'react-auth-kit/hooks/useSignIn';
+import axios from "axios";
+
 
 function LoginScreen() {
+  const signIn = useSignIn();
   const validateSchema = Yup.object().shape({
     email: Yup.string()
       .email("Voer een geldig email adres in.")
@@ -18,10 +22,20 @@ function LoginScreen() {
       password: "",
     },
     onSubmit: (values) => {
-      console.log(values);
+      if (formik.isValid) {
+        retrieveToken();
+        
+      }
     },
     validationSchema: validateSchema,
   });
+  async function retrieveToken() {
+    const response = await axios.post(process.env.REACT_APP_API_URL + "/api/login", {
+      email: formik.values.email,
+      password: formik.values.password,
+    })
+    console.log(response)
+  }
   return (
     <div className="w-screen h-screen flex justify-center items-center">
       <form onSubmit={formik.handleSubmit} className="flex flex-col">
