@@ -9,7 +9,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LoginScreen />} />
-        <Route path="/hoi" element={<AnyPage />} />
+        <Route path="/home" element={<AnyPage />} />
       </Routes>
     </Router>
   );
