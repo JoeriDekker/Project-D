@@ -7,6 +7,8 @@ using Microsoft.IdentityModel.Tokens;
 using WAMServer.Interfaces;
 using WAMServer.Models;
 using WAMServer.Records;
+using WAMServer.Records.Bodies;
+using WAMServer.Validation;
 
 namespace WAMServer.Controllers
 {
@@ -44,9 +46,14 @@ namespace WAMServer.Controllers
         /// <returns>The result of the login.</returns>
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult Login([FromBody] LoginBody body)
+        public ActionResult Login([FromBody] LoginBody body)
         {
-            IActionResult response = Unauthorized();
+            const string errormsg = "The email address and/or the password did not match.";
+            ActionResult response = Unauthorized(errormsg);
+            if (!InputValidation.IsValidEmail(body.Email))
+            {
+                return Unauthorized(new ErrorBody(errormsg));
+            }
             // Authenticate the user. If the user is authenticated, generate a token. Otherwise (user is null), return Unauthorized.
             var user = AuthenticateUserReturnNullIfUnable(body.Email, body.Password);
 
@@ -64,6 +71,7 @@ namespace WAMServer.Controllers
         /// </summary>
         /// <param name="userInfo">The user information.</param>
         /// <returns>The JSON web token.</returns>
+        [NonAction]
         public string GenerateJSONWebToken(User userInfo)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"] ?? "WamsSuperSecretKey"));
@@ -87,6 +95,7 @@ namespace WAMServer.Controllers
         /// <param name="email">The email of the user.</param>
         /// <param name="password">The password of the user.</param>
         /// <returns>The user if authenticated, null otherwise.</returns>
+        [NonAction]
         public User? AuthenticateUserReturnNullIfUnable(string email, string password)
         {
             User? user = null;

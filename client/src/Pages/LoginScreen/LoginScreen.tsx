@@ -1,11 +1,13 @@
 import { useFormik } from "formik";
-import React from "react";
+import React, { useState } from "react";
 import * as Yup from "yup"; // Import Yup package
 import useSignIn from 'react-auth-kit/hooks/useSignIn';
-import axios from "axios";
+import axios, { AxiosError } from "axios";
+import { LoginTokenResponse } from "./LoginScreen.state";
 
 
 function LoginScreen() {
+  const [error, setError] = useState<string | null>(null);
   const signIn = useSignIn();
   const validateSchema = Yup.object().shape({
     email: Yup.string()
@@ -14,31 +16,45 @@ function LoginScreen() {
       .min(8, "Email moet uit minimaal 8 karakters bestaan."),
     password: Yup.string()
       .required("Voer een geldig wachtwoord in.")
-      .min(8, "Wachtwoord moet uit minimaal 8 karakters bestaan."),
+      .min(6, "Wachtwoord moet uit minimaal 6 karakters bestaan."),
   });
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
-    onSubmit: (values) => {
+    onSubmit: async (values) => { // Add 'async' keyword to make the function asynchronous
       if (formik.isValid) {
-        retrieveToken();
-        
+        const token: string | undefined = await retrieveToken(); // Await the retrieveToken() function
+        if (!token) {
+          return;
+        }
       }
     },
     validationSchema: validateSchema,
   });
-  async function retrieveToken() {
-    const response = await axios.post(process.env.REACT_APP_API_URL + "/api/login", {
-      email: formik.values.email,
-      password: formik.values.password,
-    })
-    console.log(response)
+  async function retrieveToken(): Promise<string | undefined> {
+    try {
+      const response = await axios.post("http://localhost:5000/api/login", {
+        email: formik.values.email,
+        password: formik.values.password,
+      });
+      return response.data.token;
+    } catch (e) {
+      const error = e as AxiosError;
+      console.error(error);
+      // setError(error.response?.data);
+      if (typeof error.response?.data === "string") {
+        setError(error.response.data);
+      } else {
+        setError("Er is iets misgegaan tijdens het inloggen.");
+      }
+    }
   }
   return (
     <div className="w-screen h-screen flex justify-center items-center">
       <form onSubmit={formik.handleSubmit} className="flex flex-col">
+        {error ? <div className="bg-red-400 text-white p-4 text-center">{error}</div> : null}
         <label htmlFor="email">Email</label>
         <input
           className="border"

@@ -2,9 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import logo from "./visuals/logo.svg";
 
-import LoginScreen from "./Pages/LoginScreen";
 import AuthOutlet from "@auth-kit/react-router/AuthOutlet";
 import Dashboard from "./Components/Dashboard/Dashboard";
+import LoginScreen from "./pages/LoginScreen/LoginScreen";
 
 function App() {
   return (

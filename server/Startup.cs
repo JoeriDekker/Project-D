@@ -7,6 +7,7 @@ using WAMServer.Data;
 using WAMServer.Interfaces;
 using WAMServer.Models;
 using WAMServer.Repositories;
+using WAMServer.Services;
 
 namespace WAMServer
 {
@@ -29,6 +30,7 @@ namespace WAMServer
             configure(builder);
             var app = builder.Build();
             DBInitializer.Seed(app);
+            app.UseCors();
             app.UseAuthentication();
             app.UseAuthorization();
             app.Urls.Add("http://localhost:5000");
@@ -42,9 +44,10 @@ namespace WAMServer
         /// <param name="service">The services of the webappbuilder</param>
         private void configureServices(IServiceCollection services, IConfiguration configuration)
         {
+            // setup cors
+            setupCors(services);
             var jwtIssuer = configuration.GetSection("Jwt:Issuer").Get<string>();
             var jwtKey = configuration.GetSection("Jwt:Key").Get<string>();
-            // Add services to the container.
             // JWT
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
@@ -63,6 +66,22 @@ namespace WAMServer
             services.AddTransient<IRepository<User>, DbUserRepository>();
             services.AddTransient<ILoginService, DBLoginService>();
             services.AddTransient<IRepository<Address>, DbAddressRepository>();
+        }
+
+        /// <summary>
+        /// Sets up the cors. CORS is a security feature that allows you to restrict which domains can access your API.
+        /// </summary>
+        private void setupCors(IServiceCollection services)
+        {
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                });
+            });
         }
 
         /// <summary>
