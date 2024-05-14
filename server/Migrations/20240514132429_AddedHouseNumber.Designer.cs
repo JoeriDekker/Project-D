@@ -12,8 +12,8 @@ using WAMServer.Models;
 namespace server.Migrations
 {
     [DbContext(typeof(WamDBContext))]
-    [Migration("20240426093935_init")]
-    partial class init
+    [Migration("20240514132429_AddedHouseNumber")]
+    partial class AddedHouseNumber
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,6 +32,10 @@ namespace server.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("HouseNumber")
                         .IsRequired()
                         .HasColumnType("text");
 

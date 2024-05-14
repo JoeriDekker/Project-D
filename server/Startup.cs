@@ -3,6 +3,7 @@ using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using WAMServer.Data;
 using WAMServer.Interfaces;
 using WAMServer.Models;
 using WAMServer.Repositories;
@@ -27,6 +28,7 @@ namespace WAMServer
             });
             configure(builder);
             var app = builder.Build();
+            DBInitializer.Seed(app);
             app.UseAuthentication();
             app.UseAuthorization();
             app.Urls.Add("http://localhost:5000");
@@ -59,6 +61,7 @@ namespace WAMServer
                     };
                 });
             services.AddTransient<IRepository<User>, DbUserRepository>();
+            services.AddTransient<ILoginService, DBLoginService>();
             services.AddTransient<IRepository<Address>, DbAddressRepository>();
         }
 
