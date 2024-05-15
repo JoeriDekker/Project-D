@@ -9,13 +9,13 @@ namespace WAMServer.Tests.Controllers
 {
     public class LoginControllerTests
     {
-        private Mock<IUserRepository> usersRepo;
+        private Mock<ILoginService> loginService;
         private Mock<IConfiguration> config;
 
 
         public LoginControllerTests()
         {
-            usersRepo = new Mock<IUserRepository>();
+            loginService = new Mock<ILoginService>();
             config = new Mock<IConfiguration>();
             // Setup mock
             setupMock();
@@ -26,8 +26,8 @@ namespace WAMServer.Tests.Controllers
         {
             // Arrange
             User user = new User("John", "Doe", "john.doe@email.com", "supersecurepassword");
-            usersRepo.Setup(x => x.GetUser(user.Email)).Returns(user);
-            LoginController loginController = new LoginController(usersRepo.Object,  config.Object);
+            loginService.Setup(x => x.GetUser(user.Email)).Returns(user);
+            LoginController loginController = new LoginController(loginService.Object,  config.Object);
             // Act
             var result = loginController.AuthenticateUserReturnNullIfUnable(user.Email, user.Password);
             // Assert

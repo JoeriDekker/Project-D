@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  db:
+    container_name: database
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: wamsuperdupersecret
+      POSTGRES_DB: wam-data
+    ports: 
+      - "5432:5432"
+    networks:
+      - wam
+    volumes:
+      - ./data:/var/lib/postgresql/data
+  pgadmin:
+    container_name: database-controlpanel
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    networks:
+      - wam
+    depends_on:
+      - db
+networks:
+  wam:

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using WAMServer.Models;
@@ -11,9 +12,11 @@ using WAMServer.Models;
 namespace server.Migrations
 {
     [DbContext(typeof(WamDBContext))]
-    partial class WamDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240514125652_Init")]
+    partial class Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,10 +32,6 @@ namespace server.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("City")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("HouseNumber")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -60,7 +59,7 @@ namespace server.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("AddressId")
+                    b.Property<Guid>("AddressId")
                         .HasColumnType("uuid");
 
                     b.Property<string>("Email")
@@ -99,7 +98,9 @@ namespace server.Migrations
                 {
                     b.HasOne("WAMServer.Models.Address", "Address")
                         .WithMany()
-                        .HasForeignKey("AddressId");
+                        .HasForeignKey("AddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Address");
                 });

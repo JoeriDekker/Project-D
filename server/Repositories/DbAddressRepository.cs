@@ -28,7 +28,7 @@ namespace WAMServer.Repositories
 
         public Address? Get(Guid id)
         {
-            throw new NotImplementedException();
+            return _context.Addresses.Where(a => a.Id == id).FirstOrDefault();
         }
 
         public Task<IEnumerable<Address>> GetAllAsync()
