@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import createStore from "react-auth-kit/createStore";
 import "./style/index.css";
+import './language/i18n';
 
 import App from "./App";
 
