@@ -26,11 +26,12 @@ namespace WAMServer.Tests.Controllers
         public void AuthenticateUserReturnNullIfUnableReturnsDesiredUser()
         {
             // Arrange
-            User user = new User("John", "Doe", "john.doe@email.com", "supersecurepassword");
+            string password = "supersecurepassword";
+            User user = new User("John", "Doe", "john.doe@email.com", BCrypt.Net.BCrypt.EnhancedHashPassword(password));
             loginService.Setup(x => x.GetUser(user.Email)).Returns(user);
             LoginController loginController = new LoginController(loginService.Object, config.Object);
             // Act
-            var result = loginController.AuthenticateUserReturnNullIfUnable(user.Email, user.Password);
+            var result = loginController.AuthenticateUserReturnNullIfUnable(user.Email, password);
             // Assert
             Assert.Equal(user, result);
         }
@@ -40,7 +41,8 @@ namespace WAMServer.Tests.Controllers
         {
             // Arrange
             // Arranges a user with a different email and password
-            User user = new User("John", "Doe", "john.doe@email.com", "supersecurepassword");
+            string password = "supersecurepassword";
+            User user = new User("John", "Doe", "john.doe@email.com", BCrypt.Net.BCrypt.EnhancedHashPassword(password));
             // Sets up the login service to return the user
             loginService.Setup(x => x.GetUser(user.Email)).Returns(user);
             LoginController loginController = new(loginService.Object, config.Object);
@@ -54,7 +56,7 @@ namespace WAMServer.Tests.Controllers
         public void GenerateJSONWebToken_ReturnsValidToken()
         {
             // Arrange
-            var userInfo = new User("John", "Doe", "john.doe@email.com", "supersecurepassword");
+            var userInfo = new User("John", "Doe", "john.doe@email.com", BCrypt.Net.BCrypt.EnhancedHashPassword("supersecurepassword"));
             var controller = new LoginController(null!, configMock.Object);
 
             // Act
@@ -74,7 +76,7 @@ namespace WAMServer.Tests.Controllers
         public void GenerateJSONWebToken_ReturnsTokenWithDefaultKeyWhenConfigKeyIsNull()
         {
             // Arrange
-            var userInfo = new User("John", "Doe", "john.doe@email.com", "supersecurepassword");
+            var userInfo = new User("John", "Doe", "john.doe@email.com", BCrypt.Net.BCrypt.EnhancedHashPassword("supersecurepassword"));
             configMock.Setup(x => x["Jwt:Key"]).Returns((string)null!); // Simulating null configuration key
             var controller = new LoginController(null!, configMock.Object);
 
