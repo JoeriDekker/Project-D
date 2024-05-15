@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import NavItem from '../navbar-navitem/navitem'
 import { useTranslation } from 'react-i18next';
 import Icons from '../../visuals/icons/generalicons';
+import AnyButton from '../Button/AnyButton';
 
 function Navbar() {
     const { t } = useTranslation();
@@ -54,7 +55,7 @@ function Navbar() {
                         </> : <></>}
                     </div>
 
-                    <a href="/" className="ring-offset-background mx-14 focus-visible:ring-ring flex h-10 w-50 items-center justify-center whitespace-nowrap rounded-md bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-black/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50" type="submit">{t('Navigation.logout')}</a>
+                    <AnyButton link="/" text={t('Navigation.logout')} />
                 </nav>
             </div>
         </aside>

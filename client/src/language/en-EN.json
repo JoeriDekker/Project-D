@@ -15,5 +15,16 @@
         "contact": "If you have any questions or uncertainties about the data, please contact us on the following contact details:",
         "telephone": "Telephone: +31 6 12345678",
         "email": "Email: WAMmail@onderzoekjeplegen.nl"
+    },
+    "Login": {
+        "adjust": "Change account details",
+        "current": "Current account details",
+        "street": "Street name",
+        "housenum": "House number",
+        "zipcode": "Postal code",
+        "place": "Place name",
+        "password": "Password",
+        "adjustpass": "Change/Forgot password",
+        "adjustbutton": "Save changes"
     }
 }
