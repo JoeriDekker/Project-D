@@ -9,6 +9,7 @@ import LoginScreen from "./pages/LoginScreen/LoginScreen";
 import axios, { AxiosError } from "axios";
 import useSignOut from "react-auth-kit/hooks/useSignOut";
 import useIsAuthenticated from 'react-auth-kit/hooks/useIsAuthenticated'
+import LogboekScreen from "./pages/logboekscreen";
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         <Route path="/login" Component={LoginScreen} />
         <Route element={<AuthOutlet fallbackPath="/login" />}>
           <Route path="/" element={<Dashboard />} />
+          <Route path="/logboek" element={<LogboekScreen />} />
         </Route>
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
