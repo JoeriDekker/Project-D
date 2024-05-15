@@ -101,7 +101,11 @@ namespace WAMServer.Controllers
             User? user = null;
             //TODO: Add encryption
             User? userQueryResult = loginService.GetUser(email);
-            if (userQueryResult?.Password == password)
+            if (userQueryResult == null)
+            {
+                return user;
+            }
+            if (BCrypt.Net.BCrypt.EnhancedVerify(password, userQueryResult?.Password ?? ""))
             {
                 user = userQueryResult;
             }
