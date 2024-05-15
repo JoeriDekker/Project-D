@@ -26,7 +26,7 @@ namespace WAMServer.Data
                         HouseNumber = "207",
                         Zip = "2806BE"
                     };
-                    var user = new User("Jan", "Waterpeil", "admin@email.com", "geheim");
+                    var user = new User("Jan", "Waterpeil", "admin@email.com", BCrypt.Net.BCrypt.EnhancedHashPassword("geheim"));
                     address.UserId = user.Id;
                     context.Users.Add(user);
                     context.SaveChanges();
