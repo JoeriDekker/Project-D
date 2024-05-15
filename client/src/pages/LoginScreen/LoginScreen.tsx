@@ -101,7 +101,6 @@ function LoginScreen() {
 
   // If already logged in, redirect to dashboard
   if (isAuthenticated) {
-    console.log("je moeder");
     window.location.href = "/";
   }
   return (
