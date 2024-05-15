@@ -1,14 +1,15 @@
 import { useFormik } from "formik";
 import React, { useState } from "react";
 import * as Yup from "yup"; // Import Yup package
-import useSignIn from 'react-auth-kit/hooks/useSignIn';
+import useSignIn from "react-auth-kit/hooks/useSignIn";
+import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 import axios, { AxiosError } from "axios";
-import { LoginTokenResponse } from "./LoginScreen.state";
-
+import { UserResponse } from "./LoginScreen.state";
 
 function LoginScreen() {
   const [error, setError] = useState<string | null>(null);
   const signIn = useSignIn();
+  const isAuthenticated = useIsAuthenticated();
   const validateSchema = Yup.object().shape({
     email: Yup.string()
       .email("Voer een geldig email adres in.")
@@ -23,27 +24,53 @@ function LoginScreen() {
       email: "",
       password: "",
     },
-    onSubmit: async (values) => { // Add 'async' keyword to make the function asynchronous
+    onSubmit: async (values) => {
+      // Add 'async' keyword to make the function asynchronous
       if (formik.isValid) {
         const token: string | undefined = await retrieveToken(); // Await the retrieveToken() function
         if (!token) {
           return;
         }
+        const userData = await retrieveUser(token as string);
+        if (!userData) {
+          return;
+        }
+        const signinres = signIn({
+          auth: {
+            token: token,
+            type: "Bearer",
+          },
+          userState: {
+            id: userData?.id,
+            email: userData?.email,
+            firstName: userData?.firstName,
+            lastName: userData?.lastName,
+          },
+        });
+
+        if (signinres) {
+          window.location.href = "/";
+        }
       }
     },
     validationSchema: validateSchema,
   });
-  async function retrieveToken(): Promise<string | undefined> {
+  async function retrieveUser(
+    token: string
+  ): Promise<UserResponse | undefined> {
     try {
-      const response = await axios.post("http://localhost:5000/api/login", {
-        email: formik.values.email,
-        password: formik.values.password,
-      });
-      return response.data.token;
+      const response = await axios.get(
+        process.env.REACT_APP_API_URL + "/api/users",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      return response.data;
     } catch (e) {
       const error = e as AxiosError;
       console.error(error);
-      // setError(error.response?.data);
       if (typeof error.response?.data === "string") {
         setError(error.response.data);
       } else {
@@ -51,10 +78,38 @@ function LoginScreen() {
       }
     }
   }
+  async function retrieveToken(): Promise<string | undefined> {
+    try {
+      const response = await axios.post(
+        process.env.REACT_APP_API_URL + "/api/login",
+        {
+          email: formik.values.email,
+          password: formik.values.password,
+        }
+      );
+      return response.data.token;
+    } catch (e) {
+      const error = e as AxiosError;
+      console.error(error);
+      if (typeof error.response?.data === "string") {
+        setError(error.response.data);
+      } else {
+        setError("Er is iets misgegaan tijdens het inloggen.");
+      }
+    }
+  }
+
+  // If already logged in, redirect to dashboard
+  if (isAuthenticated) {
+    console.log("je moeder");
+    window.location.href = "/";
+  }
   return (
     <div className="w-screen h-screen flex justify-center items-center">
       <form onSubmit={formik.handleSubmit} className="flex flex-col">
-        {error ? <div className="bg-red-400 text-white p-4 text-center">{error}</div> : null}
+        {error ? (
+          <div className="bg-red-400 text-white p-4 text-center">{error}</div>
+        ) : null}
         <label htmlFor="email">Email</label>
         <input
           className="border"
