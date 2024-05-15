@@ -24,7 +24,7 @@ function Navbar() {
 
                         <NavItem icon="Home" text={t('Navigation.overview')} link="/home" />
                         <NavItem icon="Measure" text={t('Navigation.waterdata')} link="/" />
-                        <NavItem icon="Logbook" text={t('Navigation.logbooks')} link="/" />
+                        <NavItem icon="Logbook" text={t('Navigation.logbooks')} link="/logboek" />
                     </div>
 
                     <div className="space-y-2 pb-8 flex flex-col">
