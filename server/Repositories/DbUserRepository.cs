@@ -32,7 +32,7 @@ namespace WAMServer.Repositories
 
         public User? Get(Guid id)
         {
-            throw new NotImplementedException();
+            return _context.Users.Where(u => u.Id == id).FirstOrDefault();
         }
 
         public Task<IEnumerable<User>> GetAllAsync()

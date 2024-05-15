@@ -11,20 +11,17 @@ namespace WAMServer.Controllers
     [Route("/api/[controller]")]
     public class UsersController : ControllerBase
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IRepository<User> _userRepository;
         private readonly IRepository<Address> _addressRepository;
-        public UsersController(IUserRepository userRepository, IRepository<Address> addressRepo)
+        public UsersController(IRepository<User> userRepository, IRepository<Address> addressRepo)
         {
             _userRepository = userRepository;
             _addressRepository = addressRepo;
         }
 
-        // TODO: Remove me!
-        /// <summary>
-        /// Did something, felt cute, might delete later
-        /// </summary>
-        /// <returns></returns>
+
         [HttpGet]
+        [Authorize]
         public ActionResult<UserDTO> GetUser()
         {
             var currentUser = HttpContext.User;
@@ -33,10 +30,19 @@ namespace WAMServer.Controllers
                 return Unauthorized();
             }
             string userId = currentUser.Claims.FirstOrDefault(c => c.Type == "Id")!.Value;
-            User? user = _userRepository.GetUserIncludingAddress(_userRepository.GetUser(Guid.Parse(userId)));
+            if (!Guid.TryParse(userId, out Guid id))
+            {
+                return Unauthorized();
+            }
+            User? user = _userRepository.Get(id);
             if (user == null)
             {
                 return NotFound();
+            }
+            // If the user has an address, get it from the address repository
+            if (user.AddressId != null)
+            {
+                user.Address = _addressRepository.Get(user.AddressId.Value);
             }
             return Ok(new UserDTO(user));
         }

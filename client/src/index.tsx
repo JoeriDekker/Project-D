@@ -1,17 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './style/index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import createStore from "react-auth-kit/createStore";
+import "./style/index.css";
 import './language/i18n';
 
-import App from './App';
+import App from "./App";
 
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from "./reportWebVitals";
+import AuthProvider from "react-auth-kit/AuthProvider";
+
+const store = createStore({
+  authName: "_auth",
+  authType: "cookie",
+  cookieDomain: window.location.hostname,
+  cookieSecure: window.location.protocol === "https:",
+});
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
-  <App />
+  <React.StrictMode>
+    <AuthProvider store={store}>
+      <App />
+    </AuthProvider>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
