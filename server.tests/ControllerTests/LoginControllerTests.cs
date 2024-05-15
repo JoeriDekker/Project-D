@@ -39,7 +39,9 @@ namespace WAMServer.Tests.Controllers
         public void AuthenticateUserReturnNullIfUnableReturnsNull()
         {
             // Arrange
+            // Arranges a user with a different email and password
             User user = new User("John", "Doe", "john.doe@email.com", "supersecurepassword");
+            // Sets up the login service to return the user
             loginService.Setup(x => x.GetUser(user.Email)).Returns(user);
             LoginController loginController = new(loginService.Object, config.Object);
             // Act
