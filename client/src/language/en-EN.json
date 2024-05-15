@@ -1,0 +1,19 @@
+{
+    "Navigation": {
+        "dashboard": "Dashboard",
+        "settings": "Settings",
+        "contact": "Uncertainties? Contact us!",
+        "logout": "Logout",
+        "overview": "Overview",
+        "waterdata": "Measurement data",
+        "logbooks": "Logbooks",
+        "neighbourhood": "My neighbourhood",
+        "account": "Account",
+        "close": "Close"
+    },
+    "Contact": {
+        "contact": "If you have any questions or uncertainties about the data, please contact us on the following contact details:",
+        "telephone": "Telephone: +31 6 12345678",
+        "email": "Email: WAMmail@onderzoekjeplegen.nl"
+    }
+}
