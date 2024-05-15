@@ -31,7 +31,7 @@ function Navbar() {
                         <label className="px-14 text-sm text-gray-500">{t('Navigation.settings')}</label>
 
                         <NavItem icon="Neighbourhood" text={t('Navigation.neighbourhood')} link="/" />
-                        <NavItem icon="Account" text={t('Navigation.account')} link="/" />
+                        <NavItem icon="Account" text={t('Navigation.account')} link="/account" />
                     </div>
 
                     <div className="space-y-2 flex flex-col pb-8">
