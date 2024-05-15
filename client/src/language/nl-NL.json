@@ -26,5 +26,18 @@
         "password": "Wachtwoord",
         "adjustpass": "Wachtwoord wijzigen/vergeten",
         "adjustbutton": "Wijzigen opslaan"
+    },
+    "PC": {
+        "connection": "Verbinding",
+        "foundin": "Gevonden in de ondergrond voor het meten van de grondwaterstand.",
+        "uuid": "UUID meetapparaat",
+        "uuidexplain": "De UUID is een unieke identificator voor het apparaat. Dit wordt gebruikt om het apparaat met de server te verbinden.",
+        "security": "Beveiligingssleutel",
+        "securityexplain": "Het beveiligingsniveau van het apparaat. Dit wordt gebruikt om het toegangsniveau van het apparaat te bepalen.",
+        "reconnect": "Opnieuw Verbinden",
+        "status": "Computerstatus",
+        "statusexplain": "De huidige status van het apparaat. Dit wordt gebruikt om te bepalen of het apparaat met de server is verbonden.",
+        "foundon": "De UUID gevonden op de achterkant van het apparaat.",
+        "keyon": "De beveiligingssleutel gevonden in een e-mail die naar de gebruiker is verzonden."
     }
 }

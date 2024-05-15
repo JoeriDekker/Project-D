@@ -26,5 +26,18 @@
         "password": "Password",
         "adjustpass": "Change/Forgot password",
         "adjustbutton": "Save changes"
+    },
+    "PC": {
+        "connection": "Connection",
+        "foundin": "Found in the basement for measuring the water level",
+        "uuid": "UUID measuring device",
+        "uuidexplain": "The UUID is a unique identifier for the device. This is used to connect the device to the server.",
+        "security": "Security key",
+        "securityexplain": "The security level of the device. This is used to determine the access level of the device.",
+        "reconnect": "Reconnect",
+        "status": "Computer Status",
+        "statusexplain": "The current status of the device. This is used to determine if the device is connected to the server.",
+        "foundon": "The UUID found on the back of the device.",
+        "keyon": "The security key found within an email sent to the user."
     }
 }
