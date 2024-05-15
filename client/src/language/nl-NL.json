@@ -8,6 +8,12 @@
         "waterdata": "Meetgegevens",
         "logbooks": "Logboeken",
         "neighbourhood": "Mijn buurt",
-        "account": "Account"
+        "account": "Account",
+        "close": "Sluiten"
+    },
+    "Contact": {
+        "contact": "Als u vragen of onzekerheden heeft, neem dan contact met ons op via de volgende mogelijkheden:",
+        "telephone": "Tel nr: +31 6 12345678",
+        "email": "Email: WAMmail@onderzoekjeplegen.nl"
     }
 }

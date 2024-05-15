@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './style/index.css';
-import { LanguageProvider } from './language/languagecontext';
+import './language/i18n';
 
 import App from './App';
 
@@ -11,11 +11,7 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <LanguageProvider>
-    {/* <React.StrictMode> */}
-    <App />
-    {/* </React.StrictMode> */}
-  </LanguageProvider>
+  <App />
 );
 
 // If you want to start measuring performance in your app, pass a function

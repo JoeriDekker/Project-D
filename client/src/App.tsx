@@ -6,12 +6,13 @@ import AnyPage from './pages/anypage';
 import LogboekScreen from './pages/logboekscreen';
 
 function App() {
+
   return (
     <Router>
       <Routes>
         <Route path="/" element={<LoginScreen />} />
-        <Route path="/hoi" element={<AnyPage />} />
         <Route path="/logboek" element={<LogboekScreen />} />
+        <Route path="/home" element={<AnyPage />} />
       </Routes>
     </Router>
   );
