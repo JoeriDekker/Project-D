@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import LoginScreen from './pages/loginscreen';
-import AnyPage from './pages/anypage';
+import Home from './pages/homedashboard';
 import LogboekScreen from './pages/logboekscreen';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginScreen />} />
         <Route path="/logboek" element={<LogboekScreen />} />
-        <Route path="/home" element={<AnyPage />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
     </Router>
   );
