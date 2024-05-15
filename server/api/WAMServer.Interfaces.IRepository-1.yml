@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: server/Interfaces/IRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: IRepository
     path: Interfaces/IRepository.cs
@@ -50,7 +50,7 @@ items:
   source:
     remote:
       path: server/Interfaces/IRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Get
     path: Interfaces/IRepository.cs
@@ -83,7 +83,7 @@ items:
   source:
     remote:
       path: server/Interfaces/IRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: GetAllAsync
     path: Interfaces/IRepository.cs
@@ -113,7 +113,7 @@ items:
   source:
     remote:
       path: server/Interfaces/IRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: AddAsync
     path: Interfaces/IRepository.cs
@@ -146,7 +146,7 @@ items:
   source:
     remote:
       path: server/Interfaces/IRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: UpdateAsync
     path: Interfaces/IRepository.cs
@@ -179,7 +179,7 @@ items:
   source:
     remote:
       path: server/Interfaces/IRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: DeleteAsync
     path: Interfaces/IRepository.cs

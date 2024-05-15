@@ -4,7 +4,9 @@ items:
   commentId: N:server.Migrations
   id: server.Migrations
   children:
-  - server.Migrations.init
+  - server.Migrations.AddedHouseNumber
+  - server.Migrations.Init
+  - server.Migrations.MadeAddressNullable
   langs:
   - csharp
   - vb
@@ -15,9 +17,21 @@ items:
   assemblies:
   - server
 references:
-- uid: server.Migrations.init
-  commentId: T:server.Migrations.init
-  href: server.Migrations.init.html
-  name: init
-  nameWithType: init
-  fullName: server.Migrations.init
+- uid: server.Migrations.Init
+  commentId: T:server.Migrations.Init
+  href: server.Migrations.Init.html
+  name: Init
+  nameWithType: Init
+  fullName: server.Migrations.Init
+- uid: server.Migrations.AddedHouseNumber
+  commentId: T:server.Migrations.AddedHouseNumber
+  href: server.Migrations.AddedHouseNumber.html
+  name: AddedHouseNumber
+  nameWithType: AddedHouseNumber
+  fullName: server.Migrations.AddedHouseNumber
+- uid: server.Migrations.MadeAddressNullable
+  commentId: T:server.Migrations.MadeAddressNullable
+  href: server.Migrations.MadeAddressNullable.html
+  name: MadeAddressNullable
+  nameWithType: MadeAddressNullable
+  fullName: server.Migrations.MadeAddressNullable

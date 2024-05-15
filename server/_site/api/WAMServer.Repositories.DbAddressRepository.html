@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class DbAddressRepository | wam-server ">
       
-      
+      <meta name="description" content="This class is responsible for handling the database operations for the Address entity.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/JoeriDekker/Project-D/new/development/apiSpec/new?filename=WAMServer_Repositories_DbAddressRepository.md&amp;value=---%0Auid%3A%20WAMServer.Repositories.DbAddressRepository%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/JoeriDekker/Project-D/new/fix/logincontroller-docs/apiSpec/new?filename=WAMServer_Repositories_DbAddressRepository.md&amp;value=---%0Auid%3A%20WAMServer.Repositories.DbAddressRepository%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="WAMServer_Repositories_DbAddressRepository" data-uid="WAMServer.Repositories.DbAddressRepository" class="text-break">
-Class DbAddressRepository  <a class="header-action link-secondary" title="View source" href="https://github.com/JoeriDekker/Project-D/blob/development/server/Repositories/DbAddressRepository.cs/#L8"><i class="bi bi-code-slash"></i></a>
+Class DbAddressRepository  <a class="header-action link-secondary" title="View source" href="https://github.com/JoeriDekker/Project-D/blob/fix/logincontroller-docs/server/Repositories/DbAddressRepository.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class DbAddressRepository  <a class="header-action link-secondary" title="View s
   <dl><dt>Assembly</dt><dd>server.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>This class is responsible for handling the database operations for the Address entity.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -162,7 +163,7 @@ Class DbAddressRepository  <a class="header-action link-secondary" title="View s
 
   <h3 id="WAMServer_Repositories_DbAddressRepository__ctor_WAMServer_Models_WamDBContext_" data-uid="WAMServer.Repositories.DbAddressRepository.#ctor(WAMServer.Models.WamDBContext)">
   DbAddressRepository(WamDBContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/JoeriDekker/Project-D/blob/development/server/Repositories/DbAddressRepository.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JoeriDekker/Project-D/blob/fix/logincontroller-docs/server/Repositories/DbAddressRepository.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -197,10 +198,11 @@ Class DbAddressRepository  <a class="header-action link-secondary" title="View s
 
   <h3 id="WAMServer_Repositories_DbAddressRepository_AddAsync_WAMServer_Models_Address_" data-uid="WAMServer.Repositories.DbAddressRepository.AddAsync(WAMServer.Models.Address)">
   AddAsync(Address)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/JoeriDekker/Project-D/blob/development/server/Repositories/DbAddressRepository.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JoeriDekker/Project-D/blob/fix/logincontroller-docs/server/Repositories/DbAddressRepository.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds an address to the database in an asynchronous manner.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -210,13 +212,15 @@ Class DbAddressRepository  <a class="header-action link-secondary" title="View s
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>entity</code> <a class="xref" href="WAMServer.Models.Address.html">Address</a></dt>
-    <dd></dd>
+    <dd><p>The entity to be added. In this case the address.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="WAMServer.Models.Address.html">Address</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>The created address.</p>
+</dd>
   </dl>
 
 
@@ -233,7 +237,7 @@ Class DbAddressRepository  <a class="header-action link-secondary" title="View s
 
   <h3 id="WAMServer_Repositories_DbAddressRepository_DeleteAsync_System_Guid_" data-uid="WAMServer.Repositories.DbAddressRepository.DeleteAsync(System.Guid)">
   DeleteAsync(Guid)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/JoeriDekker/Project-D/blob/development/server/Repositories/DbAddressRepository.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JoeriDekker/Project-D/blob/fix/logincontroller-docs/server/Repositories/DbAddressRepository.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -269,10 +273,11 @@ Class DbAddressRepository  <a class="header-action link-secondary" title="View s
 
   <h3 id="WAMServer_Repositories_DbAddressRepository_Get_System_Guid_" data-uid="WAMServer.Repositories.DbAddressRepository.Get(System.Guid)">
   Get(Guid)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/JoeriDekker/Project-D/blob/development/server/Repositories/DbAddressRepository.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JoeriDekker/Project-D/blob/fix/logincontroller-docs/server/Repositories/DbAddressRepository.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets an address from the database by its id.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -282,13 +287,15 @@ Class DbAddressRepository  <a class="header-action link-secondary" title="View s
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
-    <dd></dd>
+    <dd><p>The id that's used for fetching the address</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="WAMServer.Models.Address.html">Address</a></dt>
-    <dd></dd>
+    <dd><p>The address object if it exists in the database, returns null if it doesnt exist.</p>
+</dd>
   </dl>
 
 
@@ -305,7 +312,7 @@ Class DbAddressRepository  <a class="header-action link-secondary" title="View s
 
   <h3 id="WAMServer_Repositories_DbAddressRepository_GetAllAsync" data-uid="WAMServer.Repositories.DbAddressRepository.GetAllAsync">
   GetAllAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/JoeriDekker/Project-D/blob/development/server/Repositories/DbAddressRepository.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JoeriDekker/Project-D/blob/fix/logincontroller-docs/server/Repositories/DbAddressRepository.cs/#L47"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -336,7 +343,7 @@ Class DbAddressRepository  <a class="header-action link-secondary" title="View s
 
   <h3 id="WAMServer_Repositories_DbAddressRepository_UpdateAsync_WAMServer_Models_Address_" data-uid="WAMServer.Repositories.DbAddressRepository.UpdateAsync(WAMServer.Models.Address)">
   UpdateAsync(Address)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/JoeriDekker/Project-D/blob/development/server/Repositories/DbAddressRepository.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JoeriDekker/Project-D/blob/fix/logincontroller-docs/server/Repositories/DbAddressRepository.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -372,7 +379,7 @@ Class DbAddressRepository  <a class="header-action link-secondary" title="View s
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/JoeriDekker/Project-D/blob/development/server/Repositories/DbAddressRepository.cs/#L8" class="edit-link">Edit this page</a>
+          <a href="https://github.com/JoeriDekker/Project-D/blob/fix/logincontroller-docs/server/Repositories/DbAddressRepository.cs/#L11" class="edit-link">Edit this page</a>
         </div>
 
 

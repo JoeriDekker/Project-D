@@ -19,15 +19,15 @@ references:
   commentId: T:WAMServer.Controllers.LoginController
   fullName: WAMServer.Controllers.LoginController
   nameWithType: LoginController
-- uid: WAMServer.Controllers.LoginController.#ctor(WAMServer.Interfaces.IUserRepository,Microsoft.Extensions.Configuration.IConfiguration)
-  name: LoginController(IUserRepository, IConfiguration)
-  href: api/WAMServer.Controllers.LoginController.html#WAMServer_Controllers_LoginController__ctor_WAMServer_Interfaces_IUserRepository_Microsoft_Extensions_Configuration_IConfiguration_
-  commentId: M:WAMServer.Controllers.LoginController.#ctor(WAMServer.Interfaces.IUserRepository,Microsoft.Extensions.Configuration.IConfiguration)
-  name.vb: New(IUserRepository, IConfiguration)
-  fullName: WAMServer.Controllers.LoginController.LoginController(WAMServer.Interfaces.IUserRepository, Microsoft.Extensions.Configuration.IConfiguration)
-  fullName.vb: WAMServer.Controllers.LoginController.New(WAMServer.Interfaces.IUserRepository, Microsoft.Extensions.Configuration.IConfiguration)
-  nameWithType: LoginController.LoginController(IUserRepository, IConfiguration)
-  nameWithType.vb: LoginController.New(IUserRepository, IConfiguration)
+- uid: WAMServer.Controllers.LoginController.#ctor(WAMServer.Interfaces.ILoginService,Microsoft.Extensions.Configuration.IConfiguration)
+  name: LoginController(ILoginService, IConfiguration)
+  href: api/WAMServer.Controllers.LoginController.html#WAMServer_Controllers_LoginController__ctor_WAMServer_Interfaces_ILoginService_Microsoft_Extensions_Configuration_IConfiguration_
+  commentId: M:WAMServer.Controllers.LoginController.#ctor(WAMServer.Interfaces.ILoginService,Microsoft.Extensions.Configuration.IConfiguration)
+  name.vb: New(ILoginService, IConfiguration)
+  fullName: WAMServer.Controllers.LoginController.LoginController(WAMServer.Interfaces.ILoginService, Microsoft.Extensions.Configuration.IConfiguration)
+  fullName.vb: WAMServer.Controllers.LoginController.New(WAMServer.Interfaces.ILoginService, Microsoft.Extensions.Configuration.IConfiguration)
+  nameWithType: LoginController.LoginController(ILoginService, IConfiguration)
+  nameWithType.vb: LoginController.New(ILoginService, IConfiguration)
 - uid: WAMServer.Controllers.LoginController.#ctor*
   name: LoginController
   href: api/WAMServer.Controllers.LoginController.html#WAMServer_Controllers_LoginController__ctor_
@@ -86,15 +86,15 @@ references:
   commentId: T:WAMServer.Controllers.UsersController
   fullName: WAMServer.Controllers.UsersController
   nameWithType: UsersController
-- uid: WAMServer.Controllers.UsersController.#ctor(WAMServer.Interfaces.IUserRepository,WAMServer.Interfaces.IRepository{WAMServer.Models.Address})
-  name: UsersController(IUserRepository, IRepository<Address>)
-  href: api/WAMServer.Controllers.UsersController.html#WAMServer_Controllers_UsersController__ctor_WAMServer_Interfaces_IUserRepository_WAMServer_Interfaces_IRepository_WAMServer_Models_Address__
-  commentId: M:WAMServer.Controllers.UsersController.#ctor(WAMServer.Interfaces.IUserRepository,WAMServer.Interfaces.IRepository{WAMServer.Models.Address})
-  name.vb: New(IUserRepository, IRepository(Of Address))
-  fullName: WAMServer.Controllers.UsersController.UsersController(WAMServer.Interfaces.IUserRepository, WAMServer.Interfaces.IRepository<WAMServer.Models.Address>)
-  fullName.vb: WAMServer.Controllers.UsersController.New(WAMServer.Interfaces.IUserRepository, WAMServer.Interfaces.IRepository(Of WAMServer.Models.Address))
-  nameWithType: UsersController.UsersController(IUserRepository, IRepository<Address>)
-  nameWithType.vb: UsersController.New(IUserRepository, IRepository(Of Address))
+- uid: WAMServer.Controllers.UsersController.#ctor(WAMServer.Interfaces.IRepository{WAMServer.Models.User},WAMServer.Interfaces.IRepository{WAMServer.Models.Address})
+  name: UsersController(IRepository<User>, IRepository<Address>)
+  href: api/WAMServer.Controllers.UsersController.html#WAMServer_Controllers_UsersController__ctor_WAMServer_Interfaces_IRepository_WAMServer_Models_User__WAMServer_Interfaces_IRepository_WAMServer_Models_Address__
+  commentId: M:WAMServer.Controllers.UsersController.#ctor(WAMServer.Interfaces.IRepository{WAMServer.Models.User},WAMServer.Interfaces.IRepository{WAMServer.Models.Address})
+  name.vb: New(IRepository(Of User), IRepository(Of Address))
+  fullName: WAMServer.Controllers.UsersController.UsersController(WAMServer.Interfaces.IRepository<WAMServer.Models.User>, WAMServer.Interfaces.IRepository<WAMServer.Models.Address>)
+  fullName.vb: WAMServer.Controllers.UsersController.New(WAMServer.Interfaces.IRepository(Of WAMServer.Models.User), WAMServer.Interfaces.IRepository(Of WAMServer.Models.Address))
+  nameWithType: UsersController.UsersController(IRepository<User>, IRepository<Address>)
+  nameWithType.vb: UsersController.New(IRepository(Of User), IRepository(Of Address))
 - uid: WAMServer.Controllers.UsersController.#ctor*
   name: UsersController
   href: api/WAMServer.Controllers.UsersController.html#WAMServer_Controllers_UsersController__ctor_
@@ -131,13 +131,13 @@ references:
   fullName: WAMServer.DTO.UserDTO
   nameWithType: UserDTO
 - uid: WAMServer.DTO.UserDTO.#ctor(System.Guid,System.String,System.String,System.String,WAMServer.Models.Address)
-  name: UserDTO(Guid, string, string, string, Address)
+  name: UserDTO(Guid, string, string, string, Address?)
   href: api/WAMServer.DTO.UserDTO.html#WAMServer_DTO_UserDTO__ctor_System_Guid_System_String_System_String_System_String_WAMServer_Models_Address_
   commentId: M:WAMServer.DTO.UserDTO.#ctor(System.Guid,System.String,System.String,System.String,WAMServer.Models.Address)
   name.vb: New(Guid, String, String, String, Address)
-  fullName: WAMServer.DTO.UserDTO.UserDTO(System.Guid, string, string, string, WAMServer.Models.Address)
+  fullName: WAMServer.DTO.UserDTO.UserDTO(System.Guid, string, string, string, WAMServer.Models.Address?)
   fullName.vb: WAMServer.DTO.UserDTO.New(System.Guid, String, String, String, WAMServer.Models.Address)
-  nameWithType: UserDTO.UserDTO(Guid, string, string, string, Address)
+  nameWithType: UserDTO.UserDTO(Guid, string, string, string, Address?)
   nameWithType.vb: UserDTO.New(Guid, String, String, String, Address)
 - uid: WAMServer.DTO.UserDTO.#ctor(WAMServer.Models.User)
   name: UserDTO(User)
@@ -223,12 +223,59 @@ references:
   isSpec: "True"
   fullName: WAMServer.DTO.UserDTO.LastName
   nameWithType: UserDTO.LastName
+- uid: WAMServer.Data
+  name: WAMServer.Data
+  href: api/WAMServer.Data.html
+  commentId: N:WAMServer.Data
+  fullName: WAMServer.Data
+  nameWithType: WAMServer.Data
+- uid: WAMServer.Data.DBInitializer
+  name: DBInitializer
+  href: api/WAMServer.Data.DBInitializer.html
+  commentId: T:WAMServer.Data.DBInitializer
+  fullName: WAMServer.Data.DBInitializer
+  nameWithType: DBInitializer
+- uid: WAMServer.Data.DBInitializer.Seed(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+  name: Seed(IApplicationBuilder)
+  href: api/WAMServer.Data.DBInitializer.html#WAMServer_Data_DBInitializer_Seed_Microsoft_AspNetCore_Builder_IApplicationBuilder_
+  commentId: M:WAMServer.Data.DBInitializer.Seed(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+  fullName: WAMServer.Data.DBInitializer.Seed(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+  nameWithType: DBInitializer.Seed(IApplicationBuilder)
+- uid: WAMServer.Data.DBInitializer.Seed*
+  name: Seed
+  href: api/WAMServer.Data.DBInitializer.html#WAMServer_Data_DBInitializer_Seed_
+  commentId: Overload:WAMServer.Data.DBInitializer.Seed
+  isSpec: "True"
+  fullName: WAMServer.Data.DBInitializer.Seed
+  nameWithType: DBInitializer.Seed
 - uid: WAMServer.Interfaces
   name: WAMServer.Interfaces
   href: api/WAMServer.Interfaces.html
   commentId: N:WAMServer.Interfaces
   fullName: WAMServer.Interfaces
   nameWithType: WAMServer.Interfaces
+- uid: WAMServer.Interfaces.ILoginService
+  name: ILoginService
+  href: api/WAMServer.Interfaces.ILoginService.html
+  commentId: T:WAMServer.Interfaces.ILoginService
+  fullName: WAMServer.Interfaces.ILoginService
+  nameWithType: ILoginService
+- uid: WAMServer.Interfaces.ILoginService.GetUser(System.String)
+  name: GetUser(string)
+  href: api/WAMServer.Interfaces.ILoginService.html#WAMServer_Interfaces_ILoginService_GetUser_System_String_
+  commentId: M:WAMServer.Interfaces.ILoginService.GetUser(System.String)
+  name.vb: GetUser(String)
+  fullName: WAMServer.Interfaces.ILoginService.GetUser(string)
+  fullName.vb: WAMServer.Interfaces.ILoginService.GetUser(String)
+  nameWithType: ILoginService.GetUser(string)
+  nameWithType.vb: ILoginService.GetUser(String)
+- uid: WAMServer.Interfaces.ILoginService.GetUser*
+  name: GetUser
+  href: api/WAMServer.Interfaces.ILoginService.html#WAMServer_Interfaces_ILoginService_GetUser_
+  commentId: Overload:WAMServer.Interfaces.ILoginService.GetUser
+  isSpec: "True"
+  fullName: WAMServer.Interfaces.ILoginService.GetUser
+  nameWithType: ILoginService.GetUser
 - uid: WAMServer.Interfaces.IRepository`1
   name: IRepository<T>
   href: api/WAMServer.Interfaces.IRepository-1.html
@@ -447,6 +494,19 @@ references:
   isSpec: "True"
   fullName: WAMServer.Models.Address.City
   nameWithType: Address.City
+- uid: WAMServer.Models.Address.HouseNumber
+  name: HouseNumber
+  href: api/WAMServer.Models.Address.html#WAMServer_Models_Address_HouseNumber
+  commentId: P:WAMServer.Models.Address.HouseNumber
+  fullName: WAMServer.Models.Address.HouseNumber
+  nameWithType: Address.HouseNumber
+- uid: WAMServer.Models.Address.HouseNumber*
+  name: HouseNumber
+  href: api/WAMServer.Models.Address.html#WAMServer_Models_Address_HouseNumber_
+  commentId: Overload:WAMServer.Models.Address.HouseNumber
+  isSpec: "True"
+  fullName: WAMServer.Models.Address.HouseNumber
+  nameWithType: Address.HouseNumber
 - uid: WAMServer.Models.Address.Id
   name: Id
   href: api/WAMServer.Models.Address.html#WAMServer_Models_Address_Id
@@ -685,6 +745,50 @@ references:
   commentId: N:WAMServer.Records
   fullName: WAMServer.Records
   nameWithType: WAMServer.Records
+- uid: WAMServer.Records.Bodies
+  name: WAMServer.Records.Bodies
+  href: api/WAMServer.Records.Bodies.html
+  commentId: N:WAMServer.Records.Bodies
+  fullName: WAMServer.Records.Bodies
+  nameWithType: WAMServer.Records.Bodies
+- uid: WAMServer.Records.Bodies.ErrorBody
+  name: ErrorBody
+  href: api/WAMServer.Records.Bodies.ErrorBody.html
+  commentId: T:WAMServer.Records.Bodies.ErrorBody
+  fullName: WAMServer.Records.Bodies.ErrorBody
+  nameWithType: ErrorBody
+- uid: WAMServer.Records.Bodies.ErrorBody.#ctor(System.String)
+  name: ErrorBody(string)
+  href: api/WAMServer.Records.Bodies.ErrorBody.html#WAMServer_Records_Bodies_ErrorBody__ctor_System_String_
+  commentId: M:WAMServer.Records.Bodies.ErrorBody.#ctor(System.String)
+  name.vb: New(String)
+  fullName: WAMServer.Records.Bodies.ErrorBody.ErrorBody(string)
+  fullName.vb: WAMServer.Records.Bodies.ErrorBody.New(String)
+  nameWithType: ErrorBody.ErrorBody(string)
+  nameWithType.vb: ErrorBody.New(String)
+- uid: WAMServer.Records.Bodies.ErrorBody.#ctor*
+  name: ErrorBody
+  href: api/WAMServer.Records.Bodies.ErrorBody.html#WAMServer_Records_Bodies_ErrorBody__ctor_
+  commentId: Overload:WAMServer.Records.Bodies.ErrorBody.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: WAMServer.Records.Bodies.ErrorBody.ErrorBody
+  fullName.vb: WAMServer.Records.Bodies.ErrorBody.New
+  nameWithType: ErrorBody.ErrorBody
+  nameWithType.vb: ErrorBody.New
+- uid: WAMServer.Records.Bodies.ErrorBody.Error
+  name: Error
+  href: api/WAMServer.Records.Bodies.ErrorBody.html#WAMServer_Records_Bodies_ErrorBody_Error
+  commentId: P:WAMServer.Records.Bodies.ErrorBody.Error
+  fullName: WAMServer.Records.Bodies.ErrorBody.Error
+  nameWithType: ErrorBody.Error
+- uid: WAMServer.Records.Bodies.ErrorBody.Error*
+  name: Error
+  href: api/WAMServer.Records.Bodies.ErrorBody.html#WAMServer_Records_Bodies_ErrorBody_Error_
+  commentId: Overload:WAMServer.Records.Bodies.ErrorBody.Error
+  isSpec: "True"
+  fullName: WAMServer.Records.Bodies.ErrorBody.Error
+  nameWithType: ErrorBody.Error
 - uid: WAMServer.Records.LoginBody
   name: LoginBody
   href: api/WAMServer.Records.LoginBody.html
@@ -922,6 +1026,53 @@ references:
   isSpec: "True"
   fullName: WAMServer.Repositories.DbUserRepository.UpdateAsync
   nameWithType: DbUserRepository.UpdateAsync
+- uid: WAMServer.Services
+  name: WAMServer.Services
+  href: api/WAMServer.Services.html
+  commentId: N:WAMServer.Services
+  fullName: WAMServer.Services
+  nameWithType: WAMServer.Services
+- uid: WAMServer.Services.DBLoginService
+  name: DBLoginService
+  href: api/WAMServer.Services.DBLoginService.html
+  commentId: T:WAMServer.Services.DBLoginService
+  fullName: WAMServer.Services.DBLoginService
+  nameWithType: DBLoginService
+- uid: WAMServer.Services.DBLoginService.#ctor(WAMServer.Models.WamDBContext)
+  name: DBLoginService(WamDBContext)
+  href: api/WAMServer.Services.DBLoginService.html#WAMServer_Services_DBLoginService__ctor_WAMServer_Models_WamDBContext_
+  commentId: M:WAMServer.Services.DBLoginService.#ctor(WAMServer.Models.WamDBContext)
+  name.vb: New(WamDBContext)
+  fullName: WAMServer.Services.DBLoginService.DBLoginService(WAMServer.Models.WamDBContext)
+  fullName.vb: WAMServer.Services.DBLoginService.New(WAMServer.Models.WamDBContext)
+  nameWithType: DBLoginService.DBLoginService(WamDBContext)
+  nameWithType.vb: DBLoginService.New(WamDBContext)
+- uid: WAMServer.Services.DBLoginService.#ctor*
+  name: DBLoginService
+  href: api/WAMServer.Services.DBLoginService.html#WAMServer_Services_DBLoginService__ctor_
+  commentId: Overload:WAMServer.Services.DBLoginService.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: WAMServer.Services.DBLoginService.DBLoginService
+  fullName.vb: WAMServer.Services.DBLoginService.New
+  nameWithType: DBLoginService.DBLoginService
+  nameWithType.vb: DBLoginService.New
+- uid: WAMServer.Services.DBLoginService.GetUser(System.String)
+  name: GetUser(string)
+  href: api/WAMServer.Services.DBLoginService.html#WAMServer_Services_DBLoginService_GetUser_System_String_
+  commentId: M:WAMServer.Services.DBLoginService.GetUser(System.String)
+  name.vb: GetUser(String)
+  fullName: WAMServer.Services.DBLoginService.GetUser(string)
+  fullName.vb: WAMServer.Services.DBLoginService.GetUser(String)
+  nameWithType: DBLoginService.GetUser(string)
+  nameWithType.vb: DBLoginService.GetUser(String)
+- uid: WAMServer.Services.DBLoginService.GetUser*
+  name: GetUser
+  href: api/WAMServer.Services.DBLoginService.html#WAMServer_Services_DBLoginService_GetUser_
+  commentId: Overload:WAMServer.Services.DBLoginService.GetUser
+  isSpec: "True"
+  fullName: WAMServer.Services.DBLoginService.GetUser
+  nameWithType: DBLoginService.GetUser
 - uid: WAMServer.Startup
   name: Startup
   href: api/WAMServer.Startup.html
@@ -985,12 +1136,175 @@ references:
   isSpec: "True"
   fullName: WAMServer.Tests.Controllers.LoginControllerTests.AuthenticateUserReturnNullIfUnableReturnsDesiredUser
   nameWithType: LoginControllerTests.AuthenticateUserReturnNullIfUnableReturnsDesiredUser
+- uid: WAMServer.Validation
+  name: WAMServer.Validation
+  href: api/WAMServer.Validation.html
+  commentId: N:WAMServer.Validation
+  fullName: WAMServer.Validation
+  nameWithType: WAMServer.Validation
+- uid: WAMServer.Validation.InputValidation
+  name: InputValidation
+  href: api/WAMServer.Validation.InputValidation.html
+  commentId: T:WAMServer.Validation.InputValidation
+  fullName: WAMServer.Validation.InputValidation
+  nameWithType: InputValidation
+- uid: WAMServer.Validation.InputValidation.IsValidEmail(System.String)
+  name: IsValidEmail(string)
+  href: api/WAMServer.Validation.InputValidation.html#WAMServer_Validation_InputValidation_IsValidEmail_System_String_
+  commentId: M:WAMServer.Validation.InputValidation.IsValidEmail(System.String)
+  name.vb: IsValidEmail(String)
+  fullName: WAMServer.Validation.InputValidation.IsValidEmail(string)
+  fullName.vb: WAMServer.Validation.InputValidation.IsValidEmail(String)
+  nameWithType: InputValidation.IsValidEmail(string)
+  nameWithType.vb: InputValidation.IsValidEmail(String)
+- uid: WAMServer.Validation.InputValidation.IsValidEmail*
+  name: IsValidEmail
+  href: api/WAMServer.Validation.InputValidation.html#WAMServer_Validation_InputValidation_IsValidEmail_
+  commentId: Overload:WAMServer.Validation.InputValidation.IsValidEmail
+  isSpec: "True"
+  fullName: WAMServer.Validation.InputValidation.IsValidEmail
+  nameWithType: InputValidation.IsValidEmail
 - uid: server.Migrations
   name: server.Migrations
   href: api/server.Migrations.html
   commentId: N:server.Migrations
   fullName: server.Migrations
   nameWithType: server.Migrations
+- uid: server.Migrations.AddedHouseNumber
+  name: AddedHouseNumber
+  href: api/server.Migrations.AddedHouseNumber.html
+  commentId: T:server.Migrations.AddedHouseNumber
+  fullName: server.Migrations.AddedHouseNumber
+  nameWithType: AddedHouseNumber
+- uid: server.Migrations.AddedHouseNumber.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  name: BuildTargetModel(ModelBuilder)
+  href: api/server.Migrations.AddedHouseNumber.html#server_Migrations_AddedHouseNumber_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+  commentId: M:server.Migrations.AddedHouseNumber.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  fullName: server.Migrations.AddedHouseNumber.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: AddedHouseNumber.BuildTargetModel(ModelBuilder)
+- uid: server.Migrations.AddedHouseNumber.BuildTargetModel*
+  name: BuildTargetModel
+  href: api/server.Migrations.AddedHouseNumber.html#server_Migrations_AddedHouseNumber_BuildTargetModel_
+  commentId: Overload:server.Migrations.AddedHouseNumber.BuildTargetModel
+  isSpec: "True"
+  fullName: server.Migrations.AddedHouseNumber.BuildTargetModel
+  nameWithType: AddedHouseNumber.BuildTargetModel
+- uid: server.Migrations.AddedHouseNumber.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Down(MigrationBuilder)
+  href: api/server.Migrations.AddedHouseNumber.html#server_Migrations_AddedHouseNumber_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:server.Migrations.AddedHouseNumber.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: server.Migrations.AddedHouseNumber.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: AddedHouseNumber.Down(MigrationBuilder)
+- uid: server.Migrations.AddedHouseNumber.Down*
+  name: Down
+  href: api/server.Migrations.AddedHouseNumber.html#server_Migrations_AddedHouseNumber_Down_
+  commentId: Overload:server.Migrations.AddedHouseNumber.Down
+  isSpec: "True"
+  fullName: server.Migrations.AddedHouseNumber.Down
+  nameWithType: AddedHouseNumber.Down
+- uid: server.Migrations.AddedHouseNumber.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Up(MigrationBuilder)
+  href: api/server.Migrations.AddedHouseNumber.html#server_Migrations_AddedHouseNumber_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:server.Migrations.AddedHouseNumber.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: server.Migrations.AddedHouseNumber.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: AddedHouseNumber.Up(MigrationBuilder)
+- uid: server.Migrations.AddedHouseNumber.Up*
+  name: Up
+  href: api/server.Migrations.AddedHouseNumber.html#server_Migrations_AddedHouseNumber_Up_
+  commentId: Overload:server.Migrations.AddedHouseNumber.Up
+  isSpec: "True"
+  fullName: server.Migrations.AddedHouseNumber.Up
+  nameWithType: AddedHouseNumber.Up
+- uid: server.Migrations.Init
+  name: Init
+  href: api/server.Migrations.Init.html
+  commentId: T:server.Migrations.Init
+  fullName: server.Migrations.Init
+  nameWithType: Init
+- uid: server.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  name: BuildTargetModel(ModelBuilder)
+  href: api/server.Migrations.Init.html#server_Migrations_Init_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+  commentId: M:server.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  fullName: server.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: Init.BuildTargetModel(ModelBuilder)
+- uid: server.Migrations.Init.BuildTargetModel*
+  name: BuildTargetModel
+  href: api/server.Migrations.Init.html#server_Migrations_Init_BuildTargetModel_
+  commentId: Overload:server.Migrations.Init.BuildTargetModel
+  isSpec: "True"
+  fullName: server.Migrations.Init.BuildTargetModel
+  nameWithType: Init.BuildTargetModel
+- uid: server.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Down(MigrationBuilder)
+  href: api/server.Migrations.Init.html#server_Migrations_Init_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:server.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: server.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: Init.Down(MigrationBuilder)
+- uid: server.Migrations.Init.Down*
+  name: Down
+  href: api/server.Migrations.Init.html#server_Migrations_Init_Down_
+  commentId: Overload:server.Migrations.Init.Down
+  isSpec: "True"
+  fullName: server.Migrations.Init.Down
+  nameWithType: Init.Down
+- uid: server.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Up(MigrationBuilder)
+  href: api/server.Migrations.Init.html#server_Migrations_Init_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:server.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: server.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: Init.Up(MigrationBuilder)
+- uid: server.Migrations.Init.Up*
+  name: Up
+  href: api/server.Migrations.Init.html#server_Migrations_Init_Up_
+  commentId: Overload:server.Migrations.Init.Up
+  isSpec: "True"
+  fullName: server.Migrations.Init.Up
+  nameWithType: Init.Up
+- uid: server.Migrations.MadeAddressNullable
+  name: MadeAddressNullable
+  href: api/server.Migrations.MadeAddressNullable.html
+  commentId: T:server.Migrations.MadeAddressNullable
+  fullName: server.Migrations.MadeAddressNullable
+  nameWithType: MadeAddressNullable
+- uid: server.Migrations.MadeAddressNullable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  name: BuildTargetModel(ModelBuilder)
+  href: api/server.Migrations.MadeAddressNullable.html#server_Migrations_MadeAddressNullable_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+  commentId: M:server.Migrations.MadeAddressNullable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  fullName: server.Migrations.MadeAddressNullable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: MadeAddressNullable.BuildTargetModel(ModelBuilder)
+- uid: server.Migrations.MadeAddressNullable.BuildTargetModel*
+  name: BuildTargetModel
+  href: api/server.Migrations.MadeAddressNullable.html#server_Migrations_MadeAddressNullable_BuildTargetModel_
+  commentId: Overload:server.Migrations.MadeAddressNullable.BuildTargetModel
+  isSpec: "True"
+  fullName: server.Migrations.MadeAddressNullable.BuildTargetModel
+  nameWithType: MadeAddressNullable.BuildTargetModel
+- uid: server.Migrations.MadeAddressNullable.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Down(MigrationBuilder)
+  href: api/server.Migrations.MadeAddressNullable.html#server_Migrations_MadeAddressNullable_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:server.Migrations.MadeAddressNullable.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: server.Migrations.MadeAddressNullable.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: MadeAddressNullable.Down(MigrationBuilder)
+- uid: server.Migrations.MadeAddressNullable.Down*
+  name: Down
+  href: api/server.Migrations.MadeAddressNullable.html#server_Migrations_MadeAddressNullable_Down_
+  commentId: Overload:server.Migrations.MadeAddressNullable.Down
+  isSpec: "True"
+  fullName: server.Migrations.MadeAddressNullable.Down
+  nameWithType: MadeAddressNullable.Down
+- uid: server.Migrations.MadeAddressNullable.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Up(MigrationBuilder)
+  href: api/server.Migrations.MadeAddressNullable.html#server_Migrations_MadeAddressNullable_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:server.Migrations.MadeAddressNullable.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: server.Migrations.MadeAddressNullable.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: MadeAddressNullable.Up(MigrationBuilder)
+- uid: server.Migrations.MadeAddressNullable.Up*
+  name: Up
+  href: api/server.Migrations.MadeAddressNullable.html#server_Migrations_MadeAddressNullable_Up_
+  commentId: Overload:server.Migrations.MadeAddressNullable.Up
+  isSpec: "True"
+  fullName: server.Migrations.MadeAddressNullable.Up
+  nameWithType: MadeAddressNullable.Up
 - uid: server.Migrations.init
   name: init
   href: api/server.Migrations.init.html

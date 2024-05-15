@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: server/DTO/UserDTO.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: UserDTO
     path: DTO/UserDTO.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: server/DTO/UserDTO.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Id
     path: DTO/UserDTO.cs
@@ -86,7 +86,7 @@ items:
   source:
     remote:
       path: server/DTO/UserDTO.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: FirstName
     path: DTO/UserDTO.cs
@@ -115,7 +115,7 @@ items:
   source:
     remote:
       path: server/DTO/UserDTO.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: LastName
     path: DTO/UserDTO.cs
@@ -144,7 +144,7 @@ items:
   source:
     remote:
       path: server/DTO/UserDTO.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Email
     path: DTO/UserDTO.cs
@@ -173,7 +173,7 @@ items:
   source:
     remote:
       path: server/DTO/UserDTO.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Address
     path: DTO/UserDTO.cs
@@ -182,7 +182,7 @@ items:
   - server
   namespace: WAMServer.DTO
   syntax:
-    content: public Address Address { get; set; }
+    content: public Address? Address { get; set; }
     parameters: []
     return:
       type: WAMServer.Models.Address
@@ -195,14 +195,14 @@ items:
   langs:
   - csharp
   - vb
-  name: UserDTO(Guid, string, string, string, Address)
-  nameWithType: UserDTO.UserDTO(Guid, string, string, string, Address)
-  fullName: WAMServer.DTO.UserDTO.UserDTO(System.Guid, string, string, string, WAMServer.Models.Address)
+  name: UserDTO(Guid, string, string, string, Address?)
+  nameWithType: UserDTO.UserDTO(Guid, string, string, string, Address?)
+  fullName: WAMServer.DTO.UserDTO.UserDTO(System.Guid, string, string, string, WAMServer.Models.Address?)
   type: Constructor
   source:
     remote:
       path: server/DTO/UserDTO.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: .ctor
     path: DTO/UserDTO.cs
@@ -211,7 +211,7 @@ items:
   - server
   namespace: WAMServer.DTO
   syntax:
-    content: public UserDTO(Guid id, string firstName, string lastName, string email, Address address)
+    content: public UserDTO(Guid id, string firstName, string lastName, string email, Address? address)
     parameters:
     - id: id
       type: System.Guid
@@ -242,7 +242,7 @@ items:
   source:
     remote:
       path: server/DTO/UserDTO.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: .ctor
     path: DTO/UserDTO.cs

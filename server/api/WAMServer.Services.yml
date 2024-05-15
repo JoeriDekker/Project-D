@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: WAMServer.Services
+  commentId: N:WAMServer.Services
+  id: WAMServer.Services
+  children:
+  - WAMServer.Services.DBLoginService
+  langs:
+  - csharp
+  - vb
+  name: WAMServer.Services
+  nameWithType: WAMServer.Services
+  fullName: WAMServer.Services
+  type: Namespace
+  assemblies:
+  - server
+references:
+- uid: WAMServer.Services.DBLoginService
+  commentId: T:WAMServer.Services.DBLoginService
+  href: WAMServer.Services.DBLoginService.html
+  name: DBLoginService
+  nameWithType: DBLoginService
+  fullName: WAMServer.Services.DBLoginService
