@@ -67,7 +67,7 @@ namespace WAMServer.Tests.Controllers
             var tokenHandler = new JwtSecurityTokenHandler();
             var jwtToken = tokenHandler.ReadJwtToken(token);
             Assert.Equal("testIssuer", jwtToken.Issuer);
-            Assert.Equal(DateTime.Now.AddMinutes(120).Date, jwtToken.ValidTo.Date); // Check expiry
+            Assert.Equal(DateTime.Now.AddMinutes(120).ToUniversalTime().Date, jwtToken.ValidTo.Date); // Check expiry
             Assert.Contains(jwtToken.Claims, claim => claim.Type == JwtRegisteredClaimNames.Email && claim.Value == userInfo.Email);
             Assert.Contains(jwtToken.Claims, claim => claim.Type == "Id" && claim.Value == userInfo.Id.ToString());
         }
@@ -88,7 +88,7 @@ namespace WAMServer.Tests.Controllers
             var tokenHandler = new JwtSecurityTokenHandler();
             var jwtToken = tokenHandler.ReadJwtToken(token);
             Assert.Equal("testIssuer", jwtToken.Issuer);
-            Assert.Equal(DateTime.Now.AddMinutes(120).Date, jwtToken.ValidTo.Date); // Check expiry
+            Assert.Equal(DateTime.Now.AddMinutes(120).ToUniversalTime().Date, jwtToken.ValidTo.Date); // Check expiry
             Assert.Contains(jwtToken.Claims, claim => claim.Type == JwtRegisteredClaimNames.Email && claim.Value == userInfo.Email);
             Assert.Contains(jwtToken.Claims, claim => claim.Type == "Id" && claim.Value == userInfo.Id.ToString());
         }
