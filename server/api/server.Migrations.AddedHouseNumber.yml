@@ -1,27 +1,27 @@
 ### YamlMime:ManagedReference
 items:
-- uid: server.Migrations.Init
-  commentId: T:server.Migrations.Init
-  id: Init
+- uid: server.Migrations.AddedHouseNumber
+  commentId: T:server.Migrations.AddedHouseNumber
+  id: AddedHouseNumber
   parent: server.Migrations
   children:
-  - server.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
-  - server.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  - server.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  - server.Migrations.AddedHouseNumber.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  - server.Migrations.AddedHouseNumber.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  - server.Migrations.AddedHouseNumber.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   langs:
   - csharp
   - vb
-  name: Init
-  nameWithType: Init
-  fullName: server.Migrations.Init
+  name: AddedHouseNumber
+  nameWithType: AddedHouseNumber
+  fullName: server.Migrations.AddedHouseNumber
   type: Class
   source:
     remote:
-      path: server/Migrations/20240514125652_Init.Designer.cs
+      path: server/Migrations/20240514132429_AddedHouseNumber.Designer.cs
       branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
-    id: Init
-    path: Migrations/20240514125652_Init.Designer.cs
+    id: AddedHouseNumber
+    path: Migrations/20240514132429_AddedHouseNumber.Designer.cs
     startLine: 13
   assemblies:
   - server
@@ -33,15 +33,15 @@ items:
     content: >-
       [DbContext(typeof(WamDBContext))]
 
-      [Migration("20240514125652_Init")]
+      [Migration("20240514132429_AddedHouseNumber")]
 
-      public class Init : Migration
+      public class AddedHouseNumber : Migration
     content.vb: >-
       <DbContext(GetType(WamDBContext))>
 
-      <Migration("20240514125652_Init")>
+      <Migration("20240514132429_AddedHouseNumber")>
 
-      Public Class Init Inherits Migration
+      Public Class AddedHouseNumber Inherits Migration
   inheritance:
   - System.Object
   - Microsoft.EntityFrameworkCore.Migrations.Migration
@@ -68,26 +68,26 @@ items:
     ctor: Microsoft.EntityFrameworkCore.Migrations.MigrationAttribute.#ctor(System.String)
     arguments:
     - type: System.String
-      value: 20240514125652_Init
-- uid: server.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  commentId: M:server.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+      value: 20240514132429_AddedHouseNumber
+- uid: server.Migrations.AddedHouseNumber.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  commentId: M:server.Migrations.AddedHouseNumber.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   id: Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  parent: server.Migrations.Init
+  parent: server.Migrations.AddedHouseNumber
   langs:
   - csharp
   - vb
   name: Up(MigrationBuilder)
-  nameWithType: Init.Up(MigrationBuilder)
-  fullName: server.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: AddedHouseNumber.Up(MigrationBuilder)
+  fullName: server.Migrations.AddedHouseNumber.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   type: Method
   source:
     remote:
-      path: server/Migrations/20240514125652_Init.cs
+      path: server/Migrations/20240514132429_AddedHouseNumber.cs
       branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Up
-    path: Migrations/20240514125652_Init.cs
-    startLine: 11
+    path: Migrations/20240514132429_AddedHouseNumber.cs
+    startLine: 10
   assemblies:
   - server
   namespace: server.Migrations
@@ -112,26 +112,26 @@ items:
       description: The <xref href="Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder" data-throw-if-not-resolved="false"></xref> that will build the operations.
     content.vb: Protected Overrides Sub Up(migrationBuilder As MigrationBuilder)
   overridden: Microsoft.EntityFrameworkCore.Migrations.Migration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  overload: server.Migrations.Init.Up*
-- uid: server.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  commentId: M:server.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  overload: server.Migrations.AddedHouseNumber.Up*
+- uid: server.Migrations.AddedHouseNumber.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  commentId: M:server.Migrations.AddedHouseNumber.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   id: Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  parent: server.Migrations.Init
+  parent: server.Migrations.AddedHouseNumber
   langs:
   - csharp
   - vb
   name: Down(MigrationBuilder)
-  nameWithType: Init.Down(MigrationBuilder)
-  fullName: server.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: AddedHouseNumber.Down(MigrationBuilder)
+  fullName: server.Migrations.AddedHouseNumber.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   type: Method
   source:
     remote:
-      path: server/Migrations/20240514125652_Init.cs
+      path: server/Migrations/20240514132429_AddedHouseNumber.cs
       branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Down
-    path: Migrations/20240514125652_Init.cs
-    startLine: 69
+    path: Migrations/20240514132429_AddedHouseNumber.cs
+    startLine: 21
   assemblies:
   - server
   namespace: server.Migrations
@@ -158,25 +158,25 @@ items:
       description: The <xref href="Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder" data-throw-if-not-resolved="false"></xref> that will build the operations.
     content.vb: Protected Overrides Sub Down(migrationBuilder As MigrationBuilder)
   overridden: Microsoft.EntityFrameworkCore.Migrations.Migration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  overload: server.Migrations.Init.Down*
-- uid: server.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
-  commentId: M:server.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  overload: server.Migrations.AddedHouseNumber.Down*
+- uid: server.Migrations.AddedHouseNumber.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  commentId: M:server.Migrations.AddedHouseNumber.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
   id: BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
-  parent: server.Migrations.Init
+  parent: server.Migrations.AddedHouseNumber
   langs:
   - csharp
   - vb
   name: BuildTargetModel(ModelBuilder)
-  nameWithType: Init.BuildTargetModel(ModelBuilder)
-  fullName: server.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: AddedHouseNumber.BuildTargetModel(ModelBuilder)
+  fullName: server.Migrations.AddedHouseNumber.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
   type: Method
   source:
     remote:
-      path: server/Migrations/20240514125652_Init.Designer.cs
+      path: server/Migrations/20240514132429_AddedHouseNumber.Designer.cs
       branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: BuildTargetModel
-    path: Migrations/20240514125652_Init.Designer.cs
+    path: Migrations/20240514132429_AddedHouseNumber.Designer.cs
     startLine: 18
   assemblies:
   - server
@@ -192,7 +192,7 @@ items:
       description: The <xref href="Microsoft.EntityFrameworkCore.ModelBuilder" data-throw-if-not-resolved="false"></xref> to use to build the model.
     content.vb: Protected Overrides Sub BuildTargetModel(modelBuilder As ModelBuilder)
   overridden: Microsoft.EntityFrameworkCore.Migrations.Migration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
-  overload: server.Migrations.Init.BuildTargetModel*
+  overload: server.Migrations.AddedHouseNumber.BuildTargetModel*
 references:
 - uid: server.Migrations
   commentId: N:server.Migrations
@@ -576,12 +576,12 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.migrations.migrationbuilder
   - name: )
-- uid: server.Migrations.Init.Up*
-  commentId: Overload:server.Migrations.Init.Up
-  href: server.Migrations.Init.html#server_Migrations_Init_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+- uid: server.Migrations.AddedHouseNumber.Up*
+  commentId: Overload:server.Migrations.AddedHouseNumber.Up
+  href: server.Migrations.AddedHouseNumber.html#server_Migrations_AddedHouseNumber_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
   name: Up
-  nameWithType: Init.Up
-  fullName: server.Migrations.Init.Up
+  nameWithType: AddedHouseNumber.Up
+  fullName: server.Migrations.AddedHouseNumber.Up
 - uid: Microsoft.EntityFrameworkCore.Migrations.Migration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   commentId: M:Microsoft.EntityFrameworkCore.Migrations.Migration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   parent: Microsoft.EntityFrameworkCore.Migrations.Migration
@@ -612,12 +612,12 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.migrations.migrationbuilder
   - name: )
-- uid: server.Migrations.Init.Down*
-  commentId: Overload:server.Migrations.Init.Down
-  href: server.Migrations.Init.html#server_Migrations_Init_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+- uid: server.Migrations.AddedHouseNumber.Down*
+  commentId: Overload:server.Migrations.AddedHouseNumber.Down
+  href: server.Migrations.AddedHouseNumber.html#server_Migrations_AddedHouseNumber_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
   name: Down
-  nameWithType: Init.Down
-  fullName: server.Migrations.Init.Down
+  nameWithType: AddedHouseNumber.Down
+  fullName: server.Migrations.AddedHouseNumber.Down
 - uid: Microsoft.EntityFrameworkCore.ModelBuilder
   commentId: T:Microsoft.EntityFrameworkCore.ModelBuilder
   parent: Microsoft.EntityFrameworkCore
@@ -656,12 +656,12 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.modelbuilder
   - name: )
-- uid: server.Migrations.Init.BuildTargetModel*
-  commentId: Overload:server.Migrations.Init.BuildTargetModel
-  href: server.Migrations.Init.html#server_Migrations_Init_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+- uid: server.Migrations.AddedHouseNumber.BuildTargetModel*
+  commentId: Overload:server.Migrations.AddedHouseNumber.BuildTargetModel
+  href: server.Migrations.AddedHouseNumber.html#server_Migrations_AddedHouseNumber_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
   name: BuildTargetModel
-  nameWithType: Init.BuildTargetModel
-  fullName: server.Migrations.Init.BuildTargetModel
+  nameWithType: AddedHouseNumber.BuildTargetModel
+  fullName: server.Migrations.AddedHouseNumber.BuildTargetModel
 - uid: Microsoft.EntityFrameworkCore
   commentId: N:Microsoft.EntityFrameworkCore
   isExternal: true

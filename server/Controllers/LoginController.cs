@@ -74,7 +74,7 @@ namespace WAMServer.Controllers
         [NonAction]
         public string GenerateJSONWebToken(User userInfo)
         {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"] ?? "WamsSuperSecretKey"));
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"] ?? "ThisIsTheWamsSuperSecretKey782623"));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
             var claims = new[] {
                 new Claim(JwtRegisteredClaimNames.Email, userInfo.Email),
@@ -101,7 +101,11 @@ namespace WAMServer.Controllers
             User? user = null;
             //TODO: Add encryption
             User? userQueryResult = loginService.GetUser(email);
-            if (userQueryResult?.Password == password)
+            if (userQueryResult == null)
+            {
+                return user;
+            }
+            if (BCrypt.Net.BCrypt.EnhancedVerify(password, userQueryResult?.Password ?? ""))
             {
                 user = userQueryResult;
             }

@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: WAMServer.Validation
+  commentId: N:WAMServer.Validation
+  id: WAMServer.Validation
+  children:
+  - WAMServer.Validation.InputValidation
+  langs:
+  - csharp
+  - vb
+  name: WAMServer.Validation
+  nameWithType: WAMServer.Validation
+  fullName: WAMServer.Validation
+  type: Namespace
+  assemblies:
+  - server
+references:
+- uid: WAMServer.Validation.InputValidation
+  commentId: T:WAMServer.Validation.InputValidation
+  href: WAMServer.Validation.InputValidation.html
+  name: InputValidation
+  nameWithType: InputValidation
+  fullName: WAMServer.Validation.InputValidation

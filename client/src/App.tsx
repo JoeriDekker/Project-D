@@ -16,6 +16,8 @@ import axios, { AxiosError } from "axios";
 import useSignOut from "react-auth-kit/hooks/useSignOut";
 import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 import AnyPage from "./pages/anypage";
+import LogboekScreen from "./pages/Logboek/logboekScreen";
+
 
 function App() {
   const authHeader = useAuthHeader();
@@ -51,6 +53,7 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/account" element={<AccountPage />} />
           <Route path="/home" element={<AnyPage />} />
+          <Route path="/logboek" element={<LogboekScreen />} />
         </Route>
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>

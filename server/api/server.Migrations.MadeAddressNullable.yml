@@ -1,27 +1,27 @@
 ### YamlMime:ManagedReference
 items:
-- uid: server.Migrations.Init
-  commentId: T:server.Migrations.Init
-  id: Init
+- uid: server.Migrations.MadeAddressNullable
+  commentId: T:server.Migrations.MadeAddressNullable
+  id: MadeAddressNullable
   parent: server.Migrations
   children:
-  - server.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
-  - server.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  - server.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  - server.Migrations.MadeAddressNullable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  - server.Migrations.MadeAddressNullable.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  - server.Migrations.MadeAddressNullable.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   langs:
   - csharp
   - vb
-  name: Init
-  nameWithType: Init
-  fullName: server.Migrations.Init
+  name: MadeAddressNullable
+  nameWithType: MadeAddressNullable
+  fullName: server.Migrations.MadeAddressNullable
   type: Class
   source:
     remote:
-      path: server/Migrations/20240514125652_Init.Designer.cs
+      path: server/Migrations/20240514133323_MadeAddressNullable.Designer.cs
       branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
-    id: Init
-    path: Migrations/20240514125652_Init.Designer.cs
+    id: MadeAddressNullable
+    path: Migrations/20240514133323_MadeAddressNullable.Designer.cs
     startLine: 13
   assemblies:
   - server
@@ -33,15 +33,15 @@ items:
     content: >-
       [DbContext(typeof(WamDBContext))]
 
-      [Migration("20240514125652_Init")]
+      [Migration("20240514133323_MadeAddressNullable")]
 
-      public class Init : Migration
+      public class MadeAddressNullable : Migration
     content.vb: >-
       <DbContext(GetType(WamDBContext))>
 
-      <Migration("20240514125652_Init")>
+      <Migration("20240514133323_MadeAddressNullable")>
 
-      Public Class Init Inherits Migration
+      Public Class MadeAddressNullable Inherits Migration
   inheritance:
   - System.Object
   - Microsoft.EntityFrameworkCore.Migrations.Migration
@@ -68,25 +68,25 @@ items:
     ctor: Microsoft.EntityFrameworkCore.Migrations.MigrationAttribute.#ctor(System.String)
     arguments:
     - type: System.String
-      value: 20240514125652_Init
-- uid: server.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  commentId: M:server.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+      value: 20240514133323_MadeAddressNullable
+- uid: server.Migrations.MadeAddressNullable.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  commentId: M:server.Migrations.MadeAddressNullable.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   id: Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  parent: server.Migrations.Init
+  parent: server.Migrations.MadeAddressNullable
   langs:
   - csharp
   - vb
   name: Up(MigrationBuilder)
-  nameWithType: Init.Up(MigrationBuilder)
-  fullName: server.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: MadeAddressNullable.Up(MigrationBuilder)
+  fullName: server.Migrations.MadeAddressNullable.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   type: Method
   source:
     remote:
-      path: server/Migrations/20240514125652_Init.cs
+      path: server/Migrations/20240514133323_MadeAddressNullable.cs
       branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Up
-    path: Migrations/20240514125652_Init.cs
+    path: Migrations/20240514133323_MadeAddressNullable.cs
     startLine: 11
   assemblies:
   - server
@@ -112,26 +112,26 @@ items:
       description: The <xref href="Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder" data-throw-if-not-resolved="false"></xref> that will build the operations.
     content.vb: Protected Overrides Sub Up(migrationBuilder As MigrationBuilder)
   overridden: Microsoft.EntityFrameworkCore.Migrations.Migration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  overload: server.Migrations.Init.Up*
-- uid: server.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  commentId: M:server.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  overload: server.Migrations.MadeAddressNullable.Up*
+- uid: server.Migrations.MadeAddressNullable.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  commentId: M:server.Migrations.MadeAddressNullable.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   id: Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  parent: server.Migrations.Init
+  parent: server.Migrations.MadeAddressNullable
   langs:
   - csharp
   - vb
   name: Down(MigrationBuilder)
-  nameWithType: Init.Down(MigrationBuilder)
-  fullName: server.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: MadeAddressNullable.Down(MigrationBuilder)
+  fullName: server.Migrations.MadeAddressNullable.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   type: Method
   source:
     remote:
-      path: server/Migrations/20240514125652_Init.cs
+      path: server/Migrations/20240514133323_MadeAddressNullable.cs
       branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Down
-    path: Migrations/20240514125652_Init.cs
-    startLine: 69
+    path: Migrations/20240514133323_MadeAddressNullable.cs
+    startLine: 34
   assemblies:
   - server
   namespace: server.Migrations
@@ -158,25 +158,25 @@ items:
       description: The <xref href="Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder" data-throw-if-not-resolved="false"></xref> that will build the operations.
     content.vb: Protected Overrides Sub Down(migrationBuilder As MigrationBuilder)
   overridden: Microsoft.EntityFrameworkCore.Migrations.Migration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  overload: server.Migrations.Init.Down*
-- uid: server.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
-  commentId: M:server.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  overload: server.Migrations.MadeAddressNullable.Down*
+- uid: server.Migrations.MadeAddressNullable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  commentId: M:server.Migrations.MadeAddressNullable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
   id: BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
-  parent: server.Migrations.Init
+  parent: server.Migrations.MadeAddressNullable
   langs:
   - csharp
   - vb
   name: BuildTargetModel(ModelBuilder)
-  nameWithType: Init.BuildTargetModel(ModelBuilder)
-  fullName: server.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: MadeAddressNullable.BuildTargetModel(ModelBuilder)
+  fullName: server.Migrations.MadeAddressNullable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
   type: Method
   source:
     remote:
-      path: server/Migrations/20240514125652_Init.Designer.cs
+      path: server/Migrations/20240514133323_MadeAddressNullable.Designer.cs
       branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: BuildTargetModel
-    path: Migrations/20240514125652_Init.Designer.cs
+    path: Migrations/20240514133323_MadeAddressNullable.Designer.cs
     startLine: 18
   assemblies:
   - server
@@ -192,7 +192,7 @@ items:
       description: The <xref href="Microsoft.EntityFrameworkCore.ModelBuilder" data-throw-if-not-resolved="false"></xref> to use to build the model.
     content.vb: Protected Overrides Sub BuildTargetModel(modelBuilder As ModelBuilder)
   overridden: Microsoft.EntityFrameworkCore.Migrations.Migration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
-  overload: server.Migrations.Init.BuildTargetModel*
+  overload: server.Migrations.MadeAddressNullable.BuildTargetModel*
 references:
 - uid: server.Migrations
   commentId: N:server.Migrations
@@ -576,12 +576,12 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.migrations.migrationbuilder
   - name: )
-- uid: server.Migrations.Init.Up*
-  commentId: Overload:server.Migrations.Init.Up
-  href: server.Migrations.Init.html#server_Migrations_Init_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+- uid: server.Migrations.MadeAddressNullable.Up*
+  commentId: Overload:server.Migrations.MadeAddressNullable.Up
+  href: server.Migrations.MadeAddressNullable.html#server_Migrations_MadeAddressNullable_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
   name: Up
-  nameWithType: Init.Up
-  fullName: server.Migrations.Init.Up
+  nameWithType: MadeAddressNullable.Up
+  fullName: server.Migrations.MadeAddressNullable.Up
 - uid: Microsoft.EntityFrameworkCore.Migrations.Migration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   commentId: M:Microsoft.EntityFrameworkCore.Migrations.Migration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   parent: Microsoft.EntityFrameworkCore.Migrations.Migration
@@ -612,12 +612,12 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.migrations.migrationbuilder
   - name: )
-- uid: server.Migrations.Init.Down*
-  commentId: Overload:server.Migrations.Init.Down
-  href: server.Migrations.Init.html#server_Migrations_Init_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+- uid: server.Migrations.MadeAddressNullable.Down*
+  commentId: Overload:server.Migrations.MadeAddressNullable.Down
+  href: server.Migrations.MadeAddressNullable.html#server_Migrations_MadeAddressNullable_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
   name: Down
-  nameWithType: Init.Down
-  fullName: server.Migrations.Init.Down
+  nameWithType: MadeAddressNullable.Down
+  fullName: server.Migrations.MadeAddressNullable.Down
 - uid: Microsoft.EntityFrameworkCore.ModelBuilder
   commentId: T:Microsoft.EntityFrameworkCore.ModelBuilder
   parent: Microsoft.EntityFrameworkCore
@@ -656,12 +656,12 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.modelbuilder
   - name: )
-- uid: server.Migrations.Init.BuildTargetModel*
-  commentId: Overload:server.Migrations.Init.BuildTargetModel
-  href: server.Migrations.Init.html#server_Migrations_Init_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+- uid: server.Migrations.MadeAddressNullable.BuildTargetModel*
+  commentId: Overload:server.Migrations.MadeAddressNullable.BuildTargetModel
+  href: server.Migrations.MadeAddressNullable.html#server_Migrations_MadeAddressNullable_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
   name: BuildTargetModel
-  nameWithType: Init.BuildTargetModel
-  fullName: server.Migrations.Init.BuildTargetModel
+  nameWithType: MadeAddressNullable.BuildTargetModel
+  fullName: server.Migrations.MadeAddressNullable.BuildTargetModel
 - uid: Microsoft.EntityFrameworkCore
   commentId: N:Microsoft.EntityFrameworkCore
   isExternal: true

@@ -17,9 +17,16 @@ items:
   items:
   - uid: WAMServer.DTO.UserDTO
     name: UserDTO
+- uid: WAMServer.Data
+  name: WAMServer.Data
+  items:
+  - uid: WAMServer.Data.DBInitializer
+    name: DBInitializer
 - uid: WAMServer.Interfaces
   name: WAMServer.Interfaces
   items:
+  - uid: WAMServer.Interfaces.ILoginService
+    name: ILoginService
   - uid: WAMServer.Interfaces.IRepository`1
     name: IRepository<T>
   - uid: WAMServer.Interfaces.IUserRepository
@@ -38,6 +45,11 @@ items:
   items:
   - uid: WAMServer.Records.LoginBody
     name: LoginBody
+- uid: WAMServer.Records.Bodies
+  name: WAMServer.Records.Bodies
+  items:
+  - uid: WAMServer.Records.Bodies.ErrorBody
+    name: ErrorBody
 - uid: WAMServer.Repositories
   name: WAMServer.Repositories
   items:
@@ -45,19 +57,23 @@ items:
     name: DbAddressRepository
   - uid: WAMServer.Repositories.DbUserRepository
     name: DbUserRepository
-- uid: WAMServer.Tests.Controllers
-  name: WAMServer.Tests.Controllers
+- uid: WAMServer.Services
+  name: WAMServer.Services
   items:
-  - uid: WAMServer.Tests.Controllers.LoginControllerTests
-    name: LoginControllerTests
+  - uid: WAMServer.Services.DBLoginService
+    name: DBLoginService
+- uid: WAMServer.Validation
+  name: WAMServer.Validation
+  items:
+  - uid: WAMServer.Validation.InputValidation
+    name: InputValidation
 - uid: server.Migrations
   name: server.Migrations
   items:
-  - uid: server.Migrations.init
-    name: init
-- uid: server.tests
-  name: server.tests
-  items:
-  - uid: server.tests.UnitTest1
-    name: UnitTest1
+  - uid: server.Migrations.AddedHouseNumber
+    name: AddedHouseNumber
+  - uid: server.Migrations.Init
+    name: Init
+  - uid: server.Migrations.MadeAddressNullable
+    name: MadeAddressNullable
 memberLayout: SamePage
