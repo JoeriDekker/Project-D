@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using WAMServer.Records.Bodies;
 
 namespace WAMServer.Models
 {
@@ -38,5 +39,14 @@ namespace WAMServer.Models
         /// </summary>
         [ForeignKey("UserId")]
         public User? User { get; set; }
+
+        public Address() {}
+        public Address(AddressPatchBody addressPatchBody)
+        {
+            Street = addressPatchBody.Street!;
+            HouseNumber = addressPatchBody.HouseNumber!;
+            City = addressPatchBody.City!;
+            Zip = addressPatchBody.Zip!;
+        }
     }
 }
