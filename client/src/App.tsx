@@ -9,7 +9,7 @@ import LoginScreen from "./pages/LoginScreen/LoginScreen";
 import axios, { AxiosError } from "axios";
 import useSignOut from "react-auth-kit/hooks/useSignOut";
 import useIsAuthenticated from 'react-auth-kit/hooks/useIsAuthenticated'
-import LogboekScreen from "./pages/logboekscreen";
+import LogboekScreen from "./pages/Logboek/logboekScreen";
 
 
 function App() {

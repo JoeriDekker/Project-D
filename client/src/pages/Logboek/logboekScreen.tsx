@@ -1,7 +1,7 @@
 import React from "react";
 
-import Navbar from '../components/navbar/navbar'
-import Logboek from '../components/logboek/logboek'
+import Navbar from '../../components/navbar/navbar'
+import Logboek from '../../components/logboek/logboek'
 
 function LogboekScreen() {
       
