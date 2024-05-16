@@ -12,7 +12,7 @@ import useSignOut from "react-auth-kit/hooks/useSignOut";
 import useIsAuthenticated from 'react-auth-kit/hooks/useIsAuthenticated'
 import AnyPage from "./pages/anypage";
 import LogboekScreen from "./pages/Logboek/logboekScreen";
-import Register from "./pages/Register/Register";
+import Register from "./pages/Register/RegisterPage";
 
 
 function App() {

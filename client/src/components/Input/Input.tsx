@@ -7,6 +7,9 @@ type Props = {
     width?: string;
     needed?: boolean;
     neededText?: string;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    name?: string;
+    type?: React.HTMLInputTypeAttribute | undefined;
 }
 
 function Input(props: Props) {
@@ -30,7 +33,7 @@ function Input(props: Props) {
                     </div>
                 )}
             </div>
-            <input type="text" id="default-input" className="bg-gray-50 border-2 p-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-[#A6E1FA] text-grey-900 text-sm rounded-lg block w-full p-2.5" placeholder={props.placeholder} />
+            <input name={props.name} type={props.type ? props.type : "text"} id="default-input" onChange={props.onChange} className="bg-gray-50 border-2 p-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-[#A6E1FA] text-grey-900 text-sm rounded-lg block w-full p-2.5" placeholder={props.placeholder} />
         </div >
     )
 }
