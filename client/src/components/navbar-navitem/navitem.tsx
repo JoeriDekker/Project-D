@@ -18,10 +18,6 @@ function NavItem(props: Props) {
             {props.text}
 
         </NavLink>
-        // <a href={link} className="flex items-center px-20 py-5 bg-gradient-to-r from-slate-0 via-slate-0 to-slate-0 transition-all duration-300 transform rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:via-slate-50 hover:to-slate-0">
-        //     <Icons iconName={props.icon} />
-        //     <p className="mx-2 text-sm font-medium text-black">{props.text}</p>
-        // </a>
     );
 }
 
