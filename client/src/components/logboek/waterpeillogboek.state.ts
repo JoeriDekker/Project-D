@@ -2,8 +2,8 @@ export interface logboek {
 
 }
 
-export interface waterpeilLogboek {
+export interface WaterpeilLogboekState {
     date: string;
-    peil: string;
     street: string;
+    peil: string;
 }
