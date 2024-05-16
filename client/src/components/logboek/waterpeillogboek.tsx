@@ -19,6 +19,10 @@ function WaterpeilLogboek(){
         );
     };
 
+    const GetWaterpeilData = () => {
+        
+    };
+
     const data = [
         { date: '08/12', peil: '+0.12m', street: 'Street 1' },
         { date: '09/12', peil: '-0.13m', street: 'Street 2' },
