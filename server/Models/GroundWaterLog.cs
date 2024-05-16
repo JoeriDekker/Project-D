@@ -6,7 +6,7 @@ namespace WAMServer.Models
     /// <summary>
     /// The User class represents a user in the database.
     /// </summary>
-    public class UserSetting
+    public class GroundWaterLog
     {
         [Key]
         public Guid Id { get; set; }
@@ -21,10 +21,11 @@ namespace WAMServer.Models
         /// <summary>
         /// The default constructor.
         /// </summary>
-        /// <param name="userId">The id of the user within the relation</param>
-        /// <param name="controlPCID">The ID of the control PC in the house</param>
-        /// <param name="controlPCSecret">The secret token of the control PC</param>
-        public UserSetting(Guid userId, Guid controlPCID, string controlPCSecret)
+        /// <param name="firstName">The firstname of the user</param>
+        /// <param name="lastName">The lastname of the user</param>
+        /// <param name="email">The emailaddress of the user</param>
+        /// <param name="password">The password of the user</param>
+        public GroundWaterLog(Guid userId, Guid controlPCID, string controlPCSecret)
         {
             this.Id = Guid.NewGuid();
             this.userId = userId;
