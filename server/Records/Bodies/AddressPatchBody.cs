@@ -5,10 +5,10 @@ namespace WAMServer.Records.Bodies
     /// </summary>
     public record AddressPatchBody
     {
-        public string Street = null!;
-        public string HouseNumber = null!;
-        public string City = null!;
-        public string Zip = null!;
-        public string Password = null!;
+        public string? Street { get; init; }
+        public string? HouseNumber { get; init; }
+        public string? City { get; init; }
+        public string? Zip { get; init; }
+        public string? Password { get; init; }
     }
 }

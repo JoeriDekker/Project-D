@@ -36,7 +36,7 @@ function App() {
       );
     } catch (error) {
       const axiosError = error as AxiosError;
-      if (axiosError.response?.status === 401) {
+      if (axiosError.response?.status === 401 || axiosError.response?.status === 404) {
         // If the token is invalid, sign out the user and redirect to the login page
         SignOut();
         window.location.href = "/login";

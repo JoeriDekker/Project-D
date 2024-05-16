@@ -43,10 +43,10 @@ namespace WAMServer.Models
         public Address() {}
         public Address(AddressPatchBody addressPatchBody)
         {
-            Street = addressPatchBody.Street;
-            HouseNumber = addressPatchBody.HouseNumber;
-            City = addressPatchBody.City;
-            Zip = addressPatchBody.Zip;
+            Street = addressPatchBody.Street!;
+            HouseNumber = addressPatchBody.HouseNumber!;
+            City = addressPatchBody.City!;
+            Zip = addressPatchBody.Zip!;
         }
     }
 }

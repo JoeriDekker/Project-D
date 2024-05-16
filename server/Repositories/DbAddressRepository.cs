@@ -53,10 +53,10 @@ namespace WAMServer.Repositories
         {
             var address = _context.Addresses.Where(predicate).FirstOrDefault();
             if (address == null) return null;
-            address.Street = entity.Street;
-            address.HouseNumber = entity.HouseNumber;
-            address.City = entity.City;
-            address.Zip = entity.Zip;
+            if (entity.Street != null) address.Street = entity.Street;
+            if (entity.HouseNumber != null) address.HouseNumber = entity.HouseNumber;
+            if (entity.City != null) address.City = entity.City;
+            if (entity.Zip != null) address.Zip = entity.Zip;
             await _context.SaveChangesAsync();
             return address;
         }
