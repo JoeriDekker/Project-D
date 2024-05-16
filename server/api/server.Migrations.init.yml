@@ -1,27 +1,27 @@
 ### YamlMime:ManagedReference
 items:
-- uid: server.Migrations.init
-  commentId: T:server.Migrations.init
-  id: init
+- uid: server.Migrations.Init
+  commentId: T:server.Migrations.Init
+  id: Init
   parent: server.Migrations
   children:
-  - server.Migrations.init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
-  - server.Migrations.init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  - server.Migrations.init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  - server.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  - server.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  - server.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   langs:
   - csharp
   - vb
-  name: init
-  nameWithType: init
-  fullName: server.Migrations.init
+  name: Init
+  nameWithType: Init
+  fullName: server.Migrations.Init
   type: Class
   source:
     remote:
-      path: server/Migrations/20240426093935_init.Designer.cs
-      branch: development
+      path: server/Migrations/20240514125652_Init.Designer.cs
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
-    id: init
-    path: Migrations/20240426093935_init.Designer.cs
+    id: Init
+    path: Migrations/20240514125652_Init.Designer.cs
     startLine: 13
   assemblies:
   - server
@@ -33,15 +33,15 @@ items:
     content: >-
       [DbContext(typeof(WamDBContext))]
 
-      [Migration("20240426093935_init")]
+      [Migration("20240514125652_Init")]
 
-      public class init : Migration
+      public class Init : Migration
     content.vb: >-
       <DbContext(GetType(WamDBContext))>
 
-      <Migration("20240426093935_init")>
+      <Migration("20240514125652_Init")>
 
-      Public Class init Inherits Migration
+      Public Class Init Inherits Migration
   inheritance:
   - System.Object
   - Microsoft.EntityFrameworkCore.Migrations.Migration
@@ -68,25 +68,25 @@ items:
     ctor: Microsoft.EntityFrameworkCore.Migrations.MigrationAttribute.#ctor(System.String)
     arguments:
     - type: System.String
-      value: 20240426093935_init
-- uid: server.Migrations.init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  commentId: M:server.Migrations.init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+      value: 20240514125652_Init
+- uid: server.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  commentId: M:server.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   id: Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  parent: server.Migrations.init
+  parent: server.Migrations.Init
   langs:
   - csharp
   - vb
   name: Up(MigrationBuilder)
-  nameWithType: init.Up(MigrationBuilder)
-  fullName: server.Migrations.init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: Init.Up(MigrationBuilder)
+  fullName: server.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   type: Method
   source:
     remote:
-      path: server/Migrations/20240426093935_init.cs
-      branch: development
+      path: server/Migrations/20240514125652_Init.cs
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Up
-    path: Migrations/20240426093935_init.cs
+    path: Migrations/20240514125652_Init.cs
     startLine: 11
   assemblies:
   - server
@@ -112,25 +112,25 @@ items:
       description: The <xref href="Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder" data-throw-if-not-resolved="false"></xref> that will build the operations.
     content.vb: Protected Overrides Sub Up(migrationBuilder As MigrationBuilder)
   overridden: Microsoft.EntityFrameworkCore.Migrations.Migration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  overload: server.Migrations.init.Up*
-- uid: server.Migrations.init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  commentId: M:server.Migrations.init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  overload: server.Migrations.Init.Up*
+- uid: server.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  commentId: M:server.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   id: Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  parent: server.Migrations.init
+  parent: server.Migrations.Init
   langs:
   - csharp
   - vb
   name: Down(MigrationBuilder)
-  nameWithType: init.Down(MigrationBuilder)
-  fullName: server.Migrations.init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: Init.Down(MigrationBuilder)
+  fullName: server.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   type: Method
   source:
     remote:
-      path: server/Migrations/20240426093935_init.cs
-      branch: development
+      path: server/Migrations/20240514125652_Init.cs
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Down
-    path: Migrations/20240426093935_init.cs
+    path: Migrations/20240514125652_Init.cs
     startLine: 69
   assemblies:
   - server
@@ -158,25 +158,25 @@ items:
       description: The <xref href="Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder" data-throw-if-not-resolved="false"></xref> that will build the operations.
     content.vb: Protected Overrides Sub Down(migrationBuilder As MigrationBuilder)
   overridden: Microsoft.EntityFrameworkCore.Migrations.Migration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  overload: server.Migrations.init.Down*
-- uid: server.Migrations.init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
-  commentId: M:server.Migrations.init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  overload: server.Migrations.Init.Down*
+- uid: server.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  commentId: M:server.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
   id: BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
-  parent: server.Migrations.init
+  parent: server.Migrations.Init
   langs:
   - csharp
   - vb
   name: BuildTargetModel(ModelBuilder)
-  nameWithType: init.BuildTargetModel(ModelBuilder)
-  fullName: server.Migrations.init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: Init.BuildTargetModel(ModelBuilder)
+  fullName: server.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
   type: Method
   source:
     remote:
-      path: server/Migrations/20240426093935_init.Designer.cs
-      branch: development
+      path: server/Migrations/20240514125652_Init.Designer.cs
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: BuildTargetModel
-    path: Migrations/20240426093935_init.Designer.cs
+    path: Migrations/20240514125652_Init.Designer.cs
     startLine: 18
   assemblies:
   - server
@@ -192,7 +192,7 @@ items:
       description: The <xref href="Microsoft.EntityFrameworkCore.ModelBuilder" data-throw-if-not-resolved="false"></xref> to use to build the model.
     content.vb: Protected Overrides Sub BuildTargetModel(modelBuilder As ModelBuilder)
   overridden: Microsoft.EntityFrameworkCore.Migrations.Migration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
-  overload: server.Migrations.init.BuildTargetModel*
+  overload: server.Migrations.Init.BuildTargetModel*
 references:
 - uid: server.Migrations
   commentId: N:server.Migrations
@@ -576,12 +576,12 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.migrations.migrationbuilder
   - name: )
-- uid: server.Migrations.init.Up*
-  commentId: Overload:server.Migrations.init.Up
-  href: server.Migrations.init.html#server_Migrations_init_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+- uid: server.Migrations.Init.Up*
+  commentId: Overload:server.Migrations.Init.Up
+  href: server.Migrations.Init.html#server_Migrations_Init_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
   name: Up
-  nameWithType: init.Up
-  fullName: server.Migrations.init.Up
+  nameWithType: Init.Up
+  fullName: server.Migrations.Init.Up
 - uid: Microsoft.EntityFrameworkCore.Migrations.Migration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   commentId: M:Microsoft.EntityFrameworkCore.Migrations.Migration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   parent: Microsoft.EntityFrameworkCore.Migrations.Migration
@@ -612,12 +612,12 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.migrations.migrationbuilder
   - name: )
-- uid: server.Migrations.init.Down*
-  commentId: Overload:server.Migrations.init.Down
-  href: server.Migrations.init.html#server_Migrations_init_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+- uid: server.Migrations.Init.Down*
+  commentId: Overload:server.Migrations.Init.Down
+  href: server.Migrations.Init.html#server_Migrations_Init_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
   name: Down
-  nameWithType: init.Down
-  fullName: server.Migrations.init.Down
+  nameWithType: Init.Down
+  fullName: server.Migrations.Init.Down
 - uid: Microsoft.EntityFrameworkCore.ModelBuilder
   commentId: T:Microsoft.EntityFrameworkCore.ModelBuilder
   parent: Microsoft.EntityFrameworkCore
@@ -656,12 +656,12 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.modelbuilder
   - name: )
-- uid: server.Migrations.init.BuildTargetModel*
-  commentId: Overload:server.Migrations.init.BuildTargetModel
-  href: server.Migrations.init.html#server_Migrations_init_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+- uid: server.Migrations.Init.BuildTargetModel*
+  commentId: Overload:server.Migrations.Init.BuildTargetModel
+  href: server.Migrations.Init.html#server_Migrations_Init_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
   name: BuildTargetModel
-  nameWithType: init.BuildTargetModel
-  fullName: server.Migrations.init.BuildTargetModel
+  nameWithType: Init.BuildTargetModel
+  fullName: server.Migrations.Init.BuildTargetModel
 - uid: Microsoft.EntityFrameworkCore
   commentId: N:Microsoft.EntityFrameworkCore
   isExternal: true
