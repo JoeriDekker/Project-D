@@ -12,8 +12,8 @@ using WAMServer.Models;
 namespace server.Migrations
 {
     [DbContext(typeof(WamDBContext))]
-    [Migration("20240516152353_initial_migration")]
-    partial class initial_migration
+    [Migration("20240516172239_modelstodb")]
+    partial class modelstodb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -55,6 +55,28 @@ namespace server.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Addresses");
+                });
+
+            modelBuilder.Entity("WAMServer.Models.GroundWaterLog", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("controlPCID")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("description")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<decimal>("level")
+                        .HasColumnType("decimal");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("GroundWaterLog");
                 });
 
             modelBuilder.Entity("WAMServer.Models.User", b =>
