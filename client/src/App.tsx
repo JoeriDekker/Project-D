@@ -10,6 +10,7 @@ import axios, { AxiosError } from "axios";
 import useSignOut from "react-auth-kit/hooks/useSignOut";
 import useIsAuthenticated from 'react-auth-kit/hooks/useIsAuthenticated'
 import LogboekScreen from "./pages/Logboek/logboekScreen";
+import Register from "./pages/Register/Register";
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/login" Component={LoginScreen} />
+        <Route path="/Register" Component={Register} />
         <Route element={<AuthOutlet fallbackPath="/login" />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/logboek" element={<LogboekScreen />} />
