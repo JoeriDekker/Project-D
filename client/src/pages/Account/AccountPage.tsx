@@ -49,15 +49,15 @@ function AnyPage() {
 
     useEffect(() => {
         async function fetchUser() {
-            // const res = await axios.get(
-            //     process.env.REACT_APP_API_URL + "/api/users",
-            //     {
-            //         headers: {
-            //             Authorization: authHeader,
-            //         },
-            //     }
-            // );
-            // setUser(res.data);
+            const res = await axios.get(
+                process.env.REACT_APP_API_URL + "/api/users",
+                {
+                    headers: {
+                        Authorization: authHeader,
+                    },
+                }
+            );
+            setUser(res.data);
         }
         fetchUser();
     }, [authHeader]);
@@ -69,19 +69,19 @@ function AnyPage() {
         city: string;
         password: string;
     }) {
-        // try {
-        //     const res = await axios.put(process.env.REACT_APP_API_URL + "/api/address", values, {
-        //         headers: {
-        //             Authorization: authHeader,
-        //         },
-        //     });
-        //     if (res.status === 200) {
-        //         alert("Address updated successfully");
-        //     }
-        // } catch (e) {
-        //     const error = e as AxiosError;
-        //     console.error(error);
-        // }
+        try {
+            const res = await axios.put(process.env.REACT_APP_API_URL + "/api/address", values, {
+                headers: {
+                    Authorization: authHeader,
+                },
+            });
+            if (res.status === 200) {
+                alert("Address updated successfully");
+            }
+        } catch (e) {
+            const error = e as AxiosError;
+            console.error(error);
+        }
     }
 
     return (
@@ -200,16 +200,6 @@ function AnyPage() {
             </div>
         </div>
     );
-
-    // return (
-    //     <>
-    //         <div></div>
-    //         <div className="bg-backgroundCol w-screen h-screen py-5 flex dir-row max-w-screen">
-    //             <Navbar />
-    //             <div className="ml-80 space-y-10 bg-white w-full h-fit min-h-full rounded-xl mr-5 p-5 flex flex-col">
-
-    //             
-    // );
 }
 
 export default AnyPage;
