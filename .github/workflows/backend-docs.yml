@@ -2,9 +2,13 @@ name: DocFX Build and Publish
 
 on:
   push:
-    branches: [ development, main ]
+    branches:
+      - development
+      - main
   pull_request:
-    branches: [ development, main ]
+    branches:
+      - development
+      - main
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
