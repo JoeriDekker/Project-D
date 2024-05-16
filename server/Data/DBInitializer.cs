@@ -38,14 +38,8 @@ namespace WAMServer.Data
                     }
                     context.SaveChanges();
                     // add a ground water log
-                    var groundWaterLog = new GroundWaterLog()
-                    {
-                        Id = Guid.NewGuid(),
-                        ControlPCId = Guid.NewGuid(),
-                        Date = "16/05/2024",
-                        Level = "-1",
-                        Description = "Gouda onder die water gelopen!"
-                    };
+                    var groundWaterLog = new GroundWaterLog(Guid.NewGuid().ToString(), "epic description", 1);
+                  
                     context.GroundWaterLog.Add(groundWaterLog);
                     context.SaveChanges();
                 }
