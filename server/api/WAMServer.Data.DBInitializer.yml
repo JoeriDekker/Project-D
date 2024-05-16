@@ -1,34 +1,32 @@
 ### YamlMime:ManagedReference
 items:
-- uid: WAMServer.Startup
-  commentId: T:WAMServer.Startup
-  id: Startup
-  parent: WAMServer
+- uid: WAMServer.Data.DBInitializer
+  commentId: T:WAMServer.Data.DBInitializer
+  id: DBInitializer
+  parent: WAMServer.Data
   children:
-  - WAMServer.Startup.Start
+  - WAMServer.Data.DBInitializer.Seed(Microsoft.AspNetCore.Builder.IApplicationBuilder)
   langs:
   - csharp
   - vb
-  name: Startup
-  nameWithType: Startup
-  fullName: WAMServer.Startup
+  name: DBInitializer
+  nameWithType: DBInitializer
+  fullName: WAMServer.Data.DBInitializer
   type: Class
   source:
     remote:
-      path: server/Startup.cs
+      path: server/Data/DBInitializer.cs
       branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
-    id: Startup
-    path: Startup.cs
-    startLine: 16
+    id: DBInitializer
+    path: Data/DBInitializer.cs
+    startLine: 4
   assemblies:
   - server
-  namespace: WAMServer
-  summary: The Startup class is the entry point of the application.
-  example: []
+  namespace: WAMServer.Data
   syntax:
-    content: public class Startup
-    content.vb: Public Class Startup
+    content: public class DBInitializer
+    content.vb: Public Class DBInitializer
   inheritance:
   - System.Object
   inheritedMembers:
@@ -39,41 +37,58 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: WAMServer.Startup.Start
-  commentId: M:WAMServer.Startup.Start
-  id: Start
-  parent: WAMServer.Startup
+- uid: WAMServer.Data.DBInitializer.Seed(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+  commentId: M:WAMServer.Data.DBInitializer.Seed(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+  id: Seed(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+  parent: WAMServer.Data.DBInitializer
   langs:
   - csharp
   - vb
-  name: Start()
-  nameWithType: Startup.Start()
-  fullName: WAMServer.Startup.Start()
+  name: Seed(IApplicationBuilder)
+  nameWithType: DBInitializer.Seed(IApplicationBuilder)
+  fullName: WAMServer.Data.DBInitializer.Seed(Microsoft.AspNetCore.Builder.IApplicationBuilder)
   type: Method
   source:
     remote:
-      path: server/Startup.cs
+      path: server/Data/DBInitializer.cs
       branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
-    id: Start
-    path: Startup.cs
-    startLine: 21
+    id: Seed
+    path: Data/DBInitializer.cs
+    startLine: 6
   assemblies:
   - server
-  namespace: WAMServer
-  summary: Responsible for starting the application.
-  example: []
+  namespace: WAMServer.Data
   syntax:
-    content: public void Start()
-    content.vb: Public Sub Start()
-  overload: WAMServer.Startup.Start*
+    content: public static void Seed(IApplicationBuilder applicationBuilder)
+    parameters:
+    - id: applicationBuilder
+      type: Microsoft.AspNetCore.Builder.IApplicationBuilder
+    content.vb: Public Shared Sub Seed(applicationBuilder As IApplicationBuilder)
+  overload: WAMServer.Data.DBInitializer.Seed*
 references:
-- uid: WAMServer
-  commentId: N:WAMServer
+- uid: WAMServer.Data
+  commentId: N:WAMServer.Data
   href: WAMServer.html
-  name: WAMServer
-  nameWithType: WAMServer
-  fullName: WAMServer
+  name: WAMServer.Data
+  nameWithType: WAMServer.Data
+  fullName: WAMServer.Data
+  spec.csharp:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Data
+    name: Data
+    href: WAMServer.Data.html
+  spec.vb:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Data
+    name: Data
+    href: WAMServer.Data.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -311,9 +326,54 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: WAMServer.Startup.Start*
-  commentId: Overload:WAMServer.Startup.Start
-  href: WAMServer.Startup.html#WAMServer_Startup_Start
-  name: Start
-  nameWithType: Startup.Start
-  fullName: WAMServer.Startup.Start
+- uid: WAMServer.Data.DBInitializer.Seed*
+  commentId: Overload:WAMServer.Data.DBInitializer.Seed
+  href: WAMServer.Data.DBInitializer.html#WAMServer_Data_DBInitializer_Seed_Microsoft_AspNetCore_Builder_IApplicationBuilder_
+  name: Seed
+  nameWithType: DBInitializer.Seed
+  fullName: WAMServer.Data.DBInitializer.Seed
+- uid: Microsoft.AspNetCore.Builder.IApplicationBuilder
+  commentId: T:Microsoft.AspNetCore.Builder.IApplicationBuilder
+  parent: Microsoft.AspNetCore.Builder
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder
+  name: IApplicationBuilder
+  nameWithType: IApplicationBuilder
+  fullName: Microsoft.AspNetCore.Builder.IApplicationBuilder
+- uid: Microsoft.AspNetCore.Builder
+  commentId: N:Microsoft.AspNetCore.Builder
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Builder
+  nameWithType: Microsoft.AspNetCore.Builder
+  fullName: Microsoft.AspNetCore.Builder
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Builder
+    name: Builder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.builder
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Builder
+    name: Builder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.builder

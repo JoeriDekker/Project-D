@@ -1,36 +1,37 @@
 ### YamlMime:ManagedReference
 items:
-- uid: WAMServer.Startup
-  commentId: T:WAMServer.Startup
-  id: Startup
-  parent: WAMServer
+- uid: WAMServer.Records.Bodies.ErrorBody
+  commentId: T:WAMServer.Records.Bodies.ErrorBody
+  id: ErrorBody
+  parent: WAMServer.Records.Bodies
   children:
-  - WAMServer.Startup.Start
+  - WAMServer.Records.Bodies.ErrorBody.#ctor(System.String)
+  - WAMServer.Records.Bodies.ErrorBody.Error
   langs:
   - csharp
   - vb
-  name: Startup
-  nameWithType: Startup
-  fullName: WAMServer.Startup
+  name: ErrorBody
+  nameWithType: ErrorBody
+  fullName: WAMServer.Records.Bodies.ErrorBody
   type: Class
   source:
     remote:
-      path: server/Startup.cs
+      path: server/Records/Bodies/ErrorBody.cs
       branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
-    id: Startup
-    path: Startup.cs
-    startLine: 16
+    id: ErrorBody
+    path: Records/Bodies/ErrorBody.cs
+    startLine: 2
   assemblies:
   - server
-  namespace: WAMServer
-  summary: The Startup class is the entry point of the application.
-  example: []
+  namespace: WAMServer.Records.Bodies
   syntax:
-    content: public class Startup
-    content.vb: Public Class Startup
+    content: 'public record ErrorBody : IEquatable<ErrorBody>'
+    content.vb: Public Class ErrorBody Implements IEquatable(Of ErrorBody)
   inheritance:
   - System.Object
+  implements:
+  - System.IEquatable{WAMServer.Records.Bodies.ErrorBody}
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -39,41 +40,98 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: WAMServer.Startup.Start
-  commentId: M:WAMServer.Startup.Start
-  id: Start
-  parent: WAMServer.Startup
+- uid: WAMServer.Records.Bodies.ErrorBody.#ctor(System.String)
+  commentId: M:WAMServer.Records.Bodies.ErrorBody.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: WAMServer.Records.Bodies.ErrorBody
   langs:
   - csharp
   - vb
-  name: Start()
-  nameWithType: Startup.Start()
-  fullName: WAMServer.Startup.Start()
-  type: Method
+  name: ErrorBody(string)
+  nameWithType: ErrorBody.ErrorBody(string)
+  fullName: WAMServer.Records.Bodies.ErrorBody.ErrorBody(string)
+  type: Constructor
   source:
     remote:
-      path: server/Startup.cs
+      path: server/Records/Bodies/ErrorBody.cs
       branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
-    id: Start
-    path: Startup.cs
-    startLine: 21
+    id: .ctor
+    path: Records/Bodies/ErrorBody.cs
+    startLine: 2
   assemblies:
   - server
-  namespace: WAMServer
-  summary: Responsible for starting the application.
-  example: []
+  namespace: WAMServer.Records.Bodies
   syntax:
-    content: public void Start()
-    content.vb: Public Sub Start()
-  overload: WAMServer.Startup.Start*
+    content: public ErrorBody(string Error)
+    parameters:
+    - id: Error
+      type: System.String
+    content.vb: Public Sub New([Error] As String)
+  overload: WAMServer.Records.Bodies.ErrorBody.#ctor*
+  nameWithType.vb: ErrorBody.New(String)
+  fullName.vb: WAMServer.Records.Bodies.ErrorBody.New(String)
+  name.vb: New(String)
+- uid: WAMServer.Records.Bodies.ErrorBody.Error
+  commentId: P:WAMServer.Records.Bodies.ErrorBody.Error
+  id: Error
+  parent: WAMServer.Records.Bodies.ErrorBody
+  langs:
+  - csharp
+  - vb
+  name: Error
+  nameWithType: ErrorBody.Error
+  fullName: WAMServer.Records.Bodies.ErrorBody.Error
+  type: Property
+  source:
+    remote:
+      path: server/Records/Bodies/ErrorBody.cs
+      branch: fix/logincontroller-docs
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: Error
+    path: Records/Bodies/ErrorBody.cs
+    startLine: 2
+  assemblies:
+  - server
+  namespace: WAMServer.Records.Bodies
+  syntax:
+    content: public string Error { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property [Error] As String
+  overload: WAMServer.Records.Bodies.ErrorBody.Error*
 references:
-- uid: WAMServer
-  commentId: N:WAMServer
+- uid: WAMServer.Records.Bodies
+  commentId: N:WAMServer.Records.Bodies
   href: WAMServer.html
-  name: WAMServer
-  nameWithType: WAMServer
-  fullName: WAMServer
+  name: WAMServer.Records.Bodies
+  nameWithType: WAMServer.Records.Bodies
+  fullName: WAMServer.Records.Bodies
+  spec.csharp:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Records
+    name: Records
+    href: WAMServer.Records.html
+  - name: .
+  - uid: WAMServer.Records.Bodies
+    name: Bodies
+    href: WAMServer.Records.Bodies.html
+  spec.vb:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Records
+    name: Records
+    href: WAMServer.Records.html
+  - name: .
+  - uid: WAMServer.Records.Bodies
+    name: Bodies
+    href: WAMServer.Records.Bodies.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -85,6 +143,39 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
+- uid: System.IEquatable{WAMServer.Records.Bodies.ErrorBody}
+  commentId: T:System.IEquatable{WAMServer.Records.Bodies.ErrorBody}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<ErrorBody>
+  nameWithType: IEquatable<ErrorBody>
+  fullName: System.IEquatable<WAMServer.Records.Bodies.ErrorBody>
+  nameWithType.vb: IEquatable(Of ErrorBody)
+  fullName.vb: System.IEquatable(Of WAMServer.Records.Bodies.ErrorBody)
+  name.vb: IEquatable(Of ErrorBody)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: WAMServer.Records.Bodies.ErrorBody
+    name: ErrorBody
+    href: WAMServer.Records.Bodies.ErrorBody.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: WAMServer.Records.Bodies.ErrorBody
+    name: ErrorBody
+    href: WAMServer.Records.Bodies.ErrorBody.html
+  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -311,9 +402,57 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: WAMServer.Startup.Start*
-  commentId: Overload:WAMServer.Startup.Start
-  href: WAMServer.Startup.html#WAMServer_Startup_Start
-  name: Start
-  nameWithType: Startup.Start
-  fullName: WAMServer.Startup.Start
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: WAMServer.Records.Bodies.ErrorBody.#ctor*
+  commentId: Overload:WAMServer.Records.Bodies.ErrorBody.#ctor
+  href: WAMServer.Records.Bodies.ErrorBody.html#WAMServer_Records_Bodies_ErrorBody__ctor_System_String_
+  name: ErrorBody
+  nameWithType: ErrorBody.ErrorBody
+  fullName: WAMServer.Records.Bodies.ErrorBody.ErrorBody
+  nameWithType.vb: ErrorBody.New
+  fullName.vb: WAMServer.Records.Bodies.ErrorBody.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: WAMServer.Records.Bodies.ErrorBody.Error*
+  commentId: Overload:WAMServer.Records.Bodies.ErrorBody.Error
+  href: WAMServer.Records.Bodies.ErrorBody.html#WAMServer_Records_Bodies_ErrorBody_Error
+  name: Error
+  nameWithType: ErrorBody.Error
+  fullName: WAMServer.Records.Bodies.ErrorBody.Error

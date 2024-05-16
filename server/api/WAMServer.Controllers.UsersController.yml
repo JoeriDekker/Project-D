@@ -5,7 +5,7 @@ items:
   id: UsersController
   parent: WAMServer.Controllers
   children:
-  - WAMServer.Controllers.UsersController.#ctor(WAMServer.Interfaces.IUserRepository,WAMServer.Interfaces.IRepository{WAMServer.Models.Address})
+  - WAMServer.Controllers.UsersController.#ctor(WAMServer.Interfaces.IRepository{WAMServer.Models.User},WAMServer.Interfaces.IRepository{WAMServer.Models.Address})
   - WAMServer.Controllers.UsersController.GetUser
   langs:
   - csharp
@@ -17,14 +17,16 @@ items:
   source:
     remote:
       path: server/Controllers/UsersController.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: UsersController
     path: Controllers/UsersController.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - server
   namespace: WAMServer.Controllers
+  summary: Controller responsible for handling user-related operations.
+  example: []
   syntax:
     content: >-
       [Authorize]
@@ -238,40 +240,40 @@ items:
     arguments:
     - type: System.String
       value: /api/[controller]
-- uid: WAMServer.Controllers.UsersController.#ctor(WAMServer.Interfaces.IUserRepository,WAMServer.Interfaces.IRepository{WAMServer.Models.Address})
-  commentId: M:WAMServer.Controllers.UsersController.#ctor(WAMServer.Interfaces.IUserRepository,WAMServer.Interfaces.IRepository{WAMServer.Models.Address})
-  id: '#ctor(WAMServer.Interfaces.IUserRepository,WAMServer.Interfaces.IRepository{WAMServer.Models.Address})'
+- uid: WAMServer.Controllers.UsersController.#ctor(WAMServer.Interfaces.IRepository{WAMServer.Models.User},WAMServer.Interfaces.IRepository{WAMServer.Models.Address})
+  commentId: M:WAMServer.Controllers.UsersController.#ctor(WAMServer.Interfaces.IRepository{WAMServer.Models.User},WAMServer.Interfaces.IRepository{WAMServer.Models.Address})
+  id: '#ctor(WAMServer.Interfaces.IRepository{WAMServer.Models.User},WAMServer.Interfaces.IRepository{WAMServer.Models.Address})'
   parent: WAMServer.Controllers.UsersController
   langs:
   - csharp
   - vb
-  name: UsersController(IUserRepository, IRepository<Address>)
-  nameWithType: UsersController.UsersController(IUserRepository, IRepository<Address>)
-  fullName: WAMServer.Controllers.UsersController.UsersController(WAMServer.Interfaces.IUserRepository, WAMServer.Interfaces.IRepository<WAMServer.Models.Address>)
+  name: UsersController(IRepository<User>, IRepository<Address>)
+  nameWithType: UsersController.UsersController(IRepository<User>, IRepository<Address>)
+  fullName: WAMServer.Controllers.UsersController.UsersController(WAMServer.Interfaces.IRepository<WAMServer.Models.User>, WAMServer.Interfaces.IRepository<WAMServer.Models.Address>)
   type: Constructor
   source:
     remote:
       path: server/Controllers/UsersController.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: .ctor
     path: Controllers/UsersController.cs
-    startLine: 15
+    startLine: 19
   assemblies:
   - server
   namespace: WAMServer.Controllers
   syntax:
-    content: public UsersController(IUserRepository userRepository, IRepository<Address> addressRepo)
+    content: public UsersController(IRepository<User> userRepository, IRepository<Address> addressRepo)
     parameters:
     - id: userRepository
-      type: WAMServer.Interfaces.IUserRepository
+      type: WAMServer.Interfaces.IRepository{WAMServer.Models.User}
     - id: addressRepo
       type: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}
-    content.vb: Public Sub New(userRepository As IUserRepository, addressRepo As IRepository(Of Address))
+    content.vb: Public Sub New(userRepository As IRepository(Of User), addressRepo As IRepository(Of Address))
   overload: WAMServer.Controllers.UsersController.#ctor*
-  nameWithType.vb: UsersController.New(IUserRepository, IRepository(Of Address))
-  fullName.vb: WAMServer.Controllers.UsersController.New(WAMServer.Interfaces.IUserRepository, WAMServer.Interfaces.IRepository(Of WAMServer.Models.Address))
-  name.vb: New(IUserRepository, IRepository(Of Address))
+  nameWithType.vb: UsersController.New(IRepository(Of User), IRepository(Of Address))
+  fullName.vb: WAMServer.Controllers.UsersController.New(WAMServer.Interfaces.IRepository(Of WAMServer.Models.User), WAMServer.Interfaces.IRepository(Of WAMServer.Models.Address))
+  name.vb: New(IRepository(Of User), IRepository(Of Address))
 - uid: WAMServer.Controllers.UsersController.GetUser
   commentId: M:WAMServer.Controllers.UsersController.GetUser
   id: GetUser
@@ -286,32 +288,39 @@ items:
   source:
     remote:
       path: server/Controllers/UsersController.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: GetUser
     path: Controllers/UsersController.cs
-    startLine: 26
+    startLine: 29
   assemblies:
   - server
   namespace: WAMServer.Controllers
-  summary: Did something, felt cute, might delete later
+  summary: Retrieves the current user's information.
   example: []
   syntax:
     content: >-
       [HttpGet]
 
+      [Authorize]
+
       public ActionResult<UserDTO> GetUser()
     return:
       type: Microsoft.AspNetCore.Mvc.ActionResult{WAMServer.DTO.UserDTO}
-      description: ''
+      description: An ActionResult containing the current user's information if authorized; otherwise, returns an UnauthorizedResult.
     content.vb: >-
       <HttpGet>
+
+      <Authorize>
 
       Public Function GetUser() As ActionResult(Of UserDTO)
   overload: WAMServer.Controllers.UsersController.GetUser*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
     ctor: Microsoft.AspNetCore.Mvc.HttpGetAttribute.#ctor
+    arguments: []
+  - type: Microsoft.AspNetCore.Authorization.AuthorizeAttribute
+    ctor: Microsoft.AspNetCore.Authorization.AuthorizeAttribute.#ctor
     arguments: []
 references:
 - uid: WAMServer.Controllers
@@ -9303,20 +9312,44 @@ references:
   - name: )
 - uid: WAMServer.Controllers.UsersController.#ctor*
   commentId: Overload:WAMServer.Controllers.UsersController.#ctor
-  href: WAMServer.Controllers.UsersController.html#WAMServer_Controllers_UsersController__ctor_WAMServer_Interfaces_IUserRepository_WAMServer_Interfaces_IRepository_WAMServer_Models_Address__
+  href: WAMServer.Controllers.UsersController.html#WAMServer_Controllers_UsersController__ctor_WAMServer_Interfaces_IRepository_WAMServer_Models_User__WAMServer_Interfaces_IRepository_WAMServer_Models_Address__
   name: UsersController
   nameWithType: UsersController.UsersController
   fullName: WAMServer.Controllers.UsersController.UsersController
   nameWithType.vb: UsersController.New
   fullName.vb: WAMServer.Controllers.UsersController.New
   name.vb: New
-- uid: WAMServer.Interfaces.IUserRepository
-  commentId: T:WAMServer.Interfaces.IUserRepository
+- uid: WAMServer.Interfaces.IRepository{WAMServer.Models.User}
+  commentId: T:WAMServer.Interfaces.IRepository{WAMServer.Models.User}
   parent: WAMServer.Interfaces
-  href: WAMServer.Interfaces.IUserRepository.html
-  name: IUserRepository
-  nameWithType: IUserRepository
-  fullName: WAMServer.Interfaces.IUserRepository
+  definition: WAMServer.Interfaces.IRepository`1
+  href: WAMServer.Interfaces.IRepository-1.html
+  name: IRepository<User>
+  nameWithType: IRepository<User>
+  fullName: WAMServer.Interfaces.IRepository<WAMServer.Models.User>
+  nameWithType.vb: IRepository(Of User)
+  fullName.vb: WAMServer.Interfaces.IRepository(Of WAMServer.Models.User)
+  name.vb: IRepository(Of User)
+  spec.csharp:
+  - uid: WAMServer.Interfaces.IRepository`1
+    name: IRepository
+    href: WAMServer.Interfaces.IRepository-1.html
+  - name: <
+  - uid: WAMServer.Models.User
+    name: User
+    href: WAMServer.Models.User.html
+  - name: '>'
+  spec.vb:
+  - uid: WAMServer.Interfaces.IRepository`1
+    name: IRepository
+    href: WAMServer.Interfaces.IRepository-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: WAMServer.Models.User
+    name: User
+    href: WAMServer.Models.User.html
+  - name: )
 - uid: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}
   commentId: T:WAMServer.Interfaces.IRepository{WAMServer.Models.Address}
   parent: WAMServer.Interfaces
@@ -9348,28 +9381,6 @@ references:
     name: Address
     href: WAMServer.Models.Address.html
   - name: )
-- uid: WAMServer.Interfaces
-  commentId: N:WAMServer.Interfaces
-  href: WAMServer.html
-  name: WAMServer.Interfaces
-  nameWithType: WAMServer.Interfaces
-  fullName: WAMServer.Interfaces
-  spec.csharp:
-  - uid: WAMServer
-    name: WAMServer
-    href: WAMServer.html
-  - name: .
-  - uid: WAMServer.Interfaces
-    name: Interfaces
-    href: WAMServer.Interfaces.html
-  spec.vb:
-  - uid: WAMServer
-    name: WAMServer
-    href: WAMServer.html
-  - name: .
-  - uid: WAMServer.Interfaces
-    name: Interfaces
-    href: WAMServer.Interfaces.html
 - uid: WAMServer.Interfaces.IRepository`1
   commentId: T:WAMServer.Interfaces.IRepository`1
   href: WAMServer.Interfaces.IRepository-1.html
@@ -9395,6 +9406,28 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: WAMServer.Interfaces
+  commentId: N:WAMServer.Interfaces
+  href: WAMServer.html
+  name: WAMServer.Interfaces
+  nameWithType: WAMServer.Interfaces
+  fullName: WAMServer.Interfaces
+  spec.csharp:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Interfaces
+    name: Interfaces
+    href: WAMServer.Interfaces.html
+  spec.vb:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Interfaces
+    name: Interfaces
+    href: WAMServer.Interfaces.html
 - uid: WAMServer.Controllers.UsersController.GetUser*
   commentId: Overload:WAMServer.Controllers.UsersController.GetUser
   href: WAMServer.Controllers.UsersController.html#WAMServer_Controllers_UsersController_GetUser
