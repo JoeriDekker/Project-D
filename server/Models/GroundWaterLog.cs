@@ -11,26 +11,25 @@ namespace WAMServer.Models
         [Key]
         public Guid Id { get; set; }
         [Required, Column(TypeName = "varchar(100)")]
-
-        public Guid userId { get; set; }
+        public string controlPCID { get; set; } = null!;
         [Required, Column(TypeName = "varchar(100)")]
-        public Guid controlPCID { get; set; }
-        [Required, Column(TypeName = "varchar(100)")]
-        public string controlPCSecret { get; set; }
+        public string description { get; set; } = null!;
+        [Required, Column(TypeName = "decimal")]
+        public decimal level { get; set; } = 0;
 
         /// <summary>
-        /// The default constructor.
+        /// Constructor for creating a GroundWaterLog object.
         /// </summary>
-        /// <param name="firstName">The firstname of the user</param>
-        /// <param name="lastName">The lastname of the user</param>
-        /// <param name="email">The emailaddress of the user</param>
-        /// <param name="password">The password of the user</param>
-        public GroundWaterLog(Guid userId, Guid controlPCID, string controlPCSecret)
+        /// <param name="controlPCID">ID of the control PC associated with the log.</param>
+        /// <param name="description">Description of the groundwater log.</param>
+        /// <param name="level">Level of groundwater.</param>
+        public GroundWaterLog(string controlPCID, string description, decimal level)
         {
             this.Id = Guid.NewGuid();
-            this.userId = userId;
             this.controlPCID = controlPCID;
-            this.controlPCSecret = controlPCSecret;
+            this.description = description;
+            this.level = level;
         }
+
     }
 }
