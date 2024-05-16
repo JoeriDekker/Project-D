@@ -62,6 +62,36 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/WAMServer.Data.DBInitializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WAMServer.Data.DBInitializer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WAMServer.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WAMServer.Data.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WAMServer.Interfaces.ILoginService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WAMServer.Interfaces.ILoginService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/WAMServer.Interfaces.IRepository-1.yml",
       "output": {
         ".html": {
@@ -132,6 +162,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/WAMServer.Records.Bodies.ErrorBody.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WAMServer.Records.Bodies.ErrorBody.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WAMServer.Records.Bodies.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WAMServer.Records.Bodies.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/WAMServer.Records.LoginBody.yml",
       "output": {
         ".html": {
@@ -182,6 +232,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/WAMServer.Services.DBLoginService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WAMServer.Services.DBLoginService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WAMServer.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WAMServer.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/WAMServer.Startup.yml",
       "output": {
         ".html": {
@@ -212,10 +282,60 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/WAMServer.Validation.InputValidation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WAMServer.Validation.InputValidation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WAMServer.Validation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WAMServer.Validation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/WAMServer.yml",
       "output": {
         ".html": {
           "relative_path": "api/WAMServer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/server.Migrations.AddedHouseNumber.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/server.Migrations.AddedHouseNumber.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/server.Migrations.Init.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/server.Migrations.Init.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/server.Migrations.MadeAddressNullable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/server.Migrations.MadeAddressNullable.html"
         }
       },
       "version": ""

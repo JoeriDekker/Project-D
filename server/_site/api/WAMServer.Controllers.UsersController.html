@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class UsersController | wam-server ">
       
-      
+      <meta name="description" content="Controller responsible for handling user-related operations.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/JoeriDekker/Project-D/new/development/apiSpec/new?filename=WAMServer_Controllers_UsersController.md&amp;value=---%0Auid%3A%20WAMServer.Controllers.UsersController%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/JoeriDekker/Project-D/new/fix/logincontroller-docs/apiSpec/new?filename=WAMServer_Controllers_UsersController.md&amp;value=---%0Auid%3A%20WAMServer.Controllers.UsersController%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="WAMServer_Controllers_UsersController" data-uid="WAMServer.Controllers.UsersController" class="text-break">
-Class UsersController  <a class="header-action link-secondary" title="View source" href="https://github.com/JoeriDekker/Project-D/blob/development/server/Controllers/UsersController.cs/#L9"><i class="bi bi-code-slash"></i></a>
+Class UsersController  <a class="header-action link-secondary" title="View source" href="https://github.com/JoeriDekker/Project-D/blob/fix/logincontroller-docs/server/Controllers/UsersController.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class UsersController  <a class="header-action link-secondary" title="View sourc
   <dl><dt>Assembly</dt><dd>server.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Controller responsible for handling user-related operations.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -677,21 +678,21 @@ public class UsersController : ControllerBase</code></pre>
 
   <a id="WAMServer_Controllers_UsersController__ctor_" data-uid="WAMServer.Controllers.UsersController.#ctor*"></a>
 
-  <h3 id="WAMServer_Controllers_UsersController__ctor_WAMServer_Interfaces_IUserRepository_WAMServer_Interfaces_IRepository_WAMServer_Models_Address__" data-uid="WAMServer.Controllers.UsersController.#ctor(WAMServer.Interfaces.IUserRepository,WAMServer.Interfaces.IRepository{WAMServer.Models.Address})">
-  UsersController(IUserRepository, IRepository&lt;Address&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/JoeriDekker/Project-D/blob/development/server/Controllers/UsersController.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <h3 id="WAMServer_Controllers_UsersController__ctor_WAMServer_Interfaces_IRepository_WAMServer_Models_User__WAMServer_Interfaces_IRepository_WAMServer_Models_Address__" data-uid="WAMServer.Controllers.UsersController.#ctor(WAMServer.Interfaces.IRepository{WAMServer.Models.User},WAMServer.Interfaces.IRepository{WAMServer.Models.Address})">
+  UsersController(IRepository&lt;User&gt;, IRepository&lt;Address&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JoeriDekker/Project-D/blob/fix/logincontroller-docs/server/Controllers/UsersController.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public UsersController(IUserRepository userRepository, IRepository&lt;Address&gt; addressRepo)</code></pre>
+    <pre><code class="lang-csharp hljs">public UsersController(IRepository&lt;User&gt; userRepository, IRepository&lt;Address&gt; addressRepo)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>userRepository</code> <a class="xref" href="WAMServer.Interfaces.IUserRepository.html">IUserRepository</a></dt>
+    <dt><code>userRepository</code> <a class="xref" href="WAMServer.Interfaces.IRepository-1.html">IRepository</a>&lt;<a class="xref" href="WAMServer.Models.User.html">User</a>&gt;</dt>
     <dd></dd>
     <dt><code>addressRepo</code> <a class="xref" href="WAMServer.Interfaces.IRepository-1.html">IRepository</a>&lt;<a class="xref" href="WAMServer.Models.Address.html">Address</a>&gt;</dt>
     <dd></dd>
@@ -716,15 +717,16 @@ public class UsersController : ControllerBase</code></pre>
 
   <h3 id="WAMServer_Controllers_UsersController_GetUser" data-uid="WAMServer.Controllers.UsersController.GetUser">
   GetUser()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/JoeriDekker/Project-D/blob/development/server/Controllers/UsersController.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JoeriDekker/Project-D/blob/fix/logincontroller-docs/server/Controllers/UsersController.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Did something, felt cute, might delete later</p>
+  <div class="markdown level1 summary"><p>Retrieves the current user's information.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[HttpGet]
+[Authorize]
 public ActionResult&lt;UserDTO&gt; GetUser()</code></pre>
   </div>
 
@@ -732,7 +734,8 @@ public ActionResult&lt;UserDTO&gt; GetUser()</code></pre>
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1">ActionResult</a>&lt;<a class="xref" href="WAMServer.DTO.UserDTO.html">UserDTO</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>An ActionResult containing the current user's information if authorized; otherwise, returns an UnauthorizedResult.</p>
+</dd>
   </dl>
 
 
@@ -749,7 +752,7 @@ public ActionResult&lt;UserDTO&gt; GetUser()</code></pre>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/JoeriDekker/Project-D/blob/development/server/Controllers/UsersController.cs/#L9" class="edit-link">Edit this page</a>
+          <a href="https://github.com/JoeriDekker/Project-D/blob/fix/logincontroller-docs/server/Controllers/UsersController.cs/#L12" class="edit-link">Edit this page</a>
         </div>
 
 

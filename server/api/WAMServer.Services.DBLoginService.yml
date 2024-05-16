@@ -1,0 +1,498 @@
+### YamlMime:ManagedReference
+items:
+- uid: WAMServer.Services.DBLoginService
+  commentId: T:WAMServer.Services.DBLoginService
+  id: DBLoginService
+  parent: WAMServer.Services
+  children:
+  - WAMServer.Services.DBLoginService.#ctor(WAMServer.Models.WamDBContext)
+  - WAMServer.Services.DBLoginService.GetUser(System.String)
+  langs:
+  - csharp
+  - vb
+  name: DBLoginService
+  nameWithType: DBLoginService
+  fullName: WAMServer.Services.DBLoginService
+  type: Class
+  source:
+    remote:
+      path: server/Services/DBLoginService.cs
+      branch: fix/logincontroller-docs
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: DBLoginService
+    path: Services/DBLoginService.cs
+    startLine: 8
+  assemblies:
+  - server
+  namespace: WAMServer.Services
+  summary: Service for handling user authentication through the database.
+  example: []
+  syntax:
+    content: 'public class DBLoginService : ILoginService'
+    content.vb: Public Class DBLoginService Implements ILoginService
+  inheritance:
+  - System.Object
+  implements:
+  - WAMServer.Interfaces.ILoginService
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: WAMServer.Services.DBLoginService.#ctor(WAMServer.Models.WamDBContext)
+  commentId: M:WAMServer.Services.DBLoginService.#ctor(WAMServer.Models.WamDBContext)
+  id: '#ctor(WAMServer.Models.WamDBContext)'
+  parent: WAMServer.Services.DBLoginService
+  langs:
+  - csharp
+  - vb
+  name: DBLoginService(WamDBContext)
+  nameWithType: DBLoginService.DBLoginService(WamDBContext)
+  fullName: WAMServer.Services.DBLoginService.DBLoginService(WAMServer.Models.WamDBContext)
+  type: Constructor
+  source:
+    remote:
+      path: server/Services/DBLoginService.cs
+      branch: fix/logincontroller-docs
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: .ctor
+    path: Services/DBLoginService.cs
+    startLine: 12
+  assemblies:
+  - server
+  namespace: WAMServer.Services
+  syntax:
+    content: public DBLoginService(WamDBContext context)
+    parameters:
+    - id: context
+      type: WAMServer.Models.WamDBContext
+    content.vb: Public Sub New(context As WamDBContext)
+  overload: WAMServer.Services.DBLoginService.#ctor*
+  nameWithType.vb: DBLoginService.New(WamDBContext)
+  fullName.vb: WAMServer.Services.DBLoginService.New(WAMServer.Models.WamDBContext)
+  name.vb: New(WamDBContext)
+- uid: WAMServer.Services.DBLoginService.GetUser(System.String)
+  commentId: M:WAMServer.Services.DBLoginService.GetUser(System.String)
+  id: GetUser(System.String)
+  parent: WAMServer.Services.DBLoginService
+  langs:
+  - csharp
+  - vb
+  name: GetUser(string)
+  nameWithType: DBLoginService.GetUser(string)
+  fullName: WAMServer.Services.DBLoginService.GetUser(string)
+  type: Method
+  source:
+    remote:
+      path: server/Services/DBLoginService.cs
+      branch: fix/logincontroller-docs
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: GetUser
+    path: Services/DBLoginService.cs
+    startLine: 22
+  assemblies:
+  - server
+  namespace: WAMServer.Services
+  summary: Retrieves a user from the database based on their email.
+  example: []
+  syntax:
+    content: public User? GetUser(string email)
+    parameters:
+    - id: email
+      type: System.String
+      description: The email of the user to retrieve.
+    return:
+      type: WAMServer.Models.User
+      description: The user corresponding to the provided email, if found; otherwise, null.
+    content.vb: Public Function GetUser(email As String) As User
+  overload: WAMServer.Services.DBLoginService.GetUser*
+  implements:
+  - WAMServer.Interfaces.ILoginService.GetUser(System.String)
+  nameWithType.vb: DBLoginService.GetUser(String)
+  fullName.vb: WAMServer.Services.DBLoginService.GetUser(String)
+  name.vb: GetUser(String)
+references:
+- uid: WAMServer.Services
+  commentId: N:WAMServer.Services
+  href: WAMServer.html
+  name: WAMServer.Services
+  nameWithType: WAMServer.Services
+  fullName: WAMServer.Services
+  spec.csharp:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Services
+    name: Services
+    href: WAMServer.Services.html
+  spec.vb:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Services
+    name: Services
+    href: WAMServer.Services.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: WAMServer.Interfaces.ILoginService
+  commentId: T:WAMServer.Interfaces.ILoginService
+  parent: WAMServer.Interfaces
+  href: WAMServer.Interfaces.ILoginService.html
+  name: ILoginService
+  nameWithType: ILoginService
+  fullName: WAMServer.Interfaces.ILoginService
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: WAMServer.Interfaces
+  commentId: N:WAMServer.Interfaces
+  href: WAMServer.html
+  name: WAMServer.Interfaces
+  nameWithType: WAMServer.Interfaces
+  fullName: WAMServer.Interfaces
+  spec.csharp:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Interfaces
+    name: Interfaces
+    href: WAMServer.Interfaces.html
+  spec.vb:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Interfaces
+    name: Interfaces
+    href: WAMServer.Interfaces.html
+- uid: WAMServer.Services.DBLoginService.#ctor*
+  commentId: Overload:WAMServer.Services.DBLoginService.#ctor
+  href: WAMServer.Services.DBLoginService.html#WAMServer_Services_DBLoginService__ctor_WAMServer_Models_WamDBContext_
+  name: DBLoginService
+  nameWithType: DBLoginService.DBLoginService
+  fullName: WAMServer.Services.DBLoginService.DBLoginService
+  nameWithType.vb: DBLoginService.New
+  fullName.vb: WAMServer.Services.DBLoginService.New
+  name.vb: New
+- uid: WAMServer.Models.WamDBContext
+  commentId: T:WAMServer.Models.WamDBContext
+  parent: WAMServer.Models
+  href: WAMServer.Models.WamDBContext.html
+  name: WamDBContext
+  nameWithType: WamDBContext
+  fullName: WAMServer.Models.WamDBContext
+- uid: WAMServer.Models
+  commentId: N:WAMServer.Models
+  href: WAMServer.html
+  name: WAMServer.Models
+  nameWithType: WAMServer.Models
+  fullName: WAMServer.Models
+  spec.csharp:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Models
+    name: Models
+    href: WAMServer.Models.html
+  spec.vb:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Models
+    name: Models
+    href: WAMServer.Models.html
+- uid: WAMServer.Services.DBLoginService.GetUser*
+  commentId: Overload:WAMServer.Services.DBLoginService.GetUser
+  href: WAMServer.Services.DBLoginService.html#WAMServer_Services_DBLoginService_GetUser_System_String_
+  name: GetUser
+  nameWithType: DBLoginService.GetUser
+  fullName: WAMServer.Services.DBLoginService.GetUser
+- uid: WAMServer.Interfaces.ILoginService.GetUser(System.String)
+  commentId: M:WAMServer.Interfaces.ILoginService.GetUser(System.String)
+  parent: WAMServer.Interfaces.ILoginService
+  isExternal: true
+  href: WAMServer.Interfaces.ILoginService.html#WAMServer_Interfaces_ILoginService_GetUser_System_String_
+  name: GetUser(string)
+  nameWithType: ILoginService.GetUser(string)
+  fullName: WAMServer.Interfaces.ILoginService.GetUser(string)
+  nameWithType.vb: ILoginService.GetUser(String)
+  fullName.vb: WAMServer.Interfaces.ILoginService.GetUser(String)
+  name.vb: GetUser(String)
+  spec.csharp:
+  - uid: WAMServer.Interfaces.ILoginService.GetUser(System.String)
+    name: GetUser
+    href: WAMServer.Interfaces.ILoginService.html#WAMServer_Interfaces_ILoginService_GetUser_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: WAMServer.Interfaces.ILoginService.GetUser(System.String)
+    name: GetUser
+    href: WAMServer.Interfaces.ILoginService.html#WAMServer_Interfaces_ILoginService_GetUser_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: WAMServer.Models.User
+  commentId: T:WAMServer.Models.User
+  parent: WAMServer.Models
+  href: WAMServer.Models.User.html
+  name: User
+  nameWithType: User
+  fullName: WAMServer.Models.User
