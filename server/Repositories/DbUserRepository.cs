@@ -39,8 +39,8 @@ namespace WAMServer.Repositories
         {
             throw new NotImplementedException();
         }
-
-        public Task<User> UpdateAsync(User entity)
+        
+        public Task<User> UpdateAsync(User entity, Func<User, bool> predicate)
         {
             throw new NotImplementedException();
         }

@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../components/navbar/navbar";
 import Input from "../../components/Input/Input";
 import { t } from "i18next";
 import { AnyButton2 } from "../../components/Button/AnyButton";
+import { UserResponse } from "./AccountPage.state";
+import axios from "axios";
+import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 
 function AnyPage() {
-    const connected = false;
+    const [connected, setConnected] = React.useState(false);
+    const [user, setUser] = React.useState<UserResponse | null>(null);
+    const authHeader = useAuthHeader();
+
+    useEffect(() => {
+        async function fetchUser() {
+            const res = await axios.get(process.env.REACT_APP_API_URL + "/api/users", {
+                headers: {
+                    Authorization: authHeader
+                }
+            });
+            setUser(res.data);
+        }
+        fetchUser();
+    }, [authHeader]);
 
     return (
         <div className="bg-backgroundCol w-screen h-screen py-5 flex dir-row">
@@ -13,17 +30,18 @@ function AnyPage() {
             <div className="space-y-10 bg-white w-full h-full rounded-xl mr-5 p-5">
 
                 {/* Account setting section  */}
-                <div>
+                
+                <form>
                     <h1 className="text-xl font-medium">{t("Login.adjust")}</h1>
                     <h2 className="text-l font-medium opacity-40">{t("Login.current")}</h2>
                     <div className="flex dir-row w-full gap-5 px-5 pt-5" >
-                        <Input label={t("Login.street")} placeholder="Gortaanse straat" />
+                        <Input label={t("Login.street")} placeholder={user?.address.street || ""} />
 
-                        <Input label={t("Login.housenum")} placeholder="8" width="1/2" />
+                        <Input label={t("Login.housenum")} placeholder={user?.address.houseNumber || ""} width="1/2" />
                     </div>
                     <div className="flex dir-row w-full gap-5 px-5 pt-5" >
-                        <Input label={t("Login.zipcode")} placeholder="3857 KG" width="1/2" />
-                        <Input label={t("Login.place")} placeholder="Gouda" />
+                        <Input label={t("Login.zipcode")} placeholder={user?.address.zip || ""} width="1/2" />
+                        <Input label={t("Login.place")} placeholder={user?.address.city || ""} />
                     </div>
                     {/* TODO: Link this do an actual forget page */}
                     <Input label={t("Login.password")} placeholder="***************" width="1/2 px-5 pt-5" />
@@ -33,7 +51,7 @@ function AnyPage() {
                         <AnyButton2 link="/account" text={t('Login.adjustbutton')} />
                     </div>
 
-                </div>
+                </form>
 
                 {/* Pc connection section */}
                 <div>
