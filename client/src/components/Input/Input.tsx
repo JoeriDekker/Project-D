@@ -7,9 +7,11 @@ type Props = {
     width?: string;
     needed?: boolean;
     neededText?: string;
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    name?: string;
     type?: React.HTMLInputTypeAttribute | undefined;
+    onChange?: React.ChangeEventHandler<HTMLInputElement>;
+    value?: string | number | readonly string[] | undefined;
+    name?: string;
+    error?: string;
 }
 
 function Input(props: Props) {
@@ -24,7 +26,7 @@ function Input(props: Props) {
     return (
         <div className={newWidth} >
             <div className="flex dir-row gap-1">
-                <label htmlFor="default-input" className="block mb-2 text-sm font-medium text-gray-900 opacity-40">{props.label}</label>
+                <label htmlFor="default-input" className="block mb-2 text-sm font-medium text-gray-900 opacity-80">{props.label}</label>
                 {!props.needed ? (<></>) : (
                     <div className="flex dir-row " onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
                         <p className="text-red-500 text-xl">*</p>
@@ -33,7 +35,8 @@ function Input(props: Props) {
                     </div>
                 )}
             </div>
-            <input name={props.name} type={props.type ? props.type : "text"} id="default-input" onChange={props.onChange} className="bg-gray-50 border-2 p-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-[#A6E1FA] text-grey-900 text-sm rounded-lg block w-full p-2.5" placeholder={props.placeholder} />
+            <input name={props.name} type={props.type ? props.type : "text"} value={props.value} onChange={props.onChange} id="default-input" className="bg-gray-50 border-2 p-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-[#A6E1FA] text-grey-900 text-sm rounded-lg block w-full p-2.5" placeholder={props.placeholder} />
+            <p className="text-red-500">{props.error}</p>
         </div >
     )
 }

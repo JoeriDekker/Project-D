@@ -16,7 +16,7 @@ module.exports = {
         'backgroundCol': secondaryColor,
       },
       width: {
-        '20r': '25em'
+        '20r': '20em'
       },
     },
   },

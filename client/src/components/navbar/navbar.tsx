@@ -13,7 +13,7 @@ function Navbar() {
     }
 
     return (
-        <aside className="flex flex-col w-20r min-w-80 h-full pb-8 overflow-y-hidden">
+        <aside className="flex fixed flex-col w-20r min-w-80 h-full pb-8 overflow-y-hidden">
             <a href="/home" className="px-14"> {/* TODO: Add link to homepage */}
                 <Icons iconName="Logo" />
             </a>
