@@ -64,7 +64,7 @@ namespace server.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(100)");
 
-                    b.Property<string>("description")
+                    b.Property<string>("date")
                         .IsRequired()
                         .HasColumnType("varchar(100)");
 

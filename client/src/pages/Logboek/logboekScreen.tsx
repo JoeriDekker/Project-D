@@ -1,4 +1,5 @@
 import React from "react";
+import axios, { AxiosError } from "axios";
 
 import Navbar from '../../components/navbar/navbar'
 import Logboek from '../../components/logboek/logboek'

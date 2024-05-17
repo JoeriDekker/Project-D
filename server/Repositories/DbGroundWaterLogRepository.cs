@@ -1,5 +1,6 @@
 using WAMServer.Interfaces;
 using WAMServer.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace WAMServer.Repositories{
 
@@ -30,9 +31,9 @@ namespace WAMServer.Repositories{
             return _context.GroundWaterLog.Where(a => a.Id == id).FirstOrDefault();
         }
 
-        public Task<IEnumerable<GroundWaterLog>> GetAllAsync()
+        public async Task<IEnumerable<GroundWaterLog>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _context.GroundWaterLog.ToListAsync();
         }
 
         public Task<GroundWaterLog> UpdateAsync(GroundWaterLog entity)

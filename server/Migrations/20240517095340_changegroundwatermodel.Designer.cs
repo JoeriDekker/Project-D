@@ -12,8 +12,8 @@ using WAMServer.Models;
 namespace server.Migrations
 {
     [DbContext(typeof(WamDBContext))]
-    [Migration("20240516172239_modelstodb")]
-    partial class modelstodb
+    [Migration("20240517095340_changegroundwatermodel")]
+    partial class changegroundwatermodel
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -67,7 +67,7 @@ namespace server.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(100)");
 
-                    b.Property<string>("description")
+                    b.Property<string>("date")
                         .IsRequired()
                         .HasColumnType("varchar(100)");
 

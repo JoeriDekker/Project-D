@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace server.Migrations
 {
     /// <inheritdoc />
-    public partial class modelstodb : Migration
+    public partial class changegroundwatermodel : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,7 +17,7 @@ namespace server.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     controlPCID = table.Column<string>(type: "varchar(100)", nullable: false),
-                    description = table.Column<string>(type: "varchar(100)", nullable: false),
+                    date = table.Column<string>(type: "varchar(100)", nullable: false),
                     level = table.Column<decimal>(type: "decimal", nullable: false)
                 },
                 constraints: table =>
