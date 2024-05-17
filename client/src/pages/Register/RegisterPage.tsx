@@ -22,7 +22,8 @@ function RegisterPage() {
       .email(t("Register.emailvalid")),
     password: Yup.string()
       .required(t("Register.passwordreq"))
-      .min(8, t("Register.passwordmin")).max(250, t("Register.passwordmax")),
+      .min(8, t("Register.passwordmin")).max(250, t("Register.passwordmax"))
+      .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d]).{8,64}$/, t("Register.passwordcomplex")),
     cpassword: Yup.string()
       .required(t("Register.cpasswordreq"))
       .oneOf([Yup.ref("password")], t("Register.cpasswordmatch")),
@@ -44,18 +45,18 @@ function RegisterPage() {
 
   async function sendForm() {
     try {
-      const res = await axios.post(process.env.REACT_APP_API_URL + "/register", formik.values);
+      const res = await axios.post(process.env.REACT_APP_API_URL + "/api/register", formik.values);
       if (res.status === 200) {
-        console.log("Success")
         // Todo: Redirect to success page
       }
     } catch (e) {
-      const error = e as AxiosError;
+      const error = e as AxiosError<{ error?: string }>; // Update the type of the error variable
       if (error.response?.status === 500) {
         setError(t("Register.servererror"));
       } else {
-        console.log(error.response?.data)
-        setError(t("Register.error"));
+        if (error.response?.data?.error) {
+          setError(error.response.data.error);
+        }
       }
     }
   }

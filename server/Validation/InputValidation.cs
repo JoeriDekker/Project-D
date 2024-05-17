@@ -15,5 +15,17 @@ namespace WAMServer.Validation
             }
             return false;
         }
+
+        public static bool IsValidPassword(string password)
+        {
+            if(password.Length >= 8 && password.Length <= 64)
+            {
+                if (Regex.IsMatch(password, """^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d]).{8,64}$"""))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

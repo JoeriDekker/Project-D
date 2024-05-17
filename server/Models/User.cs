@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using BCrypt.Net;
 
 namespace WAMServer.Models
 {
@@ -28,7 +29,7 @@ namespace WAMServer.Models
         /// <param name="firstName">The firstname of the user</param>
         /// <param name="lastName">The lastname of the user</param>
         /// <param name="email">The emailaddress of the user</param>
-        /// <param name="password">The password of the user</param>
+        /// <param name="password">The hashed password of the user</param>
         public User(string firstName, string lastName, string email, string password)
         {
             Id = Guid.NewGuid();

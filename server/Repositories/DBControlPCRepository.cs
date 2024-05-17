@@ -60,6 +60,11 @@ namespace WAMServer.Repositories
             return _context.ControlPCs.FirstOrDefault(c => c.Id == id);
         }
 
+        public IEnumerable<ControlPC?> GetAll(Func<ControlPC, bool> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Gets all ControlPCs from the database in an asynchronous manner.
         /// </summary>

@@ -48,7 +48,12 @@ namespace WAMServer.Repositories
         {
             throw new NotImplementedException();
         }
-        
+
+        public IEnumerable<User?> GetAll(Func<User, bool> predicate)
+        {
+            return _context.Users.Where(predicate).ToList();
+        }
+
         public Task<User> UpdateAsync(User entity, Func<User, bool> predicate)
         {
             throw new NotImplementedException();

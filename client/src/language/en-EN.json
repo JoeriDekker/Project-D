@@ -70,6 +70,7 @@
         "firstnamemax": "The first name may not be greater than 50 characters",
         "lastnamemax": "The last name may not be greater than 50 characters",
         "passwordmax": "The password may not be greater than 250 characters",
+        "passwordcomplex": "The password must contain at least one uppercase letter, one lowercase letter, one number and one special character",
         "emailmax": "The email may not be greater than 50 characters",
         "servererror": "Something went wrong while processing your request. Please try again later.",
         "error": "Something went wrong, please try again later."
