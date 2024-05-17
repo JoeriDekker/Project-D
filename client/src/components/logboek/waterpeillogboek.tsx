@@ -10,10 +10,10 @@ function WaterpeilLogboek(){
     
 
     const WaterpeilLogboekEntry = ({ controlPCID, date, id, level }: any) => {
-        // let peilcolor: string = 'text-green-600';
-        // if (peil.includes('-')) {
-        //     peilcolor = 'text-red-600';
-        // }
+        let peilcolor: string = 'text-green-600';
+        if (level.toString().includes('-')) {
+            peilcolor = 'text-red-600';
+        }
 
         // return (
         //     <div className="grid grid-cols-3 gap-2 mt-2 shadow-md text-center">
@@ -27,7 +27,7 @@ function WaterpeilLogboek(){
             <div className="grid grid-cols-3 gap-2 mt-2 shadow-md text-center">
                 <div className="py-1 px-2 mr-20 rounded-md bg-slate-100">Date: <text>{date}</text></div>
                 <div className="mr-6">street: <text>{id}</text></div>
-                <div className="mr-6">Peil: <text>{level}</text></div>
+                <div className="mr-6">Peil: <text className={`${peilcolor}`}>{level}</text></div>
             </div>
         );
     };
@@ -95,11 +95,12 @@ function WaterpeilLogboek(){
                                 </div>
                                 
                             </div>
-                            <div className="max-h-[300px] overflow-y-auto mt-1">
+                            <div className="max-h-[300px] overflow-y-auto mt-1 shadow-md">
                                 {/* {data.map((entry, index) => <WaterpeilLogboekEntry key={index} {...entry} />)} */}
                                 {waterlogs.map((log, index) => (
                                     <WaterpeilLogboekEntry key={index} {...log} />
                                 ))}
+                                
                             </div>
                         </div>
     );
