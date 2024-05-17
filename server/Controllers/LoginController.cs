@@ -52,7 +52,7 @@ namespace WAMServer.Controllers
             ActionResult response = Unauthorized(errormsg);
             if (!InputValidation.IsValidEmail(body.Email))
             {
-                return Unauthorized(new ErrorBody(errormsg));
+                return response;
             }
             // Authenticate the user. If the user is authenticated, generate a token. Otherwise (user is null), return Unauthorized.
             var user = AuthenticateUserReturnNullIfUnable(body.Email, body.Password);

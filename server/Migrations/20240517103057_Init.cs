@@ -12,6 +12,21 @@ namespace server.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "ControlPCs",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    userId = table.Column<Guid>(type: "uuid", nullable: false),
+                    secret = table.Column<string>(type: "varchar(255)", nullable: false),
+                    meetputBroID = table.Column<string>(type: "varchar(255)", nullable: false),
+                    ControlPCSecret = table.Column<string>(type: "varchar(255)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ControlPCs", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Addresses",
                 columns: table => new
                 {
@@ -36,6 +51,7 @@ namespace server.Migrations
                     LastName = table.Column<string>(type: "varchar(100)", nullable: false),
                     Email = table.Column<string>(type: "varchar(100)", nullable: false),
                     Password = table.Column<string>(type: "varchar(100)", nullable: false),
+                    IsConfirmed = table.Column<bool>(type: "boolean", nullable: false),
                     AddressId = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>
@@ -72,6 +88,9 @@ namespace server.Migrations
             migrationBuilder.DropForeignKey(
                 name: "FK_Addresses_Users_UserId",
                 table: "Addresses");
+
+            migrationBuilder.DropTable(
+                name: "ControlPCs");
 
             migrationBuilder.DropTable(
                 name: "Users");

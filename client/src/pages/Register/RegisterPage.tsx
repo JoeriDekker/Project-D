@@ -49,14 +49,17 @@ function RegisterPage() {
       const res = await axios.post(process.env.REACT_APP_API_URL + "/api/register", formik.values);
       if (res.status === 200) {
         setSuccess(t("Register.success"));
+        setError(null);
       }
     } catch (e) {
       const error = e as AxiosError<{ error?: string }>; // Update the type of the error variable
       if (error.response?.status === 500) {
         setError(t("Register.servererror"));
+        setSuccess(null);
       } else {
         if (error.response?.data?.error) {
           setError(error.response.data.error);
+          setSuccess(null);
         }
       }
     }
