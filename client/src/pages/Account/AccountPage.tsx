@@ -85,13 +85,13 @@ function AnyPage() {
 
     async function handleControlPCChange(values: { uuid: string; key: string }) {
         try {
-            const res = await axios.put(process.env.REACT_APP_API_URL + "/api/miniPC", values, {
+            const res = await axios.put(process.env.REACT_APP_API_URL + "/api/controlPC", values, {
                 headers: {
                     Authorization: authHeader,
                 },
             });
             if (res.status === 200) {
-                alert("MiniPC updated successfully");
+                alert("controlPC updated successfully");
             }
         } catch (e) {
             const error = e as AxiosError;
@@ -161,7 +161,7 @@ function AnyPage() {
                         <Input
                             label={t("Login.place")}
                             placeholder={user?.address.city || ""}
-                            width="1/2"
+                            width="full"
                             onChange={addressFormik.handleChange}
                             value={addressFormik.values.city}
                             name="city"
@@ -172,7 +172,7 @@ function AnyPage() {
                     <Input
                         label={t("Login.password")}
                         placeholder="***************"
-                        width="1/2 px-5 pt-5"
+                        width="fit px-5 pt-5"
                         onChange={addressFormik.handleChange}
                         value={addressFormik.values.password}
                         name="password"

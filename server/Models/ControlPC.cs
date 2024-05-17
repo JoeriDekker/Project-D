@@ -11,7 +11,7 @@ namespace WAMServer.Models
         [Key]
         public Guid Id { get; set; }
 
-        [Required, Column(TypeName = "varchar(100)")]
+        // [Required, Column(TypeName = "varchar(100)")]
         public Guid userId { get; set; }
         [Required, Column(TypeName = "varchar(255)")]
         public string secret { get; set; }
@@ -20,7 +20,6 @@ namespace WAMServer.Models
         public string meetputBroID { get; set; }
         [Required, Column(TypeName = "varchar(255)")]
         public string ControlPCSecret { get; set; }
-
 
         /// <summary>
         /// Constructor for creating a ControlPC object.
