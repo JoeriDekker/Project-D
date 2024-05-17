@@ -30,7 +30,10 @@ namespace WAMServer.Data
                         Zip = "2806BE"
                     };
 
-                    var user = new User("Jan", "Waterpeil", "admin@email.com", BCrypt.Net.BCrypt.EnhancedHashPassword("geheim"));
+                    var user = new User("Jan", "Waterpeil", "admin@email.com", BCrypt.Net.BCrypt.EnhancedHashPassword("geheim"))
+                    {
+                        IsConfirmed = true
+                    };
                     var controlPC = new ControlPC(user.Id, "geheimPC", "123", "Uhhhhwaarvoorstaatdit?");
                     address.UserId = user.Id;
                     context.Users.Add(user);

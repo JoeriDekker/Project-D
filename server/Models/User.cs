@@ -19,6 +19,8 @@ namespace WAMServer.Models
         public string Email { get; set; } = null!;
         [Required, Column(TypeName = "varchar(100)")]
         public string Password { get; set; } = null!;
+        [Required]
+        public bool IsConfirmed { get; set; } = false;
         public Guid? AddressId { get; set; }
         [ForeignKey("AddressId")]
         public Address? Address { get; set; }

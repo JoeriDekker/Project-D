@@ -8,6 +8,7 @@ import axios, { AxiosError } from "axios";
 
 function RegisterPage() {
   const [error, setError] = React.useState<string | null>(null);
+  const [success, setSuccess] = React.useState<string | null>(null);
   const validationScheme = Yup.object({
     firstname: Yup.string()
       .required(t("Register.firstnamereq"))
@@ -47,7 +48,7 @@ function RegisterPage() {
     try {
       const res = await axios.post(process.env.REACT_APP_API_URL + "/api/register", formik.values);
       if (res.status === 200) {
-        // Todo: Redirect to success page
+        setSuccess(t("Register.success"));
       }
     } catch (e) {
       const error = e as AxiosError<{ error?: string }>; // Update the type of the error variable
@@ -65,6 +66,7 @@ function RegisterPage() {
     <div className="w-screen h-screen flex flex-col flex-wrap justify-center items-center">
       <h1 className="text-2xl inline-block">{t("Register.register")}</h1>
       {error && <p className="text-red-500">{error}</p>}
+      {success && <p className="text-green-500">{success}</p>}
       <form onSubmit={formik.handleSubmit} className="lg:w-2/5 sm:w-4/5 mt-5">
         <div className="space-y-5">
           <div>

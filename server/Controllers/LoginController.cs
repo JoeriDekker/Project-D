@@ -57,7 +57,7 @@ namespace WAMServer.Controllers
             // Authenticate the user. If the user is authenticated, generate a token. Otherwise (user is null), return Unauthorized.
             var user = AuthenticateUserReturnNullIfUnable(body.Email, body.Password);
 
-            if (user != null)
+            if (user != null && user.IsConfirmed)
             {
                 var tokenString = GenerateJSONWebToken(user);
                 response = Ok(new { token = tokenString });

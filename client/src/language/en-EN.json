@@ -73,6 +73,7 @@
         "passwordcomplex": "The password must contain at least one uppercase letter, one lowercase letter, one number and one special character",
         "emailmax": "The email may not be greater than 50 characters",
         "servererror": "Something went wrong while processing your request. Please try again later.",
-        "error": "Something went wrong, please try again later."
+        "error": "Something went wrong, please try again later.",
+        "success": "You have successfully registered. A confirmation email has been sent to your email address. After confirming your email address, you can log in."
     }
 }
