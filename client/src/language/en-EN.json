@@ -42,7 +42,7 @@
     },
     "Register": {
         "city": "City name",
-        "confirmpassword": "Confirm password",
+        "cpassword": "Confirm password",
         "email": "Email",
         "emailexplain": "",
         "exampleemail": "John.waters@gmail.com",
@@ -56,6 +56,22 @@
         "register": "Register",
         "registerbutton": "Register",
         "street": "Street name",
-        "zipcode": "Postal code"
+        "zipcode": "Postal code",
+        "firstnamereq": "The first name is required",
+        "lastnamereq": "The last name is required",
+        "emailreq": "The email is required",
+        "passwordreq": "The password is required",
+        "cpasswordreq": "The confirm password is required",
+        "firstnamemin": "The first name must be at least 2 characters",
+        "lastnamemin": "The last name must be at least 2 characters",
+        "passwordmin": "The password must be at least 8 characters",
+        "cpasswordmatch": "The passwords must match",
+        "emailvalid": "The email must be a valid email address",
+        "firstnamemax": "The first name may not be greater than 50 characters",
+        "lastnamemax": "The last name may not be greater than 50 characters",
+        "passwordmax": "The password may not be greater than 250 characters",
+        "emailmax": "The email may not be greater than 50 characters",
+        "servererror": "Something went wrong while processing your request. Please try again later.",
+        "error": "Something went wrong, please try again later."
     }
 }
