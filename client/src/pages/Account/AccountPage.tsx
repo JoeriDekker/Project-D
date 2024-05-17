@@ -14,7 +14,7 @@ function AnyPage() {
     const [user, setUser] = React.useState<UserResponse | null>(null);
     const authHeader = useAuthHeader();
 
-    // Formik
+    // -------- Address Formik --------
     const addressValidationScheme = Yup.object().shape({
         street: Yup.string()
             .required("Address.streetreq")
@@ -47,21 +47,6 @@ function AnyPage() {
         validationSchema: addressValidationScheme,
     });
 
-    useEffect(() => {
-        async function fetchUser() {
-            const res = await axios.get(
-                process.env.REACT_APP_API_URL + "/api/users",
-                {
-                    headers: {
-                        Authorization: authHeader,
-                    },
-                }
-            );
-            setUser(res.data);
-        }
-        fetchUser();
-    }, [authHeader]);
-
     async function handleAddressChange(values: {
         street: string;
         houseNumber: string;
@@ -84,12 +69,60 @@ function AnyPage() {
         }
     }
 
+    // -------- MiniPC Formik --------
+
+    const controlPCFormik = useFormik({
+        initialValues: {
+            uuid: "",
+            key: "",
+        },
+        onSubmit: async (values) => handleControlPCChange(values),
+        validationSchema: Yup.object().shape({
+            uuid: Yup.string().required("UUID is required"),
+            key: Yup.string().required("Key is required"),
+        }),
+    });
+
+    async function handleControlPCChange(values: { uuid: string; key: string }) {
+        try {
+            const res = await axios.put(process.env.REACT_APP_API_URL + "/api/miniPC", values, {
+                headers: {
+                    Authorization: authHeader,
+                },
+            });
+            if (res.status === 200) {
+                alert("MiniPC updated successfully");
+            }
+        } catch (e) {
+            const error = e as AxiosError;
+            console.error(error);
+        }
+    }
+
+
+    useEffect(() => {
+        async function fetchUser() {
+            const res = await axios.get(
+                process.env.REACT_APP_API_URL + "/api/users",
+                {
+                    headers: {
+                        Authorization: authHeader,
+                    },
+                }
+            );
+            setUser(res.data);
+        }
+        fetchUser();
+    }, [authHeader]);
+
+
+
     return (
         <div className="w-screen h-screen py-5 flex dir-row max-w-screen bg-backgroundCol overflow-x-hidden">
             <Navbar />
             <div className="ml-80 space-y-10 bg-white w-full h-fit min-h-full rounded-xl mr-5 p-5 flex flex-col">
-                {/* Account setting section  */}
 
+                {/* Account setting section  */}
                 <form onSubmit={addressFormik.handleSubmit}>
                     <h1 className="text-xl font-medium">{t("Login.adjust")}</h1>
                     <h2 className="text-l font-medium opacity-40">
@@ -155,7 +188,7 @@ function AnyPage() {
                 </form>
 
                 {/* Pc connection section */}
-                <div>
+                <form onSubmit={controlPCFormik.handleSubmit}>
                     <h1 className="text-xl font-medium">{t("PC.connection")}</h1>
                     <h2 className="text-l font-medium opacity-40">{t("PC.foundin")}</h2>
                     <div className="space-y-5 px-5 pt-5">
@@ -168,6 +201,10 @@ function AnyPage() {
                                 neededText={t("PC.foundon")}
                                 placeholder="b678ef40-524f-4890-a40b-efae6e85113e"
                                 width="auto max-w-xs"
+                                onChange={controlPCFormik.handleChange}
+                                value={controlPCFormik.values.uuid}
+                                name="password"
+                                error={controlPCFormik.errors.uuid}
                             />
                         </div>
                         <div>
@@ -178,8 +215,12 @@ function AnyPage() {
                                     label="Key"
                                     needed
                                     neededText={t("PC.keyon")}
-                                    placeholder="**********"
+                                    placeholder="***************"
                                     width="auto max-w-xs"
+                                    onChange={controlPCFormik.handleChange}
+                                    value={controlPCFormik.values.key}
+                                    name="password"
+                                    error={controlPCFormik.errors.key}
                                 />
                             </div>
                         </div>
@@ -194,9 +235,9 @@ function AnyPage() {
                             </div>
                             <p className="opacity-40">{t("PC.statusexplain")}</p>
                         </div>
-                        <AnyButton2 link="/account" text={t("PC.reconnect")} />
+                        <LinkLessButton text={t("PC.reconnect")} />
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     );
