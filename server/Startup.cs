@@ -66,6 +66,7 @@ namespace WAMServer
             services.AddTransient<IRepository<User>, DbUserRepository>();
             services.AddTransient<ILoginService, DBLoginService>();
             services.AddTransient<IRepository<Address>, DbAddressRepository>();
+            services.AddTransient<IEmailService, DefaultEmailService>();
         }
 
         /// <summary>
@@ -77,9 +78,9 @@ namespace WAMServer
             {
                 options.AddDefaultPolicy(builder =>
                 {
-                    builder.AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader();
+                    builder.WithOrigins("http://localhost:3000")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
                 });
             });
         }

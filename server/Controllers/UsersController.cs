@@ -16,11 +16,13 @@ namespace WAMServer.Controllers
     {
         private readonly IRepository<User> _userRepository;
         private readonly IRepository<Address> _addressRepository;
+        private readonly IEmailService _emailService;
 
-        public UsersController(IRepository<User> userRepository, IRepository<Address> addressRepo)
+        public UsersController(IRepository<User> userRepository, IRepository<Address> addressRepo, IEmailService emailService)
         {
             _userRepository = userRepository;
             _addressRepository = addressRepo;
+            _emailService = emailService;
         }
 
         /// <summary>
@@ -65,6 +67,14 @@ namespace WAMServer.Controllers
 
             // Return the user DTO as OK response
             return Ok(new UserDTO(user));
+        }
+
+        [HttpGet("test")]
+        [AllowAnonymous]
+        public ActionResult Test()
+        {
+            _emailService.SendEmail("mulderrens@outlook.com", "Test", "test email");
+            return Ok("Test");
         }
     }
 }
