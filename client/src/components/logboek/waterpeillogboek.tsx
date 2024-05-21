@@ -7,7 +7,7 @@ import { use } from "i18next";
 
 function WaterpeilLogboek(){
 
-    
+    const currentYear = new Date().getFullYear();
 
     const WaterpeilLogboekEntry = ({date, address, level }: WaterpeilLogboekState) => {
         let peilcolor: string = 'text-green-600';
@@ -109,8 +109,8 @@ function WaterpeilLogboek(){
                                     </select>
                                 </div>
                                 <div className="text-center font-bold text-gray-600">
-                                    {/* current year */}
-                                    2024
+                                    {/* get current year */}
+                                    {currentYear}
                                 </div>
                                 
                             </div>
