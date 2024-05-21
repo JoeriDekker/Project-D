@@ -1,6 +1,7 @@
 import React from "react";
 
 import Navbar from '../components/navbar/navbar'
+import WaterlevelDial from '../components/waterleveldial/waterleveldial'
 
 function HomeDashboard() {
     return (
@@ -42,7 +43,9 @@ function HomeDashboard() {
                     </div>
                     <div className="bg-gray-100 m-2 p-4 rounded-xl">Item 2</div>
                     <div className="bg-gray-100 m-2 p-4 rounded-xl">Item 3</div>
-                    <div className="bg-gray-100 m-2 p-4 rounded-xl">Item 4</div>
+                    <div className="bg-gray-100 m-2 p-4 rounded-xl">
+                        <WaterlevelDial />
+                    </div>
                 </div>
             </div>
         </div>
