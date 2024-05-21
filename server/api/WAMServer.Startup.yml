@@ -16,11 +16,11 @@ items:
   source:
     remote:
       path: server/Startup.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Startup
     path: Startup.cs
-    startLine: 14
+    startLine: 16
   assemblies:
   - server
   namespace: WAMServer
@@ -53,11 +53,11 @@ items:
   source:
     remote:
       path: server/Startup.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Start
     path: Startup.cs
-    startLine: 19
+    startLine: 21
   assemblies:
   - server
   namespace: WAMServer

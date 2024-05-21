@@ -21,14 +21,16 @@ items:
   source:
     remote:
       path: server/Repositories/DbAddressRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: DbAddressRepository
     path: Repositories/DbAddressRepository.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - server
   namespace: WAMServer.Repositories
+  summary: This class is responsible for handling the database operations for the Address entity.
+  example: []
   syntax:
     content: 'public class DbAddressRepository : IRepository<Address>'
     content.vb: Public Class DbAddressRepository Implements IRepository(Of Address)
@@ -58,11 +60,11 @@ items:
   source:
     remote:
       path: server/Repositories/DbAddressRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: .ctor
     path: Repositories/DbAddressRepository.cs
-    startLine: 11
+    startLine: 14
   assemblies:
   - server
   namespace: WAMServer.Repositories
@@ -90,22 +92,25 @@ items:
   source:
     remote:
       path: server/Repositories/DbAddressRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: AddAsync
     path: Repositories/DbAddressRepository.cs
-    startLine: 16
+    startLine: 24
   assemblies:
   - server
   namespace: WAMServer.Repositories
+  summary: Adds an address to the database in an asynchronous manner.
   example: []
   syntax:
     content: public Task<Address> AddAsync(Address entity)
     parameters:
     - id: entity
       type: WAMServer.Models.Address
+      description: The entity to be added. In this case the address.
     return:
       type: System.Threading.Tasks.Task{WAMServer.Models.Address}
+      description: The created address.
     content.vb: Public Function AddAsync(entity As Address) As Task(Of Address)
   overload: WAMServer.Repositories.DbAddressRepository.AddAsync*
   implements:
@@ -124,11 +129,11 @@ items:
   source:
     remote:
       path: server/Repositories/DbAddressRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: DeleteAsync
     path: Repositories/DbAddressRepository.cs
-    startLine: 23
+    startLine: 31
   assemblies:
   - server
   namespace: WAMServer.Repositories
@@ -158,22 +163,25 @@ items:
   source:
     remote:
       path: server/Repositories/DbAddressRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Get
     path: Repositories/DbAddressRepository.cs
-    startLine: 28
+    startLine: 41
   assemblies:
   - server
   namespace: WAMServer.Repositories
+  summary: Gets an address from the database by its id.
   example: []
   syntax:
     content: public Address? Get(Guid id)
     parameters:
     - id: id
       type: System.Guid
+      description: The id that's used for fetching the address
     return:
       type: WAMServer.Models.Address
+      description: The address object if it exists in the database, returns null if it doesnt exist.
     content.vb: Public Function [Get](id As Guid) As Address
   overload: WAMServer.Repositories.DbAddressRepository.Get*
   implements:
@@ -192,11 +200,11 @@ items:
   source:
     remote:
       path: server/Repositories/DbAddressRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: GetAllAsync
     path: Repositories/DbAddressRepository.cs
-    startLine: 33
+    startLine: 46
   assemblies:
   - server
   namespace: WAMServer.Repositories
@@ -223,11 +231,11 @@ items:
   source:
     remote:
       path: server/Repositories/DbAddressRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: UpdateAsync
     path: Repositories/DbAddressRepository.cs
-    startLine: 38
+    startLine: 51
   assemblies:
   - server
   namespace: WAMServer.Repositories

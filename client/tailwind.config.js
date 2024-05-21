@@ -9,11 +9,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'base-color': '#161D27',
-        'secondary-color': secondaryColor,
+        'baseCol': '#161D27',
+        'secondaryCol': secondaryColor,
         'reds': '#D16666',
         'greens': '#ADD167',
-        'background-color': secondaryColor,
+        'backgroundCol': secondaryColor,
       },
       width: {
         '20r': '25em'

@@ -21,11 +21,11 @@ items:
   source:
     remote:
       path: server/Repositories/DbUserRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: DbUserRepository
     path: Repositories/DbUserRepository.cs
-    startLine: 11
+    startLine: 10
   assemblies:
   - server
   namespace: WAMServer.Repositories
@@ -60,11 +60,11 @@ items:
   source:
     remote:
       path: server/Repositories/DbUserRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: .ctor
     path: Repositories/DbUserRepository.cs
-    startLine: 15
+    startLine: 14
   assemblies:
   - server
   namespace: WAMServer.Repositories
@@ -92,22 +92,25 @@ items:
   source:
     remote:
       path: server/Repositories/DbUserRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: AddAsync
     path: Repositories/DbUserRepository.cs
-    startLine: 20
+    startLine: 24
   assemblies:
   - server
   namespace: WAMServer.Repositories
+  summary: Adds a user to the database in an asynchronous manner.
   example: []
   syntax:
     content: public Task<User> AddAsync(User entity)
     parameters:
     - id: entity
       type: WAMServer.Models.User
+      description: The entity to be added, in this case the user.
     return:
       type: System.Threading.Tasks.Task{WAMServer.Models.User}
+      description: The created user.
     content.vb: Public Function AddAsync(entity As User) As Task(Of User)
   overload: WAMServer.Repositories.DbUserRepository.AddAsync*
   implements:
@@ -126,11 +129,11 @@ items:
   source:
     remote:
       path: server/Repositories/DbUserRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: DeleteAsync
     path: Repositories/DbUserRepository.cs
-    startLine: 27
+    startLine: 31
   assemblies:
   - server
   namespace: WAMServer.Repositories
@@ -160,22 +163,25 @@ items:
   source:
     remote:
       path: server/Repositories/DbUserRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Get
     path: Repositories/DbUserRepository.cs
-    startLine: 32
+    startLine: 41
   assemblies:
   - server
   namespace: WAMServer.Repositories
+  summary: Gets a user from the database by it's id.
   example: []
   syntax:
     content: public User? Get(Guid id)
     parameters:
     - id: id
       type: System.Guid
+      description: The id of the user to be fetched
     return:
       type: WAMServer.Models.User
+      description: Returns the user from the database if it exists, otherwise a null.
     content.vb: Public Function [Get](id As Guid) As User
   overload: WAMServer.Repositories.DbUserRepository.Get*
   implements:
@@ -194,11 +200,11 @@ items:
   source:
     remote:
       path: server/Repositories/DbUserRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: GetAllAsync
     path: Repositories/DbUserRepository.cs
-    startLine: 37
+    startLine: 46
   assemblies:
   - server
   namespace: WAMServer.Repositories
@@ -225,11 +231,11 @@ items:
   source:
     remote:
       path: server/Repositories/DbUserRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: UpdateAsync
     path: Repositories/DbUserRepository.cs
-    startLine: 42
+    startLine: 51
   assemblies:
   - server
   namespace: WAMServer.Repositories

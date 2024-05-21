@@ -4,6 +4,7 @@ items:
   commentId: N:WAMServer.Interfaces
   id: WAMServer.Interfaces
   children:
+  - WAMServer.Interfaces.ILoginService
   - WAMServer.Interfaces.IRepository`1
   - WAMServer.Interfaces.IUserRepository
   langs:
@@ -16,6 +17,13 @@ items:
   assemblies:
   - server
 references:
+- uid: WAMServer.Interfaces.ILoginService
+  commentId: T:WAMServer.Interfaces.ILoginService
+  parent: WAMServer.Interfaces
+  href: WAMServer.Interfaces.ILoginService.html
+  name: ILoginService
+  nameWithType: ILoginService
+  fullName: WAMServer.Interfaces.ILoginService
 - uid: WAMServer.Interfaces.IRepository`1
   commentId: T:WAMServer.Interfaces.IRepository`1
   href: WAMServer.Interfaces.IRepository-1.html
@@ -43,7 +51,6 @@ references:
   - name: )
 - uid: WAMServer.Interfaces.IUserRepository
   commentId: T:WAMServer.Interfaces.IUserRepository
-  parent: WAMServer.Interfaces
   href: WAMServer.Interfaces.IUserRepository.html
   name: IUserRepository
   nameWithType: IUserRepository

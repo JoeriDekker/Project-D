@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: server/Interfaces/IUserRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: IUserRepository
     path: Interfaces/IUserRepository.cs
@@ -47,7 +47,7 @@ items:
   source:
     remote:
       path: server/Interfaces/IUserRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: GetUser
     path: Interfaces/IUserRepository.cs
@@ -78,7 +78,7 @@ items:
   source:
     remote:
       path: server/Interfaces/IUserRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: GetUser
     path: Interfaces/IUserRepository.cs
@@ -112,7 +112,7 @@ items:
   source:
     remote:
       path: server/Interfaces/IUserRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: GetUserIncludingAddress
     path: Interfaces/IUserRepository.cs
@@ -146,7 +146,7 @@ items:
   source:
     remote:
       path: server/Interfaces/IUserRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: GetUsersAsync
     path: Interfaces/IUserRepository.cs
@@ -174,7 +174,7 @@ items:
   source:
     remote:
       path: server/Interfaces/IUserRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: AddUserAsync
     path: Interfaces/IUserRepository.cs
@@ -205,7 +205,7 @@ items:
   source:
     remote:
       path: server/Interfaces/IUserRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: UpdateUserAsync
     path: Interfaces/IUserRepository.cs
@@ -236,7 +236,7 @@ items:
   source:
     remote:
       path: server/Interfaces/IUserRepository.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: DeleteUserAsync
     path: Interfaces/IUserRepository.cs
