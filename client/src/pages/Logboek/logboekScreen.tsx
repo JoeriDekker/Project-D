@@ -1,7 +1,9 @@
 import React from "react";
+import axios, { AxiosError } from "axios";
 
 import Navbar from '../../components/navbar/navbar'
 import Logboek from '../../components/logboek/logboek'
+import WaterpeilLogboek from "../../components/logboek/waterpeillogboek";
 
 function LogboekScreen() {
       
@@ -15,10 +17,8 @@ function LogboekScreen() {
                         Logboek
                     </h1>
                     <br />
-                    <div className="grid grid-cols-2 gap-2">
-                        <div className="flex justify-center bg-amber-200">
-                            Div 1
-                        </div>
+                    <div className="grid grid-cols-2 gap-10">
+                        <WaterpeilLogboek />
                         <Logboek />
                     </div>
                 </div> 

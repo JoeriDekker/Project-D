@@ -8,16 +8,6 @@ on:
   pull_request:
 
 jobs:
-  documentation:
-    runs-on: ubuntu-latest
-    name: Create Documentation
-    steps:
-    - uses: actions/checkout@v3
-    # ...
-    - uses: nikeee/docfx-action@v1.0.0
-      name: Build Documentation
-      with:
-        args: ./server/docfx.json
   build:
 
     runs-on: ubuntu-latest

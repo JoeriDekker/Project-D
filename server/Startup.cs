@@ -66,6 +66,7 @@ namespace WAMServer
             services.AddTransient<IRepository<User>, DbUserRepository>();
             services.AddTransient<ILoginService, DBLoginService>();
             services.AddTransient<IRepository<Address>, DbAddressRepository>();
+            services.AddTransient<IRepository<GroundWaterLog>, DbGroundWaterLogRepository>();
         }
 
         /// <summary>

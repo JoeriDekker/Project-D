@@ -29,7 +29,7 @@ namespace WAMServer.Repositories
             return entity;
         }
 
-        public Task<Address> DeleteAsync(Guid id)
+        public Task<Address?> DeleteAsync(Guid id)
         {
             throw new NotImplementedException();
         }
@@ -44,14 +44,21 @@ namespace WAMServer.Repositories
             return _context.Addresses.Where(a => a.Id == id).FirstOrDefault();
         }
 
-        public Task<IEnumerable<Address>> GetAllAsync()
+        public Task<IEnumerable<Address?>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<Address> UpdateAsync(Address entity)
+        public async Task<Address?> UpdateAsync(Address entity, Func<Address, bool> predicate)
         {
-            throw new NotImplementedException();
+            var address = _context.Addresses.Where(predicate).FirstOrDefault();
+            if (address == null) return null;
+            if (entity.Street != null) address.Street = entity.Street;
+            if (entity.HouseNumber != null) address.HouseNumber = entity.HouseNumber;
+            if (entity.City != null) address.City = entity.City;
+            if (entity.Zip != null) address.Zip = entity.Zip;
+            await _context.SaveChangesAsync();
+            return address;
         }
     }
 }
