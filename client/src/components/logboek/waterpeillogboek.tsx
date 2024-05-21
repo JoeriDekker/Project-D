@@ -2,14 +2,14 @@ import React, { useEffect } from "react";
 import axios, { AxiosError } from "axios";
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 
-import { WaterpeilLogboekState } from "./waterpeillogboek.state";
+import { WaterpeilLogboekState, UserResponse } from "./waterpeillogboek.state";
 import { use } from "i18next";
 
 function WaterpeilLogboek(){
 
     
 
-    const WaterpeilLogboekEntry = ({ controlPCID, date, id, level }: any) => {
+    const WaterpeilLogboekEntry = ({date, address, level }: WaterpeilLogboekState) => {
         let peilcolor: string = 'text-green-600';
         if (level.toString().includes('-')) {
             peilcolor = 'text-red-600';
@@ -26,7 +26,7 @@ function WaterpeilLogboek(){
         return (
             <div className="grid grid-cols-3 gap-2 mt-2 shadow-md text-center">
                 <div className="py-1 px-2 mr-20 rounded-md bg-slate-100">Date: <text>{date}</text></div>
-                <div className="mr-6">street: <text>{id}</text></div>
+                <div className="mr-6">street: <text>{address}</text></div>
                 <div className="mr-6">Peil: <text className={`${peilcolor}`}>{level}</text></div>
             </div>
         );
@@ -35,6 +35,8 @@ function WaterpeilLogboek(){
     const authHeader = useAuthHeader();
 
     const [waterlogs, setwaterlogs] = React.useState<WaterpeilLogboekState[]>([]);
+    const [user, setUser] = React.useState<UserResponse | null>(null);
+    const [address, setAddress] = React.useState<string | null>(null);
 
     console.log(waterlogs);
     console.log(authHeader);
@@ -52,6 +54,20 @@ function WaterpeilLogboek(){
             setwaterlogs(res.data);
         }
         fetchWaterlogs();
+
+        async function fetchUser() {
+            const res = await axios.get(
+                process.env.REACT_APP_API_URL + "/api/users",
+                {
+                    headers: {
+                        Authorization: authHeader,
+                    },
+                }
+            );
+            setUser(res.data);
+            setAddress(res.data.address);
+        }
+        fetchUser();
     }, [authHeader]);
         
 
@@ -98,9 +114,8 @@ function WaterpeilLogboek(){
                             <div className="max-h-[300px] overflow-y-auto mt-1 shadow-md">
                                 {/* {data.map((entry, index) => <WaterpeilLogboekEntry key={index} {...entry} />)} */}
                                 {waterlogs.map((log, index) => (
-                                    <WaterpeilLogboekEntry key={index} {...log} />
+                                    <WaterpeilLogboekEntry key={index} date={log.date} address={user?.address?.street ?? "Unknown"} level={log.level}  />
                                 ))}
-                                
                             </div>
                         </div>
     );
