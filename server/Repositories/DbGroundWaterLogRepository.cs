@@ -36,6 +36,7 @@ namespace WAMServer.Repositories{
             return await _context.GroundWaterLog.ToListAsync();
         }
 
+        // TODO: understand why it has to be 2 params instead of 1
         public Task<GroundWaterLog> UpdateAsync(GroundWaterLog entity, Func<GroundWaterLog, bool> predicate)
         {
            throw new NotImplementedException();
