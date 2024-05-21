@@ -15,6 +15,9 @@ function WaterpeilLogboek(){
             peilcolor = 'text-red-600';
         }
 
+        // get only firt 5 characters of date
+        let smalldate = date.substring(0, 5);
+
         // return (
         //     <div className="grid grid-cols-3 gap-2 mt-2 shadow-md text-center">
         //         <div className="py-1 px-2 mr-20 rounded-md bg-slate-100"><b>{date}</b></div>
@@ -24,10 +27,10 @@ function WaterpeilLogboek(){
         // );
 
         return (
-            <div className="grid grid-cols-3 gap-2 mt-2 shadow-md text-center">
-                <div className="py-1 px-2 mr-20 rounded-md bg-slate-100">Date: <text>{date}</text></div>
-                <div className="mr-6">street: <text>{address}</text></div>
-                <div className="mr-6">Peil: <text className={`${peilcolor}`}>{level}</text></div>
+            <div className="grid grid-cols-10 gap-2 mt-2 shadow-md text-center p-1">
+                <div className="py-1 px-2 mr-20 rounded-md bg-slate-100 col-span-3 ml-4"><text className="font-bold">{smalldate}</text></div>
+                <div className="mr-6 col-span-5 text-left"><text className="font-bold text-lg text-gray-400">{address}</text></div>
+                <div className="mr-6 col-span-2">Peil: <text className={`${peilcolor}`}>{level}</text></div>
             </div>
         );
     };
@@ -111,6 +114,7 @@ function WaterpeilLogboek(){
                                 </div>
                                 
                             </div>
+                            <hr className="my-4"></hr>
                             <div className="max-h-[300px] overflow-y-auto mt-1 shadow-md">
                                 {/* {data.map((entry, index) => <WaterpeilLogboekEntry key={index} {...entry} />)} */}
                                 {waterlogs.map((log, index) => (
