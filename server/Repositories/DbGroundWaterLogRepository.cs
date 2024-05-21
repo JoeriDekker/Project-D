@@ -36,6 +36,11 @@ namespace WAMServer.Repositories{
             return await _context.GroundWaterLog.ToListAsync();
         }
 
+        public Task<GroundWaterLog> UpdateAsync(GroundWaterLog entity, Func<GroundWaterLog, bool> predicate)
+        {
+           throw new NotImplementedException();
+        }
+
         public Task<GroundWaterLog> UpdateAsync(GroundWaterLog entity)
         {
             throw new NotImplementedException();
