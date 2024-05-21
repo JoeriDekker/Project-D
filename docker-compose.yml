@@ -1,5 +1,21 @@
-version: '3.8'
+version: "3.8"
 services:
+  backend:
+    container_name: backend
+    build: ./server
+    ports:
+      - "5000:5000"
+    networks:
+      - wam
+    depends_on:
+      - db
+  frontend:
+    container_name: frontend
+    build: ./client
+    ports:
+      - "80:3399"
+    networks:
+      - wam
   db:
     container_name: database
     image: postgres:latest
@@ -13,17 +29,5 @@ services:
       - wam
     volumes:
       - ./data:/var/lib/postgresql/data
-  pgadmin:
-    container_name: database-controlpanel
-    image: dpage/pgadmin4
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: admin
-    ports:
-      - "5050:80"
-    networks:
-      - wam
-    depends_on:
-      - db
 networks:
   wam:
