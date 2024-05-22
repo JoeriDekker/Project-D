@@ -15,6 +15,7 @@ namespace WAMServer.Tests.Controllers
         private readonly Mock<IRepository<User>> _userRepositoryMock;
         private readonly Mock<IEmailService> _mailServiceMock;
         private readonly Mock<IConfiguration> _configurationMock;
+        private readonly Mock<IRepository<Address>> _addressRepositoryMock;
         private readonly RegisterController _controller;
 
         public RegisterControllerTests()
@@ -22,10 +23,12 @@ namespace WAMServer.Tests.Controllers
             _configurationMock = new Mock<IConfiguration>();
             _userRepositoryMock = new Mock<IRepository<User>>();
             _mailServiceMock = new Mock<IEmailService>();
+            _addressRepositoryMock = new Mock<IRepository<Address>>();
+            
 
             _mailServiceMock.Setup(x => x.SendEmail(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()));
 
-            _controller = new RegisterController(_userRepositoryMock.Object, _mailServiceMock.Object, _configurationMock.Object);
+            _controller = new RegisterController(_userRepositoryMock.Object, _mailServiceMock.Object, _configurationMock.Object, _addressRepositoryMock.Object);
         }
 
         [Fact]

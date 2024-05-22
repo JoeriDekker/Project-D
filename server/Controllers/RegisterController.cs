@@ -13,14 +13,16 @@ namespace WAMServer.Controllers
     {
 
         private IRepository<User> _userRepository;
+        private IRepository<Address> _addressRepository;
         private IEmailService _mailService;
         private IConfiguration _configuration;
 
-        public RegisterController(IRepository<User> userRepository, IEmailService mailService, IConfiguration configuration)
+        public RegisterController(IRepository<User> userRepository, IEmailService mailService, IConfiguration configuration, IRepository<Address> addressRepository)
         {
             _userRepository = userRepository;
             _mailService = mailService;
             _configuration = configuration;
+            _addressRepository = addressRepository;
         }
 
         [HttpPost]
@@ -50,7 +52,18 @@ namespace WAMServer.Controllers
             }
             string hashedPassword = BCrypt.Net.BCrypt.EnhancedHashPassword(body.Password);
             var user = new User(body.FirstName, body.LastName, body.Email, hashedPassword);
+            var address = new Address
+            {
+                Street = "",
+                City = "",
+                Zip = "",
+                HouseNumber = "",
+                UserId = user.Id
+            };
             User registeredUser = await _userRepository.AddAsync(user);
+            await _addressRepository.AddAsync(address);
+            user.AddressId = address.Id;
+            await _userRepository.UpdateAsync(user, u => u.Id == user.Id);
             if (registeredUser == null)
             {
                 return BadRequest(new ErrorBody("Register.failed"));
