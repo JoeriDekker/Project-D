@@ -25,7 +25,9 @@
         "place": "Place name",
         "password": "Password",
         "adjustpass": "Change/Forgot password",
-        "adjustbutton": "Save changes"
+        "adjustbutton": "Save changes",
+        "email": "Email",
+        "login": "Login"
     },
     "PC": {
         "connection": "Connection",
