@@ -62,7 +62,7 @@ function Navbar() {
                         </button>
 
                         {active ? <>
-                            <div className="pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6">
+                            <div className="pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6 z-10">
                                 <div className="pointer-events-auto ml-72 w-fit rounded-xl bg-white p-6 shadow-lg ring-1 ring-gray-900/10">
                                     <p className="text-sm leading-6 text-gray-900">{t('Contact.contact')}<br /><br />{t('Contact.telephone')}<br />{t('Contact.email')}</p>
                                     <div className="mt-4 flex items-center gap-x-5">
