@@ -1,6 +1,6 @@
 using WAMServer.Models;
 
-namespace WAMServer.Data
+namespace WAMServer.Seeders
 {
     public class DBInitializer
     {

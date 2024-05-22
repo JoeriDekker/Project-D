@@ -5,7 +5,7 @@ import Logboek from "../components/logboek/waterpeillogboek";
 
 function HomeDashboard() {
     return (
-        <div className="bg-background-color w-screen h-screen py-5 flex dir-row">
+        <div className="bg-secondaryCol w-screen h-screen py-5 flex dir-row">
             <Navbar />
 
             {/* grid setup */}
@@ -42,7 +42,7 @@ function HomeDashboard() {
                                 <div className="absolute bottom-56 left-[50%] transform -translate-x-[50%] bg-gray-200 w-full h-0.5"></div>
                                 <div className="absolute bottom-40 left-[50%] transform -translate-x-[50%] bg-red-500 w-full h-0.5"></div>
 
-                                <div className="absolute top-0 left-[50%] transform -translate-x-[50%] bg-orange-400 w-[25%] h-[32%]"></div>
+                                {/* <div className="absolute top-0 left-[50%] transform -translate-x-[50%] bg-orange-400 w-[25%] h-[32%]"></div> */}
                                 <div className="absolute bottom-0 left-[50%] transform -translate-x-[50%] bg-orange-300 w-[15%] h-[68%]"></div>
                                 <div className="flex flex-1"></div>
                                 <div className="flex h-[65%] border-t-2 border-teal-400 bg-teal-400 bg-opacity-30 z-10"></div>

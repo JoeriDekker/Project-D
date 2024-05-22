@@ -52,6 +52,7 @@ function App() {
         <Route element={<AuthOutlet fallbackPath="/login" />}>
           <Route path="/account" element={<AccountPage />} />
           <Route path="/" element={<AnyPage />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/logboek" element={<LogboekScreen />} />
         </Route>
         <Route path="/*" element={<Navigate to="/" />} />
