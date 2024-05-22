@@ -48,7 +48,7 @@ namespace WAMServer.Services
 
             using (var smtpClient = new SmtpClient())
             {
-                smtpClient.Connect(_configuration.GetValue<string>("Email:Host"), _configuration.GetValue<int>("Email:Port"), false);
+                smtpClient.Connect(host, port, false);
                 smtpClient.Authenticate(username, password);
                 smtpClient.Send(mailMessage);
                 smtpClient.Disconnect(true);

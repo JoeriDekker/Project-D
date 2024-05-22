@@ -20,7 +20,7 @@ function RegisterPage() {
       .max(50, t("Register.lastnamemax")),
     email: Yup.string()
       .required(t("Register.emailreq"))
-      .email(t("Register.emailvalid")),
+      .matches(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, t("Register.emailvalid")),
     password: Yup.string()
       .required(t("Register.passwordreq"))
       .min(8, t("Register.passwordmin")).max(250, t("Register.passwordmax"))

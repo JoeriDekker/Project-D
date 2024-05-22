@@ -36,7 +36,7 @@ function Input(props: Props) {
                 )}
             </div>
             <input name={props.name} type={props.type ? props.type : "text"} value={props.value} onChange={props.onChange} id="default-input" className="bg-gray-50 border-2 p-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-[#A6E1FA] text-grey-900 block w-full" placeholder={props.placeholder} />
-            <p className="text-red-500">{props.error}</p>
+            <p id={`${props.name}-error`} className="text-red-500">{props.error}</p>
         </div >
     )
 }
