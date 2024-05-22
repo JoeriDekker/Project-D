@@ -42,7 +42,7 @@ namespace WAMServer.Seeders
                         editUser.AddressId = address.Id;
                     }
                     context.SaveChanges();
-                    context.ControlPCs.Add(controlPC);
+                    context.ControlPC.Add(controlPC);
                     Console.WriteLine(context);
                     // add a ground water log
                     var groundWaterLog = new GroundWaterLog(Guid.NewGuid().ToString(), "17/05/2024", Decimal.Parse("-1.33"));
