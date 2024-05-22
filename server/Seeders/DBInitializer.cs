@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using WAMServer.Models;
 
-namespace WAMServer.Data
+namespace WAMServer.Seeders
 {
     public class DBInitializer
     {
@@ -44,6 +44,10 @@ namespace WAMServer.Data
                     context.SaveChanges();
                     context.ControlPCs.Add(controlPC);
                     Console.WriteLine(context);
+                    // add a ground water log
+                    var groundWaterLog = new GroundWaterLog(Guid.NewGuid().ToString(), "17/05/2024", Decimal.Parse("-1.33"));
+
+                    context.GroundWaterLog.Add(groundWaterLog);
                     context.SaveChanges();
                 }
             }

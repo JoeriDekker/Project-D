@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using WAMServer.Models;
@@ -11,9 +12,11 @@ using WAMServer.Models;
 namespace server.Migrations
 {
     [DbContext(typeof(WamDBContext))]
-    partial class WamDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240517095340_changegroundwatermodel")]
+    partial class changegroundwatermodel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,36 +57,12 @@ namespace server.Migrations
                     b.ToTable("Addresses");
                 });
 
-
-            modelBuilder.Entity("WAMServer.Models.ControlPC", b =>
-            {
-                b.Property<string>("ControlPCSecret")
-                        .IsRequired()
-                        .HasColumnType("varchar(255)");
-
-                b.Property<string>("meetputBroID")
-                    .IsRequired()
-                    .HasColumnType("varchar(255)");
-
-                b.Property<string>("secret")
-                    .IsRequired()
-                    .HasColumnType("varchar(255)");
-
-                b.Property<string>("userId")
-                    .IsRequired()
-                    .HasColumnType("varchar(100)");
-
-                b.HasKey("Id");
-
-                b.ToTable("ControlPCs");
-            });
-
             modelBuilder.Entity("WAMServer.Models.GroundWaterLog", b =>
-
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
+
                     b.Property<string>("controlPCID")
                         .IsRequired()
                         .HasColumnType("varchar(100)");

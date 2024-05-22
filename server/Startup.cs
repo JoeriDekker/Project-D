@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using WAMServer.Data;
+using WAMServer.Seeders;
 using WAMServer.Interfaces;
 using WAMServer.Models;
 using WAMServer.Repositories;
@@ -33,7 +33,7 @@ namespace WAMServer
             app.UseCors();
             app.UseAuthentication();
             app.UseAuthorization();
-            app.Urls.Add("http://localhost:5000");
+            app.Urls.Add("http://*:5000");
             app.MapControllers();
             app.Run();
         }
@@ -66,6 +66,7 @@ namespace WAMServer
             services.AddTransient<IRepository<User>, DbUserRepository>();
             services.AddTransient<ILoginService, DBLoginService>();
             services.AddTransient<IRepository<Address>, DbAddressRepository>();
+            services.AddTransient<IRepository<GroundWaterLog>, DbGroundWaterLogRepository>();
         }
 
         /// <summary>
