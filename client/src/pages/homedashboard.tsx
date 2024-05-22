@@ -5,12 +5,12 @@ import Logboek from "../components/logboek/waterpeillogboek";
 
 function HomeDashboard() {
     return (
-        <div className="bg-secondaryCol w-screen h-screen py-5 flex dir-row">
+        <div className="bg-secondaryCol w-screen h-screen py-5 flex">
             <Navbar />
 
             {/* grid setup */}
             <div className="bg-white w-full h-full rounded-xl mr-5 pb-4">
-                <div className="grid grid-cols-2 h-[100%] m-2">
+                <div className="grid grid-cols-2 grid-rows-2 h-[100%] m-2">
 
                     {/* water level visual */}
                     <div className="bg-gray-800 m-2 p-4 rounded-xl">
