@@ -1,6 +1,7 @@
 import React from "react";
 
 import Navbar from '../components/navbar/navbar'
+import Logboek from "../components/logboek/waterpeillogboek";
 
 function HomeDashboard() {
     return (
@@ -50,7 +51,9 @@ function HomeDashboard() {
                     </div>
 
                     {/*  */}
-                    <div className="bg-gray-100 m-2 p-4 rounded-xl">Item 2</div>
+                    <div className="bg-gray-100 m-2 p-4 rounded-xl">
+                        <Logboek />
+                    </div>
 
                     {/*  */}
                     <div className="bg-gray-100 m-2 p-4 rounded-xl">Item 3</div>
