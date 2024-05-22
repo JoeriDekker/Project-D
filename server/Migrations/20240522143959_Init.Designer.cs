@@ -12,7 +12,7 @@ using WAMServer.Models;
 namespace server.Migrations
 {
     [DbContext(typeof(WamDBContext))]
-    [Migration("20240522121914_Init")]
+    [Migration("20240522143959_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -118,9 +118,8 @@ namespace server.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(255)");
 
-                    b.Property<string>("userId")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
+                    b.Property<Guid>("userId")
+                        .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
@@ -158,6 +157,9 @@ namespace server.Migrations
                     b.Property<Guid?>("AddressId")
                         .HasColumnType("uuid");
 
+                    b.Property<Guid>("ConfirmationToken")
+                        .HasColumnType("uuid");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("varchar(100)");
@@ -165,6 +167,9 @@ namespace server.Migrations
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("varchar(100)");
+
+                    b.Property<bool>("IsConfirmed")
+                        .HasColumnType("boolean");
 
                     b.Property<string>("LastName")
                         .IsRequired()

@@ -115,22 +115,12 @@ namespace server.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(255)");
 
-<<<<<<< HEAD
                     b.Property<Guid>("userId")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
-                    b.ToTable("ControlPCs");
-=======
-                    b.Property<string>("userId")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
-
-                    b.HasKey("Id");
-
                     b.ToTable("ControlPC");
->>>>>>> a785b29d509f0b2ef75727dda2b18f4b873c9374
                 });
 
             modelBuilder.Entity("WAMServer.Models.GroundWaterLog", b =>

@@ -24,8 +24,10 @@ namespace WAMServer.Models
 
         [Required]
         public Guid ConfirmationToken { get; set; }
+        [ForeignKey("Address")]
         public Guid? AddressId { get; set; }
         public Address? Address { get; set; }
+        public List<ActionLog> ActionLogs { get; set; }
 
 
         /// <summary>

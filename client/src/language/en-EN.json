@@ -10,11 +10,13 @@
         "adjustpass": "Change/Forgot password",
         "current": "Current account details",
         "housenum": "House number",
+        "email": "Email",
         "password": "Password",
         "place": "Place name",
         "street": "Street name",
         "zipcode": "Postal code",
-        "verificationsuccess": "Your email address has been verified. You can now log in."
+        "verificationsuccess": "Your email address has been verified. You can now log in.",
+        "login": "Login"
     },
     "Navigation": {
         "account": "Account",
