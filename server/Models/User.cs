@@ -39,6 +39,7 @@ namespace WAMServer.Models
         public User(string firstName, string lastName, string email, string password) : this(Guid.NewGuid(), firstName, lastName, email, password, false, Guid.NewGuid(), null)
         {
         }
+        
 
         public User(Guid id, string firstName, string lastName, string email, string password, bool isConfirmed, Guid confirmationToken, Guid? addressId)
         {
@@ -50,6 +51,10 @@ namespace WAMServer.Models
             IsConfirmed = isConfirmed;
             ConfirmationToken = confirmationToken;
             AddressId = addressId;
+        }
+
+        public User()
+        {
         }
     }
 }

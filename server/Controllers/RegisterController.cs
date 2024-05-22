@@ -27,8 +27,8 @@ namespace WAMServer.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> Post([FromBody] UserBody body)
         {
-            string? backendURL = _configuration.GetValue<string>("JWT:Issuer");
-            string? frontendURL = _configuration.GetValue<string>("FrontendURL");
+            string? backendURL = _configuration["JWT:Issuer"];
+            string? frontendURL = _configuration["FrontendURL"];
             if(backendURL == null || frontendURL == null)
             {
                 return BadRequest(new ErrorBody("Register.failed"));
