@@ -14,5 +14,6 @@ namespace WAMServer.Models
         public DbSet<User> Users { get; set; } = null!;
         public DbSet<Address> Addresses { get; set; } = null!;
         public DbSet<ControlPC> ControlPCs { get; set; } = null!;
+        public DbSet<GroundWaterLog> GroundWaterLog { get; set; } = null!;
     }
 }

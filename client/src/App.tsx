@@ -51,9 +51,8 @@ function App() {
         <Route path="/Register" Component={Register} />
         <Route path="/login" Component={LoginScreen} />
         <Route element={<AuthOutlet fallbackPath="/login" />}>
-          <Route path="/" element={<Dashboard />} />
           <Route path="/account" element={<AccountPage />} />
-          <Route path="/home" element={<AnyPage />} />
+          <Route path="/" element={<AnyPage />} />
           <Route path="/logboek" element={<LogboekScreen />} />
         </Route>
         <Route path="/*" element={<Navigate to="/" />} />

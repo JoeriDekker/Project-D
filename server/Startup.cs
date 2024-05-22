@@ -33,7 +33,7 @@ namespace WAMServer
             app.UseCors();
             app.UseAuthentication();
             app.UseAuthorization();
-            app.Urls.Add("http://localhost:5000");
+            app.Urls.Add("http://*:5000");
             app.MapControllers();
             app.Run();
         }
@@ -67,6 +67,7 @@ namespace WAMServer
             services.AddTransient<ILoginService, DBLoginService>();
             services.AddTransient<IRepository<Address>, DbAddressRepository>();
             services.AddTransient<IEmailService, DefaultEmailService>();
+            services.AddTransient<IRepository<GroundWaterLog>, DbGroundWaterLogRepository>();
         }
 
         /// <summary>
