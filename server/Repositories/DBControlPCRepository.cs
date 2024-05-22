@@ -12,7 +12,7 @@ namespace WAMServer.Repositories
     /// <summary>
     /// This class is responsible for handling the database operations for the ControlPC entity.
     /// </summary>
-    public class ControlPCRepository : IRepository<ControlPC>
+    public class DbControlPCRepository : IRepository<ControlPC>
     {
         private readonly WamDBContext _context;
 
