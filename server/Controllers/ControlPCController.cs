@@ -73,26 +73,30 @@ namespace WAMServer.Controllers
         {
             if (controlPC == null)
             {
-                new WAMServer.Records.Bodies.ErrorBody("Invalid data.");
+                return BadRequest(new ErrorBody("Invalid data."));
             }
 
             var currentUser = HttpContext.User;
             if (!currentUser.HasClaim(c => c.Type == "Id"))
             {
-                return Unauthorized(new { message = "Unauthorized." });
+                return Unauthorized();
             }
 
             string userId = currentUser.Claims.FirstOrDefault(c => c.Type == "Id")!.Value;
             if (!Guid.TryParse(userId, out Guid id))
             {
-                return Unauthorized(new { message = "Invalid user ID." });
+                return Unauthorized();
             }
 
-            controlPC.userId = id;
-            controlPC.Id = Guid.NewGuid();
+            if (controlPC != null)
+            {
+                controlPC.userId = id;
+                controlPC.Id = Guid.NewGuid();
+                await _controlPCRepository2.CreateAsync(controlPC);
+                return CreatedAtAction(nameof(GetControlPC), new { id = controlPC.Id }, controlPC);
+            }
 
-            await _controlPCRepository2.CreateAsync(controlPC);
-            return CreatedAtAction(nameof(GetControlPC), new { id = controlPC.Id }, controlPC);
+            return BadRequest(new ErrorBody("Invalid controlOPC configuration."));
         }
 
         /// <summary>
@@ -107,7 +111,7 @@ namespace WAMServer.Controllers
         {
             if (controlPC == null || id != controlPC.Id)
             {
-                return BadRequest(new { message = "Data mismatch." });
+                return BadRequest(new ErrorBody("Data mismatch"));
             }
 
             var existingControlPC = await _controlPCRepository2.GetAsync(id);
@@ -117,7 +121,8 @@ namespace WAMServer.Controllers
             }
 
             await _controlPCRepository.UpdateAsync(controlPC, _ => _.Id == id);
-            return NoContent();
+            return Ok();
+
         }
 
         /// <summary>
