@@ -12,8 +12,8 @@ using WAMServer.Models;
 namespace server.Migrations
 {
     [DbContext(typeof(WamDBContext))]
-    [Migration("20240516185054_Init")]
-    partial class Init
+    [Migration("20240522094535_newtables")]
+    partial class newtables
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,25 @@ namespace server.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+
+            modelBuilder.Entity("WAMServer.Models.ActionType", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("details")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("title")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ActionType");
+                });
 
             modelBuilder.Entity("WAMServer.Models.Address", b =>
                 {
@@ -57,6 +76,55 @@ namespace server.Migrations
                     b.ToTable("Addresses");
                 });
 
+            modelBuilder.Entity("WAMServer.Models.ControlPC", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("ControlPCSecret")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("meetputBroID")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("secret")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("userId")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ControlPC");
+                });
+
+            modelBuilder.Entity("WAMServer.Models.GroundWaterLog", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("controlPCID")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("date")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<decimal>("level")
+                        .HasColumnType("decimal");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("GroundWaterLog");
+                });
+
             modelBuilder.Entity("WAMServer.Models.User", b =>
                 {
                     b.Property<Guid>("Id")
@@ -87,6 +155,29 @@ namespace server.Migrations
                     b.HasIndex("AddressId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("WAMServer.Models.UserSetting", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("controlPCID")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("controlPCSecret")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("userId")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserSetting");
                 });
 
             modelBuilder.Entity("WAMServer.Models.Address", b =>

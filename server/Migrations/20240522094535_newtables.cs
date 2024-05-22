@@ -6,11 +6,67 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace server.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class newtables : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "ActionType",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    title = table.Column<string>(type: "varchar(255)", nullable: false),
+                    details = table.Column<string>(type: "varchar(255)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ActionType", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ControlPC",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    userId = table.Column<string>(type: "varchar(100)", nullable: false),
+                    secret = table.Column<string>(type: "varchar(255)", nullable: false),
+                    meetputBroID = table.Column<string>(type: "varchar(255)", nullable: false),
+                    ControlPCSecret = table.Column<string>(type: "varchar(255)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ControlPC", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "GroundWaterLog",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    controlPCID = table.Column<string>(type: "varchar(100)", nullable: false),
+                    date = table.Column<string>(type: "varchar(100)", nullable: false),
+                    level = table.Column<decimal>(type: "decimal", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GroundWaterLog", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserSetting",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    userId = table.Column<string>(type: "varchar(100)", nullable: false),
+                    controlPCID = table.Column<string>(type: "varchar(100)", nullable: false),
+                    controlPCSecret = table.Column<string>(type: "varchar(100)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserSetting", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Addresses",
                 columns: table => new
@@ -72,6 +128,18 @@ namespace server.Migrations
             migrationBuilder.DropForeignKey(
                 name: "FK_Addresses_Users_UserId",
                 table: "Addresses");
+
+            migrationBuilder.DropTable(
+                name: "ActionType");
+
+            migrationBuilder.DropTable(
+                name: "ControlPC");
+
+            migrationBuilder.DropTable(
+                name: "GroundWaterLog");
+
+            migrationBuilder.DropTable(
+                name: "UserSetting");
 
             migrationBuilder.DropTable(
                 name: "Users");
