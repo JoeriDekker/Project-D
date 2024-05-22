@@ -73,7 +73,7 @@ namespace WAMServer.Controllers
         {
             if (controlPC == null)
             {
-                return BadRequest(new { message = "Invalid data." });
+                new WAMServer.Records.Bodies.ErrorBody("Invalid data.");
             }
 
             var currentUser = HttpContext.User;
