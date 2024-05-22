@@ -12,8 +12,8 @@ using WAMServer.Models;
 namespace server.Migrations
 {
     [DbContext(typeof(WamDBContext))]
-    [Migration("20240522094535_newtables")]
-    partial class newtables
+    [Migration("20240522121914_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,11 +25,37 @@ namespace server.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("WAMServer.Models.ActionType", b =>
+            modelBuilder.Entity("WAMServer.Models.ActionLog", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
+
+                    b.Property<int>("actionTypeID")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("dateTimeStamp")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("userId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("actionTypeID");
+
+                    b.HasIndex("userId");
+
+                    b.ToTable("ActionLog");
+                });
+
+            modelBuilder.Entity("WAMServer.Models.ActionType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("details")
                         .IsRequired()
@@ -70,8 +96,6 @@ namespace server.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Addresses");
                 });
@@ -152,7 +176,8 @@ namespace server.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AddressId");
+                    b.HasIndex("AddressId")
+                        .IsUnique();
 
                     b.ToTable("Users");
                 });
@@ -180,11 +205,21 @@ namespace server.Migrations
                     b.ToTable("UserSetting");
                 });
 
-            modelBuilder.Entity("WAMServer.Models.Address", b =>
+            modelBuilder.Entity("WAMServer.Models.ActionLog", b =>
                 {
+                    b.HasOne("WAMServer.Models.ActionType", "ActionType")
+                        .WithMany("ActionLogs")
+                        .HasForeignKey("actionTypeID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("WAMServer.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
+                        .WithMany("ActionLogs")
+                        .HasForeignKey("userId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ActionType");
 
                     b.Navigation("User");
                 });
@@ -192,10 +227,25 @@ namespace server.Migrations
             modelBuilder.Entity("WAMServer.Models.User", b =>
                 {
                     b.HasOne("WAMServer.Models.Address", "Address")
-                        .WithMany()
-                        .HasForeignKey("AddressId");
+                        .WithOne("User")
+                        .HasForeignKey("WAMServer.Models.User", "AddressId");
 
                     b.Navigation("Address");
+                });
+
+            modelBuilder.Entity("WAMServer.Models.ActionType", b =>
+                {
+                    b.Navigation("ActionLogs");
+                });
+
+            modelBuilder.Entity("WAMServer.Models.Address", b =>
+                {
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("WAMServer.Models.User", b =>
+                {
+                    b.Navigation("ActionLogs");
                 });
 #pragma warning restore 612, 618
         }

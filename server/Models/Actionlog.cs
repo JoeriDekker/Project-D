@@ -11,14 +11,16 @@ namespace WAMServer.Models
         [Key]
         public Guid Id { get; set; }
 
-        [Required, Column(TypeName = "varchar(100)")]
+        [ForeignKey("User")]
         public Guid userId { get; set; }
-
-        [Required, Column(TypeName = "integer(11)")]
+        [ForeignKey("ActionType")]
         public int actionTypeID { get; set; }
 
-        [Required, Column(TypeName = "BIGINT")]
+        [Required]
         public DateTime dateTimeStamp { get; set; }
+
+        public User User {get;set;} = null!;
+        public ActionType ActionType {get;set;} = null!;
 
         /// <summary>
         /// Constructor for creating an ActionLog object.
