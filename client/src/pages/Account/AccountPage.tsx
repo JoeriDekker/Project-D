@@ -47,6 +47,21 @@ function AnyPage() {
         validationSchema: addressValidationScheme,
     });
 
+  useEffect(() => {
+    async function fetchUser() {
+      const res = await axios.get(
+        process.env.REACT_APP_API_URL + "/api/users",
+        {
+          headers: {
+            Authorization: authHeader,
+          },
+        }
+      );
+      setUser(res.data);
+    }
+    fetchUser();
+  }, [authHeader]);
+
     async function handleAddressChange(values: {
         street: string;
         houseNumber: string;
@@ -138,49 +153,49 @@ function AnyPage() {
                             error={addressFormik.errors.street}
                         />
 
-                        <Input
-                            label={t("Login.housenum")}
-                            placeholder={user?.address.houseNumber || ""}
-                            width="1/2"
-                            onChange={addressFormik.handleChange}
-                            value={addressFormik.values.houseNumber}
-                            name="houseNumber"
-                            error={addressFormik.errors.houseNumber}
-                        />
-                    </div>
-                    <div className="flex dir-row w-full gap-5 px-5 pt-5">
-                        <Input
-                            label={t("Login.zipcode")}
-                            placeholder={user?.address.zip || ""}
-                            width="1/2"
-                            onChange={addressFormik.handleChange}
-                            value={addressFormik.values.zip}
-                            error={addressFormik.errors.zip}
-                            name="zip"
-                        />
-                        <Input
-                            label={t("Login.place")}
-                            placeholder={user?.address.city || ""}
-                            width="full"
-                            onChange={addressFormik.handleChange}
-                            value={addressFormik.values.city}
-                            name="city"
-                            error={addressFormik.errors.city}
-                        />
-                    </div>
-                    {/* TODO: Link this do an actual forget page */}
-                    <Input
-                        label={t("Login.password")}
-                        placeholder="***************"
-                        width="fit px-5 pt-5"
-                        onChange={addressFormik.handleChange}
-                        value={addressFormik.values.password}
-                        name="password"
-                        error={addressFormik.errors.password}
-                    />
-                    <a href="/wwforgor" className="px-5 underline text-secondaryCol">
-                        {t("Login.adjustpass")}
-                    </a>
+            <Input
+              label={t("Login.housenum")}
+              placeholder={user?.address.houseNumber || ""}
+              width="1/2"
+              onChange={addressFormik.handleChange}
+              value={addressFormik.values.houseNumber}
+              name="houseNumber"
+              error={addressFormik.errors.houseNumber}
+            />
+          </div>
+          <div className="flex dir-row w-full gap-5 px-5 pt-5">
+            <Input
+              label={t("Login.zipcode")}
+              placeholder={user?.address.zip || ""}
+              width="1/2"
+              onChange={addressFormik.handleChange}
+              value={addressFormik.values.zip}
+              error={addressFormik.errors.zip}
+              name="zip"
+            />
+            <Input
+              label={t("Login.place")}
+              placeholder={user?.address.city || ""}
+              width="full"
+              onChange={addressFormik.handleChange}
+              value={addressFormik.values.city}
+              name="city"
+              error={addressFormik.errors.city}
+            />
+          </div>
+          <Input
+            label={t("Login.password")}
+            placeholder="***************"
+            width="1/2 px-5 pt-5"
+            onChange={addressFormik.handleChange}
+            value={addressFormik.values.password}
+            name="password"
+            error={addressFormik.errors.password}
+          />
+          {/* TODO: Link this do an actual forget page */}
+          <a href="/wwforgor" className="px-5 underline text-secondaryCol">
+            {t("Login.adjustpass")}
+          </a>
 
                     <div className="mx-5">
                         <LinkLessButton text={t("Login.adjustbutton")} />

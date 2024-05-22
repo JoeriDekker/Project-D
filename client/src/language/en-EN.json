@@ -26,7 +26,10 @@
         "neighbourhood": "My neighbourhood",
         "overview": "Overview",
         "settings": "Settings",
-        "waterdata": "Measurement data"
+        "waterdata": "Measurement data",
+        "adjustbutton": "Save changes",
+        "email": "Email",
+        "login": "Login"
     },
     "PC": {
         "connection": "Connection",

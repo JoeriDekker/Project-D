@@ -7,6 +7,10 @@ import axios, { AxiosError } from "axios";
 import { UserResponse } from "./LoginScreen.state";
 import { useLocation } from "react-router-dom";
 import { t } from "i18next";
+import Input from "../../components/Input/Input";
+import { useTranslation } from "react-i18next";
+import { LinkLessButton2 } from "../../components/Button/AnyButton";
+import Icons from "../../visuals/icons/generalicons";
 
 function useQuery() {
   const { search } = useLocation();
@@ -14,7 +18,9 @@ function useQuery() {
   return React.useMemo(() => new URLSearchParams(search), [search]);
 }
 
+
 function LoginScreen() {
+  const { t } = useTranslation();
   const query = useQuery();
   const [error, setError] = useState<string | null>(query.get("error"));
   const [success, setSuccess] = useState<string | null>(null);
@@ -126,38 +132,41 @@ function LoginScreen() {
     window.location.href = "/";
   }
   return (
-    <div className="w-screen h-screen flex justify-center items-center">
-      <form onSubmit={formik.handleSubmit} className="flex flex-col">
-        {error ? (
-          <div className="bg-red-400 text-white p-4 text-center">{error}</div>
-        ) : null}
-        {success ? (
-          <div className="bg-green-400 text-white p-4 text-center">{success}</div>
-        ) : null}
-        <label htmlFor="email">Email</label>
-        <input
-          className="border"
-          type="email"
-          name="email"
-          onChange={formik.handleChange}
-          value={formik.values.email}
-          id=""
-        />
-        {formik.errors.email ? <div>{formik.errors.email}</div> : null}
-        <label htmlFor="password">Password</label>
-        <input
-          className="border"
-          type="password"
-          name="password"
-          onChange={formik.handleChange}
-          value={formik.values.password}
-          id=""
-        />
-        {formik.errors.password ? <div>{formik.errors.password}</div> : null}
-        <button className="bg-blue-500 text-white" type="submit">
-          Submit
-        </button>
-      </form>
+    <div className="w-screen h-screen flex justify-center items-center flex-col">
+      <div className="Stakeholders w-full h-30 max-h-20 flex flex-row gap-5 p-5 justify-end">
+        <Icons iconName="CampusGouda" />
+        <Icons iconName="Bam" />
+        <Icons iconName="Rijkswaterstaat" />
+      </div>
+
+      <div className="w-full h-full flex flex-col justify-center items-center">
+        <div className="w-40 h-40 mb-10 rounded-full overflow-hidden">
+          <Icons iconName="TiltedTowers" />
+        </div>
+        <form onSubmit={formik.handleSubmit} className="w-fit max-w-80 min-w-80 h-fit flex flex-col">
+          {error ? (
+            <div className="bg-red-400 text-white p-4 text-center">{error}</div>
+          ) : null}
+
+          <Input
+            label={t("Login.email")}
+            placeholder=""
+            onChange={formik.handleChange}
+            value={formik.values.email}
+            name="email"
+          />
+          {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+          <Input
+            label={t("Login.password")}
+            placeholder="******"
+            onChange={formik.handleChange}
+            value={formik.values.password}
+            name="password"
+          />
+          {formik.errors.password ? <div>{formik.errors.password}</div> : null}
+          <LinkLessButton2 text={t("Login.login")} />
+        </form>
+      </div>
     </div>
   );
 }

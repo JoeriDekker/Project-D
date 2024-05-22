@@ -42,5 +42,16 @@ function LinkLessButton(props: LinkLessButtonProps) {
   );
 }
 
+function LinkLessButton2(props: LinkLessButtonProps) {
+  return (
+    <button
+      className="ring-offset-background mt-8 focus-visible:ring-ring flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md bg-secondaryCol px-8 py-2 text-sm font-medium text-black transition-colors hover:bg-secondaryCol/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+      type="submit"
+    >
+      {props.text}
+    </button>
+  );
+}
+
 export default AnyButton;
-export { AnyButton2, LinkLessButton };
+export { AnyButton2, LinkLessButton, LinkLessButton2 };

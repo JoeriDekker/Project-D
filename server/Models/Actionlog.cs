@@ -6,32 +6,34 @@ namespace WAMServer.Models
     /// <summary>
     /// The User class represents a user in the database.
     /// </summary>
-    public class Actionlog
+    public class ActionLog
     {
         [Key]
         public Guid Id { get; set; }
 
-        [Required, Column(TypeName = "varchar(100)")]
+        [ForeignKey("User")]
         public Guid userId { get; set; }
-
-        [Required, Column(TypeName = "integer(11)")]
+        [ForeignKey("ActionType")]
         public int actionTypeID { get; set; }
 
-        [Required, Column(TypeName = "BIGINT")]
-        public long dateTime { get; set; }
+        [Required]
+        public DateTime dateTimeStamp { get; set; }
+
+        public User User {get;set;} = null!;
+        public ActionType ActionType {get;set;} = null!;
 
         /// <summary>
         /// Constructor for creating an ActionLog object.
         /// </summary>
         /// <param name="userId">ID of the user associated with the action log.</param>
         /// <param name="actionTypeID">ID of the action type performed.</param>
-        /// <param name="dateTime">Date and time of the action.</param>
-        public Actionlog(Guid userId, int actionTypeID, long datetime)
+        /// <param name="datetime">Date and time of the action.</param>
+        public ActionLog(Guid userId, int actionTypeID, DateTime dateTimeStamp)
         {
             this.Id = Guid.NewGuid();
             this.userId = userId;
             this.actionTypeID = actionTypeID;
-            this.dateTime = dateTime;
+            this.dateTimeStamp = dateTimeStamp;
         }
 
     }

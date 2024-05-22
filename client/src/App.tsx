@@ -9,7 +9,6 @@ import {
 import AuthOutlet from "@auth-kit/react-router/AuthOutlet";
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 
-import Dashboard from "./pages/Dashboard/Dashboard";
 import LoginScreen from "./pages/LoginScreen/LoginScreen";
 import AccountPage from "./pages/Account/AccountPage";
 import axios, { AxiosError } from "axios";
@@ -18,7 +17,7 @@ import useIsAuthenticated from 'react-auth-kit/hooks/useIsAuthenticated'
 import AnyPage from "./pages/anypage";
 import LogboekScreen from "./pages/Logboek/logboekScreen";
 import Register from "./pages/Register/RegisterPage";
-import VerificationScreen from "./pages/Verification/VerificationScreen";
+import VerificationScreen from "./pages/Verification/VerificationScreen";import Home from './pages/homedashboard';
 
 function App() {
   const authHeader = useAuthHeader();
@@ -54,7 +53,8 @@ function App() {
         <Route path="/verify/:userId/:token" Component={VerificationScreen} />
         <Route element={<AuthOutlet fallbackPath="/login" />}>
           <Route path="/account" element={<AccountPage />} />
-          <Route path="/" element={<AnyPage />} />
+          <Route path="/*" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/logboek" element={<LogboekScreen />} />
         </Route>
         <Route path="/*" element={<Navigate to="/" />} />
