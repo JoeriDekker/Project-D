@@ -16,7 +16,7 @@ namespace WAMServer.Repositories
     {
         private readonly WamDBContext _context;
 
-        public ControlPCRepository(WamDBContext context)
+        public DbControlPCRepository(WamDBContext context)
         {
             _context = context;
         }
