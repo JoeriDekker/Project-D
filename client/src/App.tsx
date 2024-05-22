@@ -48,9 +48,13 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LoginScreen />} />
-        <Route path="/logboek" element={<LogboekScreen />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/login" Component={LoginScreen} />
+        <Route element={<AuthOutlet fallbackPath="/login" />}>
+          <Route path="/account" element={<AccountPage />} />
+          <Route path="/" element={<AnyPage />} />
+          <Route path="/logboek" element={<LogboekScreen />} />
+        </Route>
+        <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );

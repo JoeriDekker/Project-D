@@ -33,7 +33,7 @@ namespace WAMServer
             app.UseCors();
             app.UseAuthentication();
             app.UseAuthorization();
-            app.Urls.Add("http://localhost:5000");
+            app.Urls.Add("http://*:5000");
             app.MapControllers();
             app.Run();
         }
