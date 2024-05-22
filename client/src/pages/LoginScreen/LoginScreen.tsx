@@ -1,13 +1,23 @@
 import { useFormik } from "formik";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as Yup from "yup"; // Import Yup package
 import useSignIn from "react-auth-kit/hooks/useSignIn";
 import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 import axios, { AxiosError } from "axios";
 import { UserResponse } from "./LoginScreen.state";
+import { useLocation } from "react-router-dom";
+import { t } from "i18next";
+
+function useQuery() {
+  const { search } = useLocation();
+
+  return React.useMemo(() => new URLSearchParams(search), [search]);
+}
 
 function LoginScreen() {
-  const [error, setError] = useState<string | null>(null);
+  const query = useQuery();
+  const [error, setError] = useState<string | null>(query.get("error"));
+  const [success, setSuccess] = useState<string | null>(null);
   const signIn = useSignIn();
   const isAuthenticated = useIsAuthenticated();
   const validateSchema = Yup.object().shape({
@@ -98,6 +108,18 @@ function LoginScreen() {
       }
     }
   }
+  
+  useEffect(() => {
+    if (query.get("success") === "verf") {
+      setSuccess(t("Login.verificationsuccess"));
+      // fade out the success message after 5 seconds
+      setTimeout(() => {
+        setSuccess(null);
+      }, 5000);
+    } else if (query.get("error") === "verf") {
+      setError(t("Login.verificationerror"));
+    }
+  }, [query]);
 
   // If already logged in, redirect to dashboard
   if (isAuthenticated) {
@@ -108,6 +130,9 @@ function LoginScreen() {
       <form onSubmit={formik.handleSubmit} className="flex flex-col">
         {error ? (
           <div className="bg-red-400 text-white p-4 text-center">{error}</div>
+        ) : null}
+        {success ? (
+          <div className="bg-green-400 text-white p-4 text-center">{success}</div>
         ) : null}
         <label htmlFor="email">Email</label>
         <input

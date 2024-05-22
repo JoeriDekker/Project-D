@@ -12,12 +12,12 @@ function RegisterPage() {
   const validationScheme = Yup.object({
     firstname: Yup.string()
       .required(t("Register.firstnamereq"))
-      .min(2, "Register.firstnamemin")
-      .max(50, "Register.firstnamemax"),
+      .min(2, t("Register.firstnamemin"))
+      .max(50, t("Register.firstnamemax")),
     lastname: Yup.string()
       .required(t("Register.lastnamereq"))
-      .min(2, "Register.lastnamemin")
-      .max(50, "Register.lastnamemax"),
+      .min(2, t("Register.lastnamemin"))
+      .max(50, t("Register.lastnamemax")),
     email: Yup.string()
       .required(t("Register.emailreq"))
       .email(t("Register.emailvalid")),

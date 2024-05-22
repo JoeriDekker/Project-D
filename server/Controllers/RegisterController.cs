@@ -28,7 +28,8 @@ namespace WAMServer.Controllers
         public async Task<ActionResult> Post([FromBody] UserBody body)
         {
             string? backendURL = _configuration.GetValue<string>("JWT:Issuer");
-            if(backendURL == null)
+            string? frontendURL = _configuration.GetValue<string>("FrontendURL");
+            if(backendURL == null || frontendURL == null)
             {
                 return BadRequest(new ErrorBody("Register.failed"));
             }
@@ -54,7 +55,7 @@ namespace WAMServer.Controllers
             {
                 return BadRequest(new ErrorBody("Register.failed"));
             }
-            _mailService.SendEmail(user.Email, "Welcome to WAM", $"We are pleased to hear you want to join the fight against polerot. In order to log in, please confirm your email address by clicking the following link: {backendURL}/api/register/confirm?userId=" + user.Id + "&token=" + user.ConfirmationToken);
+            _mailService.SendEmail(user.Email, "Welcome to WAM", $"We are pleased to hear you want to join the fight against polerot. In order to log in, please confirm your email address by clicking the following link: {frontendURL}/verify/" + user.Id + "/" + user.ConfirmationToken);
             return Ok();
         }
 
@@ -67,7 +68,13 @@ namespace WAMServer.Controllers
             {
                 return BadRequest();
             }
-            var user = _userRepository.Get(Guid.Parse(userId));
+            User? user;
+            try {
+            user = _userRepository.Get(Guid.Parse(userId));
+            } catch (FormatException)
+            {
+                return BadRequest();
+            }
             if (user == null)
             {
                 return NotFound();
@@ -78,7 +85,7 @@ namespace WAMServer.Controllers
             }
             user.IsConfirmed = true;
             await _userRepository.UpdateAsync(user, u => u.Id == user.Id);
-            return Redirect(frontendURL);
+            return Ok(frontendURL);
         }
         
 

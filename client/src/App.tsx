@@ -18,6 +18,7 @@ import useIsAuthenticated from 'react-auth-kit/hooks/useIsAuthenticated'
 import AnyPage from "./pages/anypage";
 import LogboekScreen from "./pages/Logboek/logboekScreen";
 import Register from "./pages/Register/RegisterPage";
+import VerificationScreen from "./pages/Verification/VerificationScreen";
 
 function App() {
   const authHeader = useAuthHeader();
@@ -48,8 +49,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/Register" Component={Register} />
+        <Route path="/register" Component={Register} />
         <Route path="/login" Component={LoginScreen} />
+        <Route path="/verify/:userId/:token" Component={VerificationScreen} />
         <Route element={<AuthOutlet fallbackPath="/login" />}>
           <Route path="/account" element={<AccountPage />} />
           <Route path="/" element={<AnyPage />} />
