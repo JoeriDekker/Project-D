@@ -17,7 +17,7 @@ import useSignOut from "react-auth-kit/hooks/useSignOut";
 import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 import AnyPage from "./pages/anypage";
 import LogboekScreen from "./pages/Logboek/logboekScreen";
-
+import Home from './pages/homedashboard';
 
 function App() {
   const authHeader = useAuthHeader();
@@ -52,6 +52,7 @@ function App() {
         <Route element={<AuthOutlet fallbackPath="/login" />}>
           <Route path="/account" element={<AccountPage />} />
           <Route path="/" element={<AnyPage />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/logboek" element={<LogboekScreen />} />
         </Route>
         <Route path="/*" element={<Navigate to="/" />} />
