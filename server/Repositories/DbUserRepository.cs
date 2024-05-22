@@ -54,9 +54,22 @@ namespace WAMServer.Repositories
             return _context.Users.Where(predicate).ToList();
         }
 
-        public Task<User> UpdateAsync(User entity, Func<User, bool> predicate)
+        public async Task<User?> UpdateAsync(User entity, Func<User, bool> predicate)
         {
-            throw new NotImplementedException();
+            var user = _context.Users.Where(predicate).FirstOrDefault();
+            if (user == null)
+            {
+                throw new Exception("User not found");
+            }
+            user.FirstName = entity.FirstName;
+            user.LastName = entity.LastName;
+            user.Email = entity.Email;
+            user.Password = entity.Password;
+            user.IsConfirmed = entity.IsConfirmed;
+            user.ConfirmationToken = entity.ConfirmationToken;
+            user.AddressId = entity.AddressId;
+            await _context.SaveChangesAsync();
+            return user;
         }
     }
 }

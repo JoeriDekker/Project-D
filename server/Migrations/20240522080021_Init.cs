@@ -27,6 +27,20 @@ namespace server.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "GroundWaterLog",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    controlPCID = table.Column<string>(type: "varchar(100)", nullable: false),
+                    date = table.Column<string>(type: "varchar(100)", nullable: false),
+                    level = table.Column<decimal>(type: "decimal", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GroundWaterLog", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Addresses",
                 columns: table => new
                 {
@@ -52,6 +66,7 @@ namespace server.Migrations
                     Email = table.Column<string>(type: "varchar(100)", nullable: false),
                     Password = table.Column<string>(type: "varchar(100)", nullable: false),
                     IsConfirmed = table.Column<bool>(type: "boolean", nullable: false),
+                    ConfirmationToken = table.Column<Guid>(type: "uuid", nullable: false),
                     AddressId = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>
@@ -91,6 +106,9 @@ namespace server.Migrations
 
             migrationBuilder.DropTable(
                 name: "ControlPCs");
+
+            migrationBuilder.DropTable(
+                name: "GroundWaterLog");
 
             migrationBuilder.DropTable(
                 name: "Users");

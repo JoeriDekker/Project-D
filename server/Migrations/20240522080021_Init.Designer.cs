@@ -12,8 +12,8 @@ using WAMServer.Models;
 namespace server.Migrations
 {
     [DbContext(typeof(WamDBContext))]
-    [Migration("20240517095340_changegroundwatermodel")]
-    partial class changegroundwatermodel
+    [Migration("20240522080021_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -57,6 +57,32 @@ namespace server.Migrations
                     b.ToTable("Addresses");
                 });
 
+            modelBuilder.Entity("WAMServer.Models.ControlPC", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("ControlPCSecret")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("meetputBroID")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("secret")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<Guid>("userId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ControlPCs");
+                });
+
             modelBuilder.Entity("WAMServer.Models.GroundWaterLog", b =>
                 {
                     b.Property<Guid>("Id")
@@ -88,6 +114,9 @@ namespace server.Migrations
                     b.Property<Guid?>("AddressId")
                         .HasColumnType("uuid");
 
+                    b.Property<Guid>("ConfirmationToken")
+                        .HasColumnType("uuid");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("varchar(100)");
@@ -95,6 +124,9 @@ namespace server.Migrations
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("varchar(100)");
+
+                    b.Property<bool>("IsConfirmed")
+                        .HasColumnType("boolean");
 
                     b.Property<string>("LastName")
                         .IsRequired()

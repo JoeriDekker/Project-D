@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
 using WAMServer.Interfaces;
 using WAMServer.Models;
 using WAMServer.Records.Bodies;
@@ -14,16 +13,27 @@ namespace WAMServer.Controllers
     {
 
         private IRepository<User> _userRepository;
+        private IEmailService _mailService;
+        private IConfiguration _configuration;
 
-        public RegisterController(IRepository<User> userRepository)
+        public RegisterController(IRepository<User> userRepository, IEmailService mailService, IConfiguration configuration)
         {
             _userRepository = userRepository;
+            _mailService = mailService;
+            _configuration = configuration;
         }
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<ActionResult<User>> Post([FromBody] UserBody body)
+        public async Task<ActionResult> Post([FromBody] UserBody body)
         {
+            string? backendURL = _configuration.GetValue<string>("JWT:Issuer");
+            if(backendURL == null)
+            {
+                return BadRequest(new ErrorBody("Register.failed"));
+            }
+
+            // Check if the email is already taken
             var usersWithEmail = _userRepository.GetAll(user => user.Email == body.Email);
             if (usersWithEmail.Count() > 0)
             {
@@ -39,20 +49,36 @@ namespace WAMServer.Controllers
             }
             string hashedPassword = BCrypt.Net.BCrypt.EnhancedHashPassword(body.Password);
             var user = new User(body.FirstName, body.LastName, body.Email, hashedPassword);
-            return await _userRepository.AddAsync(user);
+            User registeredUser = await _userRepository.AddAsync(user);
+            if (registeredUser == null)
+            {
+                return BadRequest(new ErrorBody("Register.failed"));
+            }
+            _mailService.SendEmail(user.Email, "Welcome to WAM", $"We are pleased to hear you want to join the fight against polerot. In order to log in, please confirm your email address by clicking the following link: {backendURL}/api/register/confirm?userId=" + user.Id + "&token=" + user.ConfirmationToken);
+            return Ok();
         }
 
         [HttpGet("confirm")]
         [AllowAnonymous]
-        public ActionResult Confirm([FromQuery] string userId, [FromQuery] string token)
+        public async Task<ActionResult> Confirm([FromQuery] string userId, [FromQuery] string token)
         {
+            string? frontendURL = _configuration.GetValue<string>("FrontendURL");
+            if(frontendURL == null)
+            {
+                return BadRequest();
+            }
             var user = _userRepository.Get(Guid.Parse(userId));
             if (user == null)
             {
                 return NotFound();
             }
-            
-            return Ok();
+            if (user.ConfirmationToken.ToString() != token)
+            {
+                return BadRequest();
+            }
+            user.IsConfirmed = true;
+            await _userRepository.UpdateAsync(user, u => u.Id == user.Id);
+            return Redirect(frontendURL);
         }
         
 
