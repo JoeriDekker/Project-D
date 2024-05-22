@@ -153,12 +153,14 @@ function LoginScreen() {
             placeholder=""
             onChange={formik.handleChange}
             value={formik.values.email}
+            type="email"
             name="email"
           />
           {formik.errors.email ? <div>{formik.errors.email}</div> : null}
           <Input
             label={t("Login.password")}
             placeholder="******"
+            type="password"
             onChange={formik.handleChange}
             value={formik.values.password}
             name="password"
