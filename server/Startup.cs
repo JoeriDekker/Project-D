@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using WAMServer.Data;
+using WAMServer.Seeders;
 using WAMServer.Interfaces;
 using WAMServer.Models;
 using WAMServer.Repositories;
