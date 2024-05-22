@@ -37,7 +37,6 @@ namespace WAMServer.Models
         /// <summary>
         /// The user of the address.
         /// </summary>
-        [ForeignKey("UserId")]
         public User? User { get; set; }
 
         public Address() {}

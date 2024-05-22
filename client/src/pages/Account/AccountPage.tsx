@@ -238,6 +238,126 @@ function AnyPage() {
                         <LinkLessButton text={t("PC.reconnect")} />
                     </div>
                 </form>
+
+      });
+      if (res.status === 200) {
+        alert("Address updated successfully");
+      }
+    } catch (e) {
+      const error = e as AxiosError;
+      console.error(error);
+    }
+  }
+
+  return (
+    <div className="bg-backgroundCol w-screen h-screen py-5 flex dir-row">
+      <Navbar />
+      <div className="space-y-10 bg-white w-full h-full rounded-xl mr-5 p-5">
+        {/* Account setting section  */}
+
+        <form onSubmit={addressFormik.handleSubmit}>
+          <h1 className="text-xl font-medium">{t("Login.adjust")}</h1>
+          <h2 className="text-l font-medium opacity-40">
+            {t("Login.current")}
+          </h2>
+          <div className="flex dir-row w-full gap-5 px-5 pt-5">
+            <Input
+              label={t("Login.street")}
+              placeholder={user?.address.street || ""}
+              onChange={addressFormik.handleChange}
+              value={addressFormik.values.street}
+              name="street"
+              error={addressFormik.errors.street}
+            />
+
+            <Input
+              label={t("Login.housenum")}
+              placeholder={user?.address.houseNumber || ""}
+              width="1/2"
+              onChange={addressFormik.handleChange}
+              value={addressFormik.values.houseNumber}
+              name="houseNumber"
+              error={addressFormik.errors.houseNumber}
+            />
+          </div>
+          <div className="flex dir-row w-full gap-5 px-5 pt-5">
+            <Input
+              label={t("Login.zipcode")}
+              placeholder={user?.address.zip || ""}
+              width="1/2"
+              onChange={addressFormik.handleChange}
+              value={addressFormik.values.zip}
+              error={addressFormik.errors.zip}
+              name="zip"
+            />
+            <Input
+              label={t("Login.place")}
+              placeholder={user?.address.city || ""}
+              width="full"
+              onChange={addressFormik.handleChange}
+              value={addressFormik.values.city}
+              name="city"
+              error={addressFormik.errors.city}
+            />
+          </div>
+          <Input
+            label={t("Login.password")}
+            placeholder="***************"
+            width="1/2 px-5 pt-5"
+            onChange={addressFormik.handleChange}
+            value={addressFormik.values.password}
+            name="password"
+            error={addressFormik.errors.password}
+          />
+          {/* TODO: Link this do an actual forget page */}
+          <a href="/wwforgor" className="px-5 underline text-secondaryCol">
+            {t("Login.adjustpass")}
+          </a>
+
+          <div className="mx-5">
+            <LinkLessButton text={t("Login.adjustbutton")} />
+          </div>
+        </form>
+
+        {/* Pc connection section */}
+        <div>
+          <h1 className="text-xl font-medium">{t("PC.connection")}</h1>
+          <h2 className="text-l font-medium opacity-40">{t("PC.foundin")}</h2>
+          <div className="space-y-5 px-5 pt-5">
+            <div>
+              <h3 className="text-m font-medium">{t("PC.uuid")}</h3>
+              <p className="opacity-40">{t("PC.uuidexplain")}</p>
+              <Input
+                label="UUID"
+                needed
+                neededText={t("PC.foundon")}
+                placeholder="b678ef40-524f-4890-a40b-efae6e85113e"
+                width="auto max-w-xs"
+              />
+            </div>
+            <div>
+              <h3 className="text-m font-medium">{t("PC.security")}</h3>
+              <p className="opacity-40">{t("PC.securityexplain")}</p>
+              <div className="">
+                <Input
+                  label="Key"
+                  needed
+                  neededText={t("PC.keyon")}
+                  placeholder="**********"
+                  width="auto max-w-xs"
+                />
+              </div>
+            </div>
+            <div>
+              <div className="flex dir-row gap-2 items-center">
+                <h3 className="text-m font-medium">{t("PC.status")}</h3>
+                {connected ? (
+                  <div className="bg-green-500 w-3 h-3 rounded-xl"></div>
+                ) : (
+                  <div className="bg-red-500 w-3 h-3 rounded-xl"></div>
+                )}
+              </div>
+              <p className="opacity-40">{t("PC.statusexplain")}</p>
             </div>
         </div>
     );

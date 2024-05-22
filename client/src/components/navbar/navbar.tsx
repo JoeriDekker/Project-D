@@ -41,15 +41,15 @@ function Navbar() {
                     <div className="space-y-2 flex flex-grow flex-col">
                         <label className="px-14 text-sm text-gray-500">{t('Navigation.dashboard')}</label>
 
-                        <NavItem icon="Home" text={t('Navigation.overview')} link="/home" />
-                        <NavItem icon="Measure" text={t('Navigation.waterdata')} link="/" />
+                        <NavItem icon="Home" text={t('Navigation.overview')} link="/" />
+                        <NavItem icon="Measure" text={t('Navigation.waterdata')} link="/anypage" />
                         <NavItem icon="Logbook" text={t('Navigation.logbooks')} link="/logboek" />
                     </div>
 
                     <div className="space-y-2 pb-8 flex flex-col">
                         <label className="px-14 text-sm text-gray-500">{t('Navigation.settings')}</label>
 
-                        <NavItem icon="Neighbourhood" text={t('Navigation.neighbourhood')} link="/" />
+                        <NavItem icon="Neighbourhood" text={t('Navigation.neighbourhood')} link="/anypage" />
                         <NavItem icon="Account" text={t('Navigation.account')} link="/account" />
                     </div>
 
@@ -62,7 +62,7 @@ function Navbar() {
                         </button>
 
                         {active ? <>
-                            <div className="pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6">
+                            <div className="pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6 z-10">
                                 <div className="pointer-events-auto ml-72 w-fit rounded-xl bg-white p-6 shadow-lg ring-1 ring-gray-900/10">
                                     <p className="text-sm leading-6 text-gray-900">{t('Contact.contact')}<br /><br />{t('Contact.telephone')}<br />{t('Contact.email')}</p>
                                     <div className="mt-4 flex items-center gap-x-5">

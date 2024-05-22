@@ -9,13 +9,15 @@ namespace WAMServer.Models
     public class ActionType
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required, Column(TypeName = "varchar(255)")]
         public string title { get; set; }
 
         [Required, Column(TypeName = "varchar(255)")]
         public string details {get; set;}
+
+        public List<ActionLog> ActionLogs {get;set;} = null!;
 
         /// <summary>
         /// Constructor for creating an ActionType object.
@@ -24,7 +26,6 @@ namespace WAMServer.Models
         /// <param name="details">Details of the action type.</param>
         public ActionType(string title, string details)
         {
-            this.Id = Guid.NewGuid();
             this.title = title;
             this.details = details;
         }

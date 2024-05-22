@@ -17,7 +17,7 @@ function LogboekScreen() {
                             Logboek
                         </h1>
                         <br />
-                        <div className="grid grid-cols-2 gap-10">
+                        <div className="grid grid-cols-2 gap-10  px-5 pt-5">
                             <WaterpeilLogboek />
                             <Logboek />
                         </div>

@@ -25,7 +25,9 @@
         "place": "Plaats naam",
         "password": "Wachtwoord",
         "adjustpass": "Wachtwoord wijzigen/vergeten",
-        "adjustbutton": "Wijzigen opslaan"
+        "adjustbutton": "Wijzigen opslaan",
+        "email": "Email",
+        "login": "Inloggen"
     },
     "PC": {
         "connection": "Verbinding",
