@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WAMServer.Interfaces;
 using WAMServer.Models;
-using WAMServer.Data;
+using WAMServer.Seeders;
 
 namespace WAMServer.Repositories
 {
