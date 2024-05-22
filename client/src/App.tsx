@@ -50,7 +50,7 @@ function App() {
         <Route path="/login" Component={LoginScreen} />
         <Route element={<AuthOutlet fallbackPath="/login" />}>
           <Route path="/account" element={<AccountPage />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/*" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
           <Route path="/logboek" element={<LogboekScreen />} />
         </Route>
