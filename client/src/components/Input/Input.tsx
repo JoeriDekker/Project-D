@@ -25,7 +25,7 @@ function Input(props: Props) {
     return (
         <div className={newWidth} >
             <div className="flex dir-row gap-1">
-                <label htmlFor="default-input" className="block mb-2 text-sm font-medium text-gray-900 opacity-40">{props.label}</label>
+                <label htmlFor="default-input" className="block mb-2 text-sm font-medium text-gray-900 opacity-80">{props.label}</label>
                 {!props.needed ? (<></>) : (
                     <div className="flex dir-row " onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
                         <p className="text-red-500 text-xl">*</p>

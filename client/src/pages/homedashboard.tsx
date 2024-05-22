@@ -1,16 +1,72 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 import Navbar from '../components/navbar/navbar'
 import Logboek from "../components/logboek/waterpeillogboek";
 
-function HomeDashboard() {
-    return (
-        <div className="bg-secondaryCol w-screen h-screen py-5 flex dir-row">
-            <Navbar />
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+function HomeDashboard() {
+    const waterlevel = -2.15;
+    const waterlevel_perc = 65;
+
+    const paalkop = -2.05;
+    const paalkop_perc = 80;
+
+    const ideal = -1.85;
+    const ideal_perc = 70;
+
+    function defineNotifcation() {
+		// TODO: de amth.random vervangen door de API call bijvoorbeeld: /api/checkWaterStand
+
+		if(waterlevel < ideal) {
+			return toast.error("Let op! Je waterpeil is gevaarlijk laag!", {
+				position: "top-center",
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+				theme: "colored",
+			});
+		}
+
+		return toast.success("Welkom terug!", {
+			position: "top-center",
+			autoClose: 5000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+			theme: "colored",
+		});
+	}
+
+	useEffect(() => {
+		defineNotifcation();
+	})
+
+
+    return (
+        <div className="bg-secondaryCol w-screen h-screen py-5 flex">
+            <Navbar />
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             {/* grid setup */}
             <div className="bg-white w-full h-full rounded-xl mr-5 pb-4">
-                <div className="grid grid-cols-2 h-[100%] m-2">
+                <div className="grid grid-cols-2 grid-rows-2 h-[100%] m-2">
 
                     {/* water level visual */}
                     <div className="bg-gray-800 m-2 p-4 rounded-xl">
@@ -32,27 +88,32 @@ function HomeDashboard() {
                                 <div className="flex-1 relative pl-6 flex flex-col items-center">
                                     <div className="flex justify-center">
                                         <p className="text-white mr-1">Paalkop:</p>
-                                        <p className="text-red-500">-2.05</p>
+                                        <p className="text-gray-400">{paalkop}</p>
                                     </div>
 
                                     <div className="flex justify-center">
                                         <p className="text-white mr-1">Ideal:</p>
-                                        <p className="text-green-500">-1.85</p>
+                                        <p className="text-green-500">{ideal}</p>
                                     </div>
                                 </div>
                             </div>
                             <div className="flex flex-col w-[50%] m-5 border-2 relative">
 
                                 {/* min and max lines */}
-                                <div className="absolute bottom-[80%] left-[50%] transform -translate-x-[50%] bg-green-500 w-full h-0.5"></div>
-                                <div className="absolute bottom-[70%] left-[50%] transform -translate-x-[50%] bg-red-500 w-full h-0.5"></div>
+                                <div className="absolute left-[50%] transform -translate-x-[50%] bg-green-500 w-full h-0.5" style={{ bottom: `${paalkop_perc}%` }}></div>
+                                <p className="absolute bottom-[77%] left-[-10%] transform -translate-x-[50%] text-green-500" style={{ bottom: `${paalkop_perc - 3}%` }}>{paalkop}</p>
+
+                                <div className="absolute left-[50%] transform -translate-x-[50%] bg-gray-400 w-full h-0.5" style={{ bottom: `${ideal_perc}%` }}></div>
+                                <p className="absolute left-[-10%] transform -translate-x-[50%] text-gray-400" style={{ bottom: `${ideal_perc - 3}%` }}>{ideal}</p>
 
                                 {/* pillar */}
                                 <div className="absolute bottom-0 left-[50%] transform -translate-x-[50%] bg-orange-300 w-[15%] h-[70%]"></div>
 
                                 {/* current water level box */}
                                 <div className="flex flex-1"></div>
-                                <div className="flex h-[65%] border-t-2 border-teal-400 bg-teal-400 bg-opacity-30 z-10"></div>
+                                <div className="flex border-t-2 border-teal-400 bg-teal-400 bg-opacity-30 z-10" style={{ height: `${waterlevel_perc}%` }}></div>
+                                <p className="absolute left-[9%] transform -translate-x-[50%] text-red-500 z-20" style={{ bottom: `${waterlevel_perc - 8}%` }}>{waterlevel}</p>
+
                             </div>
                         </div>
                     </div>
