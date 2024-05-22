@@ -74,10 +74,10 @@ function AnyPage() {
         headers: {
           Authorization: authHeader,
         },
-			});
-			if (res.status === 200) {
-				alert("Address updated successfully");
-			}
+      });
+      if (res.status === 200) {
+        alert("Address updated successfully");
+      }
     } catch (e) {
       const error = e as AxiosError;
       console.error(error);
@@ -128,14 +128,13 @@ function AnyPage() {
             <Input
               label={t("Login.place")}
               placeholder={user?.address.city || ""}
-              width="1/2"
+              width="full"
               onChange={addressFormik.handleChange}
               value={addressFormik.values.city}
               name="city"
               error={addressFormik.errors.city}
             />
           </div>
-          {/* TODO: Link this do an actual forget page */}
           <Input
             label={t("Login.password")}
             placeholder="***************"
@@ -145,6 +144,7 @@ function AnyPage() {
             name="password"
             error={addressFormik.errors.password}
           />
+          {/* TODO: Link this do an actual forget page */}
           <a href="/wwforgor" className="px-5 underline text-secondaryCol">
             {t("Login.adjustpass")}
           </a>
