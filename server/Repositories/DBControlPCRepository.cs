@@ -28,7 +28,7 @@ namespace WAMServer.Repositories
         /// <returns>The created ControlPC.</returns>
         public async Task<ControlPC> AddAsync(ControlPC entity)
         {
-            await _context.ControlPCs.AddAsync(entity);
+            await _context.ControlPC.AddAsync(entity);
             await _context.SaveChangesAsync();
             return entity;
         }
@@ -40,10 +40,10 @@ namespace WAMServer.Repositories
         /// <returns>The deleted ControlPC if it exists, otherwise null.</returns>
         public async Task<ControlPC?> DeleteAsync(Guid id)
         {
-            var entity = await _context.ControlPCs.FindAsync(id);
+            var entity = await _context.ControlPC.FindAsync(id);
             if (entity != null)
             {
-                _context.ControlPCs.Remove(entity);
+                _context.ControlPC.Remove(entity);
                 await _context.SaveChangesAsync();
                 return entity;
             }
@@ -57,7 +57,7 @@ namespace WAMServer.Repositories
         /// <returns>Returns the ControlPC from the database if it exists, otherwise null.</returns>
         public ControlPC? Get(Guid id)
         {
-            return _context.ControlPCs.FirstOrDefault(c => c.Id == id);
+            return _context.ControlPC.FirstOrDefault(c => c.Id == id);
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace WAMServer.Repositories
         /// <returns>A list of all ControlPCs.</returns>
         public async Task<IEnumerable<ControlPC>> GetAllAsync()
         {
-            return await _context.ControlPCs.ToListAsync();
+            return await _context.ControlPC.ToListAsync();
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace WAMServer.Repositories
         /// <returns>The ControlPC object if it exists in the database, otherwise null.</returns>
         public async Task<ControlPC?> GetAsync(Guid id)
         {
-            return await _context.ControlPCs.FindAsync(id);
+            return await _context.ControlPC.FindAsync(id);
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace WAMServer.Repositories
         /// <returns>The updated ControlPC if the update was successful, otherwise null.</returns>
         public async Task<ControlPC?> UpdateAsync(ControlPC entity, Func<ControlPC, bool> predicate)
         {
-            var existingEntity = _context.ControlPCs.FirstOrDefault(predicate);
+            var existingEntity = _context.ControlPC.FirstOrDefault(predicate);
             if (existingEntity != null)
             {
                 _context.Entry(existingEntity).CurrentValues.SetValues(entity);
