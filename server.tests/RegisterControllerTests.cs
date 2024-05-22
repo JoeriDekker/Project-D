@@ -31,8 +31,8 @@ namespace WAMServer.Tests.Controllers
         [Fact]
         public async Task Post_Should_Return_BadRequest_When_Urls_Are_Null()
         {
-            _configurationMock.Setup(x => x["Issuer"]).Returns((string)null);
-            _configurationMock.Setup(x => x["FrontendURL"]).Returns((string)null);
+            _configurationMock.Setup(x => x["Issuer"]).Returns("");
+            _configurationMock.Setup(x => x["FrontendURL"]).Returns("");
 
             // Arrange
             var userBody = new UserBody { Email = "test@example.com", Password = "Password123!", FirstName = "John", LastName = "Doe" };
@@ -43,7 +43,8 @@ namespace WAMServer.Tests.Controllers
             // Assert
             Assert.IsType<BadRequestObjectResult>(result);
             var badRequestResult = result as BadRequestObjectResult;
-            Assert.Equal("Register.failed", (badRequestResult.Value as ErrorBody).Error);
+            Assert.NotNull(badRequestResult!.Value);
+            Assert.Equal("Register.failed", (badRequestResult.Value as ErrorBody)!.Error);
         }
 
         [Fact]
@@ -62,13 +63,15 @@ namespace WAMServer.Tests.Controllers
             Assert.IsType<BadRequestObjectResult>(result);
             var badRequestResult = result as BadRequestObjectResult;
             Assert.NotNull(badRequestResult!.Value);
-            Assert.Equal("Register.emailtaken", (badRequestResult.Value as ErrorBody).Error);
+            Assert.Equal("Register.emailtaken", (badRequestResult.Value as ErrorBody)!.Error);
         }
 
         [Fact]
         public async Task Post_Should_Return_BadRequest_For_Invalid_Email()
         {
             // Arrange
+            _configurationMock.Setup(x => x["JWT:Issuer"]).Returns("http://localhost:5000");
+            _configurationMock.Setup(x => x["FrontendURL"]).Returns("http://localhost:3000");
             var userBody = new UserBody { Email = "invalid-email", Password = "Password123!", FirstName = "John", LastName = "Doe" };
 
             // Act
@@ -77,13 +80,16 @@ namespace WAMServer.Tests.Controllers
             // Assert
             Assert.IsType<BadRequestObjectResult>(result);
             var badRequestResult = result as BadRequestObjectResult;
-            Assert.Equal("Wrong approach, incident reported.", (badRequestResult.Value as ErrorBody).Error);
+            Assert.NotNull(badRequestResult!.Value);
+            Assert.Equal("Wrong approach, incident reported.", (badRequestResult.Value as ErrorBody)!.Error);
         }
 
         [Fact]
         public async Task Post_Should_Return_BadRequest_For_Invalid_Password()
         {
             // Arrange
+            _configurationMock.Setup(x => x["JWT:Issuer"]).Returns("http://localhost:5000");
+            _configurationMock.Setup(x => x["FrontendURL"]).Returns("http://localhost:3000");
             var userBody = new UserBody { Email = "test@example.com", Password = "short", FirstName = "John", LastName = "Doe" };
 
             // Act
@@ -92,13 +98,16 @@ namespace WAMServer.Tests.Controllers
             // Assert
             Assert.IsType<BadRequestObjectResult>(result);
             var badRequestResult = result as BadRequestObjectResult;
-            Assert.Equal("Wrong approach, incident reported.", (badRequestResult.Value as ErrorBody).Error);
+            Assert.NotNull(badRequestResult!.Value);
+            Assert.Equal("Wrong approach, incident reported.", (badRequestResult.Value as ErrorBody)!.Error);
         }
 
         [Fact]
         public async Task Post_Should_Return_Ok_When_User_Is_Registered()
         {
             // Arrange
+            _configurationMock.Setup(x => x["JWT:Issuer"]).Returns("http://localhost:5000");
+            _configurationMock.Setup(x => x["FrontendURL"]).Returns("http://localhost:3000");
             var userBody = new UserBody { Email = "test@example.com", Password = "Password123!", FirstName = "John", LastName = "Doe" };
             var user = new User(userBody.FirstName, userBody.LastName, userBody.Email, userBody.Password);
             _userRepositoryMock.Setup(x => x.GetAll(It.IsAny<Func<User, bool>>())).Returns(new List<User>().AsQueryable());
@@ -114,6 +123,9 @@ namespace WAMServer.Tests.Controllers
         [Fact]
         public async Task Confirm_Should_Return_BadRequest_For_Invalid_UserId()
         {
+            // Arrange
+            _configurationMock.Setup(x => x["JWT:Issuer"]).Returns("http://localhost:5000");
+            _configurationMock.Setup(x => x["FrontendURL"]).Returns("http://localhost:3000");
             // Act
             var result = await _controller.Confirm("invalid-user-id", "some-token");
 
@@ -125,7 +137,9 @@ namespace WAMServer.Tests.Controllers
         public async Task Confirm_Should_Return_NotFound_When_User_Not_Exists()
         {
             // Arrange
-            _userRepositoryMock.Setup(x => x.Get(It.IsAny<Guid>())).Returns<User>(null);
+            _configurationMock.Setup(x => x["JWT:Issuer"]).Returns("http://localhost:5000");
+            _configurationMock.Setup(x => x["FrontendURL"]).Returns("http://localhost:3000");
+            _userRepositoryMock.Setup(x => x.Get(It.IsAny<Guid>())).Returns<User?>(null!);
 
             // Act
             var result = await _controller.Confirm(Guid.NewGuid().ToString(), "some-token");
@@ -138,6 +152,8 @@ namespace WAMServer.Tests.Controllers
         public async Task Confirm_Should_Return_BadRequest_For_Invalid_Token()
         {
             // Arrange
+            _configurationMock.Setup(x => x["JWT:Issuer"]).Returns("http://localhost:5000");
+            _configurationMock.Setup(x => x["FrontendURL"]).Returns("http://localhost:3000");
             var user = new User { ConfirmationToken = Guid.NewGuid() };
             _userRepositoryMock.Setup(x => x.Get(It.IsAny<Guid>())).Returns(user);
 
@@ -152,9 +168,11 @@ namespace WAMServer.Tests.Controllers
         public async Task Confirm_Should_Return_Ok_When_User_Is_Confirmed()
         {
             // Arrange
+            _configurationMock.Setup(x => x["JWT:Issuer"]).Returns("http://localhost:5000");
+            _configurationMock.Setup(x => x["FrontendURL"]).Returns("http://localhost:3000");
             var user = new User { Id = Guid.NewGuid(), ConfirmationToken = Guid.NewGuid() };
             _userRepositoryMock.Setup(x => x.Get(It.IsAny<Guid>())).Returns(user);
-            _userRepositoryMock.Setup(x => x.UpdateAsync(It.IsAny<User>(), It.IsAny<Func<User, bool>>())).Returns(new Task<User>(() => user));
+            _userRepositoryMock.Setup(x => x.UpdateAsync(It.IsAny<User>(), It.IsAny<Func<User, bool>>())).ReturnsAsync(new User());
 
             // Act
             var result = await _controller.Confirm(user.Id.ToString(), user.ConfirmationToken.ToString());
@@ -162,7 +180,8 @@ namespace WAMServer.Tests.Controllers
             // Assert
             Assert.IsType<OkObjectResult>(result);
             var okResult = result as OkObjectResult;
-            Assert.Equal("http://localhost:3000", okResult.Value);
+            Assert.NotNull(okResult!.Value);
+            Assert.Equal("http://localhost:3000", okResult!.Value);
         }
     }
 }

@@ -63,7 +63,7 @@ namespace WAMServer.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> Confirm([FromQuery] string userId, [FromQuery] string token)
         {
-            string? frontendURL = _configuration.GetValue<string>("FrontendURL");
+            string? frontendURL = _configuration["FrontendURL"];
             if(frontendURL == null)
             {
                 return BadRequest();
