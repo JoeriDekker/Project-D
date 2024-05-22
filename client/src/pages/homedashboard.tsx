@@ -16,53 +16,57 @@ function HomeDashboard() {
                     <div className="bg-gray-800 m-2 p-4 rounded-xl">
                         <div className="flex flex-row h-[100%]">
                             <div className="flex w-[50%] flex-col pr-8">
+
+                                {/* status header */}
                                 <div className="flex-1 relative pl-6 flex justify-center items-center">
                                     <span className="mt-1 mr-1 h-4 w-4 bg-red-500 rounded-full"></span>
                                     <p className="text-white">Je waterpeil is NIET goed!</p>
                                 </div>
 
+                                {/* current level */}
                                 <div className="flex-1 relative pl-6 flex justify-center items-center">
-                                    <h1 className="text-red-500 text-[350%] font-semibold">-0.10</h1>
+                                    <h1 className="text-red-500 text-[350%] font-semibold">-2.15</h1>
                                 </div>
 
+                                {/* min and max */}
                                 <div className="flex-1 relative pl-6 flex flex-col items-center">
                                     <div className="flex justify-center">
-                                        <p className="text-white mr-1">Min:</p>
-                                        <p className="text-red-500">-0.40</p>
+                                        <p className="text-white mr-1">Paalkop:</p>
+                                        <p className="text-red-500">-2.05</p>
                                     </div>
 
                                     <div className="flex justify-center">
-                                        <p className="text-white mr-1">Max:</p>
-                                        <p className="text-green-500">+0.20</p>
+                                        <p className="text-white mr-1">Ideal:</p>
+                                        <p className="text-green-500">-1.85</p>
                                     </div>
                                 </div>
                             </div>
                             <div className="flex flex-col w-[50%] m-5 border-2 relative">
-                                <div className="absolute bottom-64 left-[50%] transform -translate-x-[50%] bg-green-500 w-full h-0.5"></div>
-                                <div className="absolute bottom-56 left-[50%] transform -translate-x-[50%] bg-gray-200 w-full h-0.5"></div>
-                                <div className="absolute bottom-40 left-[50%] transform -translate-x-[50%] bg-red-500 w-full h-0.5"></div>
 
-                                {/* <div className="absolute top-0 left-[50%] transform -translate-x-[50%] bg-orange-400 w-[25%] h-[32%]"></div> */}
-                                <div className="absolute bottom-0 left-[50%] transform -translate-x-[50%] bg-orange-300 w-[15%] h-[68%]"></div>
+                                {/* min and max lines */}
+                                <div className="absolute bottom-[80%] left-[50%] transform -translate-x-[50%] bg-green-500 w-full h-0.5"></div>
+                                <div className="absolute bottom-[70%] left-[50%] transform -translate-x-[50%] bg-red-500 w-full h-0.5"></div>
+
+                                {/* pillar */}
+                                <div className="absolute bottom-0 left-[50%] transform -translate-x-[50%] bg-orange-300 w-[15%] h-[70%]"></div>
+
+                                {/* current water level box */}
                                 <div className="flex flex-1"></div>
                                 <div className="flex h-[65%] border-t-2 border-teal-400 bg-teal-400 bg-opacity-30 z-10"></div>
                             </div>
                         </div>
                     </div>
 
-                    {/*  */}
                     <div className="bg-gray-100 m-2 p-4 rounded-xl">
                         <Logboek />
                     </div>
 
-                    {/*  */}
-                    <div className="bg-gray-100 m-2 p-4 rounded-xl">Item 3</div>
+                    <div className="bg-gray-100 m-2 p-4 rounded-xl">
 
-                    {/* button to raise water*/}
-                    <div className="bg-gray-100 m-2 p-4 rounded-xl flex items-center justify-center">
-                        <button className="w-64 h-64 rounded-full bg-blue-300 hover:bg-blue-400 text-white text-[200%] font-semibold">
-                            Peil verhogen
-                        </button>
+                    </div>
+
+                    <div className="bg-gray-100 m-2 p-4 rounded-xl">
+
                     </div>
                 </div>
             </div>
