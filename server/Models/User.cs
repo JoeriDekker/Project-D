@@ -21,24 +21,35 @@ namespace WAMServer.Models
         public string Password { get; set; } = null!;
         [Required]
         public bool IsConfirmed { get; set; } = false;
+
+        [Required]
+        public Guid ConfirmationToken { get; set; }
         public Guid? AddressId { get; set; }
         [ForeignKey("AddressId")]
         public Address? Address { get; set; }
 
+
         /// <summary>
-        /// The default constructor.
+        /// Constructor 
         /// </summary>
         /// <param name="firstName">The firstname of the user</param>
         /// <param name="lastName">The lastname of the user</param>
         /// <param name="email">The emailaddress of the user</param>
         /// <param name="password">The hashed password of the user</param>
-        public User(string firstName, string lastName, string email, string password)
+        public User(string firstName, string lastName, string email, string password) : this(Guid.NewGuid(), firstName, lastName, email, password, false, Guid.NewGuid(), null)
         {
-            Id = Guid.NewGuid();
+        }
+
+        public User(Guid id, string firstName, string lastName, string email, string password, bool isConfirmed, Guid confirmationToken, Guid? addressId)
+        {
+            Id = id;
             FirstName = firstName;
             LastName = lastName;
             Email = email;
             Password = password;
+            IsConfirmed = isConfirmed;
+            ConfirmationToken = confirmationToken;
+            AddressId = addressId;
         }
     }
 }

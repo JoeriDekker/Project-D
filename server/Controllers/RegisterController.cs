@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using WAMServer.Interfaces;
 using WAMServer.Models;
 using WAMServer.Records.Bodies;
@@ -40,6 +41,20 @@ namespace WAMServer.Controllers
             var user = new User(body.FirstName, body.LastName, body.Email, hashedPassword);
             return await _userRepository.AddAsync(user);
         }
+
+        [HttpGet("confirm")]
+        [AllowAnonymous]
+        public ActionResult Confirm([FromQuery] string userId, [FromQuery] string token)
+        {
+            var user = _userRepository.Get(Guid.Parse(userId));
+            if (user == null)
+            {
+                return NotFound();
+            }
+            
+            return Ok();
+        }
+        
 
     }
 }
