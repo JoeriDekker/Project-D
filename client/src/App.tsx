@@ -9,7 +9,6 @@ import {
 import AuthOutlet from "@auth-kit/react-router/AuthOutlet";
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 
-import Dashboard from "./pages/Dashboard/Dashboard";
 import LoginScreen from "./pages/LoginScreen/LoginScreen";
 import AccountPage from "./pages/Account/AccountPage";
 import axios, { AxiosError } from "axios";
@@ -51,8 +50,8 @@ function App() {
         <Route path="/login" Component={LoginScreen} />
         <Route element={<AuthOutlet fallbackPath="/login" />}>
           <Route path="/account" element={<AccountPage />} />
-          <Route path="/anypage" element={<AnyPage />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/*" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/logboek" element={<LogboekScreen />} />
         </Route>
         <Route path="/*" element={<Navigate to="/" />} />
