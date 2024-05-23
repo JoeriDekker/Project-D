@@ -13,10 +13,11 @@ import LoginScreen from "./pages/LoginScreen/LoginScreen";
 import AccountPage from "./pages/Account/AccountPage";
 import axios, { AxiosError } from "axios";
 import useSignOut from "react-auth-kit/hooks/useSignOut";
-import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
+import useIsAuthenticated from 'react-auth-kit/hooks/useIsAuthenticated'
 import AnyPage from "./pages/anypage";
 import LogboekScreen from "./pages/Logboek/logboekScreen";
-import Home from './pages/homedashboard';
+import Register from "./pages/Register/RegisterPage";
+import VerificationScreen from "./pages/Verification/VerificationScreen";import Home from './pages/homedashboard';
 
 function App() {
   const authHeader = useAuthHeader();
@@ -47,7 +48,9 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/register" Component={Register} />
         <Route path="/login" Component={LoginScreen} />
+        <Route path="/verify/:userId/:token" Component={VerificationScreen} />
         <Route element={<AuthOutlet fallbackPath="/login" />}>
           <Route path="/account" element={<AccountPage />} />
           <Route path="/*" element={<Navigate to="/home" />} />

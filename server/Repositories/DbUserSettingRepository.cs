@@ -21,6 +21,11 @@ namespace WAMServer.Repositories{
             throw new NotImplementedException();
         }
 
+        public IEnumerable<UserSetting?> GetAll(Func<UserSetting, bool> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<IEnumerable<UserSetting?>> GetAllAsync()
         {
             throw new NotImplementedException();

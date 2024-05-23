@@ -25,3 +25,9 @@ export interface UserResponse {
     addressId: string
     address: any
   }
+
+  export interface MiniPC {
+    uuid: string
+    key: string
+    status: boolean
+  }

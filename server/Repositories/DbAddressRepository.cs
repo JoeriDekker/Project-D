@@ -44,6 +44,11 @@ namespace WAMServer.Repositories
             return _context.Addresses.Where(a => a.Id == id).FirstOrDefault();
         }
 
+        public IEnumerable<Address?> GetAll(Func<Address, bool> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<IEnumerable<Address?>> GetAllAsync()
         {
             throw new NotImplementedException();

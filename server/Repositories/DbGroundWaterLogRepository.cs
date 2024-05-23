@@ -31,6 +31,11 @@ namespace WAMServer.Repositories{
             return _context.GroundWaterLog.Where(a => a.Id == id).FirstOrDefault();
         }
 
+        public IEnumerable<GroundWaterLog?> GetAll(Func<GroundWaterLog, bool> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<GroundWaterLog>> GetAllAsync()
         {
             return await _context.GroundWaterLog.ToListAsync();
@@ -40,11 +45,6 @@ namespace WAMServer.Repositories{
         public Task<GroundWaterLog> UpdateAsync(GroundWaterLog entity, Func<GroundWaterLog, bool> predicate)
         {
            throw new NotImplementedException();
-        }
-
-        public Task<GroundWaterLog> UpdateAsync(GroundWaterLog entity)
-        {
-            throw new NotImplementedException();
         }
     }
 }

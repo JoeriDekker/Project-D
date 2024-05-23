@@ -47,7 +47,7 @@ namespace server.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    userId = table.Column<string>(type: "varchar(100)", nullable: false),
+                    userId = table.Column<Guid>(type: "uuid", nullable: false),
                     secret = table.Column<string>(type: "varchar(255)", nullable: false),
                     meetputBroID = table.Column<string>(type: "varchar(255)", nullable: false),
                     ControlPCSecret = table.Column<string>(type: "varchar(255)", nullable: false)
@@ -94,6 +94,8 @@ namespace server.Migrations
                     LastName = table.Column<string>(type: "varchar(100)", nullable: false),
                     Email = table.Column<string>(type: "varchar(100)", nullable: false),
                     Password = table.Column<string>(type: "varchar(100)", nullable: false),
+                    IsConfirmed = table.Column<bool>(type: "boolean", nullable: false),
+                    ConfirmationToken = table.Column<Guid>(type: "uuid", nullable: false),
                     AddressId = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>

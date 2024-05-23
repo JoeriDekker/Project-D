@@ -20,9 +20,11 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
+  "types": ["cypress"],
   "include": [
     "src",
     "src/pages",
-    "src/components"
+    "src/components",
+    "cypress/**/*.ts"
   ]
 }
