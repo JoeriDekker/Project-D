@@ -43,7 +43,6 @@ function ActionLogboek() {
                         },
                     }
                 );
-                console.log("Action log data", res.data);
 
                 const mappedLogs = res.data.map((log: any) => ({
                     date: log.dateTimeStamp,
@@ -90,7 +89,6 @@ function ActionLogboek() {
             <hr className="my-4" />
             <div className="max-h-[300px] overflow-y-auto mt-1 shadow-md">
                 {actionlog.map((log, index) => (
-                    console.log("Action log", log),
                     <ActionLogboekEntry 
                         key={index} 
                         date={log.date} 
