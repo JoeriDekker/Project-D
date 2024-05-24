@@ -38,7 +38,7 @@ namespace WAMServer.Repositories{
 
         public async Task<IEnumerable<GroundWaterLog>> GetAllAsync()
         {
-            return await _context.GroundWaterLog.ToListAsync();
+            return await _context.GroundWaterLog.OrderByDescending(log => log.date).ToListAsync();
         }
 
         // TODO: understand why it has to be 2 params instead of 1
