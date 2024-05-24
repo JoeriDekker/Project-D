@@ -1,3 +1,4 @@
+using System.Globalization;
 using Microsoft.EntityFrameworkCore;
 using WAMServer.Models;
 
@@ -45,10 +46,25 @@ namespace WAMServer.Seeders
                         editUser.AddressId = address.Id;
                     }
                     context.SaveChanges();
-                    // add a ground water log
-                    var groundWaterLog = new GroundWaterLog(Guid.NewGuid().ToString(), "17/05/2024", Decimal.Parse("-1.33"));
+
+                    // add ground water logs
+                    // By specifying a CultureInfo when parsing or formatting data, you ensure that the data is interpreted or presented according to the conventions of that specific culture. In cases where you want to ensure consistent behavior regardless of culture, you can use CultureInfo.InvariantCulture, which represents a culture-independent (invariant) format that is not tied to any particular culture's conventions.
+                    var groundWaterLog = new List<GroundWaterLog>()
+                    {
+                        new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("28/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-1.75")),
+                        new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("13/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-2.00")),
+                        new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("14/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-2.10")),
+                        new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("16/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-2.25")),
+                        new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("17/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-2.15")),
+                        new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("18/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-1.85")),
+                        new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("19/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-1.65")),
+                        new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("20/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-1.70")),
+                        new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("21/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-1.90")),
+                        new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("24/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-1.95")),
+                        new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("25/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-2.05")),
+                    };
                   
-                    context.GroundWaterLog.Add(groundWaterLog);
+                    context.GroundWaterLog.AddRange(groundWaterLog);
                     context.SaveChanges();
                 }
             }
