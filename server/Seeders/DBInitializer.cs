@@ -51,6 +51,7 @@ namespace WAMServer.Seeders
                     // By specifying a CultureInfo when parsing or formatting data, you ensure that the data is interpreted or presented according to the conventions of that specific culture. In cases where you want to ensure consistent behavior regardless of culture, you can use CultureInfo.InvariantCulture, which represents a culture-independent (invariant) format that is not tied to any particular culture's conventions.
                     var groundWaterLog = new List<GroundWaterLog>()
                     {
+                        new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("28/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-1.75")),
                         new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("13/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-2.00")),
                         new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("14/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-2.10")),
                         new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("16/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-2.25")),
@@ -61,7 +62,6 @@ namespace WAMServer.Seeders
                         new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("21/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-1.90")),
                         new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("24/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-1.95")),
                         new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("25/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-2.05")),
-                        new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("28/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-1.75"))
                     };
                   
                     context.GroundWaterLog.AddRange(groundWaterLog);

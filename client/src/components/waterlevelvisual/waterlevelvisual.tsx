@@ -6,7 +6,7 @@ import {WaterLevel} from "./waterlevelvisual.state";
 function WaterLevelVisual(){
 
     const minScale = -5.5;
-    const maxScale = -0.5;
+    const maxScale = -1;
 
     const poleLevel = -2.05;
     const idealLevel = -1.85;
