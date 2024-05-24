@@ -1,5 +1,5 @@
 export interface ActionLogboekState {
-    date: string;
+    date: Date;
     title: string;
     details: string;
 }

@@ -8,13 +8,15 @@ function ActionLogboek() {
     const currentYear = new Date().getFullYear();
 
     const ActionLogboekEntry = ({ date, title, details }: ActionLogboekState) => {
-        const peilcolor = 'text-green-600';
-        const smalldate = date ? date.substring(5, 10) : ''; // Adjusted to get a proper date format
+
+        const dateObj = new Date(date);
+        const day = dateObj.getDate(); // get the day as a number (1-31)
+        const month = dateObj.getMonth() + 1; // get the month as a number (0-11) and add 1 to make it human-readable (1-12)
 
         return (
             <div className="grid grid-cols-10 gap-2 mt-2 shadow-md text-center p-1">
                 <div className="py-1 px-2 mr-20 rounded-md bg-slate-100 col-span-3 ml-4">
-                    <span className="font-bold">{smalldate}</span>
+                    <span className="font-bold">{day}/{month}</span>
                 </div>
                 <div className="mr-6 col-span-2 text-left">
                     <span className="font-bold text-lg text-gray-400">{title}</span>
@@ -43,7 +45,6 @@ function ActionLogboek() {
                 );
                 console.log("Action log data", res.data);
 
-                // Map the API response to the ActionLogboekState structure
                 const mappedLogs = res.data.map((log: any) => ({
                     date: log.dateTimeStamp,
                     title: log.actionType.title,
