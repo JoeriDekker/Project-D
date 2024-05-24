@@ -6,6 +6,14 @@ namespace WAMServer.Repositories{
 
     public class DbActionLogRepository : IRepository<ActionLog>
     {
+
+        private readonly WamDBContext _context;
+
+        public DbActionLogRepository(WamDBContext context)
+        {
+            _context = context;
+        }
+
         public Task<ActionLog> AddAsync(ActionLog entity)
         {
             throw new NotImplementedException();
@@ -26,9 +34,9 @@ namespace WAMServer.Repositories{
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<ActionLog?>> GetAllAsync()
+        public async Task<IEnumerable<ActionLog?>> GetAllAsync()
         {
-            throw new NotImplementedException();
+           return await _context.ActionLog.Include(a => a.ActionType).ToListAsync();
         }
 
         public Task<ActionLog?> UpdateAsync(ActionLog entity, Func<ActionLog, bool> predicate)
