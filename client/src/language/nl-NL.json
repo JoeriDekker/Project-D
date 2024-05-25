@@ -41,5 +41,24 @@
         "statusexplain": "De huidige status van het apparaat. Dit wordt gebruikt om te bepalen of het apparaat met de server is verbonden.",
         "foundon": "De UUID gevonden op de achterkant van het apparaat.",
         "keyon": "De beveiligingssleutel gevonden in een e-mail die naar de gebruiker is verzonden."
+    },
+    "logboek" : {
+        "waterleverlogbook": "Waterpeil Logbook",
+        "actionlogbook": "Actie logboek",
+        "level": "Peil",
+        "records": "Opnamen",
+        "selectmonth": "Selecteer een maand",
+        "january": "Januari",
+        "february": "Februari",
+        "march": "Maart",
+        "april": "April",
+        "may": "Mei",
+        "june": "Juni",
+        "july": "Juli",
+        "august": "Augustus",
+        "september": "September",
+        "october": "Oktober",
+        "november": "November",
+        "december": "December"
     }
 }

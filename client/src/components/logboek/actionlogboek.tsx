@@ -3,6 +3,8 @@ import axios from "axios";
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 import { ActionLogboekState } from "./actionlogboek.state";
 
+import { t } from "i18next";
+
 
 function ActionLogboek() {
     const currentYear = new Date().getFullYear();
@@ -62,24 +64,24 @@ function ActionLogboek() {
         <div className="justify-center">
             <div className="grid grid-cols-4">
                 <div className="col-span-2 font-bold">
-                    Actie Logboek 
-                    <span className="text-left text-gray-400"> ({actionlog.length} opnamen)</span>
+                    {t("logboek.actionlogbook")}
+                    <span className="text-left text-gray-400"> ({actionlog.length} {t("logboek.records")})</span>
                 </div>
                 <div className="text-center">
                     <select id="countries" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg">
-                        <option selected>Selecteer een maand</option>
-                        <option value="01">Januari</option>
-                        <option value="02">Februari</option>
-                        <option value="03">Maart</option>
-                        <option value="04">April</option>
-                        <option value="05">Mei</option>
-                        <option value="06">Juni</option>
-                        <option value="07">Juli</option>
-                        <option value="08">Augustus</option>
-                        <option value="09">September</option>
-                        <option value="10">Oktober</option>
-                        <option value="11">November</option>
-                        <option value="12">December</option>
+                        <option selected>{t("logboek.selectmonth")}  </option>
+                        <option value="01">{t("logboek.january")} </option>
+                        <option value="02">{t("logboek.february")}</option>
+                        <option value="03">{t("logboek.march")}</option>
+                        <option value="04">{t("logboek.april")}</option>
+                        <option value="05">{t("logboek.may")}</option>
+                        <option value="06">{t("logboek.june")}</option>
+                        <option value="07">{t("logboek.july")}</option>
+                        <option value="08">{t("logboek.august")}</option>
+                        <option value="09">{t("logboek.september")}</option>
+                        <option value="10">{t("logboek.october")}</option>
+                        <option value="11">{t("logboek.november")}</option>
+                        <option value="12">{t("logboek.december")}</option>
                     </select>
                 </div>
                 <div className="text-center font-bold text-gray-600">

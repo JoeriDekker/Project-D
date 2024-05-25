@@ -3,7 +3,7 @@ import axios, { AxiosError } from "axios";
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 
 import { WaterpeilLogboekState, UserResponse } from "./waterpeillogboek.state";
-import { use } from "i18next";
+import { t } from "i18next";
 
 function WaterpeilLogboek(){
 
@@ -30,7 +30,7 @@ function WaterpeilLogboek(){
             <div className="grid grid-cols-10 gap-2 mt-2 shadow-md text-center p-1">
                 <div className="py-1 px-2 mr-20 rounded-md bg-slate-100 col-span-3 ml-4"><text className="font-bold">{smalldate}</text></div>
                 <div className="mr-6 col-span-5 text-left"><text className="font-bold text-lg text-gray-400">{address}</text></div>
-                <div className="mr-6 col-span-2">Peil: <text className={`${peilcolor}`}>{level}</text></div>
+                <div className="mr-6 col-span-2">{t("logboek.level")}: <text className={`${peilcolor}`}>{level}</text></div>
             </div>
         );
     };
@@ -41,8 +41,6 @@ function WaterpeilLogboek(){
     const [user, setUser] = React.useState<UserResponse | null>(null);
     const [address, setAddress] = React.useState<string | null>(null);
 
-    console.log(waterlogs);
-    console.log(authHeader);
 
     useEffect(() => {
         async function fetchWaterlogs() {
@@ -87,25 +85,24 @@ function WaterpeilLogboek(){
         <div className=" justify-center">
                             <div className="grid grid-cols-4 ">
                                 <div className="col-span-2 font-bold">
-                                    Waterpeil Logboek 
-                                    <text className="text-left  text-gray-400"> ( {waterlogs.length} opnamen )</text>
+                                    {t("logboek.waterleverlogbook")}
+                                    <span className="text-left text-gray-400"> ({waterlogs.length} {t("logboek.records")})</span>
                                 </div>
-                                {/* Select maand */}
                                 <div className="text-center">
                                     <select id="countries" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg">
-                                        <option selected>Selecteer een maand</option>
-                                        <option value="01">Januari</option>
-                                        <option value="02">Februari</option>
-                                        <option value="03">Maart</option>
-                                        <option value="04">April</option>
-                                        <option value="05">Mei</option>
-                                        <option value="06">Juni</option>
-                                        <option value="07">Juli</option>
-                                        <option value="08">Augustus</option>
-                                        <option value="09">September</option>
-                                        <option value="10">Oktober</option>
-                                        <option value="11">November</option>
-                                        <option value="12">December</option>
+                                        <option selected>{t("logboek.selectmonth")}  </option>
+                                        <option value="01">{t("logboek.january")} </option>
+                                        <option value="02">{t("logboek.february")}</option>
+                                        <option value="03">{t("logboek.march")}</option>
+                                        <option value="04">{t("logboek.april")}</option>
+                                        <option value="05">{t("logboek.may")}</option>
+                                        <option value="06">{t("logboek.june")}</option>
+                                        <option value="07">{t("logboek.july")}</option>
+                                        <option value="08">{t("logboek.august")}</option>
+                                        <option value="09">{t("logboek.september")}</option>
+                                        <option value="10">{t("logboek.october")}</option>
+                                        <option value="11">{t("logboek.november")}</option>
+                                        <option value="12">{t("logboek.december")}</option>
                                     </select>
                                 </div>
                                 <div className="text-center font-bold text-gray-600">
