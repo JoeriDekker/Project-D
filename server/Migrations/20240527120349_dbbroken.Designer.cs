@@ -12,8 +12,8 @@ using WAMServer.Models;
 namespace server.Migrations
 {
     [DbContext(typeof(WamDBContext))]
-    [Migration("20240524171909_addtabl")]
-    partial class addtabl
+    [Migration("20240527120349_dbbroken")]
+    partial class dbbroken
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
