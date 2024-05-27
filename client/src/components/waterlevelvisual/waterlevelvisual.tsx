@@ -41,16 +41,23 @@ function WaterLevelVisual(){
     }, [authHeader]);
 
     useEffect(() => {
-        function setStatus() {
-            if (typeof currentLevel?.level === 'number' && !isNaN(currentLevel?.level)) {
-                if (currentLevel.level >= idealLevel) {
+        function setStatus() 
+        {
+            if (typeof currentLevel?.level === 'number' && !isNaN(currentLevel?.level)) 
+            {
+                if (currentLevel.level >= idealLevel) 
+                {
                     setStatusColor("#22c55e");
                     setStatusText("Je waterpeil is GOED!");
-                } else {
+                } 
+                else 
+                {
                     setStatusColor("#ef4444");
                     setStatusText("Je waterpeil is NIET goed!");
                 }
-            } else {
+            } 
+            else 
+            {
                 console.error("Error setting water level status.");
             }
         }
