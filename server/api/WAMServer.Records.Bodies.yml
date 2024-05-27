@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: WAMServer.Records.Bodies
+  commentId: N:WAMServer.Records.Bodies
+  id: WAMServer.Records.Bodies
+  children:
+  - WAMServer.Records.Bodies.ErrorBody
+  langs:
+  - csharp
+  - vb
+  name: WAMServer.Records.Bodies
+  nameWithType: WAMServer.Records.Bodies
+  fullName: WAMServer.Records.Bodies
+  type: Namespace
+  assemblies:
+  - server
+references:
+- uid: WAMServer.Records.Bodies.ErrorBody
+  commentId: T:WAMServer.Records.Bodies.ErrorBody
+  href: WAMServer.Records.Bodies.ErrorBody.html
+  name: ErrorBody
+  nameWithType: ErrorBody
+  fullName: WAMServer.Records.Bodies.ErrorBody

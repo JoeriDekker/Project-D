@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: WAMServer.Data
+  commentId: N:WAMServer.Data
+  id: WAMServer.Data
+  children:
+  - WAMServer.Data.DBInitializer
+  langs:
+  - csharp
+  - vb
+  name: WAMServer.Data
+  nameWithType: WAMServer.Data
+  fullName: WAMServer.Data
+  type: Namespace
+  assemblies:
+  - server
+references:
+- uid: WAMServer.Data.DBInitializer
+  commentId: T:WAMServer.Data.DBInitializer
+  href: WAMServer.Data.DBInitializer.html
+  name: DBInitializer
+  nameWithType: DBInitializer
+  fullName: WAMServer.Data.DBInitializer

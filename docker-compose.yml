@@ -1,0 +1,33 @@
+version: "3.3"
+services:
+  backend:
+    container_name: backend
+    build: ./server
+    ports:
+      - "5000:5000"
+    networks:
+      - wam
+    depends_on:
+      - db
+  frontend:
+    container_name: frontend
+    build: ./client
+    ports:
+      - "3399:80"
+    networks:
+      - wam
+  db:
+    container_name: database
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: wamsuperdupersecret
+      POSTGRES_DB: wam-data
+    ports: 
+      - "5432:5432"
+    networks:
+      - wam
+    volumes:
+      - ./data:/var/lib/postgresql/data
+networks:
+  wam:

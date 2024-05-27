@@ -23,7 +23,7 @@ items:
   source:
     remote:
       path: server/Models/User.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: User
     path: Models/User.cs
@@ -60,7 +60,7 @@ items:
   source:
     remote:
       path: server/Models/User.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Id
     path: Models/User.cs
@@ -99,7 +99,7 @@ items:
   source:
     remote:
       path: server/Models/User.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: FirstName
     path: Models/User.cs
@@ -149,7 +149,7 @@ items:
   source:
     remote:
       path: server/Models/User.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: LastName
     path: Models/User.cs
@@ -199,7 +199,7 @@ items:
   source:
     remote:
       path: server/Models/User.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Email
     path: Models/User.cs
@@ -249,7 +249,7 @@ items:
   source:
     remote:
       path: server/Models/User.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Password
     path: Models/User.cs
@@ -299,7 +299,7 @@ items:
   source:
     remote:
       path: server/Models/User.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: AddressId
     path: Models/User.cs
@@ -308,11 +308,11 @@ items:
   - server
   namespace: WAMServer.Models
   syntax:
-    content: public Guid AddressId { get; set; }
+    content: public Guid? AddressId { get; set; }
     parameters: []
     return:
-      type: System.Guid
-    content.vb: Public Property AddressId As Guid
+      type: System.Nullable{System.Guid}
+    content.vb: Public Property AddressId As Guid?
   overload: WAMServer.Models.User.AddressId*
 - uid: WAMServer.Models.User.Address
   commentId: P:WAMServer.Models.User.Address
@@ -328,7 +328,7 @@ items:
   source:
     remote:
       path: server/Models/User.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Address
     path: Models/User.cs
@@ -340,7 +340,7 @@ items:
     content: >-
       [ForeignKey("AddressId")]
 
-      public Address Address { get; set; }
+      public Address? Address { get; set; }
     parameters: []
     return:
       type: WAMServer.Models.Address
@@ -369,7 +369,7 @@ items:
   source:
     remote:
       path: server/Models/User.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: .ctor
     path: Models/User.cs
@@ -714,6 +714,54 @@ references:
   name: AddressId
   nameWithType: User.AddressId
   fullName: WAMServer.Models.User.AddressId
+- uid: System.Nullable{System.Guid}
+  commentId: T:System.Nullable{System.Guid}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid?
+  nameWithType: Guid?
+  fullName: System.Guid?
+  spec.csharp:
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: '?'
+  spec.vb:
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: WAMServer.Models.User.Address*
   commentId: Overload:WAMServer.Models.User.Address
   href: WAMServer.Models.User.html#WAMServer_Models_User_Address

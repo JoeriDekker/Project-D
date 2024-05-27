@@ -22,11 +22,11 @@ items:
   source:
     remote:
       path: server/Interfaces/IUserRepository.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: IUserRepository
     path: Interfaces/IUserRepository.cs
-    startLine: 5
+    startLine: 6
   assemblies:
   - server
   namespace: WAMServer.Interfaces
@@ -47,11 +47,11 @@ items:
   source:
     remote:
       path: server/Interfaces/IUserRepository.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: GetUser
     path: Interfaces/IUserRepository.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - server
   namespace: WAMServer.Interfaces
@@ -78,11 +78,11 @@ items:
   source:
     remote:
       path: server/Interfaces/IUserRepository.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: GetUser
     path: Interfaces/IUserRepository.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - server
   namespace: WAMServer.Interfaces
@@ -112,11 +112,11 @@ items:
   source:
     remote:
       path: server/Interfaces/IUserRepository.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: GetUserIncludingAddress
     path: Interfaces/IUserRepository.cs
-    startLine: 9
+    startLine: 10
   assemblies:
   - server
   namespace: WAMServer.Interfaces
@@ -146,11 +146,11 @@ items:
   source:
     remote:
       path: server/Interfaces/IUserRepository.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: GetUsersAsync
     path: Interfaces/IUserRepository.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - server
   namespace: WAMServer.Interfaces
@@ -174,11 +174,11 @@ items:
   source:
     remote:
       path: server/Interfaces/IUserRepository.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: AddUserAsync
     path: Interfaces/IUserRepository.cs
-    startLine: 11
+    startLine: 12
   assemblies:
   - server
   namespace: WAMServer.Interfaces
@@ -205,11 +205,11 @@ items:
   source:
     remote:
       path: server/Interfaces/IUserRepository.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: UpdateUserAsync
     path: Interfaces/IUserRepository.cs
-    startLine: 12
+    startLine: 13
   assemblies:
   - server
   namespace: WAMServer.Interfaces
@@ -236,11 +236,11 @@ items:
   source:
     remote:
       path: server/Interfaces/IUserRepository.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: DeleteUserAsync
     path: Interfaces/IUserRepository.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - server
   namespace: WAMServer.Interfaces

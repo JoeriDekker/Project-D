@@ -1,15 +1,14 @@
 
-using Microsoft.EntityFrameworkCore;
-using WAMServer.DTO;
 using WAMServer.Interfaces;
 using WAMServer.Models;
+
 
 namespace WAMServer.Repositories
 {
     /// <summary>
     /// This class is responsible for handling the database operations for the User entity.
     /// </summary>
-    public class DbUserRepository : IUserRepository
+    public class DbUserRepository : IRepository<User>
     {
         private readonly WamDBContext _context;
 
@@ -19,70 +18,58 @@ namespace WAMServer.Repositories
         }
 
         /// <summary>
-        /// Adds a user to the database.
+        /// Adds a user to the database in an asynchronous manner.
         /// </summary>
-        /// <param name="user">The user to add.</param>
-        /// <returns>The added user.</returns>
-        public async Task<User> AddUserAsync(User user)
+        /// <param name="entity">The entity to be added, in this case the user.</param>
+        /// <returns>The created user.</returns>
+        public async Task<User> AddAsync(User entity)
         {
-            await _context.Users.AddAsync(user);
+            await _context.Users.AddAsync(entity);
             await _context.SaveChangesAsync();
-            return user;
+            return entity;
         }
 
-        /// <summary>
-        /// Deletes a user from the database.
-        /// </summary>
-        /// <param name="id">The id of the user to delete.</param>
-        /// <returns>The deleted user.</returns>
-        public Task<User> DeleteUserAsync(int id)
+        public Task<User> DeleteAsync(Guid id)
         {
             throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Gets a user from the database.
+        /// Gets a user from the database by it's id.
         /// </summary>
-        /// <param name="id">The id of the user to get.</param>
-        /// <returns>The user with the given id.</returns>
-        public User? GetUser(Guid id)
+        /// <param name="id">The id of the user to be fetched</param>
+        /// <returns>Returns the user from the database if it exists, otherwise a null.</returns>
+        public User? Get(Guid id)
         {
             return _context.Users.Where(u => u.Id == id).FirstOrDefault();
         }
 
-        /// <summary>
-        /// Gets a user from the database.
-        /// </summary>
-        /// <param name="email">The email of the user to get.</param>
-        /// <returns>The user with the given email.</returns>
-        public User? GetUser(string email)
+        public Task<IEnumerable<User>> GetAllAsync()
         {
-            return _context.Users.Where(u => u.Email == email).FirstOrDefault();
+            throw new NotImplementedException();
         }
 
-        /// <summary>
-        /// Gets a user from the database including the address.
-        /// </summary>
-        /// <param name="user">The user to get.</param>
-        /// <returns>The user with the given id including the address.</returns>
-        public User? GetUserIncludingAddress(User? user)
+        public IEnumerable<User?> GetAll(Func<User, bool> predicate)
         {
+            return _context.Users.Where(predicate).ToList();
+        }
+
+        public async Task<User?> UpdateAsync(User entity, Func<User, bool> predicate)
+        {
+            var user = _context.Users.Where(predicate).FirstOrDefault();
             if (user == null)
             {
-                return null;
+                throw new Exception("User not found");
             }
-            return _context.Users.Include(u => u.Address).Where(u => u.Id == user.Id).FirstOrDefault();
+            user.FirstName = entity.FirstName;
+            user.LastName = entity.LastName;
+            user.Email = entity.Email;
+            user.Password = entity.Password;
+            user.IsConfirmed = entity.IsConfirmed;
+            user.ConfirmationToken = entity.ConfirmationToken;
+            user.AddressId = entity.AddressId;
+            await _context.SaveChangesAsync();
+            return user;
         }
-
-        public Task<IEnumerable<User>> GetUsersAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<User> UpdateUserAsync(User user)
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }

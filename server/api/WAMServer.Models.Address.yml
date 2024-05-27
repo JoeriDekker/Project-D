@@ -6,6 +6,7 @@ items:
   parent: WAMServer.Models
   children:
   - WAMServer.Models.Address.City
+  - WAMServer.Models.Address.HouseNumber
   - WAMServer.Models.Address.Id
   - WAMServer.Models.Address.Street
   - WAMServer.Models.Address.User
@@ -21,14 +22,16 @@ items:
   source:
     remote:
       path: server/Models/Address.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Address
     path: Models/Address.cs
-    startLine: 5
+    startLine: 8
   assemblies:
   - server
   namespace: WAMServer.Models
+  summary: Address model
+  example: []
   syntax:
     content: public class Address
     content.vb: Public Class Address
@@ -56,14 +59,16 @@ items:
   source:
     remote:
       path: server/Models/Address.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Id
     path: Models/Address.cs
-    startLine: 7
+    startLine: 13
   assemblies:
   - server
   namespace: WAMServer.Models
+  summary: The unique identifier of the address.
+  example: []
   syntax:
     content: >-
       [Key]
@@ -95,14 +100,16 @@ items:
   source:
     remote:
       path: server/Models/Address.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Street
     path: Models/Address.cs
-    startLine: 9
+    startLine: 18
   assemblies:
   - server
   namespace: WAMServer.Models
+  summary: The street of the address.
+  example: []
   syntax:
     content: public string Street { get; set; }
     parameters: []
@@ -110,6 +117,37 @@ items:
       type: System.String
     content.vb: Public Property Street As String
   overload: WAMServer.Models.Address.Street*
+- uid: WAMServer.Models.Address.HouseNumber
+  commentId: P:WAMServer.Models.Address.HouseNumber
+  id: HouseNumber
+  parent: WAMServer.Models.Address
+  langs:
+  - csharp
+  - vb
+  name: HouseNumber
+  nameWithType: Address.HouseNumber
+  fullName: WAMServer.Models.Address.HouseNumber
+  type: Property
+  source:
+    remote:
+      path: server/Models/Address.cs
+      branch: fix/logincontroller-docs
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: HouseNumber
+    path: Models/Address.cs
+    startLine: 22
+  assemblies:
+  - server
+  namespace: WAMServer.Models
+  summary: The number of the house address.
+  example: []
+  syntax:
+    content: public string HouseNumber { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property HouseNumber As String
+  overload: WAMServer.Models.Address.HouseNumber*
 - uid: WAMServer.Models.Address.City
   commentId: P:WAMServer.Models.Address.City
   id: City
@@ -124,14 +162,16 @@ items:
   source:
     remote:
       path: server/Models/Address.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: City
     path: Models/Address.cs
-    startLine: 10
+    startLine: 26
   assemblies:
   - server
   namespace: WAMServer.Models
+  summary: The city of the address.
+  example: []
   syntax:
     content: public string City { get; set; }
     parameters: []
@@ -153,14 +193,16 @@ items:
   source:
     remote:
       path: server/Models/Address.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Zip
     path: Models/Address.cs
-    startLine: 11
+    startLine: 30
   assemblies:
   - server
   namespace: WAMServer.Models
+  summary: The state of the address.
+  example: []
   syntax:
     content: public string Zip { get; set; }
     parameters: []
@@ -182,14 +224,16 @@ items:
   source:
     remote:
       path: server/Models/Address.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: UserId
     path: Models/Address.cs
-    startLine: 12
+    startLine: 34
   assemblies:
   - server
   namespace: WAMServer.Models
+  summary: The country of the address.
+  example: []
   syntax:
     content: public Guid? UserId { get; set; }
     parameters: []
@@ -211,14 +255,16 @@ items:
   source:
     remote:
       path: server/Models/Address.cs
-      branch: main
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: User
     path: Models/Address.cs
-    startLine: 13
+    startLine: 38
   assemblies:
   - server
   namespace: WAMServer.Models
+  summary: The user of the address.
+  example: []
   syntax:
     content: >-
       [ForeignKey("UserId")]
@@ -529,6 +575,12 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: WAMServer.Models.Address.HouseNumber*
+  commentId: Overload:WAMServer.Models.Address.HouseNumber
+  href: WAMServer.Models.Address.html#WAMServer_Models_Address_HouseNumber
+  name: HouseNumber
+  nameWithType: Address.HouseNumber
+  fullName: WAMServer.Models.Address.HouseNumber
 - uid: WAMServer.Models.Address.City*
   commentId: Overload:WAMServer.Models.Address.City
   href: WAMServer.Models.Address.html#WAMServer_Models_Address_City

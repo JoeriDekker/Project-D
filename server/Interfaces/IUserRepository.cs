@@ -3,6 +3,7 @@ using WAMServer.Models;
 
 namespace WAMServer.Interfaces
 {
+    // TODO: Make this interface generic, call it IRepository<T> and make all other repositories inherit from it
     public interface IUserRepository
     {
         User? GetUser(Guid id);

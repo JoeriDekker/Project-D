@@ -4,6 +4,8 @@ items:
   commentId: N:WAMServer.Interfaces
   id: WAMServer.Interfaces
   children:
+  - WAMServer.Interfaces.ILoginService
+  - WAMServer.Interfaces.IRepository`1
   - WAMServer.Interfaces.IUserRepository
   langs:
   - csharp
@@ -15,9 +17,40 @@ items:
   assemblies:
   - server
 references:
+- uid: WAMServer.Interfaces.ILoginService
+  commentId: T:WAMServer.Interfaces.ILoginService
+  parent: WAMServer.Interfaces
+  href: WAMServer.Interfaces.ILoginService.html
+  name: ILoginService
+  nameWithType: ILoginService
+  fullName: WAMServer.Interfaces.ILoginService
+- uid: WAMServer.Interfaces.IRepository`1
+  commentId: T:WAMServer.Interfaces.IRepository`1
+  href: WAMServer.Interfaces.IRepository-1.html
+  name: IRepository<T>
+  nameWithType: IRepository<T>
+  fullName: WAMServer.Interfaces.IRepository<T>
+  nameWithType.vb: IRepository(Of T)
+  fullName.vb: WAMServer.Interfaces.IRepository(Of T)
+  name.vb: IRepository(Of T)
+  spec.csharp:
+  - uid: WAMServer.Interfaces.IRepository`1
+    name: IRepository
+    href: WAMServer.Interfaces.IRepository-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: WAMServer.Interfaces.IRepository`1
+    name: IRepository
+    href: WAMServer.Interfaces.IRepository-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: WAMServer.Interfaces.IUserRepository
   commentId: T:WAMServer.Interfaces.IUserRepository
-  parent: WAMServer.Interfaces
   href: WAMServer.Interfaces.IUserRepository.html
   name: IUserRepository
   nameWithType: IUserRepository

@@ -1,0 +1,1079 @@
+### YamlMime:ManagedReference
+items:
+- uid: WAMServer.Repositories.DbAddressRepository
+  commentId: T:WAMServer.Repositories.DbAddressRepository
+  id: DbAddressRepository
+  parent: WAMServer.Repositories
+  children:
+  - WAMServer.Repositories.DbAddressRepository.#ctor(WAMServer.Models.WamDBContext)
+  - WAMServer.Repositories.DbAddressRepository.AddAsync(WAMServer.Models.Address)
+  - WAMServer.Repositories.DbAddressRepository.DeleteAsync(System.Guid)
+  - WAMServer.Repositories.DbAddressRepository.Get(System.Guid)
+  - WAMServer.Repositories.DbAddressRepository.GetAllAsync
+  - WAMServer.Repositories.DbAddressRepository.UpdateAsync(WAMServer.Models.Address)
+  langs:
+  - csharp
+  - vb
+  name: DbAddressRepository
+  nameWithType: DbAddressRepository
+  fullName: WAMServer.Repositories.DbAddressRepository
+  type: Class
+  source:
+    remote:
+      path: server/Repositories/DbAddressRepository.cs
+      branch: fix/logincontroller-docs
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: DbAddressRepository
+    path: Repositories/DbAddressRepository.cs
+    startLine: 10
+  assemblies:
+  - server
+  namespace: WAMServer.Repositories
+  summary: This class is responsible for handling the database operations for the Address entity.
+  example: []
+  syntax:
+    content: 'public class DbAddressRepository : IRepository<Address>'
+    content.vb: Public Class DbAddressRepository Implements IRepository(Of Address)
+  inheritance:
+  - System.Object
+  implements:
+  - WAMServer.Interfaces.IRepository{WAMServer.Models.Address}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: WAMServer.Repositories.DbAddressRepository.#ctor(WAMServer.Models.WamDBContext)
+  commentId: M:WAMServer.Repositories.DbAddressRepository.#ctor(WAMServer.Models.WamDBContext)
+  id: '#ctor(WAMServer.Models.WamDBContext)'
+  parent: WAMServer.Repositories.DbAddressRepository
+  langs:
+  - csharp
+  - vb
+  name: DbAddressRepository(WamDBContext)
+  nameWithType: DbAddressRepository.DbAddressRepository(WamDBContext)
+  fullName: WAMServer.Repositories.DbAddressRepository.DbAddressRepository(WAMServer.Models.WamDBContext)
+  type: Constructor
+  source:
+    remote:
+      path: server/Repositories/DbAddressRepository.cs
+      branch: fix/logincontroller-docs
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: .ctor
+    path: Repositories/DbAddressRepository.cs
+    startLine: 14
+  assemblies:
+  - server
+  namespace: WAMServer.Repositories
+  syntax:
+    content: public DbAddressRepository(WamDBContext context)
+    parameters:
+    - id: context
+      type: WAMServer.Models.WamDBContext
+    content.vb: Public Sub New(context As WamDBContext)
+  overload: WAMServer.Repositories.DbAddressRepository.#ctor*
+  nameWithType.vb: DbAddressRepository.New(WamDBContext)
+  fullName.vb: WAMServer.Repositories.DbAddressRepository.New(WAMServer.Models.WamDBContext)
+  name.vb: New(WamDBContext)
+- uid: WAMServer.Repositories.DbAddressRepository.AddAsync(WAMServer.Models.Address)
+  commentId: M:WAMServer.Repositories.DbAddressRepository.AddAsync(WAMServer.Models.Address)
+  id: AddAsync(WAMServer.Models.Address)
+  parent: WAMServer.Repositories.DbAddressRepository
+  langs:
+  - csharp
+  - vb
+  name: AddAsync(Address)
+  nameWithType: DbAddressRepository.AddAsync(Address)
+  fullName: WAMServer.Repositories.DbAddressRepository.AddAsync(WAMServer.Models.Address)
+  type: Method
+  source:
+    remote:
+      path: server/Repositories/DbAddressRepository.cs
+      branch: fix/logincontroller-docs
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: AddAsync
+    path: Repositories/DbAddressRepository.cs
+    startLine: 24
+  assemblies:
+  - server
+  namespace: WAMServer.Repositories
+  summary: Adds an address to the database in an asynchronous manner.
+  example: []
+  syntax:
+    content: public Task<Address> AddAsync(Address entity)
+    parameters:
+    - id: entity
+      type: WAMServer.Models.Address
+      description: The entity to be added. In this case the address.
+    return:
+      type: System.Threading.Tasks.Task{WAMServer.Models.Address}
+      description: The created address.
+    content.vb: Public Function AddAsync(entity As Address) As Task(Of Address)
+  overload: WAMServer.Repositories.DbAddressRepository.AddAsync*
+  implements:
+  - WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.AddAsync(WAMServer.Models.Address)
+- uid: WAMServer.Repositories.DbAddressRepository.DeleteAsync(System.Guid)
+  commentId: M:WAMServer.Repositories.DbAddressRepository.DeleteAsync(System.Guid)
+  id: DeleteAsync(System.Guid)
+  parent: WAMServer.Repositories.DbAddressRepository
+  langs:
+  - csharp
+  - vb
+  name: DeleteAsync(Guid)
+  nameWithType: DbAddressRepository.DeleteAsync(Guid)
+  fullName: WAMServer.Repositories.DbAddressRepository.DeleteAsync(System.Guid)
+  type: Method
+  source:
+    remote:
+      path: server/Repositories/DbAddressRepository.cs
+      branch: fix/logincontroller-docs
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: DeleteAsync
+    path: Repositories/DbAddressRepository.cs
+    startLine: 31
+  assemblies:
+  - server
+  namespace: WAMServer.Repositories
+  example: []
+  syntax:
+    content: public Task<Address> DeleteAsync(Guid id)
+    parameters:
+    - id: id
+      type: System.Guid
+    return:
+      type: System.Threading.Tasks.Task{WAMServer.Models.Address}
+    content.vb: Public Function DeleteAsync(id As Guid) As Task(Of Address)
+  overload: WAMServer.Repositories.DbAddressRepository.DeleteAsync*
+  implements:
+  - WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.DeleteAsync(System.Guid)
+- uid: WAMServer.Repositories.DbAddressRepository.Get(System.Guid)
+  commentId: M:WAMServer.Repositories.DbAddressRepository.Get(System.Guid)
+  id: Get(System.Guid)
+  parent: WAMServer.Repositories.DbAddressRepository
+  langs:
+  - csharp
+  - vb
+  name: Get(Guid)
+  nameWithType: DbAddressRepository.Get(Guid)
+  fullName: WAMServer.Repositories.DbAddressRepository.Get(System.Guid)
+  type: Method
+  source:
+    remote:
+      path: server/Repositories/DbAddressRepository.cs
+      branch: fix/logincontroller-docs
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: Get
+    path: Repositories/DbAddressRepository.cs
+    startLine: 41
+  assemblies:
+  - server
+  namespace: WAMServer.Repositories
+  summary: Gets an address from the database by its id.
+  example: []
+  syntax:
+    content: public Address? Get(Guid id)
+    parameters:
+    - id: id
+      type: System.Guid
+      description: The id that's used for fetching the address
+    return:
+      type: WAMServer.Models.Address
+      description: The address object if it exists in the database, returns null if it doesnt exist.
+    content.vb: Public Function [Get](id As Guid) As Address
+  overload: WAMServer.Repositories.DbAddressRepository.Get*
+  implements:
+  - WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.Get(System.Guid)
+- uid: WAMServer.Repositories.DbAddressRepository.GetAllAsync
+  commentId: M:WAMServer.Repositories.DbAddressRepository.GetAllAsync
+  id: GetAllAsync
+  parent: WAMServer.Repositories.DbAddressRepository
+  langs:
+  - csharp
+  - vb
+  name: GetAllAsync()
+  nameWithType: DbAddressRepository.GetAllAsync()
+  fullName: WAMServer.Repositories.DbAddressRepository.GetAllAsync()
+  type: Method
+  source:
+    remote:
+      path: server/Repositories/DbAddressRepository.cs
+      branch: fix/logincontroller-docs
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: GetAllAsync
+    path: Repositories/DbAddressRepository.cs
+    startLine: 46
+  assemblies:
+  - server
+  namespace: WAMServer.Repositories
+  example: []
+  syntax:
+    content: public Task<IEnumerable<Address>> GetAllAsync()
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{WAMServer.Models.Address}}
+    content.vb: Public Function GetAllAsync() As Task(Of IEnumerable(Of Address))
+  overload: WAMServer.Repositories.DbAddressRepository.GetAllAsync*
+  implements:
+  - WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.GetAllAsync
+- uid: WAMServer.Repositories.DbAddressRepository.UpdateAsync(WAMServer.Models.Address)
+  commentId: M:WAMServer.Repositories.DbAddressRepository.UpdateAsync(WAMServer.Models.Address)
+  id: UpdateAsync(WAMServer.Models.Address)
+  parent: WAMServer.Repositories.DbAddressRepository
+  langs:
+  - csharp
+  - vb
+  name: UpdateAsync(Address)
+  nameWithType: DbAddressRepository.UpdateAsync(Address)
+  fullName: WAMServer.Repositories.DbAddressRepository.UpdateAsync(WAMServer.Models.Address)
+  type: Method
+  source:
+    remote:
+      path: server/Repositories/DbAddressRepository.cs
+      branch: fix/logincontroller-docs
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: UpdateAsync
+    path: Repositories/DbAddressRepository.cs
+    startLine: 51
+  assemblies:
+  - server
+  namespace: WAMServer.Repositories
+  example: []
+  syntax:
+    content: public Task<Address> UpdateAsync(Address entity)
+    parameters:
+    - id: entity
+      type: WAMServer.Models.Address
+    return:
+      type: System.Threading.Tasks.Task{WAMServer.Models.Address}
+    content.vb: Public Function UpdateAsync(entity As Address) As Task(Of Address)
+  overload: WAMServer.Repositories.DbAddressRepository.UpdateAsync*
+  implements:
+  - WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.UpdateAsync(WAMServer.Models.Address)
+references:
+- uid: WAMServer.Repositories
+  commentId: N:WAMServer.Repositories
+  href: WAMServer.html
+  name: WAMServer.Repositories
+  nameWithType: WAMServer.Repositories
+  fullName: WAMServer.Repositories
+  spec.csharp:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Repositories
+    name: Repositories
+    href: WAMServer.Repositories.html
+  spec.vb:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Repositories
+    name: Repositories
+    href: WAMServer.Repositories.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}
+  commentId: T:WAMServer.Interfaces.IRepository{WAMServer.Models.Address}
+  parent: WAMServer.Interfaces
+  definition: WAMServer.Interfaces.IRepository`1
+  href: WAMServer.Interfaces.IRepository-1.html
+  name: IRepository<Address>
+  nameWithType: IRepository<Address>
+  fullName: WAMServer.Interfaces.IRepository<WAMServer.Models.Address>
+  nameWithType.vb: IRepository(Of Address)
+  fullName.vb: WAMServer.Interfaces.IRepository(Of WAMServer.Models.Address)
+  name.vb: IRepository(Of Address)
+  spec.csharp:
+  - uid: WAMServer.Interfaces.IRepository`1
+    name: IRepository
+    href: WAMServer.Interfaces.IRepository-1.html
+  - name: <
+  - uid: WAMServer.Models.Address
+    name: Address
+    href: WAMServer.Models.Address.html
+  - name: '>'
+  spec.vb:
+  - uid: WAMServer.Interfaces.IRepository`1
+    name: IRepository
+    href: WAMServer.Interfaces.IRepository-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: WAMServer.Models.Address
+    name: Address
+    href: WAMServer.Models.Address.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: WAMServer.Interfaces.IRepository`1
+  commentId: T:WAMServer.Interfaces.IRepository`1
+  href: WAMServer.Interfaces.IRepository-1.html
+  name: IRepository<T>
+  nameWithType: IRepository<T>
+  fullName: WAMServer.Interfaces.IRepository<T>
+  nameWithType.vb: IRepository(Of T)
+  fullName.vb: WAMServer.Interfaces.IRepository(Of T)
+  name.vb: IRepository(Of T)
+  spec.csharp:
+  - uid: WAMServer.Interfaces.IRepository`1
+    name: IRepository
+    href: WAMServer.Interfaces.IRepository-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: WAMServer.Interfaces.IRepository`1
+    name: IRepository
+    href: WAMServer.Interfaces.IRepository-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: WAMServer.Interfaces
+  commentId: N:WAMServer.Interfaces
+  href: WAMServer.html
+  name: WAMServer.Interfaces
+  nameWithType: WAMServer.Interfaces
+  fullName: WAMServer.Interfaces
+  spec.csharp:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Interfaces
+    name: Interfaces
+    href: WAMServer.Interfaces.html
+  spec.vb:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Interfaces
+    name: Interfaces
+    href: WAMServer.Interfaces.html
+- uid: WAMServer.Repositories.DbAddressRepository.#ctor*
+  commentId: Overload:WAMServer.Repositories.DbAddressRepository.#ctor
+  href: WAMServer.Repositories.DbAddressRepository.html#WAMServer_Repositories_DbAddressRepository__ctor_WAMServer_Models_WamDBContext_
+  name: DbAddressRepository
+  nameWithType: DbAddressRepository.DbAddressRepository
+  fullName: WAMServer.Repositories.DbAddressRepository.DbAddressRepository
+  nameWithType.vb: DbAddressRepository.New
+  fullName.vb: WAMServer.Repositories.DbAddressRepository.New
+  name.vb: New
+- uid: WAMServer.Models.WamDBContext
+  commentId: T:WAMServer.Models.WamDBContext
+  parent: WAMServer.Models
+  href: WAMServer.Models.WamDBContext.html
+  name: WamDBContext
+  nameWithType: WamDBContext
+  fullName: WAMServer.Models.WamDBContext
+- uid: WAMServer.Models
+  commentId: N:WAMServer.Models
+  href: WAMServer.html
+  name: WAMServer.Models
+  nameWithType: WAMServer.Models
+  fullName: WAMServer.Models
+  spec.csharp:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Models
+    name: Models
+    href: WAMServer.Models.html
+  spec.vb:
+  - uid: WAMServer
+    name: WAMServer
+    href: WAMServer.html
+  - name: .
+  - uid: WAMServer.Models
+    name: Models
+    href: WAMServer.Models.html
+- uid: WAMServer.Repositories.DbAddressRepository.AddAsync*
+  commentId: Overload:WAMServer.Repositories.DbAddressRepository.AddAsync
+  href: WAMServer.Repositories.DbAddressRepository.html#WAMServer_Repositories_DbAddressRepository_AddAsync_WAMServer_Models_Address_
+  name: AddAsync
+  nameWithType: DbAddressRepository.AddAsync
+  fullName: WAMServer.Repositories.DbAddressRepository.AddAsync
+- uid: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.AddAsync(WAMServer.Models.Address)
+  commentId: M:WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.AddAsync(WAMServer.Models.Address)
+  parent: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}
+  definition: WAMServer.Interfaces.IRepository`1.AddAsync(`0)
+  href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_AddAsync__0_
+  name: AddAsync(Address)
+  nameWithType: IRepository<Address>.AddAsync(Address)
+  fullName: WAMServer.Interfaces.IRepository<WAMServer.Models.Address>.AddAsync(WAMServer.Models.Address)
+  nameWithType.vb: IRepository(Of Address).AddAsync(Address)
+  fullName.vb: WAMServer.Interfaces.IRepository(Of WAMServer.Models.Address).AddAsync(WAMServer.Models.Address)
+  spec.csharp:
+  - uid: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.AddAsync(WAMServer.Models.Address)
+    name: AddAsync
+    href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_AddAsync__0_
+  - name: (
+  - uid: WAMServer.Models.Address
+    name: Address
+    href: WAMServer.Models.Address.html
+  - name: )
+  spec.vb:
+  - uid: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.AddAsync(WAMServer.Models.Address)
+    name: AddAsync
+    href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_AddAsync__0_
+  - name: (
+  - uid: WAMServer.Models.Address
+    name: Address
+    href: WAMServer.Models.Address.html
+  - name: )
+- uid: WAMServer.Models.Address
+  commentId: T:WAMServer.Models.Address
+  parent: WAMServer.Models
+  href: WAMServer.Models.Address.html
+  name: Address
+  nameWithType: Address
+  fullName: WAMServer.Models.Address
+- uid: System.Threading.Tasks.Task{WAMServer.Models.Address}
+  commentId: T:System.Threading.Tasks.Task{WAMServer.Models.Address}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<Address>
+  nameWithType: Task<Address>
+  fullName: System.Threading.Tasks.Task<WAMServer.Models.Address>
+  nameWithType.vb: Task(Of Address)
+  fullName.vb: System.Threading.Tasks.Task(Of WAMServer.Models.Address)
+  name.vb: Task(Of Address)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: WAMServer.Models.Address
+    name: Address
+    href: WAMServer.Models.Address.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: WAMServer.Models.Address
+    name: Address
+    href: WAMServer.Models.Address.html
+  - name: )
+- uid: WAMServer.Interfaces.IRepository`1.AddAsync(`0)
+  commentId: M:WAMServer.Interfaces.IRepository`1.AddAsync(`0)
+  href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_AddAsync__0_
+  name: AddAsync(T)
+  nameWithType: IRepository<T>.AddAsync(T)
+  fullName: WAMServer.Interfaces.IRepository<T>.AddAsync(T)
+  nameWithType.vb: IRepository(Of T).AddAsync(T)
+  fullName.vb: WAMServer.Interfaces.IRepository(Of T).AddAsync(T)
+  spec.csharp:
+  - uid: WAMServer.Interfaces.IRepository`1.AddAsync(`0)
+    name: AddAsync
+    href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_AddAsync__0_
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: WAMServer.Interfaces.IRepository`1.AddAsync(`0)
+    name: AddAsync
+    href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_AddAsync__0_
+  - name: (
+  - name: T
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: WAMServer.Repositories.DbAddressRepository.DeleteAsync*
+  commentId: Overload:WAMServer.Repositories.DbAddressRepository.DeleteAsync
+  href: WAMServer.Repositories.DbAddressRepository.html#WAMServer_Repositories_DbAddressRepository_DeleteAsync_System_Guid_
+  name: DeleteAsync
+  nameWithType: DbAddressRepository.DeleteAsync
+  fullName: WAMServer.Repositories.DbAddressRepository.DeleteAsync
+- uid: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.DeleteAsync(System.Guid)
+  commentId: M:WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.DeleteAsync(System.Guid)
+  parent: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}
+  definition: WAMServer.Interfaces.IRepository`1.DeleteAsync(System.Guid)
+  href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_DeleteAsync_System_Guid_
+  name: DeleteAsync(Guid)
+  nameWithType: IRepository<Address>.DeleteAsync(Guid)
+  fullName: WAMServer.Interfaces.IRepository<WAMServer.Models.Address>.DeleteAsync(System.Guid)
+  nameWithType.vb: IRepository(Of Address).DeleteAsync(Guid)
+  fullName.vb: WAMServer.Interfaces.IRepository(Of WAMServer.Models.Address).DeleteAsync(System.Guid)
+  spec.csharp:
+  - uid: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.DeleteAsync(System.Guid)
+    name: DeleteAsync
+    href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_DeleteAsync_System_Guid_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: )
+  spec.vb:
+  - uid: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.DeleteAsync(System.Guid)
+    name: DeleteAsync
+    href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_DeleteAsync_System_Guid_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: )
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: WAMServer.Interfaces.IRepository`1.DeleteAsync(System.Guid)
+  commentId: M:WAMServer.Interfaces.IRepository`1.DeleteAsync(System.Guid)
+  isExternal: true
+  href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_DeleteAsync_System_Guid_
+  name: DeleteAsync(Guid)
+  nameWithType: IRepository<T>.DeleteAsync(Guid)
+  fullName: WAMServer.Interfaces.IRepository<T>.DeleteAsync(System.Guid)
+  nameWithType.vb: IRepository(Of T).DeleteAsync(Guid)
+  fullName.vb: WAMServer.Interfaces.IRepository(Of T).DeleteAsync(System.Guid)
+  spec.csharp:
+  - uid: WAMServer.Interfaces.IRepository`1.DeleteAsync(System.Guid)
+    name: DeleteAsync
+    href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_DeleteAsync_System_Guid_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: )
+  spec.vb:
+  - uid: WAMServer.Interfaces.IRepository`1.DeleteAsync(System.Guid)
+    name: DeleteAsync
+    href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_DeleteAsync_System_Guid_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: )
+- uid: WAMServer.Repositories.DbAddressRepository.Get*
+  commentId: Overload:WAMServer.Repositories.DbAddressRepository.Get
+  href: WAMServer.Repositories.DbAddressRepository.html#WAMServer_Repositories_DbAddressRepository_Get_System_Guid_
+  name: Get
+  nameWithType: DbAddressRepository.Get
+  fullName: WAMServer.Repositories.DbAddressRepository.Get
+- uid: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.Get(System.Guid)
+  commentId: M:WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.Get(System.Guid)
+  parent: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}
+  definition: WAMServer.Interfaces.IRepository`1.Get(System.Guid)
+  href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_Get_System_Guid_
+  name: Get(Guid)
+  nameWithType: IRepository<Address>.Get(Guid)
+  fullName: WAMServer.Interfaces.IRepository<WAMServer.Models.Address>.Get(System.Guid)
+  nameWithType.vb: IRepository(Of Address).Get(Guid)
+  fullName.vb: WAMServer.Interfaces.IRepository(Of WAMServer.Models.Address).Get(System.Guid)
+  spec.csharp:
+  - uid: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.Get(System.Guid)
+    name: Get
+    href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_Get_System_Guid_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: )
+  spec.vb:
+  - uid: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.Get(System.Guid)
+    name: Get
+    href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_Get_System_Guid_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: )
+- uid: WAMServer.Interfaces.IRepository`1.Get(System.Guid)
+  commentId: M:WAMServer.Interfaces.IRepository`1.Get(System.Guid)
+  isExternal: true
+  href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_Get_System_Guid_
+  name: Get(Guid)
+  nameWithType: IRepository<T>.Get(Guid)
+  fullName: WAMServer.Interfaces.IRepository<T>.Get(System.Guid)
+  nameWithType.vb: IRepository(Of T).Get(Guid)
+  fullName.vb: WAMServer.Interfaces.IRepository(Of T).Get(System.Guid)
+  spec.csharp:
+  - uid: WAMServer.Interfaces.IRepository`1.Get(System.Guid)
+    name: Get
+    href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_Get_System_Guid_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: )
+  spec.vb:
+  - uid: WAMServer.Interfaces.IRepository`1.Get(System.Guid)
+    name: Get
+    href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_Get_System_Guid_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: )
+- uid: WAMServer.Repositories.DbAddressRepository.GetAllAsync*
+  commentId: Overload:WAMServer.Repositories.DbAddressRepository.GetAllAsync
+  href: WAMServer.Repositories.DbAddressRepository.html#WAMServer_Repositories_DbAddressRepository_GetAllAsync
+  name: GetAllAsync
+  nameWithType: DbAddressRepository.GetAllAsync
+  fullName: WAMServer.Repositories.DbAddressRepository.GetAllAsync
+- uid: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.GetAllAsync
+  commentId: M:WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.GetAllAsync
+  parent: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}
+  definition: WAMServer.Interfaces.IRepository`1.GetAllAsync
+  href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_GetAllAsync
+  name: GetAllAsync()
+  nameWithType: IRepository<Address>.GetAllAsync()
+  fullName: WAMServer.Interfaces.IRepository<WAMServer.Models.Address>.GetAllAsync()
+  nameWithType.vb: IRepository(Of Address).GetAllAsync()
+  fullName.vb: WAMServer.Interfaces.IRepository(Of WAMServer.Models.Address).GetAllAsync()
+  spec.csharp:
+  - uid: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.GetAllAsync
+    name: GetAllAsync
+    href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_GetAllAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.GetAllAsync
+    name: GetAllAsync
+    href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_GetAllAsync
+  - name: (
+  - name: )
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{WAMServer.Models.Address}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{WAMServer.Models.Address}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IEnumerable<Address>>
+  nameWithType: Task<IEnumerable<Address>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<WAMServer.Models.Address>>
+  nameWithType.vb: Task(Of IEnumerable(Of Address))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of WAMServer.Models.Address))
+  name.vb: Task(Of IEnumerable(Of Address))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: WAMServer.Models.Address
+    name: Address
+    href: WAMServer.Models.Address.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: WAMServer.Models.Address
+    name: Address
+    href: WAMServer.Models.Address.html
+  - name: )
+  - name: )
+- uid: WAMServer.Interfaces.IRepository`1.GetAllAsync
+  commentId: M:WAMServer.Interfaces.IRepository`1.GetAllAsync
+  href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_GetAllAsync
+  name: GetAllAsync()
+  nameWithType: IRepository<T>.GetAllAsync()
+  fullName: WAMServer.Interfaces.IRepository<T>.GetAllAsync()
+  nameWithType.vb: IRepository(Of T).GetAllAsync()
+  fullName.vb: WAMServer.Interfaces.IRepository(Of T).GetAllAsync()
+  spec.csharp:
+  - uid: WAMServer.Interfaces.IRepository`1.GetAllAsync
+    name: GetAllAsync
+    href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_GetAllAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: WAMServer.Interfaces.IRepository`1.GetAllAsync
+    name: GetAllAsync
+    href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_GetAllAsync
+  - name: (
+  - name: )
+- uid: WAMServer.Repositories.DbAddressRepository.UpdateAsync*
+  commentId: Overload:WAMServer.Repositories.DbAddressRepository.UpdateAsync
+  href: WAMServer.Repositories.DbAddressRepository.html#WAMServer_Repositories_DbAddressRepository_UpdateAsync_WAMServer_Models_Address_
+  name: UpdateAsync
+  nameWithType: DbAddressRepository.UpdateAsync
+  fullName: WAMServer.Repositories.DbAddressRepository.UpdateAsync
+- uid: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.UpdateAsync(WAMServer.Models.Address)
+  commentId: M:WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.UpdateAsync(WAMServer.Models.Address)
+  parent: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}
+  definition: WAMServer.Interfaces.IRepository`1.UpdateAsync(`0)
+  href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_UpdateAsync__0_
+  name: UpdateAsync(Address)
+  nameWithType: IRepository<Address>.UpdateAsync(Address)
+  fullName: WAMServer.Interfaces.IRepository<WAMServer.Models.Address>.UpdateAsync(WAMServer.Models.Address)
+  nameWithType.vb: IRepository(Of Address).UpdateAsync(Address)
+  fullName.vb: WAMServer.Interfaces.IRepository(Of WAMServer.Models.Address).UpdateAsync(WAMServer.Models.Address)
+  spec.csharp:
+  - uid: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.UpdateAsync(WAMServer.Models.Address)
+    name: UpdateAsync
+    href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_UpdateAsync__0_
+  - name: (
+  - uid: WAMServer.Models.Address
+    name: Address
+    href: WAMServer.Models.Address.html
+  - name: )
+  spec.vb:
+  - uid: WAMServer.Interfaces.IRepository{WAMServer.Models.Address}.UpdateAsync(WAMServer.Models.Address)
+    name: UpdateAsync
+    href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_UpdateAsync__0_
+  - name: (
+  - uid: WAMServer.Models.Address
+    name: Address
+    href: WAMServer.Models.Address.html
+  - name: )
+- uid: WAMServer.Interfaces.IRepository`1.UpdateAsync(`0)
+  commentId: M:WAMServer.Interfaces.IRepository`1.UpdateAsync(`0)
+  href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_UpdateAsync__0_
+  name: UpdateAsync(T)
+  nameWithType: IRepository<T>.UpdateAsync(T)
+  fullName: WAMServer.Interfaces.IRepository<T>.UpdateAsync(T)
+  nameWithType.vb: IRepository(Of T).UpdateAsync(T)
+  fullName.vb: WAMServer.Interfaces.IRepository(Of T).UpdateAsync(T)
+  spec.csharp:
+  - uid: WAMServer.Interfaces.IRepository`1.UpdateAsync(`0)
+    name: UpdateAsync
+    href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_UpdateAsync__0_
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: WAMServer.Interfaces.IRepository`1.UpdateAsync(`0)
+    name: UpdateAsync
+    href: WAMServer.Interfaces.IRepository-1.html#WAMServer_Interfaces_IRepository_1_UpdateAsync__0_
+  - name: (
+  - name: T
+  - name: )

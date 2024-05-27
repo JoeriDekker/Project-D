@@ -1,19 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import createStore from "react-auth-kit/createStore";
+import "./style/index.css";
+import './language/i18n';
 
-import App from './App';
+import App from "./App";
 
-import LoginScreen from './loginscreen';
+import reportWebVitals from "./reportWebVitals";
+import AuthProvider from "react-auth-kit/AuthProvider";
 
-import reportWebVitals from './reportWebVitals';
+const store = createStore({
+  authName: "_auth",
+  authType: "cookie",
+  cookieDomain: window.location.hostname,
+  cookieSecure: window.location.protocol === "https:",
+});
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <LoginScreen />
+    <AuthProvider store={store}>
+      <App />
+    </AuthProvider>
   </React.StrictMode>
 );
 
