@@ -31,20 +31,20 @@ namespace WAMServer.Repositories{
             return _context.GroundWaterLog.Where(a => a.Id == id).FirstOrDefault();
         }
 
+        public IEnumerable<GroundWaterLog?> GetAll(Func<GroundWaterLog, bool> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<GroundWaterLog>> GetAllAsync()
         {
-            return await _context.GroundWaterLog.ToListAsync();
+            return await _context.GroundWaterLog.OrderByDescending(log => log.date).ToListAsync();
         }
 
         // TODO: understand why it has to be 2 params instead of 1
         public Task<GroundWaterLog> UpdateAsync(GroundWaterLog entity, Func<GroundWaterLog, bool> predicate)
         {
            throw new NotImplementedException();
-        }
-
-        public Task<GroundWaterLog> UpdateAsync(GroundWaterLog entity)
-        {
-            throw new NotImplementedException();
         }
     }
 }

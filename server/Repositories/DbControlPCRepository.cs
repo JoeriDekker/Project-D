@@ -69,12 +69,20 @@ namespace WAMServer.Repositories
             return await _context.ControlPC.ToListAsync();
         }
 
+
         /// <summary>
         /// Gets a ControlPC from the database by its id in an asynchronous manner.
         /// </summary>
         /// <param name="id">The id that's used for fetching the ControlPC.</param>
         /// <returns>The ControlPC object if it exists in the database, otherwise null.</returns>
-        public async Task<ControlPC?> GetAsync(Guid id)
+        //public async Task<ControlPC?> GetAsync(Guid id)
+        public IEnumerable<ControlPC?> GetAll(Func<ControlPC, bool> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<ControlPC?>> GetAllAsync()
+
         {
             return await _context.ControlPC.FindAsync(id);
         }

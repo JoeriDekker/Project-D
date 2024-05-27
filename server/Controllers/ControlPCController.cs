@@ -122,7 +122,6 @@ namespace WAMServer.Controllers
 
             await _controlPCRepository.UpdateAsync(controlPC, _ => _.Id == id);
             return Ok();
-
         }
 
         /// <summary>
