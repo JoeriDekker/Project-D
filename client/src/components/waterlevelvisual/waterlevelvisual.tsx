@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import axios from "axios";
+import { t } from "i18next";
+
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 import {WaterLevel} from "./waterlevelvisual.state";
 
@@ -48,12 +50,12 @@ function WaterLevelVisual(){
                 if (currentLevel.level >= idealLevel) 
                 {
                     setStatusColor("#22c55e");
-                    setStatusText("Je waterpeil is GOED!");
+                    setStatusText(t("waterlevel.goodstatus"));
                 } 
                 else 
                 {
                     setStatusColor("#ef4444");
-                    setStatusText("Je waterpeil is NIET goed!");
+                    setStatusText(t("waterlevel.badstatus"));
                 }
             } 
             else 
@@ -94,12 +96,12 @@ function WaterLevelVisual(){
                 <div className="flex-1 pl-6 flex flex-col items-center">
 
                     <div className="flex justify-center">
-                        <p className="text-white mr-1">Ideal:</p>
+                        <p className="text-white mr-1">{t("waterlevel.ideal")}</p>    
                         <p className="text-green-500">{idealLevel}</p>
                     </div>
 
                     <div className="flex justify-center">
-                        <p className="text-white mr-1">Paalkop:</p>
+                        <p className="text-white mr-1">{t("waterlevel.poleheight")}</p>
                         <p className="text-gray-400">{poleLevel}</p>
                     </div>
 
