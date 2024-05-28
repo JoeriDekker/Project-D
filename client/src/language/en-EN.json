@@ -82,5 +82,24 @@
         "street": "Street name",
         "success": "You have successfully registered. A confirmation email has been sent to your email address. After confirming your email address, you can log in.",
         "zipcode": "Postal code"
+    },
+    "logboek" : {
+        "waterleverlogbook": "Water Level Logbook",
+        "actionlogbook": "Action logbook",
+        "level": "Level",
+        "records": "Records",
+        "selectmonth": "Select a month",
+        "january": "January",
+        "february": "February",
+        "march": "March",
+        "april": "April",
+        "may": "May",
+        "june": "June",
+        "july": "July",
+        "august": "August",
+        "september": "September",
+        "october": "October",
+        "november": "November",
+        "december": "December"
     }
 }
