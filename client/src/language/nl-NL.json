@@ -42,6 +42,11 @@
         "foundon": "De UUID gevonden op de achterkant van het apparaat.",
         "keyon": "De beveiligingssleutel gevonden in een e-mail die naar de gebruiker is verzonden."
     },
+    "waterlevel": {
+        "ideal": "Ideaal",
+        "poleheight": "Paalkop",
+        "badstatus": "Je waterpeil is NIET goed!",
+        "goodstatus": "Je waterpeil is GOED!"
     "logboek" : {
         "waterleverlogbook": "Waterpeil Logbook",
         "actionlogbook": "Actie logboek",

@@ -83,6 +83,11 @@
         "success": "You have successfully registered. A confirmation email has been sent to your email address. After confirming your email address, you can log in.",
         "zipcode": "Postal code"
     },
+    "waterlevel": {
+        "ideal": "Ideal",
+        "poleheight": "Poleheight",
+        "badstatus": "Your waterlevel is NOT right!",
+        "goodstatus": "Your waterlevel is RIGHT!"
     "logboek" : {
         "waterleverlogbook": "Water Level Logbook",
         "actionlogbook": "Action logbook",
