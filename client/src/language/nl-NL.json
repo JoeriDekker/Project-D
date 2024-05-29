@@ -47,6 +47,7 @@
         "poleheight": "Paalkop",
         "badstatus": "Je waterpeil is NIET goed!",
         "goodstatus": "Je waterpeil is GOED!"
+    },
     "logboek" : {
         "waterleverlogbook": "Waterpeil Logbook",
         "actionlogbook": "Actie logboek",

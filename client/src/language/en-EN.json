@@ -88,6 +88,7 @@
         "poleheight": "Poleheight",
         "badstatus": "Your waterlevel is NOT right!",
         "goodstatus": "Your waterlevel is RIGHT!"
+    },
     "logboek" : {
         "waterleverlogbook": "Water Level Logbook",
         "actionlogbook": "Action logbook",
