@@ -81,12 +81,6 @@ namespace WAMServer.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<ControlPC?>> GetAllAsync()
-
-        {
-            return await _context.ControlPC.FindAsync(id);
-        }
-
         /// <summary>
         /// Updates a ControlPC in the database in an asynchronous manner.
         /// </summary>
