@@ -88,5 +88,23 @@
         "poleheight": "Poleheight",
         "badstatus": "Your waterlevel is NOT right!",
         "goodstatus": "Your waterlevel is RIGHT!"
+    "logboek" : {
+        "waterleverlogbook": "Water Level Logbook",
+        "actionlogbook": "Action logbook",
+        "level": "Level",
+        "records": "Records",
+        "selectmonth": "Select a month",
+        "january": "January",
+        "february": "February",
+        "march": "March",
+        "april": "April",
+        "may": "May",
+        "june": "June",
+        "july": "July",
+        "august": "August",
+        "september": "September",
+        "october": "October",
+        "november": "November",
+        "december": "December"
     }
 }
