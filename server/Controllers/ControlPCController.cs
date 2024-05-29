@@ -88,7 +88,7 @@ namespace WAMServer.Controllers
                 return Unauthorized(new { message = "Invalid user ID." });
             }
 
-            controlPC.userId = id;
+            controlPC.UserId = id;
             controlPC.Id = Guid.NewGuid();
 
             await _controlPCRepository2.CreateAsync(controlPC);
