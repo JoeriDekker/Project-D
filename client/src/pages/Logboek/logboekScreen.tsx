@@ -5,6 +5,7 @@ import Navbar from '../../components/navbar/navbar'
 import Logboek from '../../components/logboek/logboek'
 import WaterpeilLogboek from "../../components/logboek/waterpeillogboek";
 import ActionLogboek from "../../components/logboek/actionlogboek";
+import WaterStorage from "../../components/waterstorage/waterstorage";
 
 function LogboekScreen() {
 
@@ -22,6 +23,7 @@ function LogboekScreen() {
                             <WaterpeilLogboek />
                             <Logboek />
                             <ActionLogboek />
+                            <WaterStorage />
                         </div>
                     </div>
                 </div>

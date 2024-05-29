@@ -25,13 +25,14 @@ namespace WAMServer.Repositories{
         }
 
         public WaterStorage? Get(Guid id)
-        {
-            throw new NotImplementedException();
+        {   
+            return _context.WaterStorage.Where(w => w.controlPCID == id).FirstOrDefault();
         }
 
         public IEnumerable<WaterStorage?> GetAll(Func<WaterStorage, bool> predicate)
         {
-            throw new NotImplementedException();
+            return _context.WaterStorage.Where(predicate);
+
         }
 
         public Task<IEnumerable<WaterStorage?>> GetAllAsync()
