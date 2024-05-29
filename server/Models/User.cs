@@ -36,7 +36,7 @@ namespace WAMServer.Models
         /// The hashed password of the user.
         /// </summary>
         [Required, Column(TypeName = "varchar(100)"), MaxLength(100)]
-        public string Password { get; set; } = null!;
+        public string PasswordHash { get; set; } = null!;
 
         /// <summary>
         /// The confirmation status of the user.
@@ -100,9 +100,9 @@ namespace WAMServer.Models
         /// <param name="firstName">The first name of the user</param>
         /// <param name="lastName">The last name of the user</param>
         /// <param name="email">The email address of the user</param>
-        /// <param name="password">The plain text password of the user</param>
-        public User(string firstName, string lastName, string email, string password)
-            : this(Guid.NewGuid(), firstName, lastName, email, BCrypt.Net.BCrypt.HashPassword(password), false, Guid.NewGuid(), null, null, null)
+        /// <param name="password">The password hash of the user</param>
+        public User(string firstName, string lastName, string email, string passwordHash)
+            : this(Guid.NewGuid(), firstName, lastName, email, passwordHash, false, Guid.NewGuid(), null, null, null)
         {
         }
 
@@ -125,7 +125,7 @@ namespace WAMServer.Models
             FirstName = firstName;
             LastName = lastName;
             Email = email;
-            Password = password;
+            PasswordHash = password;
             IsConfirmed = isConfirmed;
             ConfirmationToken = confirmationToken;
             AddressId = addressId;

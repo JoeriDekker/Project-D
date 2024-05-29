@@ -105,7 +105,7 @@ namespace WAMServer.Controllers
             {
                 return user;
             }
-            if (BCrypt.Net.BCrypt.EnhancedVerify(password, userQueryResult?.Password ?? ""))
+            if (BCrypt.Net.BCrypt.EnhancedVerify(password, userQueryResult?.PasswordHash ?? ""))
             {
                 user = userQueryResult;
             }

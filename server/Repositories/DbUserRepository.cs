@@ -64,7 +64,7 @@ namespace WAMServer.Repositories
             user.FirstName = entity.FirstName;
             user.LastName = entity.LastName;
             user.Email = entity.Email;
-            user.Password = entity.Password;
+            user.PasswordHash = entity.PasswordHash;
             user.IsConfirmed = entity.IsConfirmed;
             user.ConfirmationToken = entity.ConfirmationToken;
             user.AddressId = entity.AddressId;

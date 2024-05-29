@@ -50,7 +50,7 @@ namespace WAMServer.Controllers
                 return Unauthorized(new ErrorBody(unauthorizedmsg));
             }
 
-            if (!BCrypt.Net.BCrypt.EnhancedVerify(addressPatchBody.Password, user.Password))
+            if (!BCrypt.Net.BCrypt.EnhancedVerify(addressPatchBody.Password, user.PasswordHash))
             {
                 return Unauthorized(new ErrorBody(passincorrectmsg));
             }
