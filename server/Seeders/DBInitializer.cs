@@ -74,6 +74,28 @@ namespace WAMServer.Seeders
 
                     context.GroundWaterLog.AddRange(groundWaterLogs);
                     context.SaveChanges();
+
+                    //Add action types
+                    var actionType1 = new ActionType("Pump" , "Pump water to the ground");
+                    var actionType2 = new ActionType("Stop Pump" , "Stop pumping water to the ground");
+
+                    context.ActionType.Add(actionType1);
+                    context.ActionType.Add(actionType2);
+
+                    context.SaveChanges();
+
+                    //Add action logs
+                    var actionlogs = new List<ActionLog>(){
+                        new ActionLog(user.Id, actionType1.Id, DateTime.UtcNow),
+                        new ActionLog(user.Id, actionType2.Id, DateTime.UtcNow),
+                        new ActionLog(user.Id, actionType1.Id, DateTime.UtcNow),
+                        new ActionLog(user.Id, actionType2.Id, DateTime.UtcNow),
+
+                    };
+
+                    context.ActionLog.AddRange(actionlogs);
+
+                    context.SaveChanges();
                 }
             }
         }

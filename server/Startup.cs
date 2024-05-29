@@ -71,7 +71,7 @@ namespace WAMServer
             services.AddTransient<IRepository<ControlPC>, DbControlPCRepository>();
             services.AddTransient<IRepository<UserSetting>, DbUserSettingRepository>();
             services.AddTransient<IRepository<ActionLog>, DbActionLogRepository>();
-
+            services.AddTransient<IRepository<ActionType>, DbActionTypeRepository>();
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace WAMServer
             {
                 options.AddDefaultPolicy(builder =>
                 {
-                    builder.WithOrigins("http://localhost:3000")
+                    builder.WithOrigins(["http://localhost:3000", "http://projd.renswens.nl"])
                         .AllowAnyHeader()
                         .AllowAnyMethod();
                 });
