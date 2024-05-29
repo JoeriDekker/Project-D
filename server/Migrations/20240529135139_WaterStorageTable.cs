@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace server.Migrations
 {
     /// <inheritdoc />
-    public partial class dbbroken : Migration
+    public partial class WaterStorageTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -109,6 +109,27 @@ namespace server.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "WaterStorage",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    controlPCID = table.Column<Guid>(type: "uuid", nullable: false),
+                    typeStorage = table.Column<string>(type: "text", nullable: false),
+                    waterStored = table.Column<decimal>(type: "numeric", nullable: false),
+                    regio = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_WaterStorage", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_WaterStorage_ControlPC_controlPCID",
+                        column: x => x.controlPCID,
+                        principalTable: "ControlPC",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ActionLog",
                 columns: table => new
                 {
@@ -149,6 +170,11 @@ namespace server.Migrations
                 table: "Users",
                 column: "AddressId",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_WaterStorage_controlPCID",
+                table: "WaterStorage",
+                column: "controlPCID");
         }
 
         /// <inheritdoc />
@@ -158,19 +184,22 @@ namespace server.Migrations
                 name: "ActionLog");
 
             migrationBuilder.DropTable(
-                name: "ControlPC");
-
-            migrationBuilder.DropTable(
                 name: "GroundWaterLog");
 
             migrationBuilder.DropTable(
                 name: "UserSetting");
 
             migrationBuilder.DropTable(
+                name: "WaterStorage");
+
+            migrationBuilder.DropTable(
                 name: "ActionType");
 
             migrationBuilder.DropTable(
                 name: "Users");
+
+            migrationBuilder.DropTable(
+                name: "ControlPC");
 
             migrationBuilder.DropTable(
                 name: "Addresses");

@@ -12,8 +12,8 @@ using WAMServer.Models;
 namespace server.Migrations
 {
     [DbContext(typeof(WamDBContext))]
-    [Migration("20240527120349_dbbroken")]
-    partial class dbbroken
+    [Migration("20240529135139_WaterStorageTable")]
+    partial class WaterStorageTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -210,6 +210,33 @@ namespace server.Migrations
                     b.ToTable("UserSetting");
                 });
 
+            modelBuilder.Entity("WAMServer.Models.WaterStorage", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("controlPCID")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("regio")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("typeStorage")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<decimal>("waterStored")
+                        .HasColumnType("numeric");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("controlPCID");
+
+                    b.ToTable("WaterStorage");
+                });
+
             modelBuilder.Entity("WAMServer.Models.ActionLog", b =>
                 {
                     b.HasOne("WAMServer.Models.ActionType", "ActionType")
@@ -236,6 +263,17 @@ namespace server.Migrations
                         .HasForeignKey("WAMServer.Models.User", "AddressId");
 
                     b.Navigation("Address");
+                });
+
+            modelBuilder.Entity("WAMServer.Models.WaterStorage", b =>
+                {
+                    b.HasOne("WAMServer.Models.ControlPC", "ControlPC")
+                        .WithMany()
+                        .HasForeignKey("controlPCID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ControlPC");
                 });
 
             modelBuilder.Entity("WAMServer.Models.ActionType", b =>
