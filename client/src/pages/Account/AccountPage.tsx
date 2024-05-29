@@ -47,19 +47,6 @@ function AnyPage() {
         validationSchema: addressValidationScheme,
     });
 
-  useEffect(() => {
-    async function fetchUser() {
-      const res = await axios.get(
-        process.env.REACT_APP_API_URL + "/api/users",
-        {
-          headers: {
-            Authorization: authHeader,
-          },
-        }
-    }
-    fetchUser();
-  }, [authHeader]);
-
     async function handleAddressChange(values: {
         street: string;
         houseNumber: string;
