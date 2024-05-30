@@ -99,7 +99,6 @@ namespace WAMServer.Controllers
         public User? AuthenticateUserReturnNullIfUnable(string email, string password)
         {
             User? user = null;
-            //TODO: Add encryption
             User? userQueryResult = loginService.GetUser(email);
             if (userQueryResult == null)
             {

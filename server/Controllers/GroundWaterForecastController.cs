@@ -40,6 +40,9 @@ namespace WAMServer.Controllers
                 return Unauthorized();
             }
 
+            // Get current groundwaterlevel
+            
+
             // Get the house area of the user or default to 125
             decimal houseArea = user.ControlPC?.HouseArea ?? 125;
 
