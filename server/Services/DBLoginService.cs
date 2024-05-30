@@ -1,4 +1,4 @@
-using WAMServer.Interfaces;
+using WAMServer.Interfaces.Services;
 using WAMServer.Models;
 
 namespace WAMServer.Services

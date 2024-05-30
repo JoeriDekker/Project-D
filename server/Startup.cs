@@ -8,6 +8,7 @@ using WAMServer.Interfaces;
 using WAMServer.Models;
 using WAMServer.Repositories;
 using WAMServer.Services;
+using WAMServer.Interfaces.Services;
 
 namespace WAMServer
 {
@@ -22,33 +23,49 @@ namespace WAMServer
         public void Start()
         {
             var builder = WebApplication.CreateBuilder();
-            configureServices(builder.Services, builder.Configuration);
-            builder.Services.AddControllers().AddJsonOptions(options =>
-            {
-                options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-            });
-            configure(builder);
+            ConfigureServices(builder.Services, builder.Configuration);
+            ConfigureControllers(builder.Services);
+            Configure(builder);
             var app = builder.Build();
-            DBInitializer.Seed(app);
-            app.UseCors();
-            app.UseAuthentication();
-            app.UseAuthorization();
-            app.Urls.Add("http://*:5000");
-            app.MapControllers();
+            InitializeDatabase(app);
+            ConfigureMiddleware(app);
             app.Run();
         }
 
         /// <summary>
         /// Configures the services.
         /// </summary>
-        /// <param name="service">The services of the webappbuilder</param>
-        private void configureServices(IServiceCollection services, IConfiguration configuration)
+        /// <param name="services">The services of the web application builder.</param>
+        /// <param name="configuration">The configuration of the web application.</param>
+        private void ConfigureServices(IServiceCollection services, IConfiguration configuration)
         {
-            // setup cors
-            setupCors(services);
-            var jwtIssuer = configuration.GetSection("Jwt:Issuer").Get<string>();
-            var jwtKey = configuration.GetSection("Jwt:Key").Get<string>();
-            // JWT
+            SetupCors(services);
+            ConfigureJwtAuthentication(services, configuration);
+            RegisterDependencies(services);
+        }
+
+        /// <summary>
+        /// Configures the controllers.
+        /// </summary>
+        /// <param name="services">The services of the web application builder.</param>
+        private void ConfigureControllers(IServiceCollection services)
+        {
+            services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+            });
+        }
+
+        /// <summary>
+        /// Configures JWT authentication.
+        /// </summary>
+        /// <param name="services">The services of the web application builder.</param>
+        /// <param name="configuration">The configuration of the web application.</param>
+        private void ConfigureJwtAuthentication(IServiceCollection services, IConfiguration configuration)
+        {
+            var jwtIssuer = configuration["Jwt:Issuer"];
+            var jwtKey = configuration["Jwt:Key"];
+            
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -63,6 +80,14 @@ namespace WAMServer
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey ?? "WamsSuper$ecretKey"))
                     };
                 });
+        }
+
+        /// <summary>
+        /// Registers application dependencies.
+        /// </summary>
+        /// <param name="services">The services of the web application builder.</param>
+        private void RegisterDependencies(IServiceCollection services)
+        {
             services.AddTransient<IRepository<User>, DbUserRepository>();
             services.AddTransient<ILoginService, DBLoginService>();
             services.AddTransient<IRepository<Address>, DbAddressRepository>();
@@ -72,19 +97,20 @@ namespace WAMServer
             services.AddTransient<IRepository<UserSetting>, DbUserSettingRepository>();
             services.AddTransient<IRepository<ActionLog>, DbActionLogRepository>();
             services.AddTransient<IRepository<ActionType>, DbActionTypeRepository>();
-            
+            services.AddTransient<IGroundWaterForecastService, GroundWaterForecastService>();
         }
 
         /// <summary>
-        /// Sets up the cors. CORS is a security feature that allows you to restrict which domains can access your API.
+        /// Sets up CORS.
         /// </summary>
-        private void setupCors(IServiceCollection services)
+        /// <param name="services">The services of the web application builder.</param>
+        private void SetupCors(IServiceCollection services)
         {
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(builder =>
                 {
-                    builder.WithOrigins(["http://localhost:3000", "http://projd.renswens.nl"])
+                    builder.WithOrigins("http://localhost:3000", "http://projd.renswens.nl")
                         .AllowAnyHeader()
                         .AllowAnyMethod();
                 });
@@ -94,11 +120,41 @@ namespace WAMServer
         /// <summary>
         /// Configures the application.
         /// </summary>
-        /// <param name="builder">The webapplicationbuilder responsible for making the app.</param>
-        private void configure(WebApplicationBuilder builder)
+        /// <param name="builder">The web application builder.</param>
+        private void Configure(WebApplicationBuilder builder)
         {
             builder.Services.AddDbContext<WamDBContext>(options =>
                 options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+        }
+
+        /// <summary>
+        /// Initializes the database.
+        /// </summary>
+        /// <param name="app">The web application.</param>
+        private void InitializeDatabase(WebApplication app)
+        {
+            try
+            {
+                DBInitializer.Seed(app);
+            }
+            catch (Exception ex)
+            {
+                var logger = app.Services.GetRequiredService<ILogger<Startup>>();
+                logger.LogError(ex, "An error occurred while seeding the database.");
+            }
+        }
+
+        /// <summary>
+        /// Configures the middleware.
+        /// </summary>
+        /// <param name="app">The web application.</param>
+        private void ConfigureMiddleware(WebApplication app)
+        {
+            app.UseCors();
+            app.UseAuthentication();
+            app.UseAuthorization();
+            app.Urls.Add("http://*:5000");
+            app.MapControllers();
         }
     }
 }

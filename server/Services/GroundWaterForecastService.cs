@@ -1,10 +1,12 @@
-using WAMServer.Interfaces;
+using WAMServer.Interfaces.Services;
+using WAMServer.Interfaces.Services.Weather;
+using WAMServer.Services.Weather;
 
 namespace WAMServer.Services
 {
     public class GroundWaterForecastService : IGroundWaterForecastService
     {
-        private readonly IConfiguration configuration;
+        private readonly IWindService windService;
         // The density of water in kg/m^3
         private readonly int waterDensity = 997;
         private readonly decimal heatOfVaporization = (decimal)2.45 * (decimal)Math.Pow(10, 6);
@@ -25,13 +27,14 @@ namespace WAMServer.Services
             {"dec", 2.6}
         };
 
-        public GroundWaterForecastService(IConfiguration configuration)
+        public GroundWaterForecastService(IWindService? windService = null)
         {
-            this.configuration = configuration;
+            this.windService = windService ?? new WindService();
         }
 
-        public decimal GetGroundWaterForecastForTomorrow(decimal currentWaterLevel, decimal houseArea, string place)
+        public async Task<decimal> GetGroundWaterForecastForTomorrow(decimal currentWaterLevel, decimal houseArea, string place)
         {
+            var windSpeed = await windService.GetWindSpeedForTomorrow(place);
             return 0;
         }
 
@@ -57,5 +60,6 @@ namespace WAMServer.Services
         {
             return (245) / ((decimal)0.54 * windSpeed + (decimal)0.5) * (1 / 86400);
         }
+
     }
 }

@@ -4,10 +4,9 @@ using System.Text;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
-using WAMServer.Interfaces;
+using WAMServer.Interfaces.Services;
 using WAMServer.Models;
 using WAMServer.Records;
-using WAMServer.Records.Bodies;
 using WAMServer.Validation;
 
 namespace WAMServer.Controllers

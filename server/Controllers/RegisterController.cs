@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WAMServer.Interfaces;
+using WAMServer.Interfaces.Services;
 using WAMServer.Models;
 using WAMServer.Records.Bodies;
 using WAMServer.Validation;

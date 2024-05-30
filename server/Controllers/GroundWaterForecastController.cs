@@ -1,18 +1,23 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WAMServer.Interfaces;
+using WAMServer.Interfaces.Services;
 using WAMServer.Models;
 
 namespace WAMServer.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class GroundWaterForecastController : ControllerBase
     {
 
         private readonly IRepository<User> _userRepository;
+        private readonly IGroundWaterForecastService _groundWaterForecastService;
 
-        public GroundWaterForecastController(IRepository<User> userRepository)
+        public GroundWaterForecastController(IRepository<User> userRepository, IGroundWaterForecastService groundWaterForecastService)
         {
             _userRepository = userRepository;
+            _groundWaterForecastService = groundWaterForecastService;
         }
 
         /// <summary>
@@ -50,6 +55,13 @@ namespace WAMServer.Controllers
             
 
             return Ok();
+        }
+
+        [HttpGet("test")]
+        public async Task<IActionResult> Test()
+        {
+            
+            return Ok(await _groundWaterForecastService.GetGroundWaterForecastForTomorrow(0,0,"Gouda"));
         }
     }
 }

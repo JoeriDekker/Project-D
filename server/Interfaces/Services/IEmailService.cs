@@ -1,4 +1,4 @@
-namespace WAMServer.Interfaces
+namespace WAMServer.Interfaces.Services
 {
     public interface IEmailService
     {

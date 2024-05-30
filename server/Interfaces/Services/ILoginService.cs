@@ -1,6 +1,6 @@
 using WAMServer.Models;
 
-namespace WAMServer.Interfaces
+namespace WAMServer.Interfaces.Services
 {
     public interface ILoginService
     {

@@ -1,6 +1,6 @@
 using MailKit.Net.Smtp;
 using MimeKit;
-using WAMServer.Interfaces;
+using WAMServer.Interfaces.Services;
 
 namespace WAMServer.Services
 {
