@@ -41,30 +41,40 @@ namespace WAMServer.Controllers{
         /// Gets all water storages.
         /// </summary>
         /// <returns>The list of WaterStorage records</returns>
-        [HttpGet]
-        [Authorize]
-        public async Task<ActionResult<IEnumerable<WaterStorage>>> GetWaterStorages()
-        {
-            var waterstorages = await _waterStorageRepository.GetAllAsync();
-            return Ok(waterstorages);
-        }
+        // [HttpGet]
+        // [Authorize]
+        // public async Task<ActionResult<IEnumerable<WaterStorage>>> GetWaterStorages()
+        // {
+        //     var waterstorages = await _waterStorageRepository.GetAllAsync();
+        //     return Ok(waterstorages);
+        // }
 
         [HttpGet("{id}")]
         [Authorize]
-        public async Task<ActionResult<WaterStorage>> GetWaterStorage(Guid id)
-        {   
+        public ActionResult<WaterStorage> GetWaterStorageFromID(Guid id)
+        {
             // Get all Waterstoreges from the user with the given id in getall() method
 
 
-            var controlPC =  _controlPCRepository.GetAll(c => c.userId == id).FirstOrDefault();
-            var waterstorage =  _waterStorageRepository.Get(controlPC.Id);
-
-
-            if (waterstorage == null)
+            var controlPC = _controlPCRepository.GetAll(c => c.userId == id).FirstOrDefault();
+            
+            if (controlPC == null)
             {
+                Console.WriteLine("ControlPC not found");
                 return NotFound();
             }
-            return Ok(waterstorage);
+
+            var waterstorages = _waterStorageRepository.GetAll(w => w.controlPCID == controlPC.Id);
+
+            if (waterstorages == null)
+            {
+                Console.WriteLine("Waterstorage not found");
+                return NotFound();
+            }
+            Console.WriteLine("====================================");
+            Console.WriteLine("Waterstorage found!");
+            Console.WriteLine("====================================");
+            return Ok(waterstorages);
 
         }
 

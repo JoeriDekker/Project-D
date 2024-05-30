@@ -35,9 +35,9 @@ namespace WAMServer.Repositories{
 
         }
 
-        public Task<IEnumerable<WaterStorage?>> GetAllAsync()
+        public async Task<IEnumerable<WaterStorage?>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _context.WaterStorage.ToListAsync();
         }
 
         public Task<WaterStorage?> UpdateAsync(WaterStorage entity, Func<WaterStorage, bool> predicate)

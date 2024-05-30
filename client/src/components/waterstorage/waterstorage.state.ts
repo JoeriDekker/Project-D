@@ -5,6 +5,14 @@ export interface WaterStorageState {
 
 }
 
+export interface UserResponse {
+    id: string
+    firstName: string
+    lastName: string
+    email: string
+    address: Address
+}
+
 export interface Address {
     id: string
     street: string

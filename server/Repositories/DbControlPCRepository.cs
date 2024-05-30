@@ -6,6 +6,14 @@ namespace WAMServer.Repositories{
 
     public class DbControlPCRepository : IRepository<ControlPC>
     {
+
+        private readonly WamDBContext _context;
+
+        public DbControlPCRepository(WamDBContext context)
+        {
+            _context = context;
+        }
+
         public Task<ControlPC> AddAsync(ControlPC entity)
         {
             throw new NotImplementedException();
@@ -23,7 +31,7 @@ namespace WAMServer.Repositories{
 
         public IEnumerable<ControlPC?> GetAll(Func<ControlPC, bool> predicate)
         {
-            throw new NotImplementedException();
+            return _context.ControlPCs.Where(predicate).ToList();
         }
 
         public Task<IEnumerable<ControlPC?>> GetAllAsync()
