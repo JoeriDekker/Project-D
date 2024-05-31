@@ -9,6 +9,8 @@ using WAMServer.Models;
 using WAMServer.Repositories;
 using WAMServer.Services;
 using WAMServer.Interfaces.Services;
+using WAMServer.Interfaces.Services.Weather;
+using WAMServer.Services.Weather;
 
 namespace WAMServer
 {
@@ -88,6 +90,9 @@ namespace WAMServer
         /// <param name="services">The services of the web application builder.</param>
         private void RegisterDependencies(IServiceCollection services)
         {
+            // Add HttpClient
+            services.AddHttpClient();
+
             services.AddTransient<IRepository<User>, DbUserRepository>();
             services.AddTransient<ILoginService, DBLoginService>();
             services.AddTransient<IRepository<Address>, DbAddressRepository>();
@@ -98,6 +103,7 @@ namespace WAMServer
             services.AddTransient<IRepository<ActionLog>, DbActionLogRepository>();
             services.AddTransient<IRepository<ActionType>, DbActionTypeRepository>();
             services.AddTransient<IGroundWaterForecastService, GroundWaterForecastService>();
+            services.AddTransient<IWindService, WindService>();
         }
 
         /// <summary>
