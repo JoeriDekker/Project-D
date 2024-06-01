@@ -17,15 +17,14 @@ function WaterLevelSettings() {
 
     // TODO language errors
     const waterLevelValidationScheme = Yup.object().shape({
-        poleHeight: Yup.number()
-            .required("Pole height is required")
+        poleheight: Yup.number()
             .min(-5, "Pole height cannot be less than -5")
             .max(5, "Pole height cannot be greater than 5"),
-        idealHeight: Yup.number()
-            .required("Ideal height is required")
+        idealheight: Yup.number()
             .min(-5, "Ideal height cannot be less than -5")
             .max(5, "Ideal height cannot be greater than 5")
     });
+
     const waterlevelFormik = useFormik({
         initialValues: {
             poleheight: "",
@@ -45,6 +44,7 @@ function WaterLevelSettings() {
           },
         }
       );
+      console.log("User data:", res.data); // Log the user data received from the API
       setUser(res.data);
     }
     fetchUser();
@@ -81,11 +81,11 @@ function WaterLevelSettings() {
                         {t("waterlevel.current")}
                     </h2>
 
-                    <div className="flex dir-row w-full gap-5 px-5">
+                    <div className="flex dir-row w-full gap-5 px-5 pt-5">
                         <Input
                             label={t("waterlevel.poleheight")}
-                            placeholder={user?.address.houseNumber || ""}
-                            width="1/2"
+                            placeholder={`${user?.waterlevelsettings?.poleheight || ""}`}
+                            width="1/3"
                             onChange={waterlevelFormik.handleChange}
                             value={waterlevelFormik.values.poleheight}
                             name="houseNumber"
@@ -96,8 +96,8 @@ function WaterLevelSettings() {
                     <div className="flex dir-col w-full gap-5 px-5 pt-5">
                         <Input
                             label={t("waterlevel.ideal")}
-                            placeholder={`${user?.waterlevelsettings.idealheight}` || ""}
-                            width="1/2"
+                            placeholder={`${user?.waterlevelsettings?.idealheight || ""}`}
+                            width="1/3"
                             onChange={waterlevelFormik.handleChange}
                             value={waterlevelFormik.values.idealheight}
                             name="street"

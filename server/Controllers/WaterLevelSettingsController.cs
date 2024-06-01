@@ -50,7 +50,7 @@ namespace WAMServer.Controllers
                 return Unauthorized(new ErrorBody(unauthorizedmsg));
             }
 
-            var existingSettings = _waterlevelsettingsRepository.Get(user.Id);
+            var existingSettings = _waterlevelsettingsRepository.Get(user.WaterLevelSettings!.Id);
             if (existingSettings == null)
             {
                 return NotFound(new ErrorBody("Settings not found."));
@@ -67,7 +67,7 @@ namespace WAMServer.Controllers
                 existingSettings.IdealHeight = waterlevelsettingsPatchBody.IdealHeight;
             }
 
-            _waterlevelsettingsRepository.UpdateAsync(existingSettings, _ => _.userId == id);
+            _waterlevelsettingsRepository.UpdateAsync(existingSettings, _ => _.UserId == id);
             return Ok();
         }
     }

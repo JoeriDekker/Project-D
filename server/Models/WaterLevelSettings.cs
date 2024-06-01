@@ -11,7 +11,7 @@ namespace WAMServer.Models
         public Guid Id { get; set; }
 
         [ForeignKey("User")]
-        public Guid userId { get; set; }
+        public Guid UserId { get; set; }
 
         [Required, Column(TypeName = "decimal")]
         public decimal? PoleHeight { get; set; } = 0;
