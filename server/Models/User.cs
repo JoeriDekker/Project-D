@@ -28,6 +28,7 @@ namespace WAMServer.Models
         public Guid? AddressId { get; set; }
         public Address? Address { get; set; }
         public List<ActionLog> ActionLogs { get; set; }
+        public WaterLevelSettings? WaterLevelSettings { get; set; }
 
 
         /// <summary>

@@ -42,9 +42,15 @@ namespace WAMServer.Repositories{
         }
 
         // TODO: understand why it has to be 2 params instead of 1
-        public Task<WaterLevelSettings> UpdateAsync(WaterLevelSettings entity, Func<WaterLevelSettings, bool> predicate)
+        public async Task<WaterLevelSettings?> UpdateAsync(WaterLevelSettings entity, Func<WaterLevelSettings, bool> predicate)
         {
-           throw new NotImplementedException();
+            var settings = _context.WaterLevelSettings.Where(predicate).FirstOrDefault();
+            if (settings == null) return null;
+            if (entity.PoleHeight != null) settings.PoleHeight = entity.PoleHeight;
+            if (entity.PoleHeight != null) settings.PoleHeight = entity.PoleHeight;
+
+            await _context.SaveChangesAsync();
+            return settings;        
         }
     }
 }

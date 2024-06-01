@@ -7,6 +7,7 @@ export interface UserResponse {
     lastName: string
     email: string
     address: Address
+    waterlevelsettings: WaterLevelSettings
   }
   
   export interface Address {
@@ -18,6 +19,14 @@ export interface UserResponse {
     userId: string
     user: User
   }
+
+  export interface WaterLevelSettings {
+    id: string
+    userId: string
+    poleheight: number
+    idealheight: number
+    user: User
+  }
   
   export interface User {
     id: string
@@ -27,5 +36,6 @@ export interface UserResponse {
     password: string
     addressId: string
     address: any
+    waterlevelsettings: any
   }
   

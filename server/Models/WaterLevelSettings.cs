@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using WAMServer.Records.Bodies;
 
 namespace WAMServer.Models
 {
@@ -13,17 +14,17 @@ namespace WAMServer.Models
         public Guid userId { get; set; }
 
         [Required, Column(TypeName = "decimal")]
-        public decimal PoleHeight { get; set; } = 0;
+        public decimal? PoleHeight { get; set; } = 0;
 
         [Required, Column(TypeName = "decimal")]
-        public decimal IdealHeight { get; set; } = 0;
+        public decimal? IdealHeight { get; set; } = 0;
+        public User? User { get; set; }
 
-        public WaterLevelSettings(Guid userId, decimal PoleHeight, decimal IdealHeight)
+
+        public WaterLevelSettings(WaterLevelSettingsPatchBody waterlevelsettingsPatchBody)
         {
-            this.Id = Guid.NewGuid();
-            this.userId = userId;
-            this.PoleHeight = PoleHeight;
-            this.IdealHeight = IdealHeight;
+            PoleHeight = waterlevelsettingsPatchBody.PoleHeight!;
+            IdealHeight = waterlevelsettingsPatchBody.IdealHeight!;
         }
 
     }
