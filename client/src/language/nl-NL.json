@@ -9,6 +9,7 @@
         "logbooks": "Logboeken",
         "neighbourhood": "Mijn buurt",
         "account": "Account",
+        "waterlevelsettings": "Waterpeil Instellingen",
         "close": "Sluiten"
     },
     "Contact": {
@@ -46,7 +47,9 @@
         "ideal": "Ideaal",
         "poleheight": "Paalkop",
         "badstatus": "Je waterpeil is NIET goed!",
-        "goodstatus": "Je waterpeil is GOED!"
+        "goodstatus": "Je waterpeil is GOED!",
+        "adjust": "Waterpeil instellingen wijzigen",
+        "current": "Huidige Waterpeil instellingen"
     },
     "logboek" : {
         "waterleverlogbook": "Waterpeil Logbook",

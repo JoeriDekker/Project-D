@@ -18,6 +18,7 @@ import AnyPage from "./pages/anypage";
 import LogboekScreen from "./pages/Logboek/logboekScreen";
 import Register from "./pages/Register/RegisterPage";
 import VerificationScreen from "./pages/Verification/VerificationScreen";import Home from './pages/homedashboard';
+import WaterLevelSettings from "./pages/WaterlevelSettings/WaterLevelSettings";
 
 function App() {
   const authHeader = useAuthHeader();
@@ -53,6 +54,7 @@ function App() {
         <Route path="/verify/:userId/:token" Component={VerificationScreen} />
         <Route element={<AuthOutlet fallbackPath="/login" />}>
           <Route path="/account" element={<AccountPage />} />
+          <Route path="/waterlevelsettings" element={<WaterLevelSettings />} />
           <Route path="/*" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
           <Route path="/logboek" element={<LogboekScreen />} />
