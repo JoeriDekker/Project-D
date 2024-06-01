@@ -67,6 +67,7 @@ namespace WAMServer
             services.AddTransient<ILoginService, DBLoginService>();
             services.AddTransient<IRepository<Address>, DbAddressRepository>();
             services.AddTransient<IEmailService, DefaultEmailService>();
+            services.AddTransient<IRepository<WaterLevelSettings>, DbWaterLevelSettingsRepository>();
             services.AddTransient<IRepository<GroundWaterLog>, DbGroundWaterLogRepository>();
             services.AddTransient<IRepository<ControlPC>, DbControlPCRepository>();
             services.AddTransient<IRepository<UserSetting>, DbUserSettingRepository>();

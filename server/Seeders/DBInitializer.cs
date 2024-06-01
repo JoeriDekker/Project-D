@@ -88,6 +88,16 @@ namespace WAMServer.Seeders
                     context.ActionLog.AddRange(actionlogs);
 
                     context.SaveChanges();
+
+                    //Add waterlevel settings
+                    var waterlevelSettings = new List<WaterLevelSettings>()
+                    {
+                        new WaterLevelSettings(user.Id, decimal.Parse("-2.05"), decimal.Parse("-1.85"))
+                    };
+
+                    context.WaterLevelSettings.AddRange(waterlevelSettings);
+
+                    context.SaveChanges();
                 }
             }
         }
