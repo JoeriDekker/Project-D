@@ -32,7 +32,7 @@ namespace WAMServer.Controllers
         /// <summary>
         /// Gets all groundwater logs.
         /// </summary>
-        /// <returns>The list of Groundwaterlog records</returns>
+        /// <returns>The list of Groundwaterlog records, sorted from most recent date.</returns>
         [HttpGet]
         [Authorize]
         public async Task<ActionResult<IEnumerable<GroundWaterLog>>> GetGroundWaterLogs()

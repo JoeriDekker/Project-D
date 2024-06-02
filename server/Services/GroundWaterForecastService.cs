@@ -1,15 +1,21 @@
 using WAMServer.Interfaces.Services;
-using WAMServer.Interfaces.Services.Weather;
+using WAMServer.Records;
 using WAMServer.Services.Weather;
 
 namespace WAMServer.Services
 {
     public class GroundWaterForecastService : IGroundWaterForecastService
     {
-        private readonly IWindService windService;
         // The density of water in kg/m^3
         private readonly int waterDensity = 997;
         private readonly decimal heatOfVaporization = (decimal)2.45 * (decimal)Math.Pow(10, 6);
+
+        private readonly BuienradarService  _buienradarService;
+
+        public GroundWaterForecastService(HttpClient httpClient, BuienradarService? buienradarService = null)
+        {
+            _buienradarService = buienradarService ?? new BuienradarService(httpClient);
+        }
         
         private readonly Dictionary<string, double> shortWaveRadiation = new Dictionary<string, double>
         {
@@ -27,14 +33,22 @@ namespace WAMServer.Services
             {"dec", 2.6}
         };
 
-        public GroundWaterForecastService(IWindService? windService = null)
-        {
-            this.windService = windService ?? new WindService();
-        }
-
         public async Task<decimal> GetGroundWaterForecastForTomorrow(decimal currentWaterLevel, decimal houseArea, string place)
         {
-            var windSpeed = await windService.GetWindSpeedForTomorrow(place);
+            BuienradarData buienradarData = await _buienradarService.GetBuienradarDataAsync(place);
+            if (buienradarData == null)
+            {
+                return decimal.MinValue;
+            }
+
+            // TODO: Find a way to get humidity data from outside, as buienradar does not provide it
+            // TODO: Find a more fine-grained way to get the number of sunhours.
+            var grassEvaporation = grassEvaporation(buienradarData.MaxTemperatureAvg,
+            0.70, 
+            buienradarData.WindSpeed, buienradarData.HoursOfSun,
+            buienradarData.MaximalHoursOfSun, 
+            DateTime.Now.Month);
+
             return 0;
         }
 
