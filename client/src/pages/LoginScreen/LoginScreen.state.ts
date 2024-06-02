@@ -23,8 +23,8 @@ export interface UserResponse {
   export interface WaterLevelSettings {
     id: string
     userId: string
-    poleheight: number
-    idealheight: number
+    poleHeight: number
+    idealHeight: number
     user: User
   }
   

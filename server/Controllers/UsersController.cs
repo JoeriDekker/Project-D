@@ -60,11 +60,14 @@ namespace WAMServer.Controllers
                 return NotFound();
             }
 
+            Console.WriteLine(user.AddressId);
+            Console.WriteLine(user.WaterLevelSettingsId);
+
             // If the user has an associated address, retrieve it from the address repository
-            if (user.AddressId != null)
+            if (user.AddressId != null && user.WaterLevelSettingsId != null)
             {
                 user.Address = _addressRepository.Get(user.AddressId.Value);
-                user.WaterLevelSettings = _waterlevelsettingsRepository.Get(user.Id);
+                user.WaterLevelSettings = _waterlevelsettingsRepository.Get(user.WaterLevelSettingsId.Value);
 
             }
 

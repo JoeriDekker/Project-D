@@ -27,8 +27,11 @@ namespace WAMServer.Models
         [ForeignKey("Address")]
         public Guid? AddressId { get; set; }
         public Address? Address { get; set; }
-        public List<ActionLog> ActionLogs { get; set; }
+        [ForeignKey("WaterLevelSettings")]
+        public Guid? WaterLevelSettingsId { get; set; }
         public WaterLevelSettings? WaterLevelSettings { get; set; }
+
+        public List<ActionLog> ActionLogs { get; set; }
 
 
         /// <summary>
@@ -38,12 +41,13 @@ namespace WAMServer.Models
         /// <param name="lastName">The lastname of the user</param>
         /// <param name="email">The emailaddress of the user</param>
         /// <param name="password">The hashed password of the user</param>
-        public User(string firstName, string lastName, string email, string password) : this(Guid.NewGuid(), firstName, lastName, email, password, false, Guid.NewGuid(), null)
+        public User(string firstName, string lastName, string email, string password) 
+        : this(Guid.NewGuid(), firstName, lastName, email, password, false, Guid.NewGuid(), null, null)
         {
         }
         
 
-        public User(Guid id, string firstName, string lastName, string email, string password, bool isConfirmed, Guid confirmationToken, Guid? addressId)
+        public User(Guid id, string firstName, string lastName, string email, string password, bool isConfirmed, Guid confirmationToken, Guid? addressId, Guid? waterLevelSettingsId)
         {
             Id = id;
             FirstName = firstName;
@@ -53,10 +57,14 @@ namespace WAMServer.Models
             IsConfirmed = isConfirmed;
             ConfirmationToken = confirmationToken;
             AddressId = addressId;
+            WaterLevelSettingsId = waterLevelSettingsId;
         }
+        
 
         public User()
         {
         }
+
+       
     }
 }

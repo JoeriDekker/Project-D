@@ -31,10 +31,24 @@ namespace WAMServer.Seeders
                         Zip = "2806BE"
                     };
 
+                    var waterlevelsetting = new WaterLevelSettings(){
+                        Id = Guid.NewGuid(),
+                        PoleHeight = decimal.Parse("-2.05"),
+                        IdealHeight = decimal.Parse("-1.85")
+                    };
+
+                    context.WaterLevelSettings.Add(waterlevelsetting);
+                    context.SaveChanges();
+
+
                     var user = new User("Jan", "Waterpeil", "admin@email.com", BCrypt.Net.BCrypt.EnhancedHashPassword("geheim"))
                     {
                         IsConfirmed = true
                     };
+
+                    waterlevelsetting.UserId = user.Id;
+
+
                     var controlPC = new ControlPC(user.Id, "geheimPC", "123", "Uhhhhwaarvoorstaatdit?");
                     address.UserId = user.Id;
                     context.Users.Add(user);
@@ -44,6 +58,7 @@ namespace WAMServer.Seeders
                     if (editUser != null)
                     {
                         editUser.AddressId = address.Id;
+                        editUser.WaterLevelSettingsId = waterlevelsetting.Id;
                     }
                     context.SaveChanges();
 
@@ -89,15 +104,15 @@ namespace WAMServer.Seeders
 
                     context.SaveChanges();
 
-                    //Add waterlevel settings
-                    var waterlevelSettings = new List<WaterLevelSettings>()
-                    {
-                        new WaterLevelSettings(user.Id, decimal.Parse("-2.05"), decimal.Parse("-1.85"))
-                    };
+                    // //Add waterlevel settings
+                    // var waterlevelSettings = new List<WaterLevelSettings>()
+                    // {
+                    //     new WaterLevelSettings(user.Id, decimal.Parse("-2.05"), decimal.Parse("-1.85"))
+                    // };
 
-                    context.WaterLevelSettings.AddRange(waterlevelSettings);
+                    // context.WaterLevelSettings.AddRange(waterlevelSettings);
 
-                    context.SaveChanges();
+                    // context.SaveChanges();
                 }
             }
         }

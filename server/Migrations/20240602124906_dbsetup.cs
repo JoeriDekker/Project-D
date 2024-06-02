@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace server.Migrations
 {
     /// <inheritdoc />
-    public partial class dbbroken : Migration
+    public partial class dbsetup : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -134,6 +134,26 @@ namespace server.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "WaterLevelSettings",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    UserId = table.Column<Guid>(type: "uuid", nullable: false),
+                    PoleHeight = table.Column<decimal>(type: "decimal", nullable: false),
+                    IdealHeight = table.Column<decimal>(type: "decimal", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_WaterLevelSettings", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_WaterLevelSettings_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_ActionLog_actionTypeID",
                 table: "ActionLog",
@@ -148,6 +168,12 @@ namespace server.Migrations
                 name: "IX_Users_AddressId",
                 table: "Users",
                 column: "AddressId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_WaterLevelSettings_UserId",
+                table: "WaterLevelSettings",
+                column: "UserId",
                 unique: true);
         }
 
@@ -165,6 +191,9 @@ namespace server.Migrations
 
             migrationBuilder.DropTable(
                 name: "UserSetting");
+
+            migrationBuilder.DropTable(
+                name: "WaterLevelSettings");
 
             migrationBuilder.DropTable(
                 name: "ActionType");

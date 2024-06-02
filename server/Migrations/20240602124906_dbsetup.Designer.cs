@@ -12,8 +12,8 @@ using WAMServer.Models;
 namespace server.Migrations
 {
     [DbContext(typeof(WamDBContext))]
-    [Migration("20240527120349_dbbroken")]
-    partial class dbbroken
+    [Migration("20240602124906_dbsetup")]
+    partial class dbsetup
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -210,6 +210,31 @@ namespace server.Migrations
                     b.ToTable("UserSetting");
                 });
 
+            modelBuilder.Entity("WAMServer.Models.WaterLevelSettings", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<decimal?>("IdealHeight")
+                        .IsRequired()
+                        .HasColumnType("decimal");
+
+                    b.Property<decimal?>("PoleHeight")
+                        .IsRequired()
+                        .HasColumnType("decimal");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("WaterLevelSettings");
+                });
+
             modelBuilder.Entity("WAMServer.Models.ActionLog", b =>
                 {
                     b.HasOne("WAMServer.Models.ActionType", "ActionType")
@@ -238,6 +263,17 @@ namespace server.Migrations
                     b.Navigation("Address");
                 });
 
+            modelBuilder.Entity("WAMServer.Models.WaterLevelSettings", b =>
+                {
+                    b.HasOne("WAMServer.Models.User", "User")
+                        .WithOne("WaterLevelSettings")
+                        .HasForeignKey("WAMServer.Models.WaterLevelSettings", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("WAMServer.Models.ActionType", b =>
                 {
                     b.Navigation("ActionLogs");
@@ -251,6 +287,8 @@ namespace server.Migrations
             modelBuilder.Entity("WAMServer.Models.User", b =>
                 {
                     b.Navigation("ActionLogs");
+
+                    b.Navigation("WaterLevelSettings");
                 });
 #pragma warning restore 612, 618
         }

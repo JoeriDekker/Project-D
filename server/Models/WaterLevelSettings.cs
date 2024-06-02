@@ -10,22 +10,21 @@ namespace WAMServer.Models
         [Key]
         public Guid Id { get; set; }
 
-        [ForeignKey("User")]
-        public Guid UserId { get; set; }
-
         [Required, Column(TypeName = "decimal")]
         public decimal? PoleHeight { get; set; } = 0;
 
         [Required, Column(TypeName = "decimal")]
         public decimal? IdealHeight { get; set; } = 0;
+        public Guid? UserId { get; set; }
         public User? User { get; set; }
 
-
-        public WaterLevelSettings(WaterLevelSettingsPatchBody waterlevelsettingsPatchBody)
+        public WaterLevelSettings() {}
+        public WaterLevelSettings(WaterLevelSettingsPatchBody waterLevelSettingsPatchBody)
         {
-            PoleHeight = waterlevelsettingsPatchBody.PoleHeight!;
-            IdealHeight = waterlevelsettingsPatchBody.IdealHeight!;
+            PoleHeight = waterLevelSettingsPatchBody.PoleHeight!;
+            IdealHeight = waterLevelSettingsPatchBody.IdealHeight!;
         }
-
+        
     }
+
 }
