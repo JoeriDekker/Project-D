@@ -31,6 +31,11 @@ namespace WAMServer.Repositories{
             return _context.WaterLevelSettings.Where(a => a.Id == id).FirstOrDefault();
         }
 
+        public WaterLevelSettings? GetByUserId(Guid id)
+        {
+            return _context.WaterLevelSettings.Where(a => a.UserId == id).FirstOrDefault();
+        }
+
         public IEnumerable<WaterLevelSettings?> GetAll(Func<WaterLevelSettings, bool> predicate)
         {
             throw new NotImplementedException();

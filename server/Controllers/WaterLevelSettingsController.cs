@@ -50,7 +50,7 @@ namespace WAMServer.Controllers
                 return Unauthorized(new ErrorBody(unauthorizedmsg));
             }
 
-            var existingSettings = _waterlevelsettingsRepository.Get(user.WaterLevelSettings!.Id);
+            var existingSettings = _waterlevelsettingsRepository.Get(user.Id);
             if (existingSettings == null)
             {
                 return NotFound(new ErrorBody("Settings not found."));
