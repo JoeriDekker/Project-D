@@ -14,7 +14,7 @@ namespace WAMServer.Models
         public string controlPCID { get; set; } = null!;
         [Required, Column(TypeName = "varchar(100)")]
         // TODO: Change to DateTime
-        public string date { get; set; } = null!;
+        public DateTime date { get; set; }
         [Required, Column(TypeName = "decimal")]
         public decimal level { get; set; } = 0;
 
@@ -24,7 +24,7 @@ namespace WAMServer.Models
         /// <param name="controlPCID">ID of the control PC associated with the log.</param>
         /// <param name="description">Description of the groundwater log.</param>
         /// <param name="level">Level of groundwater.</param>
-        public GroundWaterLog(string controlPCID, string date, decimal level)
+        public GroundWaterLog(string controlPCID, DateTime date, decimal level)
         {
             this.Id = Guid.NewGuid();
             this.controlPCID = controlPCID;

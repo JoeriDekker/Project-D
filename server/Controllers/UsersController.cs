@@ -32,13 +32,13 @@ namespace WAMServer.Controllers
         public ActionResult<UserDTO> GetUser()
         {
             var currentUser = HttpContext.User;
-            
+
             // Check if the user has the required claim
             if (!currentUser.HasClaim(c => c.Type == "Id"))
             {
                 return Unauthorized();
             }
-            
+
             // Extract the user id from the claim
             string userId = currentUser.Claims.FirstOrDefault(c => c.Type == "Id")!.Value;
 

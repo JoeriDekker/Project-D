@@ -66,7 +66,13 @@ namespace WAMServer
             services.AddTransient<IRepository<User>, DbUserRepository>();
             services.AddTransient<ILoginService, DBLoginService>();
             services.AddTransient<IRepository<Address>, DbAddressRepository>();
+            services.AddTransient<IEmailService, DefaultEmailService>();
             services.AddTransient<IRepository<GroundWaterLog>, DbGroundWaterLogRepository>();
+            services.AddTransient<IRepository<ControlPC>, DbControlPCRepository>();
+            services.AddTransient<IRepository<UserSetting>, DbUserSettingRepository>();
+            services.AddTransient<IRepository<ActionLog>, DbActionLogRepository>();
+            services.AddTransient<IRepository<ActionType>, DbActionTypeRepository>();
+            
         }
 
         /// <summary>
@@ -78,9 +84,9 @@ namespace WAMServer
             {
                 options.AddDefaultPolicy(builder =>
                 {
-                    builder.AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader();
+                    builder.WithOrigins(["http://localhost:3000", "http://projd.renswens.nl"])
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
                 });
             });
         }

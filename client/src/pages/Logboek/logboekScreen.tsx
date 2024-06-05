@@ -4,6 +4,7 @@ import axios, { AxiosError } from "axios";
 import Navbar from '../../components/navbar/navbar'
 import Logboek from '../../components/logboek/logboek'
 import WaterpeilLogboek from "../../components/logboek/waterpeillogboek";
+import ActionLogboek from "../../components/logboek/actionlogboek";
 
 function LogboekScreen() {
 
@@ -17,9 +18,10 @@ function LogboekScreen() {
                             Logboek
                         </h1>
                         <br />
-                        <div className="grid grid-cols-2 gap-10">
+                        <div className="grid grid-cols-2 grid-rows-2 gap-10  px-5 pt-5">
                             <WaterpeilLogboek />
                             <Logboek />
+                            <ActionLogboek />
                         </div>
                     </div>
                 </div>

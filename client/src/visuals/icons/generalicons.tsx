@@ -136,6 +136,22 @@ function Icons(props: IconProps) {
                 </svg>
             );
         }
+        case "TiltedTowers":
+            return (
+                <img src={require('./verzakking.png')} alt="tilted house" />
+            )
+        case "CampusGouda":
+            return (
+                <img className="w-20 h-20" src={require('./CampusGouda.png')} alt="tilted house" />
+            )
+        case "Bam":
+            return (
+                <img className="w-20 h-20" src={require('./Bam.jpg')} alt="tilted house" />
+            )
+        case "Rijkswaterstaat":
+            return (
+                <img className="w-40 h-20" src={require('./RIjkswaterstaat-logo.png')} alt="tilted house" />
+            )
 
     }
     return <></>;
