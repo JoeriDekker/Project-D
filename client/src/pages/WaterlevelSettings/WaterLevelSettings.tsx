@@ -11,7 +11,6 @@ import Input from "../../components/Input/Input";
 
 function WaterLevelSettings() {
     const [user, setUser] = React.useState<UserResponse | null>(null);
-    const [waterLevelSettings, setWaterLevelSettings] = React.useState<UserResponse["waterlevelsettings"] | null>(null);
     const authHeader = useAuthHeader();
 
     // -------- waterlevel Formik --------
@@ -25,7 +24,6 @@ function WaterLevelSettings() {
             .min(-5, "Ideal height cannot be less than -5")
             .max(5, "Ideal height cannot be greater than 5")
     });
-
     const waterlevelFormik = useFormik({
         initialValues: {
             poleheight: "",
@@ -35,27 +33,9 @@ function WaterLevelSettings() {
         validationSchema: waterLevelValidationScheme,
     });
 
-  useEffect(() => {
-    async function fetchUser() {
-      const res = await axios.get(
-        process.env.REACT_APP_API_URL + "/api/users",
-        {
-          headers: {
-            Authorization: authHeader,
-          },
-        }
-      );
-      console.log("User data:", res.data); // Log the user data received from the API
-      setUser(res.data);
-      setWaterLevelSettings(res.data.waterlevelsettings);
-      console.log("Water level settings:", res.data.waterLevelSettings);
-    }
-    fetchUser();
-  }, [authHeader]);
-
     async function handleWaterLevelSettingsChange(values: {
-        poleheight: string;
-        idealheight: string;
+        poleheight: number | string;
+        idealheight: number | string;
     }) {
         try {
             const res = await axios.put(process.env.REACT_APP_API_URL + "/api/waterlevelsettings", values, {
@@ -72,6 +52,23 @@ function WaterLevelSettings() {
         }
     }
 
+    useEffect(() => {
+        async function fetchUser() {
+          const res = await axios.get(
+            process.env.REACT_APP_API_URL + "/api/users",
+            {
+              headers: {
+                Authorization: authHeader,
+              },
+            }
+          );
+          setUser(res.data);
+          if (user != null)
+            console.log(user.waterLevelSettings.poleHeight)
+        }
+        fetchUser();
+      }, [authHeader]);
+
     return (
         <div className="w-screen h-screen py-5 flex dir-row max-w-screen bg-backgroundCol overflow-x-hidden">
             <Navbar />
@@ -83,14 +80,14 @@ function WaterLevelSettings() {
                     <h2 className="text-l font-medium opacity-40">
                         {t("waterlevel.current")}
                     </h2>
-
                     <div className="flex dir-row w-full gap-5 px-5 pt-5">
                     <Input
                         label={t("waterlevel.poleheight")}
+                        placeholder={"" + user?.waterLevelSettings.poleHeight}
                         width="1/3"
                         onChange={waterlevelFormik.handleChange}
                         value={waterlevelFormik.values.poleheight}
-                        name="houseNumber"
+                        name="poleheight"
                         error={waterlevelFormik.errors.poleheight}
                     />
                     </div>
@@ -98,11 +95,11 @@ function WaterLevelSettings() {
                     <div className="flex dir-col w-full gap-5 px-5 pt-5">
                         <Input
                             label={t("waterlevel.ideal")}
-                            placeholder={`${user?.waterlevelsettings?.idealHeight || ""}`}
+                            placeholder={user?.waterLevelSettings?.idealHeight.toString() || ""}
                             width="1/3"
                             onChange={waterlevelFormik.handleChange}
                             value={waterlevelFormik.values.idealheight}
-                            name="street"
+                            name="idealheight"
                             error={waterlevelFormik.errors.idealheight}
                         />
                     </div>

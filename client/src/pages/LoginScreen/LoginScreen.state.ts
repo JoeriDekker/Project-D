@@ -7,7 +7,7 @@ export interface UserResponse {
     lastName: string
     email: string
     address: Address
-    waterlevelsettings: WaterLevelSettings
+    waterLevelSettings: WaterLevelSettings
   }
   
   export interface Address {
