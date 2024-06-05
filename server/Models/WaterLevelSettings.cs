@@ -20,10 +20,10 @@ namespace WAMServer.Models
 
         public WaterLevelSettings() {}
 
-        public WaterLevelSettings(WaterLevelSettingsPatchBodyDecimal patch)
+        public WaterLevelSettings(decimal? pole, decimal? ideal)
         {
-            PoleHeight = patch.PoleHeight;
-            IdealHeight = patch.IdealHeight;
+            PoleHeight = pole;
+            IdealHeight = ideal;
         }
         
     }
