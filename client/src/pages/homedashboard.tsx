@@ -1,15 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { t } from "i18next";
+import Input from "../components/Input/Input"
 
 import Navbar from '../components/navbar/navbar'
 import WaterlevelDial from '../components/waterleveldial/waterleveldial'
 import Logboek from "../components/logboek/waterpeillogboek";
 import WaterLevelVisual from "../components/waterlevelvisual/waterlevelvisual"
+import Automatic from "../components/Validation/Automatic";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function HomeDashboard() {
-    const waterlevel = -1.15;
+    const [dialtoggle, setdialtoggle] = useState(false);
+    const [waterlevel, setwaterlevel] = useState(-1.15);
     const waterlevel_perc = 65;
 
     const paalkop = -2.05;
@@ -51,6 +55,7 @@ function HomeDashboard() {
     })
 
 
+
     return (
         <div className="bg-secondaryCol w-screen h-screen py-5 flex">
             <Navbar />
@@ -83,13 +88,18 @@ function HomeDashboard() {
 
                     </div>
 
-                    <div className="bg-gray-100 m-2 p-4 rounded-xl">
+                    <div className="flex flex-col justify-between p-8 items-center bg-gray-100 m-2 p-4 rounded-xl">
+                        {dialtoggle ? <Automatic /> : <WaterlevelDial water={waterlevel} setwaterlevel={setwaterlevel} />}
 
-                    </div>
-                    <div className="bg-gray-100 m-2 p-4 rounded-xl">Item 2</div>
-                    <div className="bg-gray-100 m-2 p-4 rounded-xl">Item 3</div>
-                    <div className="bg-gray-100 m-2 p-4 rounded-xl">
-                        <WaterlevelDial />
+                        <label>
+                            <input
+                                type="checkbox"
+                                defaultChecked={dialtoggle}
+                                onChange={() => setdialtoggle((prevState) => !prevState)}
+                            />
+                            &nbsp;
+                            {t("Water.toggle")}
+                        </label>
                     </div>
                 </div >
             </div >

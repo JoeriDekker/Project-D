@@ -89,7 +89,7 @@
         "badstatus": "Your waterlevel is NOT right!",
         "goodstatus": "Your waterlevel is RIGHT!"
     },
-    "logboek" : {
+    "logboek": {
         "waterleverlogbook": "Water Level Logbook",
         "actionlogbook": "Action logbook",
         "level": "Level",
@@ -107,5 +107,13 @@
         "october": "October",
         "november": "November",
         "december": "December"
+    },
+    "Water": {
+        "automation": "Automate",
+        "autocaution": "Make your water level automatic",
+        "retypewhy": "Turning this feature on makes the owner of the device responsible for the water level. If the water level is too high or too low, the owner will be notified.",
+        "retypetext1": "Retype uppercase the word",
+        "retypetext2": "to turn on this feature",
+        "toggle": "Automation"
     }
 }
