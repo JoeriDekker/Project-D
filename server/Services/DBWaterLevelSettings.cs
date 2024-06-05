@@ -16,10 +16,10 @@ namespace WAMServer.Services
         }
 
         /// <summary>
-        /// Retrieves a user from the database based on their email.
+        /// Retrieves a user from the database based on their id.
         /// </summary>
-        /// <param name="email">The email of the user to retrieve.</param>
-        /// <returns>The user corresponding to the provided email, if found; otherwise, null.</returns>
+        /// <param name="ID">The Id of the user to retrieve.</param>
+        /// <returns>The user corresponding to the provided ID, if found; otherwise, null.</returns>
         public WaterLevelSettings? GetByUserId(Guid id)
         {
             return _context.WaterLevelSettings.Where(wls => wls.UserId == id).FirstOrDefault();

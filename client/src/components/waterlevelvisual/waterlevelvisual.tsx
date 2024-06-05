@@ -8,8 +8,7 @@ import { UserResponse } from "./../../pages/LoginScreen/LoginScreen.state";
 
 function WaterLevelVisual(){
 
-    const minScale = -5.5;
-    const maxScale = -1;
+   
 
     const authHeader = useAuthHeader();
     const [user, setUser] = React.useState<UserResponse | null>(null);
@@ -34,6 +33,9 @@ function WaterLevelVisual(){
 
       const poleLevel = user?.waterLevelSettings.poleHeight ?? 0;
       const idealLevel = user?.waterLevelSettings.idealHeight ?? 0;
+
+      const minScale = poleLevel - 4.5;
+      const maxScale = poleLevel + 1;
 
     useEffect(() => {
         async function fetchCurrentLevel() {
@@ -127,7 +129,7 @@ function WaterLevelVisual(){
             <div className="flex flex-col w-[50%] m-5 border-2 relative">
 
                 {/* min and max lines */}
-                <div className="absolute left-[50%] transform -translate-x-[50%] bg-gray-400 w-full h-0.5" style={{ bottom: `${poleLevelPerc}%` }}></div>
+                {/* <div className="absolute left-[50%] transform -translate-x-[50%] bg-gray-400 w-full h-0.5" style={{ bottom: `${poleLevelPerc}%` }}></div> */}
                 {/* <p className="absolute bottom-[77%] left-[-10%] transform -translate-x-[50%] text-gray-400 " style={{ bottom: `${poleLevelPerc - 3}%` }}>{poleLevel}</p> */}
 
                 <div className="absolute left-[50%] transform -translate-x-[50%] bg-green-500  w-full h-0.5" style={{ bottom: `${idealLevelPerc}%` }}></div>

@@ -29,8 +29,6 @@ namespace WAMServer.Controllers
         [Authorize]
         public async Task<IActionResult> Put([FromBody] WaterLevelSettingsPatchBody waterlevelsettingsPatchBody)
         {
-            Console.WriteLine("WaterLevelSettingsController Put");
-            Console.WriteLine("-----------------------------");
             Console.WriteLine(waterlevelsettingsPatchBody);
 
             const string unauthorizedmsg = "Errors.unauth";
@@ -42,7 +40,6 @@ namespace WAMServer.Controllers
 
             WaterLevelSettingsPatchBodyDecimal checkedSettings;
 
-            Console.WriteLine("Check 1");
 
             if (decimal.TryParse(waterlevelsettingsPatchBody.PoleHeight, out decimal poleDecimal) && decimal.TryParse(waterlevelsettingsPatchBody.IdealHeight, out decimal idealDecimal))
             {
@@ -63,15 +60,11 @@ namespace WAMServer.Controllers
                 return Unauthorized(new ErrorBody(unauthorizedmsg));
             }
 
-            Console.WriteLine("Check 2");
-
             string userId = currentUser.Claims.FirstOrDefault(c => c.Type == "Id")!.Value;
             if (Guid.TryParse(userId, out Guid id) == false)
             {
                 return Unauthorized(new ErrorBody(unauthorizedmsg));
             }
-
-            Console.WriteLine("Check 3.1");
 
             var user = _userRepository.Get(id);
             if (user == null)
@@ -79,7 +72,6 @@ namespace WAMServer.Controllers
                 return Unauthorized(new ErrorBody(unauthorizedmsg));
             }
             
-            Console.WriteLine("Check 3.2");
             Console.WriteLine(user.Id);
 
             var existingSettings = _WaterLevelSettingsService.GetByUserId(user.Id);
@@ -88,24 +80,12 @@ namespace WAMServer.Controllers
                 return NotFound(new ErrorBody("Settings not found."));
             }
 
-            Console.WriteLine("Check 4");
-
-            
-            Console.WriteLine(checkedSettings.PoleHeight);
-            Console.WriteLine(checkedSettings.IdealHeight);
-            Console.WriteLine(existingSettings.PoleHeight);
-            Console.WriteLine(existingSettings.IdealHeight);
-
-
             // Update the settings with provided values, preserving existing ones if not provided.
             var updatedSettings = new WaterLevelSettingsPatchBodyDecimal
             {
-                PoleHeight = checkedSettings.PoleHeight == 0 ? existingSettings.PoleHeight : checkedSettings.PoleHeight,
-                IdealHeight = checkedSettings.IdealHeight == 0 ? existingSettings.IdealHeight : checkedSettings.IdealHeight,
+                PoleHeight = checkedSettings.PoleHeight == -100 ? existingSettings.PoleHeight : checkedSettings.PoleHeight,
+                IdealHeight = checkedSettings.IdealHeight == -100 ? existingSettings.IdealHeight : checkedSettings.IdealHeight,
             };
-
-            Console.WriteLine(updatedSettings.PoleHeight);
-            Console.WriteLine(updatedSettings.IdealHeight);
 
             await _waterlevelsettingsRepository.UpdateAsync(new WaterLevelSettings(updatedSettings), _ => _.UserId == id);
             return Ok();

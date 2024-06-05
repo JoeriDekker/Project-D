@@ -18,11 +18,11 @@ function WaterLevelSettings() {
     // TODO language errors
     const waterLevelValidationScheme = Yup.object().shape({
         poleheight: Yup.number()
-            .min(-5.5, "Pole height cannot be less than -5.5")
-            .max(-1, "Pole height cannot be greater than -1"),
+            .min(-5, "Pole height cannot be less than -5")
+            .max(5, "Pole height cannot be greater than 5"),
         idealheight: Yup.number()
-            .min(-5.5, "Ideal height cannot be less than -5.5")
-            .max(-1, "Ideal height cannot be greater than -1")
+            .min(-5, "Ideal height cannot be less than -5")
+            .max(5, "Ideal height cannot be greater than 5")
     });
     const waterlevelFormik = useFormik({
         initialValues: {
@@ -40,11 +40,11 @@ function WaterLevelSettings() {
         try {
             if (values.poleheight == "")
             {
-                values.poleheight = "0"
+                values.poleheight = "-100"
             }
             if (values.idealheight == "")
             {
-                values.idealheight = "0"
+                values.idealheight = "-100"
             }
             const res = await axios.put(process.env.REACT_APP_API_URL + "/api/waterlevelsettings", {
                 poleheight: values.poleheight,
@@ -54,15 +54,18 @@ function WaterLevelSettings() {
                     Authorization: authHeader,
                 },
             });
+            values.idealheight = ""
+            values.poleheight = ""
             if (res.status === 200) {
                 alert("Settings updated successfully");
             }
         } catch (e) {
+            values.idealheight = ""
+            values.poleheight = ""
             const error = e as AxiosError;
             console.error(error);
         }
-        values.idealheight = ""
-        values.poleheight = ""
+        
     }
 
     useEffect(() => {
