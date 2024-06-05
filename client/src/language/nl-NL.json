@@ -15,5 +15,56 @@
         "contact": "Als u vragen of onzekerheden heeft, neem dan contact met ons op via de volgende mogelijkheden:",
         "telephone": "Tel nr: +31 6 12345678",
         "email": "Email: WAMmail@onderzoekjeplegen.nl"
+    },
+    "Login": {
+        "adjust": "Account gegevens wijzigen",
+        "current": "Huidige account gegevens",
+        "street": "Straatnaam",
+        "housenum": "Huisnummer",
+        "zipcode": "Postcode",
+        "place": "Plaats naam",
+        "password": "Wachtwoord",
+        "adjustpass": "Wachtwoord wijzigen/vergeten",
+        "adjustbutton": "Wijzigen opslaan",
+        "email": "Email",
+        "login": "Inloggen"
+    },
+    "PC": {
+        "connection": "Verbinding",
+        "foundin": "Gevonden in de ondergrond voor het meten van de grondwaterstand.",
+        "uuid": "UUID meetapparaat",
+        "uuidexplain": "De UUID is een unieke identificator voor het apparaat. Dit wordt gebruikt om het apparaat met de server te verbinden.",
+        "security": "Beveiligingssleutel",
+        "securityexplain": "Het beveiligingsniveau van het apparaat. Dit wordt gebruikt om het toegangsniveau van het apparaat te bepalen.",
+        "reconnect": "Opnieuw Verbinden",
+        "status": "Computerstatus",
+        "statusexplain": "De huidige status van het apparaat. Dit wordt gebruikt om te bepalen of het apparaat met de server is verbonden.",
+        "foundon": "De UUID gevonden op de achterkant van het apparaat.",
+        "keyon": "De beveiligingssleutel gevonden in een e-mail die naar de gebruiker is verzonden."
+    },
+    "waterlevel": {
+        "ideal": "Ideaal",
+        "poleheight": "Paalkop",
+        "badstatus": "Je waterpeil is NIET goed!",
+        "goodstatus": "Je waterpeil is GOED!"
+    },
+    "logboek" : {
+        "waterleverlogbook": "Waterpeil Logbook",
+        "actionlogbook": "Actie logboek",
+        "level": "Peil",
+        "records": "Opnamen",
+        "selectmonth": "Selecteer een maand",
+        "january": "Januari",
+        "february": "Februari",
+        "march": "Maart",
+        "april": "April",
+        "may": "Mei",
+        "june": "Juni",
+        "july": "Juli",
+        "august": "Augustus",
+        "september": "September",
+        "october": "Oktober",
+        "november": "November",
+        "december": "December"
     }
 }

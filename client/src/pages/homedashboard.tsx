@@ -1,54 +1,99 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Navbar from '../components/navbar/navbar'
 import WaterlevelDial from '../components/waterleveldial/waterleveldial'
+import Logboek from "../components/logboek/waterpeillogboek";
+import WaterLevelVisual from "../components/waterlevelvisual/waterlevelvisual"
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function HomeDashboard() {
+    const waterlevel = -1.15;
+    const waterlevel_perc = 65;
+
+    const paalkop = -2.05;
+    const paalkop_perc = 70;
+
+    const ideal = -1.85;
+    const ideal_perc = 80;
+
+    function defineNotifcation() {
+        // TODO: de amth.random vervangen door de API call bijvoorbeeld: /api/checkWaterStand
+
+        if (waterlevel < ideal) {
+            return toast.error("Let op! Je waterpeil is gevaarlijk laag!", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+        }
+
+        return toast.success("Welkom terug!", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+        });
+    }
+
+    useEffect(() => {
+        defineNotifcation();
+    })
+
+
     return (
-        <div className="bg-background-color w-screen h-screen py-5 flex dir-row">
+        <div className="bg-secondaryCol w-screen h-screen py-5 flex">
             <Navbar />
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
+            {/* grid setup */}
             <div className="bg-white w-full h-full rounded-xl mr-5 pb-4">
-                <div className="grid grid-cols-2 h-[100%] m-2">
+                <div className="grid grid-cols-2 grid-rows-2 h-[100%] m-2">
+
+                    {/* water level visual */}
                     <div className="bg-gray-800 m-2 p-4 rounded-xl">
-                        <div className="flex flex-row h-[100%]">
-                            <div className="flex w-[50%] flex-col pr-8">
-                                <div className="flex-1 relative pl-6 flex justify-center items-center">
-                                    <span className="mt-1 mr-1 h-4 w-4 bg-red-500 rounded-full"></span>
-                                    <p className="text-white">Je waterpeil is NIET goed!</p>
-                                </div>
+                        <WaterLevelVisual />
+                    </div>
 
-                                <div className="flex-1 relative pl-6 flex justify-center items-center">
-                                    <h1 className="text-red-500 text-[340%]">-0.10</h1>
-                                </div>
+                    <div className="bg-gray-100 m-2 p-4 rounded-xl">
+                        <Logboek />
+                    </div>
 
-                                <div className="flex-1 relative pl-6 flex flex-col items-center">
-                                    <div className="flex justify-center">
-                                        <p className="text-white mr-1">Min:</p>
-                                        <p className="text-red-500">-0.40</p>
-                                    </div>
+                    <div className="bg-gray-100 m-2 p-4 rounded-xl">
 
-                                    <div className="flex justify-center">
-                                        <p className="text-white mr-1">Max:</p>
-                                        <p className="text-green-500">+0.20</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="flex flex-col w-[50%] m-5 border-2">
-                                <div className="flex flex-1">
-                                </div>
-                                <div className="flex h-[50%] border-t-2 border-teal-400 bg-teal-400 bg-opacity-30">
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+
+                    <div className="bg-gray-100 m-2 p-4 rounded-xl">
+
                     </div>
                     <div className="bg-gray-100 m-2 p-4 rounded-xl">Item 2</div>
                     <div className="bg-gray-100 m-2 p-4 rounded-xl">Item 3</div>
                     <div className="bg-gray-100 m-2 p-4 rounded-xl">
                         <WaterlevelDial />
                     </div>
-                </div>
-            </div>
-        </div>
+                </div >
+            </div >
+        </div >
     );
 }
 

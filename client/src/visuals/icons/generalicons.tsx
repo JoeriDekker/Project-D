@@ -139,6 +139,31 @@ function Icons(props: IconProps) {
                     <path d="M4 12H20M12 4V20" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
             );
+        case "Question": {
+            return (
+                <svg width="23px" height="23px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="8" stroke="#1C274C" strokeWidth="1.5" />
+                    <path d="M10.125 8.875C10.125 7.83947 10.9645 7 12 7C13.0355 7 13.875 7.83947 13.875 8.875C13.875 9.56245 13.505 10.1635 12.9534 10.4899C12.478 10.7711 12 11.1977 12 11.75V13" stroke="#1C274C" strokeWidth="1.5" strokeLinecap="round" />
+                    <circle cx="12" cy="16" r="1" fill="#1C274C" />
+                </svg>
+            );
+        }
+        case "TiltedTowers":
+            return (
+                <img src={require('./verzakking.png')} alt="tilted house" />
+            )
+        case "CampusGouda":
+            return (
+                <img className="w-20 h-20" src={require('./CampusGouda.png')} alt="tilted house" />
+            )
+        case "Bam":
+            return (
+                <img className="w-20 h-20" src={require('./Bam.jpg')} alt="tilted house" />
+            )
+        case "Rijkswaterstaat":
+            return (
+                <img className="w-40 h-20" src={require('./RIjkswaterstaat-logo.png')} alt="tilted house" />
+            )
 
     }
     return <></>;

@@ -13,15 +13,15 @@ module.exports = {
         '96': '96.666667%'
       },
       colors: {
-        'base-color': '#161D27',
-        'secondary-color': secondaryColor,
+        'baseCol': '#161D27',
+        'secondaryCol': secondaryColor,
         'reds': '#D16666',
         'greens': '#ADD167',
-        'background-color': secondaryColor,
+        'backgroundCol': secondaryColor,
       },
       width: {
         '96': '96.666667%',
-        '20r': '25em'
+        '20r': '20em'
       },
       borderRadius: {
         'fully': '50%'

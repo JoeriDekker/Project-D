@@ -5,7 +5,7 @@ items:
   id: LoginController
   parent: WAMServer.Controllers
   children:
-  - WAMServer.Controllers.LoginController.#ctor(WAMServer.Interfaces.IUserRepository,Microsoft.Extensions.Configuration.IConfiguration)
+  - WAMServer.Controllers.LoginController.#ctor(WAMServer.Interfaces.ILoginService,Microsoft.Extensions.Configuration.IConfiguration)
   - WAMServer.Controllers.LoginController.AuthenticateUserReturnNullIfUnable(System.String,System.String)
   - WAMServer.Controllers.LoginController.GenerateJSONWebToken(WAMServer.Models.User)
   - WAMServer.Controllers.LoginController.Login(WAMServer.Records.LoginBody)
@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: server/Controllers/LoginController.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: LoginController
     path: Controllers/LoginController.cs
-    startLine: 15
+    startLine: 17
   assemblies:
   - server
   namespace: WAMServer.Controllers
@@ -235,44 +235,43 @@ items:
   - type: Microsoft.AspNetCore.Mvc.ApiControllerAttribute
     ctor: Microsoft.AspNetCore.Mvc.ApiControllerAttribute.#ctor
     arguments: []
-- uid: WAMServer.Controllers.LoginController.#ctor(WAMServer.Interfaces.IUserRepository,Microsoft.Extensions.Configuration.IConfiguration)
-  commentId: M:WAMServer.Controllers.LoginController.#ctor(WAMServer.Interfaces.IUserRepository,Microsoft.Extensions.Configuration.IConfiguration)
-  id: '#ctor(WAMServer.Interfaces.IUserRepository,Microsoft.Extensions.Configuration.IConfiguration)'
+- uid: WAMServer.Controllers.LoginController.#ctor(WAMServer.Interfaces.ILoginService,Microsoft.Extensions.Configuration.IConfiguration)
+  commentId: M:WAMServer.Controllers.LoginController.#ctor(WAMServer.Interfaces.ILoginService,Microsoft.Extensions.Configuration.IConfiguration)
+  id: '#ctor(WAMServer.Interfaces.ILoginService,Microsoft.Extensions.Configuration.IConfiguration)'
   parent: WAMServer.Controllers.LoginController
   langs:
   - csharp
   - vb
-  name: LoginController(IUserRepository, IConfiguration)
-  nameWithType: LoginController.LoginController(IUserRepository, IConfiguration)
-  fullName: WAMServer.Controllers.LoginController.LoginController(WAMServer.Interfaces.IUserRepository, Microsoft.Extensions.Configuration.IConfiguration)
+  name: LoginController(ILoginService, IConfiguration)
+  nameWithType: LoginController.LoginController(ILoginService, IConfiguration)
+  fullName: WAMServer.Controllers.LoginController.LoginController(WAMServer.Interfaces.ILoginService, Microsoft.Extensions.Configuration.IConfiguration)
   type: Constructor
   source:
     remote:
       path: server/Controllers/LoginController.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: .ctor
     path: Controllers/LoginController.cs
-    startLine: 33
+    startLine: 35
   assemblies:
   - server
   namespace: WAMServer.Controllers
   summary: The constructor of the login controller.
   example: []
   syntax:
-    content: public LoginController(IUserRepository userRepository, IConfiguration config)
+    content: public LoginController(ILoginService loginService, IConfiguration config)
     parameters:
-    - id: userRepository
-      type: WAMServer.Interfaces.IUserRepository
-      description: The user repository.
+    - id: loginService
+      type: WAMServer.Interfaces.ILoginService
     - id: config
       type: Microsoft.Extensions.Configuration.IConfiguration
       description: The configuration of the application.
-    content.vb: Public Sub New(userRepository As IUserRepository, config As IConfiguration)
+    content.vb: Public Sub New(loginService As ILoginService, config As IConfiguration)
   overload: WAMServer.Controllers.LoginController.#ctor*
-  nameWithType.vb: LoginController.New(IUserRepository, IConfiguration)
-  fullName.vb: WAMServer.Controllers.LoginController.New(WAMServer.Interfaces.IUserRepository, Microsoft.Extensions.Configuration.IConfiguration)
-  name.vb: New(IUserRepository, IConfiguration)
+  nameWithType.vb: LoginController.New(ILoginService, IConfiguration)
+  fullName.vb: WAMServer.Controllers.LoginController.New(WAMServer.Interfaces.ILoginService, Microsoft.Extensions.Configuration.IConfiguration)
+  name.vb: New(ILoginService, IConfiguration)
 - uid: WAMServer.Controllers.LoginController.Login(WAMServer.Records.LoginBody)
   commentId: M:WAMServer.Controllers.LoginController.Login(WAMServer.Records.LoginBody)
   id: Login(WAMServer.Records.LoginBody)
@@ -287,11 +286,11 @@ items:
   source:
     remote:
       path: server/Controllers/LoginController.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Login
     path: Controllers/LoginController.cs
-    startLine: 44
+    startLine: 46
   assemblies:
   - server
   namespace: WAMServer.Controllers
@@ -303,7 +302,7 @@ items:
 
       [HttpPost]
 
-      public IActionResult Login(LoginBody body)
+      public ActionResult Login(LoginBody body)
     parameters:
     - id: body
       type: WAMServer.Records.LoginBody
@@ -313,14 +312,14 @@ items:
         ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
         arguments: []
     return:
-      type: Microsoft.AspNetCore.Mvc.IActionResult
+      type: Microsoft.AspNetCore.Mvc.ActionResult
       description: The result of the login.
     content.vb: >-
       <AllowAnonymous>
 
       <HttpPost>
 
-      Public Function Login(body As LoginBody) As IActionResult
+      Public Function Login(body As LoginBody) As ActionResult
   overload: WAMServer.Controllers.LoginController.Login*
   attributes:
   - type: Microsoft.AspNetCore.Authorization.AllowAnonymousAttribute
@@ -343,18 +342,21 @@ items:
   source:
     remote:
       path: server/Controllers/LoginController.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: GenerateJSONWebToken
     path: Controllers/LoginController.cs
-    startLine: 66
+    startLine: 73
   assemblies:
   - server
   namespace: WAMServer.Controllers
   summary: Generates a JSON web token.
   example: []
   syntax:
-    content: public string GenerateJSONWebToken(User userInfo)
+    content: >-
+      [NonAction]
+
+      public string GenerateJSONWebToken(User userInfo)
     parameters:
     - id: userInfo
       type: WAMServer.Models.User
@@ -362,8 +364,15 @@ items:
     return:
       type: System.String
       description: The JSON web token.
-    content.vb: Public Function GenerateJSONWebToken(userInfo As User) As String
+    content.vb: >-
+      <NonAction>
+
+      Public Function GenerateJSONWebToken(userInfo As User) As String
   overload: WAMServer.Controllers.LoginController.GenerateJSONWebToken*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.NonActionAttribute
+    ctor: Microsoft.AspNetCore.Mvc.NonActionAttribute.#ctor
+    arguments: []
 - uid: WAMServer.Controllers.LoginController.AuthenticateUserReturnNullIfUnable(System.String,System.String)
   commentId: M:WAMServer.Controllers.LoginController.AuthenticateUserReturnNullIfUnable(System.String,System.String)
   id: AuthenticateUserReturnNullIfUnable(System.String,System.String)
@@ -378,18 +387,21 @@ items:
   source:
     remote:
       path: server/Controllers/LoginController.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: AuthenticateUserReturnNullIfUnable
     path: Controllers/LoginController.cs
-    startLine: 89
+    startLine: 97
   assemblies:
   - server
   namespace: WAMServer.Controllers
   summary: Authenticates the user. Returns null if unable to authenticate.
   example: []
   syntax:
-    content: public User? AuthenticateUserReturnNullIfUnable(string email, string password)
+    content: >-
+      [NonAction]
+
+      public User? AuthenticateUserReturnNullIfUnable(string email, string password)
     parameters:
     - id: email
       type: System.String
@@ -400,8 +412,15 @@ items:
     return:
       type: WAMServer.Models.User
       description: The user if authenticated, null otherwise.
-    content.vb: Public Function AuthenticateUserReturnNullIfUnable(email As String, password As String) As User
+    content.vb: >-
+      <NonAction>
+
+      Public Function AuthenticateUserReturnNullIfUnable(email As String, password As String) As User
   overload: WAMServer.Controllers.LoginController.AuthenticateUserReturnNullIfUnable*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.NonActionAttribute
+    ctor: Microsoft.AspNetCore.Mvc.NonActionAttribute.#ctor
+    arguments: []
   nameWithType.vb: LoginController.AuthenticateUserReturnNullIfUnable(String, String)
   fullName.vb: WAMServer.Controllers.LoginController.AuthenticateUserReturnNullIfUnable(String, String)
   name.vb: AuthenticateUserReturnNullIfUnable(String, String)
@@ -9395,20 +9414,20 @@ references:
   - name: )
 - uid: WAMServer.Controllers.LoginController.#ctor*
   commentId: Overload:WAMServer.Controllers.LoginController.#ctor
-  href: WAMServer.Controllers.LoginController.html#WAMServer_Controllers_LoginController__ctor_WAMServer_Interfaces_IUserRepository_Microsoft_Extensions_Configuration_IConfiguration_
+  href: WAMServer.Controllers.LoginController.html#WAMServer_Controllers_LoginController__ctor_WAMServer_Interfaces_ILoginService_Microsoft_Extensions_Configuration_IConfiguration_
   name: LoginController
   nameWithType: LoginController.LoginController
   fullName: WAMServer.Controllers.LoginController.LoginController
   nameWithType.vb: LoginController.New
   fullName.vb: WAMServer.Controllers.LoginController.New
   name.vb: New
-- uid: WAMServer.Interfaces.IUserRepository
-  commentId: T:WAMServer.Interfaces.IUserRepository
+- uid: WAMServer.Interfaces.ILoginService
+  commentId: T:WAMServer.Interfaces.ILoginService
   parent: WAMServer.Interfaces
-  href: WAMServer.Interfaces.IUserRepository.html
-  name: IUserRepository
-  nameWithType: IUserRepository
-  fullName: WAMServer.Interfaces.IUserRepository
+  href: WAMServer.Interfaces.ILoginService.html
+  name: ILoginService
+  nameWithType: ILoginService
+  fullName: WAMServer.Interfaces.ILoginService
 - uid: Microsoft.Extensions.Configuration.IConfiguration
   commentId: T:Microsoft.Extensions.Configuration.IConfiguration
   parent: Microsoft.Extensions.Configuration
@@ -9489,14 +9508,14 @@ references:
   name: LoginBody
   nameWithType: LoginBody
   fullName: WAMServer.Records.LoginBody
-- uid: Microsoft.AspNetCore.Mvc.IActionResult
-  commentId: T:Microsoft.AspNetCore.Mvc.IActionResult
+- uid: Microsoft.AspNetCore.Mvc.ActionResult
+  commentId: T:Microsoft.AspNetCore.Mvc.ActionResult
   parent: Microsoft.AspNetCore.Mvc
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult
-  name: IActionResult
-  nameWithType: IActionResult
-  fullName: Microsoft.AspNetCore.Mvc.IActionResult
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.actionresult
+  name: ActionResult
+  nameWithType: ActionResult
+  fullName: Microsoft.AspNetCore.Mvc.ActionResult
 - uid: WAMServer.Records
   commentId: N:WAMServer.Records
   href: WAMServer.html

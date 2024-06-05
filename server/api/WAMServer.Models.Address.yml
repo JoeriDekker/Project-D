@@ -6,6 +6,7 @@ items:
   parent: WAMServer.Models
   children:
   - WAMServer.Models.Address.City
+  - WAMServer.Models.Address.HouseNumber
   - WAMServer.Models.Address.Id
   - WAMServer.Models.Address.Street
   - WAMServer.Models.Address.User
@@ -21,7 +22,7 @@ items:
   source:
     remote:
       path: server/Models/Address.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Address
     path: Models/Address.cs
@@ -58,7 +59,7 @@ items:
   source:
     remote:
       path: server/Models/Address.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Id
     path: Models/Address.cs
@@ -99,7 +100,7 @@ items:
   source:
     remote:
       path: server/Models/Address.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Street
     path: Models/Address.cs
@@ -116,6 +117,37 @@ items:
       type: System.String
     content.vb: Public Property Street As String
   overload: WAMServer.Models.Address.Street*
+- uid: WAMServer.Models.Address.HouseNumber
+  commentId: P:WAMServer.Models.Address.HouseNumber
+  id: HouseNumber
+  parent: WAMServer.Models.Address
+  langs:
+  - csharp
+  - vb
+  name: HouseNumber
+  nameWithType: Address.HouseNumber
+  fullName: WAMServer.Models.Address.HouseNumber
+  type: Property
+  source:
+    remote:
+      path: server/Models/Address.cs
+      branch: fix/logincontroller-docs
+      repo: https://github.com/JoeriDekker/Project-D.git
+    id: HouseNumber
+    path: Models/Address.cs
+    startLine: 22
+  assemblies:
+  - server
+  namespace: WAMServer.Models
+  summary: The number of the house address.
+  example: []
+  syntax:
+    content: public string HouseNumber { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property HouseNumber As String
+  overload: WAMServer.Models.Address.HouseNumber*
 - uid: WAMServer.Models.Address.City
   commentId: P:WAMServer.Models.Address.City
   id: City
@@ -130,11 +162,11 @@ items:
   source:
     remote:
       path: server/Models/Address.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: City
     path: Models/Address.cs
-    startLine: 22
+    startLine: 26
   assemblies:
   - server
   namespace: WAMServer.Models
@@ -161,11 +193,11 @@ items:
   source:
     remote:
       path: server/Models/Address.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: Zip
     path: Models/Address.cs
-    startLine: 26
+    startLine: 30
   assemblies:
   - server
   namespace: WAMServer.Models
@@ -192,11 +224,11 @@ items:
   source:
     remote:
       path: server/Models/Address.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: UserId
     path: Models/Address.cs
-    startLine: 30
+    startLine: 34
   assemblies:
   - server
   namespace: WAMServer.Models
@@ -223,11 +255,11 @@ items:
   source:
     remote:
       path: server/Models/Address.cs
-      branch: development
+      branch: fix/logincontroller-docs
       repo: https://github.com/JoeriDekker/Project-D.git
     id: User
     path: Models/Address.cs
-    startLine: 34
+    startLine: 38
   assemblies:
   - server
   namespace: WAMServer.Models
@@ -543,6 +575,12 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: WAMServer.Models.Address.HouseNumber*
+  commentId: Overload:WAMServer.Models.Address.HouseNumber
+  href: WAMServer.Models.Address.html#WAMServer_Models_Address_HouseNumber
+  name: HouseNumber
+  nameWithType: Address.HouseNumber
+  fullName: WAMServer.Models.Address.HouseNumber
 - uid: WAMServer.Models.Address.City*
   commentId: Overload:WAMServer.Models.Address.City
   href: WAMServer.Models.Address.html#WAMServer_Models_Address_City
