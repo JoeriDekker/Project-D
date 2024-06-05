@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect, useState, FC } from "react";
 
 import Navbar from '../components/navbar/navbar'
 import Logboek from "../components/logboek/waterpeillogboek";
@@ -6,7 +6,45 @@ import Logboek from "../components/logboek/waterpeillogboek";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-function HomeDashboard() {
+interface HomeProps {
+    hasWelcomeBeenShown: boolean;
+    setWelcomeState: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const HomeDashboard: FC<HomeProps> = ({hasWelcomeBeenShown, setWelcomeState}) => {
+    /*
+    This data is real data from the openweatherAPI.
+    TODO: implement that it gets the forecast of today at X time
+    */
+    const weatherForecast = {
+        "$id": "36",
+        "stationid": 6344,
+        "stationname": "Meetstation Rotterdam",
+        "lat": 51.95,
+        "lon": 4.45,
+        "regio": "Rotterdam",
+        "timestamp": "2024-05-23T15:00:00",
+        "weatherdescription": "Zwaar bewolkt",
+        "iconurl": "https://www.buienradar.nl/resources/images/icons/weather/30x30/c.png",
+        "fullIconUrl": "https://www.buienradar.nl/resources/images/icons/weather/96x96/C.png",
+        "graphUrl": "https://www.buienradar.nl/nederland/weerbericht/weergrafieken/c",
+        "winddirection": "WZW",
+        "airpressure": 1014.5,
+        "temperature": 18.3,
+        "groundtemperature": 20.9,
+        "feeltemperature": 18.3,
+        "visibility": 28600.0,
+        "windgusts": 11.2,
+        "windspeed": 5.6,
+        "windspeedBft": 4,
+        "humidity": 67.0,
+        "precipitation": 0.0, // neerslag
+        "sunpower": 615.0,
+        "rainFallLast24Hour": 0.0,
+        "rainFallLastHour": 0.0,
+        "winddirectiondegrees": 255
+    }
+
     const waterlevel = -2.15;
     const waterlevel_perc = 65;
 
@@ -17,36 +55,49 @@ function HomeDashboard() {
     const ideal_perc = 70;
 
     function defineNotifcation() {
-		// TODO: de amth.random vervangen door de API call bijvoorbeeld: /api/checkWaterStand
+        // TODO: de amth.random vervangen door de API call bijvoorbeeld: /api/checkWaterStand
+        if(hasWelcomeBeenShown) {
+            return;
+        }
 
-		if(waterlevel < ideal) {
-			return toast.error("Let op! Je waterpeil is gevaarlijk laag!", {
-				position: "top-center",
-				autoClose: 5000,
-				hideProgressBar: false,
-				closeOnClick: true,
-				pauseOnHover: true,
-				draggable: true,
-				progress: undefined,
-				theme: "colored",
-			});
-		}
+        if (waterlevel < ideal) {
+            return toast.error("Let op! Je waterpeil is gevaarlijk laag!", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+        }
 
-		return toast.success("Welkom terug!", {
-			position: "top-center",
-			autoClose: 5000,
-			hideProgressBar: false,
-			closeOnClick: true,
-			pauseOnHover: true,
-			draggable: true,
-			progress: undefined,
-			theme: "colored",
-		});
-	}
+        return toast.success("Welkom terug!", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+        });
+    }
 
-	useEffect(() => {
-		defineNotifcation();
-	})
+    // function determineSettingWelcome() {
+    //     if(!hasWelcomeBeenShown) {
+    //         setWelcomeState(true);
+    //     }
+    // }
+
+    useEffect(() => {
+        if(!hasWelcomeBeenShown) {
+            setWelcomeState(true);
+        }
+        defineNotifcation();
+    })
+
 
 
     return (
