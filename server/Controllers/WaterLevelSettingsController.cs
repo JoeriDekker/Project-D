@@ -28,8 +28,7 @@ namespace WAMServer.Controllers
         {
             const string unauthorizedmsg = "Errors.unauth";
 
-            // Check if the body is null or if both fields are null. If so, return a bad request.
-            if (waterlevelsettingsPatchBody == null || (waterlevelsettingsPatchBody.PoleHeight == null && waterlevelsettingsPatchBody.IdealHeight == null))
+            if (waterlevelsettingsPatchBody == null || (waterlevelsettingsPatchBody.PoleHeight == "" && waterlevelsettingsPatchBody.IdealHeight == ""))
             {
                 return BadRequest(new ErrorBody("Missing fields, incident reported."));
             }
@@ -67,15 +66,13 @@ namespace WAMServer.Controllers
                 return Unauthorized(new ErrorBody(unauthorizedmsg));
             }
 
+            // cant find settings
             var existingSettings = _waterlevelsettingsRepository.Get(user.Id);
             if (existingSettings == null)
             {
                 return NotFound(new ErrorBody("Settings not found."));
             }
 
-
-
-            // Update the settings with provided values, preserving existing ones if not provided.
             var updatedSettings = new WaterLevelSettingsPatchBodyDecimal
             {
                 PoleHeight = checkedSettings.PoleHeight ?? existingSettings.PoleHeight,

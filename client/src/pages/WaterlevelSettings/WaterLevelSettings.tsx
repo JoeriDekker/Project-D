@@ -38,6 +38,14 @@ function WaterLevelSettings() {
         idealheight: number | string;
     }) {
         try {
+            if (values.poleheight == "")
+            {
+                values.poleheight = "0"
+            }
+            if (values.idealheight == "")
+            {
+                values.idealheight = "0"
+            }
             const res = await axios.put(process.env.REACT_APP_API_URL + "/api/waterlevelsettings", {
                 poleheight: values.poleheight,
                 idealheight: values.idealheight
@@ -53,6 +61,9 @@ function WaterLevelSettings() {
             const error = e as AxiosError;
             console.error(error);
         }
+        values.idealheight = ""
+        values.poleheight = ""
+
     }
 
     useEffect(() => {
