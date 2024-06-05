@@ -96,9 +96,9 @@ namespace WAMServer.Seeders
 
                     // Add water storage
                     var WaterStorageList = new List<WaterStorage>(){
-                        new (controlPC.Id, "Rain Barrel" , 56, "Kaden buurt"),
-                        new (controlPC.Id, "Graywater Tank" , 243, "Kaden buurt"),
-                        new (controlPC.Id, "Street Tank" , 556, "Kaden buurt")
+                        new (controlPC.Id, "Rain Barrel" , 56, "Kaden buurt", 1),
+                        new (controlPC.Id, "Graywater Tank" , 243, "Kaden buurt", 2),
+                        new (controlPC.Id, "Street Tank" , 556, "Kaden buurt", 3)
                     };
 
                     context.WaterStorage.AddRange(WaterStorageList);

@@ -220,6 +220,9 @@ namespace server.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int>("state")
+                        .HasColumnType("integer");
+
                     b.Property<string>("typeStorage")
                         .IsRequired()
                         .HasColumnType("text");

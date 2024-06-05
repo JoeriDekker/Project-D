@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace server.Migrations
 {
     /// <inheritdoc />
-    public partial class WaterStorageTable : Migration
+    public partial class updatewaterstorage : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -116,7 +116,8 @@ namespace server.Migrations
                     controlPCID = table.Column<Guid>(type: "uuid", nullable: false),
                     typeStorage = table.Column<string>(type: "text", nullable: false),
                     waterStored = table.Column<decimal>(type: "numeric", nullable: false),
-                    regio = table.Column<string>(type: "text", nullable: false)
+                    regio = table.Column<string>(type: "text", nullable: false),
+                    state = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {

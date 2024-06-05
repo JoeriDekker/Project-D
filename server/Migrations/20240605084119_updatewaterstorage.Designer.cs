@@ -12,8 +12,8 @@ using WAMServer.Models;
 namespace server.Migrations
 {
     [DbContext(typeof(WamDBContext))]
-    [Migration("20240529135139_WaterStorageTable")]
-    partial class WaterStorageTable
+    [Migration("20240605084119_updatewaterstorage")]
+    partial class updatewaterstorage
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -222,6 +222,9 @@ namespace server.Migrations
                     b.Property<string>("regio")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<int>("state")
+                        .HasColumnType("integer");
 
                     b.Property<string>("typeStorage")
                         .IsRequired()

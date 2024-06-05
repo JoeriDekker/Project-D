@@ -69,6 +69,9 @@
     },
     "waterstorage" : {
         "source": "Bronnen",
-        "liters": "Liter"
+        "liters": "Liter",
+        "active": "Actief",
+        "inactive": "Inactief",
+        "error": "Fout"
     }
 }

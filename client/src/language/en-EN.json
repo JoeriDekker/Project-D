@@ -110,6 +110,9 @@
     },
     "waterstorage" : {
         "source": "Sources",
-        "liters": "Liters"
+        "liters": "Liters",
+        "active": "Active",
+        "inactive": "Inactive",
+        "error": "Error"
     }
 }

@@ -2,6 +2,7 @@ export interface WaterStorageState {
 
     typeStorage: string;
     waterStored: string;
+    state: string;
 
 }
 
