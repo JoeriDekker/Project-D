@@ -44,11 +44,6 @@ namespace WAMServer.Repositories
             return _context.Addresses.Where(a => a.Id == id).FirstOrDefault();
         }
 
-        public Address? GetByUser(Guid id)
-        {
-            return _context.Addresses.Where(a => a.UserId == id).FirstOrDefault();
-        }
-
         public IEnumerable<Address?> GetAll(Func<Address, bool> predicate)
         {
             throw new NotImplementedException();
