@@ -6,6 +6,7 @@ import WaterLevelVisual from "../components/waterlevelvisual/waterlevelvisual"
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import WaterStorage from "../components/waterstorage/waterstorage";
 
 function HomeDashboard() {
     const waterlevel = -1.15;
@@ -79,7 +80,7 @@ function HomeDashboard() {
                     </div>
 
                     <div className="bg-gray-100 m-2 p-4 rounded-xl">
-
+                        <WaterStorage />
                     </div>
 
                     <div className="bg-gray-100 m-2 p-4 rounded-xl">
