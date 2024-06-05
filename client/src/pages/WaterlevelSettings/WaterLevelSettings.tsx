@@ -95,7 +95,7 @@ function WaterLevelSettings() {
                     <div className="flex dir-row w-full gap-5 px-5 pt-5">
                     <Input
                         label={t("waterlevel.poleheight")}
-                        placeholder={"" + user?.waterLevelSettings.poleHeight}
+                        placeholder={"" + user?.waterLevelSettings.poleHeight || ""}
                         width="1/3"
                         onChange={waterlevelFormik.handleChange}
                         value={waterlevelFormik.values.poleheight}

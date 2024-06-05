@@ -67,7 +67,7 @@ namespace WAMServer.Controllers
             }
 
             // cant find settings
-            var existingSettings = _waterlevelsettingsRepository.Get(user.Id);
+            var existingSettings = _waterlevelsettingsRepository.GetByUser(user.Id);
             if (existingSettings == null)
             {
                 return NotFound(new ErrorBody("Settings not found."));
