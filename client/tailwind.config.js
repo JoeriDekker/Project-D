@@ -31,6 +31,9 @@ module.exports = {
       },
       borderColor: {
         'secondaryCol': secondaryColor,
+      },
+      lineHeight: {
+        'none': '0'
       }
     },
   },
