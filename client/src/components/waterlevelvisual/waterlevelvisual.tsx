@@ -4,19 +4,36 @@ import { t } from "i18next";
 
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 import {WaterLevel} from "./waterlevelvisual.state";
+import { UserResponse } from "./../../pages/LoginScreen/LoginScreen.state";
 
 function WaterLevelVisual(){
 
     const minScale = -5.5;
     const maxScale = -1;
 
-    const poleLevel = -2.05;
-    const idealLevel = -1.85;
-
     const authHeader = useAuthHeader();
+    const [user, setUser] = React.useState<UserResponse | null>(null);
     const [currentLevel, setCurrentLevel] = React.useState<WaterLevel | null>(null);
     const [statusColor, setStatusColor] = React.useState<string | null>(null);
     const [statusText, setStatusText] = React.useState<string | null>(null);
+
+    useEffect(() => {
+        async function fetchUser() {
+          const res = await axios.get(
+            process.env.REACT_APP_API_URL + "/api/users",
+            {
+              headers: {
+                Authorization: authHeader,
+              },
+            }
+          );
+          setUser(res.data);
+        }
+        fetchUser();
+      }, [authHeader]);
+
+      const poleLevel = user?.waterLevelSettings.poleHeight ?? 0;
+      const idealLevel = user?.waterLevelSettings.idealHeight ?? 0;
 
     useEffect(() => {
         async function fetchCurrentLevel() {
@@ -111,10 +128,10 @@ function WaterLevelVisual(){
 
                 {/* min and max lines */}
                 <div className="absolute left-[50%] transform -translate-x-[50%] bg-gray-400 w-full h-0.5" style={{ bottom: `${poleLevelPerc}%` }}></div>
-                <p className="absolute bottom-[77%] left-[-10%] transform -translate-x-[50%] text-gray-400 " style={{ bottom: `${poleLevelPerc - 3}%` }}>{poleLevel}</p>
+                {/* <p className="absolute bottom-[77%] left-[-10%] transform -translate-x-[50%] text-gray-400 " style={{ bottom: `${poleLevelPerc - 3}%` }}>{poleLevel}</p> */}
 
                 <div className="absolute left-[50%] transform -translate-x-[50%] bg-green-500  w-full h-0.5" style={{ bottom: `${idealLevelPerc}%` }}></div>
-                <p className="absolute left-[-10%] transform -translate-x-[50%] text-green-500" style={{ bottom: `${idealLevelPerc - 3}%` }}>{idealLevel}</p>
+                {/* <p className="absolute left-[-10%] transform -translate-x-[50%] text-green-500" style={{ bottom: `${idealLevelPerc - 3}%` }}>{idealLevel}</p> */}
 
                 {/* pillar */}
                 <div className="absolute bottom-0 left-[50%] transform -translate-x-[50%] bg-orange-300 w-[15%]" style={{ height: `${poleLevelPerc}%` }}></div>
@@ -122,7 +139,7 @@ function WaterLevelVisual(){
                 {/* current water level box */}
                 <div className="flex flex-1"></div>
                 <div className="flex border-t-2 border-teal-400 bg-teal-400 bg-opacity-30 z-10" style={{ height: `${waterLevelPerc}%` }}></div>
-                <p className="text-white absolute left-[9%] transform -translate-x-[50%] z-20 bottom-[2%]">{currentLevel?.level}</p>
+                {/* <p className="text-white absolute left-[9%] transform -translate-x-[50%] z-20 bottom-[2%]">{currentLevel?.level}</p> */}
 
             </div>
         </div>

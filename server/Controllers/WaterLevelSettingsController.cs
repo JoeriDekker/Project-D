@@ -91,14 +91,21 @@ namespace WAMServer.Controllers
             Console.WriteLine("Check 4");
 
             
+            Console.WriteLine(checkedSettings.PoleHeight);
+            Console.WriteLine(checkedSettings.IdealHeight);
+            Console.WriteLine(existingSettings.PoleHeight);
+            Console.WriteLine(existingSettings.IdealHeight);
 
 
             // Update the settings with provided values, preserving existing ones if not provided.
             var updatedSettings = new WaterLevelSettingsPatchBodyDecimal
             {
-                PoleHeight = checkedSettings.PoleHeight ?? existingSettings.PoleHeight,
-                IdealHeight = checkedSettings.IdealHeight ?? existingSettings.IdealHeight
+                PoleHeight = checkedSettings.PoleHeight == 0 ? existingSettings.PoleHeight : checkedSettings.PoleHeight,
+                IdealHeight = checkedSettings.IdealHeight == 0 ? existingSettings.IdealHeight : checkedSettings.IdealHeight,
             };
+
+            Console.WriteLine(updatedSettings.PoleHeight);
+            Console.WriteLine(updatedSettings.IdealHeight);
 
             await _waterlevelsettingsRepository.UpdateAsync(new WaterLevelSettings(updatedSettings), _ => _.UserId == id);
             return Ok();

@@ -18,11 +18,11 @@ function WaterLevelSettings() {
     // TODO language errors
     const waterLevelValidationScheme = Yup.object().shape({
         poleheight: Yup.number()
-            .min(-5, "Pole height cannot be less than -5")
-            .max(5, "Pole height cannot be greater than 5"),
+            .min(-5.5, "Pole height cannot be less than -5.5")
+            .max(-1, "Pole height cannot be greater than -1"),
         idealheight: Yup.number()
-            .min(-5, "Ideal height cannot be less than -5")
-            .max(5, "Ideal height cannot be greater than 5")
+            .min(-5.5, "Ideal height cannot be less than -5.5")
+            .max(-1, "Ideal height cannot be greater than -1")
     });
     const waterlevelFormik = useFormik({
         initialValues: {
@@ -63,7 +63,6 @@ function WaterLevelSettings() {
         }
         values.idealheight = ""
         values.poleheight = ""
-
     }
 
     useEffect(() => {
@@ -79,7 +78,7 @@ function WaterLevelSettings() {
           setUser(res.data);
         }
         fetchUser();
-      }, [authHeader]);
+      }, [authHeader, handleWaterLevelSettingsChange]);
 
     return (
         <div className="w-screen h-screen py-5 flex dir-row max-w-screen bg-backgroundCol overflow-x-hidden">
