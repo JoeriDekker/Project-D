@@ -19,10 +19,11 @@ namespace WAMServer.Models
         public User? User { get; set; }
 
         public WaterLevelSettings() {}
-        public WaterLevelSettings(WaterLevelSettingsPatchBody waterLevelSettingsPatchBody)
+
+        public WaterLevelSettings(decimal? pole, decimal? ideal)
         {
-            PoleHeight = waterLevelSettingsPatchBody.PoleHeight!;
-            IdealHeight = waterLevelSettingsPatchBody.IdealHeight!;
+            PoleHeight = pole;
+            IdealHeight = ideal;
         }
         
     }

@@ -5,6 +5,7 @@ using WAMServer.Models;
 using WAMServer.Records.Bodies;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace WAMServer.Controllers
 {
@@ -23,7 +24,7 @@ namespace WAMServer.Controllers
 
         [HttpPut]
         [Authorize]
-        public IActionResult Put([FromBody] WaterLevelSettingsPatchBody waterlevelsettingsPatchBody)
+        public async Task<IActionResult> Put([FromBody] WaterLevelSettingsPatchBody waterlevelsettingsPatchBody)
         {
             const string unauthorizedmsg = "Errors.unauth";
 
@@ -33,13 +34,29 @@ namespace WAMServer.Controllers
                 return BadRequest(new ErrorBody("Missing fields, incident reported."));
             }
 
+            WaterLevelSettingsPatchBodyDecimal checkedSettings;
+
+            if (decimal.TryParse(waterlevelsettingsPatchBody.PoleHeight, out decimal poleDecimal) && decimal.TryParse(waterlevelsettingsPatchBody.IdealHeight, out decimal idealDecimal))
+            {
+                checkedSettings = new WaterLevelSettingsPatchBodyDecimal
+                {
+                    PoleHeight = poleDecimal,
+                    IdealHeight = idealDecimal
+                };            
+            }
+            else
+            {
+                return NotFound(new ErrorBody("Decimals not not found."));
+            }            
+
             var currentUser = HttpContext.User;
             if (!currentUser.HasClaim(c => c.Type == "Id"))
             {
                 return Unauthorized(new ErrorBody(unauthorizedmsg));
             }
+
             string userId = currentUser.Claims.FirstOrDefault(c => c.Type == "Id")!.Value;
-            if (!Guid.TryParse(userId, out Guid id))
+            if (Guid.TryParse(userId, out Guid id) == false)
             {
                 return Unauthorized(new ErrorBody(unauthorizedmsg));
             }
@@ -56,18 +73,16 @@ namespace WAMServer.Controllers
                 return NotFound(new ErrorBody("Settings not found."));
             }
 
+
+
             // Update the settings with provided values, preserving existing ones if not provided.
-            if (waterlevelsettingsPatchBody.PoleHeight != null)
+            var updatedSettings = new WaterLevelSettingsPatchBodyDecimal
             {
-                existingSettings.PoleHeight = waterlevelsettingsPatchBody.PoleHeight;
-            }
+                PoleHeight = checkedSettings.PoleHeight ?? existingSettings.PoleHeight,
+                IdealHeight = checkedSettings.IdealHeight ?? existingSettings.IdealHeight
+            };
 
-            if (waterlevelsettingsPatchBody.IdealHeight != null)
-            {
-                existingSettings.IdealHeight = waterlevelsettingsPatchBody.IdealHeight;
-            }
-
-            _waterlevelsettingsRepository.UpdateAsync(existingSettings, _ => _.UserId == id);
+            await _waterlevelsettingsRepository.UpdateAsync(new WaterLevelSettings(updatedSettings.PoleHeight, updatedSettings.IdealHeight), _ => _.UserId == id);
             return Ok();
         }
     }

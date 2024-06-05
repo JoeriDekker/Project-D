@@ -38,7 +38,10 @@ function WaterLevelSettings() {
         idealheight: number | string;
     }) {
         try {
-            const res = await axios.put(process.env.REACT_APP_API_URL + "/api/waterlevelsettings", values, {
+            const res = await axios.put(process.env.REACT_APP_API_URL + "/api/waterlevelsettings", {
+                poleheight: values.poleheight,
+                idealheight: values.idealheight
+            }, {
                 headers: {
                     Authorization: authHeader,
                 },
@@ -63,8 +66,6 @@ function WaterLevelSettings() {
             }
           );
           setUser(res.data);
-          if (user != null)
-            console.log(user.waterLevelSettings.poleHeight)
         }
         fetchUser();
       }, [authHeader]);
