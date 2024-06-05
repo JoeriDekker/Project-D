@@ -1,5 +1,6 @@
 import React, { useEffect, useState, FC } from "react";
 
+import Modal from "../components/Modal/Modal";
 import Navbar from '../components/navbar/navbar'
 import Logboek from "../components/logboek/waterpeillogboek";
 
@@ -11,11 +12,13 @@ interface HomeProps {
     setWelcomeState: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const HomeDashboard: FC<HomeProps> = ({hasWelcomeBeenShown, setWelcomeState}) => {
+const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) => {
     /*
     This data is real data from the openweatherAPI.
     TODO: implement that it gets the forecast of today at X time
     */
+    const [modalState, setModalState] = useState("hidden");
+
     const weatherForecast = {
         "$id": "36",
         "stationid": 6344,
@@ -56,21 +59,22 @@ const HomeDashboard: FC<HomeProps> = ({hasWelcomeBeenShown, setWelcomeState}) =>
 
     function defineNotifcation() {
         // TODO: de amth.random vervangen door de API call bijvoorbeeld: /api/checkWaterStand
-        if(hasWelcomeBeenShown) {
+        if (hasWelcomeBeenShown) {
             return;
         }
 
         if (waterlevel < ideal) {
-            return toast.error("Let op! Je waterpeil is gevaarlijk laag!", {
+
+            return toast.error("Je waterpeil is laag!", {
                 position: "top-center",
-                autoClose: 5000,
+                autoClose: false,
                 hideProgressBar: false,
-                closeOnClick: true,
+                closeOnClick: false,
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
                 theme: "colored",
-            });
+            })
         }
 
         return toast.success("Welkom terug!", {
@@ -85,20 +89,13 @@ const HomeDashboard: FC<HomeProps> = ({hasWelcomeBeenShown, setWelcomeState}) =>
         });
     }
 
-    // function determineSettingWelcome() {
-    //     if(!hasWelcomeBeenShown) {
-    //         setWelcomeState(true);
-    //     }
-    // }
-
     useEffect(() => {
-        if(!hasWelcomeBeenShown) {
+        if (!hasWelcomeBeenShown) {
             setWelcomeState(true);
+            setModalState("")
         }
         defineNotifcation();
     })
-
-
 
     return (
         <div className="bg-secondaryCol w-screen h-screen py-5 flex">
@@ -181,6 +178,12 @@ const HomeDashboard: FC<HomeProps> = ({hasWelcomeBeenShown, setWelcomeState}) =>
 
                     </div>
                 </div>
+            <Modal
+                header="Oh nee! Je waterpeil is laag🤯"
+                text="Als u geen paalrot wil hebben moet u uw waterpeil verhogen door op de knop op de home pagina te drukken. Als u dit niet doet, ligt de verantwoordelijkheid bij u."
+                buttonText="Begrepen!"
+                hiddenState={modalState}
+            />
             </div>
         </div>
     );
