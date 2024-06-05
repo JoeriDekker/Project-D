@@ -54,7 +54,7 @@ namespace WAMServer.Repositories{
             var settings = _context.WaterLevelSettings.Where(predicate).FirstOrDefault();
             if (settings == null) return null;
             if (entity.PoleHeight != null) settings.PoleHeight = entity.PoleHeight;
-            if (entity.PoleHeight != null) settings.PoleHeight = entity.PoleHeight;
+            if (entity.IdealHeight != null) settings.IdealHeight = entity.IdealHeight;
 
             await _context.SaveChangesAsync();
             return settings;        
