@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -24,6 +24,9 @@ function App() {
   const authHeader = useAuthHeader();
   const authState = useIsAuthenticated();
   const SignOut = useSignOut();
+
+  const [welcomeState, setWelcomeState] = useState(false);
+
   async function isTokenValid() {
     if (!authState) return;
     try {
@@ -55,8 +58,8 @@ function App() {
         <Route element={<AuthOutlet fallbackPath="/login" />}>
           <Route path="/account" element={<AccountPage />} />
           <Route path="/waterlevelsettings" element={<WaterLevelSettings />} />
+          <Route path="/home" element={<Home hasWelcomeBeenShown={welcomeState} setWelcomeState={setWelcomeState}/>} />
           <Route path="/*" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<Home />} />
           <Route path="/logboek" element={<LogboekScreen />} />
         </Route>
         <Route path="/*" element={<Navigate to="/" />} />
