@@ -28,6 +28,12 @@ namespace WAMServer.Repositories{
 
         public WaterLevelSettings? Get(Guid id)
         {
+            return _context.WaterLevelSettings.Where(a => a.Id == id).FirstOrDefault();
+        }
+
+        public WaterLevelSettings? GetByUserId(Guid id)
+        {
+            Console.WriteLine("GetByUserId ============================");
             return _context.WaterLevelSettings.Where(a => a.UserId == id).FirstOrDefault();
         }
 
