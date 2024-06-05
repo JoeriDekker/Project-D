@@ -79,7 +79,7 @@ namespace WAMServer.Controllers
                 IdealHeight = checkedSettings.IdealHeight ?? existingSettings.IdealHeight
             };
 
-            await _waterlevelsettingsRepository.UpdateAsync(new WaterLevelSettings(updatedSettings.PoleHeight, updatedSettings.IdealHeight), _ => _.UserId == id);
+            await _waterlevelsettingsRepository.UpdateAsync(new WaterLevelSettings(updatedSettings), _ => _.UserId == id);
             return Ok();
         }
     }
