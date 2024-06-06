@@ -1,0 +1,2284 @@
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Program.cs
+FN:9,System.Void Program::Main(System.String[])
+FNDA:0,System.Void Program::Main(System.String[])
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+LF:4
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Migrations\20240527115318_addtabb.cs
+FN:11,System.Void server.Migrations.addtabb::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+FNDA:0,System.Void server.Migrations.addtabb::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+DA:12,0
+DA:14,0
+FN:17,System.Void server.Migrations.addtabb::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+FNDA:0,System.Void server.Migrations.addtabb::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+DA:18,0
+DA:20,0
+LF:4
+LH:0
+BRF:0
+BRH:0
+FNF:2
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Migrations\20240527115318_addtabb.Designer.cs
+FN:19,System.Void server.Migrations.addtabb::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+FNDA:0,System.Void server.Migrations.addtabb::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+DA:20,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:26,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:50,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:58,0
+DA:59,0
+DA:60,0
+DA:61,0
+DA:62,0
+DA:63,0
+DA:64,0
+DA:65,0
+DA:66,0
+DA:67,0
+DA:68,0
+DA:69,0
+DA:70,0
+DA:71,0
+DA:73,0
+DA:74,0
+DA:75,0
+DA:76,0
+DA:77,0
+DA:78,0
+DA:79,0
+DA:80,0
+DA:81,0
+DA:82,0
+DA:83,0
+DA:84,0
+DA:85,0
+DA:86,0
+DA:87,0
+DA:88,0
+DA:89,0
+DA:90,0
+DA:91,0
+DA:92,0
+DA:93,0
+DA:94,0
+DA:95,0
+DA:96,0
+DA:97,0
+DA:98,0
+DA:99,0
+DA:100,0
+DA:101,0
+DA:103,0
+DA:104,0
+DA:105,0
+DA:106,0
+DA:107,0
+DA:108,0
+DA:109,0
+DA:110,0
+DA:111,0
+DA:112,0
+DA:113,0
+DA:114,0
+DA:115,0
+DA:116,0
+DA:117,0
+DA:118,0
+DA:119,0
+DA:120,0
+DA:121,0
+DA:122,0
+DA:123,0
+DA:124,0
+DA:125,0
+DA:126,0
+DA:127,0
+DA:129,0
+DA:130,0
+DA:131,0
+DA:132,0
+DA:133,0
+DA:134,0
+DA:135,0
+DA:136,0
+DA:137,0
+DA:138,0
+DA:139,0
+DA:140,0
+DA:141,0
+DA:142,0
+DA:143,0
+DA:144,0
+DA:145,0
+DA:146,0
+DA:147,0
+DA:148,0
+DA:149,0
+DA:151,0
+DA:152,0
+DA:153,0
+DA:154,0
+DA:155,0
+DA:156,0
+DA:157,0
+DA:158,0
+DA:159,0
+DA:160,0
+DA:161,0
+DA:162,0
+DA:163,0
+DA:164,0
+DA:165,0
+DA:166,0
+DA:167,0
+DA:168,0
+DA:169,0
+DA:170,0
+DA:171,0
+DA:172,0
+DA:173,0
+DA:174,0
+DA:175,0
+DA:176,0
+DA:177,0
+DA:178,0
+DA:179,0
+DA:180,0
+DA:181,0
+DA:182,0
+DA:183,0
+DA:184,0
+DA:185,0
+DA:186,0
+DA:187,0
+DA:188,0
+DA:190,0
+DA:191,0
+DA:192,0
+DA:193,0
+DA:194,0
+DA:195,0
+DA:196,0
+DA:197,0
+DA:198,0
+DA:199,0
+DA:200,0
+DA:201,0
+DA:202,0
+DA:203,0
+DA:204,0
+DA:205,0
+DA:206,0
+DA:207,0
+DA:208,0
+DA:209,0
+DA:210,0
+DA:211,0
+DA:213,0
+DA:214,0
+DA:215,0
+DA:216,0
+DA:217,0
+DA:218,0
+DA:219,0
+DA:220,0
+DA:221,0
+DA:222,0
+DA:223,0
+DA:224,0
+DA:225,0
+DA:226,0
+DA:227,0
+DA:228,0
+DA:229,0
+DA:230,0
+DA:232,0
+DA:233,0
+DA:234,0
+DA:235,0
+DA:236,0
+DA:237,0
+DA:238,0
+DA:239,0
+DA:241,0
+DA:242,0
+DA:243,0
+DA:244,0
+DA:246,0
+DA:247,0
+DA:248,0
+DA:249,0
+DA:251,0
+DA:252,0
+DA:253,0
+DA:254,0
+DA:256,0
+LF:222
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Migrations\20240527120349_dbbroken.cs
+FN:13,System.Void server.Migrations.dbbroken::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+FNDA:0,System.Void server.Migrations.dbbroken::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:50,0
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:58,0
+DA:60,0
+DA:61,0
+DA:62,0
+DA:63,0
+DA:64,0
+DA:65,0
+DA:66,0
+DA:67,0
+DA:68,0
+DA:69,0
+DA:70,0
+DA:71,0
+DA:72,0
+DA:74,0
+DA:75,0
+DA:76,0
+DA:77,0
+DA:78,0
+DA:79,0
+DA:80,0
+DA:81,0
+DA:82,0
+DA:83,0
+DA:84,0
+DA:85,0
+DA:86,0
+DA:88,0
+DA:89,0
+DA:90,0
+DA:91,0
+DA:92,0
+DA:93,0
+DA:94,0
+DA:95,0
+DA:96,0
+DA:97,0
+DA:98,0
+DA:99,0
+DA:100,0
+DA:101,0
+DA:102,0
+DA:103,0
+DA:104,0
+DA:105,0
+DA:106,0
+DA:107,0
+DA:108,0
+DA:109,0
+DA:111,0
+DA:112,0
+DA:113,0
+DA:114,0
+DA:115,0
+DA:116,0
+DA:117,0
+DA:118,0
+DA:119,0
+DA:120,0
+DA:121,0
+DA:122,0
+DA:123,0
+DA:124,0
+DA:125,0
+DA:126,0
+DA:127,0
+DA:128,0
+DA:129,0
+DA:130,0
+DA:131,0
+DA:132,0
+DA:133,0
+DA:134,0
+DA:135,0
+DA:137,0
+DA:138,0
+DA:139,0
+DA:140,0
+DA:142,0
+DA:143,0
+DA:144,0
+DA:145,0
+DA:147,0
+DA:148,0
+DA:149,0
+DA:150,0
+DA:151,0
+DA:152,0
+FN:155,System.Void server.Migrations.dbbroken::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+FNDA:0,System.Void server.Migrations.dbbroken::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+DA:156,0
+DA:157,0
+DA:158,0
+DA:160,0
+DA:161,0
+DA:163,0
+DA:164,0
+DA:166,0
+DA:167,0
+DA:169,0
+DA:170,0
+DA:172,0
+DA:173,0
+DA:175,0
+DA:176,0
+DA:177,0
+LF:146
+LH:0
+BRF:0
+BRH:0
+FNF:2
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Migrations\20240527120349_dbbroken.Designer.cs
+FN:19,System.Void server.Migrations.dbbroken::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+FNDA:0,System.Void server.Migrations.dbbroken::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+DA:20,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:26,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:50,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:58,0
+DA:59,0
+DA:60,0
+DA:61,0
+DA:62,0
+DA:63,0
+DA:64,0
+DA:65,0
+DA:66,0
+DA:67,0
+DA:68,0
+DA:69,0
+DA:70,0
+DA:71,0
+DA:73,0
+DA:74,0
+DA:75,0
+DA:76,0
+DA:77,0
+DA:78,0
+DA:79,0
+DA:80,0
+DA:81,0
+DA:82,0
+DA:83,0
+DA:84,0
+DA:85,0
+DA:86,0
+DA:87,0
+DA:88,0
+DA:89,0
+DA:90,0
+DA:91,0
+DA:92,0
+DA:93,0
+DA:94,0
+DA:95,0
+DA:96,0
+DA:97,0
+DA:98,0
+DA:99,0
+DA:100,0
+DA:101,0
+DA:103,0
+DA:104,0
+DA:105,0
+DA:106,0
+DA:107,0
+DA:108,0
+DA:109,0
+DA:110,0
+DA:111,0
+DA:112,0
+DA:113,0
+DA:114,0
+DA:115,0
+DA:116,0
+DA:117,0
+DA:118,0
+DA:119,0
+DA:120,0
+DA:121,0
+DA:122,0
+DA:123,0
+DA:124,0
+DA:125,0
+DA:126,0
+DA:127,0
+DA:129,0
+DA:130,0
+DA:131,0
+DA:132,0
+DA:133,0
+DA:134,0
+DA:135,0
+DA:136,0
+DA:137,0
+DA:138,0
+DA:139,0
+DA:140,0
+DA:141,0
+DA:142,0
+DA:143,0
+DA:144,0
+DA:145,0
+DA:146,0
+DA:147,0
+DA:148,0
+DA:149,0
+DA:151,0
+DA:152,0
+DA:153,0
+DA:154,0
+DA:155,0
+DA:156,0
+DA:157,0
+DA:158,0
+DA:159,0
+DA:160,0
+DA:161,0
+DA:162,0
+DA:163,0
+DA:164,0
+DA:165,0
+DA:166,0
+DA:167,0
+DA:168,0
+DA:169,0
+DA:170,0
+DA:171,0
+DA:172,0
+DA:173,0
+DA:174,0
+DA:175,0
+DA:176,0
+DA:177,0
+DA:178,0
+DA:179,0
+DA:180,0
+DA:181,0
+DA:182,0
+DA:183,0
+DA:184,0
+DA:185,0
+DA:186,0
+DA:187,0
+DA:188,0
+DA:190,0
+DA:191,0
+DA:192,0
+DA:193,0
+DA:194,0
+DA:195,0
+DA:196,0
+DA:197,0
+DA:198,0
+DA:199,0
+DA:200,0
+DA:201,0
+DA:202,0
+DA:203,0
+DA:204,0
+DA:205,0
+DA:206,0
+DA:207,0
+DA:208,0
+DA:209,0
+DA:210,0
+DA:211,0
+DA:213,0
+DA:214,0
+DA:215,0
+DA:216,0
+DA:217,0
+DA:218,0
+DA:219,0
+DA:220,0
+DA:221,0
+DA:222,0
+DA:223,0
+DA:224,0
+DA:225,0
+DA:226,0
+DA:227,0
+DA:228,0
+DA:229,0
+DA:230,0
+DA:232,0
+DA:233,0
+DA:234,0
+DA:235,0
+DA:236,0
+DA:237,0
+DA:238,0
+DA:239,0
+DA:241,0
+DA:242,0
+DA:243,0
+DA:244,0
+DA:246,0
+DA:247,0
+DA:248,0
+DA:249,0
+DA:251,0
+DA:252,0
+DA:253,0
+DA:254,0
+DA:256,0
+LF:222
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Migrations\WamDBContextModelSnapshot.cs
+FN:16,System.Void server.Migrations.WamDBContextModelSnapshot::BuildModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+FNDA:0,System.Void server.Migrations.WamDBContextModelSnapshot::BuildModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+DA:17,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:23,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:49,0
+DA:50,0
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:58,0
+DA:59,0
+DA:60,0
+DA:61,0
+DA:62,0
+DA:63,0
+DA:64,0
+DA:65,0
+DA:66,0
+DA:67,0
+DA:68,0
+DA:70,0
+DA:71,0
+DA:72,0
+DA:73,0
+DA:74,0
+DA:75,0
+DA:76,0
+DA:77,0
+DA:78,0
+DA:79,0
+DA:80,0
+DA:81,0
+DA:82,0
+DA:83,0
+DA:84,0
+DA:85,0
+DA:86,0
+DA:87,0
+DA:88,0
+DA:89,0
+DA:90,0
+DA:91,0
+DA:92,0
+DA:93,0
+DA:94,0
+DA:95,0
+DA:96,0
+DA:97,0
+DA:98,0
+DA:100,0
+DA:101,0
+DA:102,0
+DA:103,0
+DA:104,0
+DA:105,0
+DA:106,0
+DA:107,0
+DA:108,0
+DA:109,0
+DA:110,0
+DA:111,0
+DA:112,0
+DA:113,0
+DA:114,0
+DA:115,0
+DA:116,0
+DA:117,0
+DA:118,0
+DA:119,0
+DA:120,0
+DA:121,0
+DA:122,0
+DA:123,0
+DA:124,0
+DA:126,0
+DA:127,0
+DA:128,0
+DA:129,0
+DA:130,0
+DA:131,0
+DA:132,0
+DA:133,0
+DA:134,0
+DA:135,0
+DA:136,0
+DA:137,0
+DA:138,0
+DA:139,0
+DA:140,0
+DA:141,0
+DA:142,0
+DA:143,0
+DA:144,0
+DA:145,0
+DA:146,0
+DA:148,0
+DA:149,0
+DA:150,0
+DA:151,0
+DA:152,0
+DA:153,0
+DA:154,0
+DA:155,0
+DA:156,0
+DA:157,0
+DA:158,0
+DA:159,0
+DA:160,0
+DA:161,0
+DA:162,0
+DA:163,0
+DA:164,0
+DA:165,0
+DA:166,0
+DA:167,0
+DA:168,0
+DA:169,0
+DA:170,0
+DA:171,0
+DA:172,0
+DA:173,0
+DA:174,0
+DA:175,0
+DA:176,0
+DA:177,0
+DA:178,0
+DA:179,0
+DA:180,0
+DA:181,0
+DA:182,0
+DA:183,0
+DA:184,0
+DA:185,0
+DA:187,0
+DA:188,0
+DA:189,0
+DA:190,0
+DA:191,0
+DA:192,0
+DA:193,0
+DA:194,0
+DA:195,0
+DA:196,0
+DA:197,0
+DA:198,0
+DA:199,0
+DA:200,0
+DA:201,0
+DA:202,0
+DA:203,0
+DA:204,0
+DA:205,0
+DA:206,0
+DA:207,0
+DA:208,0
+DA:210,0
+DA:211,0
+DA:212,0
+DA:213,0
+DA:214,0
+DA:215,0
+DA:216,0
+DA:217,0
+DA:218,0
+DA:219,0
+DA:220,0
+DA:221,0
+DA:222,0
+DA:223,0
+DA:224,0
+DA:225,0
+DA:226,0
+DA:227,0
+DA:229,0
+DA:230,0
+DA:231,0
+DA:232,0
+DA:233,0
+DA:234,0
+DA:235,0
+DA:236,0
+DA:238,0
+DA:239,0
+DA:240,0
+DA:241,0
+DA:243,0
+DA:244,0
+DA:245,0
+DA:246,0
+DA:248,0
+DA:249,0
+DA:250,0
+DA:251,0
+DA:253,0
+LF:222
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Startup.cs
+FN:22,System.Void WAMServer.Startup::Start()
+FNDA:0,System.Void WAMServer.Startup::Start()
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+FN:45,System.Void WAMServer.Startup::configureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+FNDA:0,System.Void WAMServer.Startup::configureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+DA:46,0
+DA:48,0
+DA:49,0
+DA:50,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:58,0
+DA:59,0
+DA:60,0
+DA:61,0
+DA:62,0
+DA:63,0
+DA:64,0
+DA:65,0
+DA:66,0
+DA:67,0
+DA:68,0
+DA:69,0
+DA:70,0
+DA:71,0
+DA:72,0
+DA:73,0
+DA:74,0
+DA:76,0
+BRDA:55,78,0,0
+BRDA:55,78,1,0
+FN:81,System.Void WAMServer.Startup::setupCors(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+FNDA:0,System.Void WAMServer.Startup::setupCors(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+DA:82,0
+DA:83,0
+DA:84,0
+DA:85,0
+DA:86,0
+DA:87,0
+DA:88,0
+DA:89,0
+DA:90,0
+DA:91,0
+DA:92,0
+FN:98,System.Void WAMServer.Startup::configure(Microsoft.AspNetCore.Builder.WebApplicationBuilder)
+FNDA:0,System.Void WAMServer.Startup::configure(Microsoft.AspNetCore.Builder.WebApplicationBuilder)
+DA:99,0
+DA:100,0
+DA:101,0
+DA:102,0
+LF:60
+LH:0
+BRF:2
+BRH:0
+FNF:4
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Validation\InputValidation.cs
+FN:7,System.Boolean WAMServer.Validation.InputValidation::IsValidEmail(System.String)
+FNDA:3,System.Boolean WAMServer.Validation.InputValidation::IsValidEmail(System.String)
+DA:8,3
+DA:9,3
+DA:10,3
+DA:11,3
+DA:12,2
+DA:13,2
+DA:15,1
+DA:16,1
+DA:17,3
+BRDA:9,8,0,3
+BRDA:9,8,1,0
+BRDA:9,28,0,3
+BRDA:11,44,0,2
+BRDA:11,44,1,1
+BRDA:9,28,1,1
+FN:19,System.Boolean WAMServer.Validation.InputValidation::IsValidPassword(System.String)
+FNDA:2,System.Boolean WAMServer.Validation.InputValidation::IsValidPassword(System.String)
+DA:20,2
+DA:21,2
+DA:22,1
+DA:23,1
+DA:24,1
+DA:25,1
+DA:27,0
+DA:28,1
+DA:29,2
+BRDA:21,8,0,1
+BRDA:21,8,1,1
+BRDA:21,28,0,1
+BRDA:23,44,0,1
+BRDA:23,44,1,0
+BRDA:21,28,1,1
+LF:18
+LH:17
+BRF:12
+BRH:10
+FNF:2
+FNH:2
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Services\DBLoginService.cs
+FN:23,WAMServer.Models.User WAMServer.Services.DBLoginService::GetUser(System.String)
+FNDA:0,WAMServer.Models.User WAMServer.Services.DBLoginService::GetUser(System.String)
+DA:24,0
+DA:25,0
+DA:26,0
+FN:12,System.Void WAMServer.Services.DBLoginService::.ctor(WAMServer.Models.WamDBContext)
+FNDA:0,System.Void WAMServer.Services.DBLoginService::.ctor(WAMServer.Models.WamDBContext)
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+LF:7
+LH:0
+BRF:0
+BRH:0
+FNF:2
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Services\DefaultEmailService.cs
+FN:17,System.Void WAMServer.Services.DefaultEmailService::SendEmail(System.String,System.String,System.String)
+FNDA:0,System.Void WAMServer.Services.DefaultEmailService::SendEmail(System.String,System.String,System.String)
+DA:18,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:49,0
+DA:50,0
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+BRDA:22,45,0,0
+BRDA:22,45,1,0
+BRDA:27,67,0,0
+BRDA:27,67,1,0
+BRDA:34,121,0,0
+BRDA:34,121,1,0
+BRDA:34,136,0,0
+BRDA:34,136,1,0
+FN:11,System.Void WAMServer.Services.DefaultEmailService::.ctor(Microsoft.Extensions.Configuration.IConfiguration)
+FNDA:0,System.Void WAMServer.Services.DefaultEmailService::.ctor(Microsoft.Extensions.Configuration.IConfiguration)
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+LF:34
+LH:0
+BRF:8
+BRH:0
+FNF:2
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Seeders\DBInitializer.cs
+FN:9,System.Void WAMServer.Seeders.DBInitializer::Seed(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+FNDA:0,System.Void WAMServer.Seeders.DBInitializer::Seed(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+DA:18,0
+DA:20,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:58,0
+DA:59,0
+DA:60,0
+DA:61,0
+DA:62,0
+DA:63,0
+DA:64,0
+DA:65,0
+DA:67,0
+DA:68,0
+DA:71,0
+DA:72,0
+DA:74,0
+DA:75,0
+DA:77,0
+DA:80,0
+DA:81,0
+DA:82,0
+DA:83,0
+DA:84,0
+DA:85,0
+DA:86,0
+DA:88,0
+DA:90,0
+DA:91,0
+DA:92,0
+DA:93,0
+BRDA:14,32,0,0
+BRDA:14,32,1,0
+BRDA:23,90,0,0
+BRDA:44,474,0,0
+BRDA:44,474,1,0
+BRDA:23,90,1,0
+LF:67
+LH:0
+BRF:6
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Repositories\DbActionLogRepository.cs
+FN:17,System.Threading.Tasks.Task`1<WAMServer.Models.ActionLog> WAMServer.Repositories.DbActionLogRepository::AddAsync(WAMServer.Models.ActionLog)
+FNDA:0,System.Threading.Tasks.Task`1<WAMServer.Models.ActionLog> WAMServer.Repositories.DbActionLogRepository::AddAsync(WAMServer.Models.ActionLog)
+DA:18,0
+DA:19,0
+FN:22,System.Threading.Tasks.Task`1<WAMServer.Models.ActionLog> WAMServer.Repositories.DbActionLogRepository::DeleteAsync(System.Guid)
+FNDA:0,System.Threading.Tasks.Task`1<WAMServer.Models.ActionLog> WAMServer.Repositories.DbActionLogRepository::DeleteAsync(System.Guid)
+DA:23,0
+DA:24,0
+FN:27,WAMServer.Models.ActionLog WAMServer.Repositories.DbActionLogRepository::Get(System.Guid)
+FNDA:0,WAMServer.Models.ActionLog WAMServer.Repositories.DbActionLogRepository::Get(System.Guid)
+DA:28,0
+DA:29,0
+FN:32,System.Collections.Generic.IEnumerable`1<WAMServer.Models.ActionLog> WAMServer.Repositories.DbActionLogRepository::GetAll(System.Func`2<WAMServer.Models.ActionLog,System.Boolean>)
+FNDA:0,System.Collections.Generic.IEnumerable`1<WAMServer.Models.ActionLog> WAMServer.Repositories.DbActionLogRepository::GetAll(System.Func`2<WAMServer.Models.ActionLog,System.Boolean>)
+DA:33,0
+DA:34,0
+FN:42,System.Threading.Tasks.Task`1<WAMServer.Models.ActionLog> WAMServer.Repositories.DbActionLogRepository::UpdateAsync(WAMServer.Models.ActionLog,System.Func`2<WAMServer.Models.ActionLog,System.Boolean>)
+FNDA:0,System.Threading.Tasks.Task`1<WAMServer.Models.ActionLog> WAMServer.Repositories.DbActionLogRepository::UpdateAsync(WAMServer.Models.ActionLog,System.Func`2<WAMServer.Models.ActionLog,System.Boolean>)
+DA:43,0
+DA:44,0
+FN:11,System.Void WAMServer.Repositories.DbActionLogRepository::.ctor(WAMServer.Models.WamDBContext)
+FNDA:0,System.Void WAMServer.Repositories.DbActionLogRepository::.ctor(WAMServer.Models.WamDBContext)
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+FN:37,System.Void WAMServer.Repositories.DbActionLogRepository/<GetAllAsync>d__6::MoveNext()
+FNDA:0,System.Void WAMServer.Repositories.DbActionLogRepository/<GetAllAsync>d__6::MoveNext()
+DA:38,0
+DA:39,0
+DA:40,0
+LF:17
+LH:0
+BRF:0
+BRH:0
+FNF:7
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Repositories\DbActionTypeRepository.cs
+FN:9,System.Threading.Tasks.Task`1<WAMServer.Models.ActionType> WAMServer.Repositories.DbActionTypeRepository::AddAsync(WAMServer.Models.ActionType)
+FNDA:0,System.Threading.Tasks.Task`1<WAMServer.Models.ActionType> WAMServer.Repositories.DbActionTypeRepository::AddAsync(WAMServer.Models.ActionType)
+DA:10,0
+DA:11,0
+FN:14,System.Threading.Tasks.Task`1<WAMServer.Models.ActionType> WAMServer.Repositories.DbActionTypeRepository::DeleteAsync(System.Guid)
+FNDA:0,System.Threading.Tasks.Task`1<WAMServer.Models.ActionType> WAMServer.Repositories.DbActionTypeRepository::DeleteAsync(System.Guid)
+DA:15,0
+DA:16,0
+FN:19,WAMServer.Models.ActionType WAMServer.Repositories.DbActionTypeRepository::Get(System.Guid)
+FNDA:0,WAMServer.Models.ActionType WAMServer.Repositories.DbActionTypeRepository::Get(System.Guid)
+DA:20,0
+DA:21,0
+FN:24,System.Collections.Generic.IEnumerable`1<WAMServer.Models.ActionType> WAMServer.Repositories.DbActionTypeRepository::GetAll(System.Func`2<WAMServer.Models.ActionType,System.Boolean>)
+FNDA:0,System.Collections.Generic.IEnumerable`1<WAMServer.Models.ActionType> WAMServer.Repositories.DbActionTypeRepository::GetAll(System.Func`2<WAMServer.Models.ActionType,System.Boolean>)
+DA:25,0
+DA:26,0
+FN:29,System.Threading.Tasks.Task`1<System.Collections.Generic.IEnumerable`1<WAMServer.Models.ActionType>> WAMServer.Repositories.DbActionTypeRepository::GetAllAsync()
+FNDA:0,System.Threading.Tasks.Task`1<System.Collections.Generic.IEnumerable`1<WAMServer.Models.ActionType>> WAMServer.Repositories.DbActionTypeRepository::GetAllAsync()
+DA:30,0
+DA:31,0
+FN:34,System.Threading.Tasks.Task`1<WAMServer.Models.ActionType> WAMServer.Repositories.DbActionTypeRepository::UpdateAsync(WAMServer.Models.ActionType,System.Func`2<WAMServer.Models.ActionType,System.Boolean>)
+FNDA:0,System.Threading.Tasks.Task`1<WAMServer.Models.ActionType> WAMServer.Repositories.DbActionTypeRepository::UpdateAsync(WAMServer.Models.ActionType,System.Func`2<WAMServer.Models.ActionType,System.Boolean>)
+DA:35,0
+DA:36,0
+LF:12
+LH:0
+BRF:0
+BRH:0
+FNF:6
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Repositories\DbAddressRepository.cs
+FN:32,System.Threading.Tasks.Task`1<WAMServer.Models.Address> WAMServer.Repositories.DbAddressRepository::DeleteAsync(System.Guid)
+FNDA:0,System.Threading.Tasks.Task`1<WAMServer.Models.Address> WAMServer.Repositories.DbAddressRepository::DeleteAsync(System.Guid)
+DA:33,0
+DA:34,0
+FN:42,WAMServer.Models.Address WAMServer.Repositories.DbAddressRepository::Get(System.Guid)
+FNDA:0,WAMServer.Models.Address WAMServer.Repositories.DbAddressRepository::Get(System.Guid)
+DA:43,0
+DA:44,0
+DA:45,0
+FN:47,System.Collections.Generic.IEnumerable`1<WAMServer.Models.Address> WAMServer.Repositories.DbAddressRepository::GetAll(System.Func`2<WAMServer.Models.Address,System.Boolean>)
+FNDA:0,System.Collections.Generic.IEnumerable`1<WAMServer.Models.Address> WAMServer.Repositories.DbAddressRepository::GetAll(System.Func`2<WAMServer.Models.Address,System.Boolean>)
+DA:48,0
+DA:49,0
+FN:52,System.Threading.Tasks.Task`1<System.Collections.Generic.IEnumerable`1<WAMServer.Models.Address>> WAMServer.Repositories.DbAddressRepository::GetAllAsync()
+FNDA:0,System.Threading.Tasks.Task`1<System.Collections.Generic.IEnumerable`1<WAMServer.Models.Address>> WAMServer.Repositories.DbAddressRepository::GetAllAsync()
+DA:53,0
+DA:54,0
+FN:14,System.Void WAMServer.Repositories.DbAddressRepository::.ctor(WAMServer.Models.WamDBContext)
+FNDA:0,System.Void WAMServer.Repositories.DbAddressRepository::.ctor(WAMServer.Models.WamDBContext)
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+FN:25,System.Void WAMServer.Repositories.DbAddressRepository/<AddAsync>d__2::MoveNext()
+FNDA:0,System.Void WAMServer.Repositories.DbAddressRepository/<AddAsync>d__2::MoveNext()
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+FN:57,System.Void WAMServer.Repositories.DbAddressRepository/<UpdateAsync>d__7::MoveNext()
+FNDA:0,System.Void WAMServer.Repositories.DbAddressRepository/<UpdateAsync>d__7::MoveNext()
+DA:58,0
+DA:59,0
+DA:60,0
+DA:61,0
+DA:62,0
+DA:63,0
+DA:64,0
+DA:65,0
+DA:66,0
+DA:67,0
+BRDA:60,67,0,0
+BRDA:60,67,1,0
+BRDA:61,92,0,0
+BRDA:61,92,1,0
+BRDA:62,135,0,0
+BRDA:62,135,1,0
+BRDA:63,178,0,0
+BRDA:63,178,1,0
+BRDA:64,221,0,0
+BRDA:64,221,1,0
+LF:28
+LH:0
+BRF:10
+BRH:0
+FNF:7
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Repositories\DbControlPCRepository.cs
+FN:9,System.Threading.Tasks.Task`1<WAMServer.Models.ControlPC> WAMServer.Repositories.DbControlPCRepository::AddAsync(WAMServer.Models.ControlPC)
+FNDA:0,System.Threading.Tasks.Task`1<WAMServer.Models.ControlPC> WAMServer.Repositories.DbControlPCRepository::AddAsync(WAMServer.Models.ControlPC)
+DA:10,0
+DA:11,0
+FN:14,System.Threading.Tasks.Task`1<WAMServer.Models.ControlPC> WAMServer.Repositories.DbControlPCRepository::DeleteAsync(System.Guid)
+FNDA:0,System.Threading.Tasks.Task`1<WAMServer.Models.ControlPC> WAMServer.Repositories.DbControlPCRepository::DeleteAsync(System.Guid)
+DA:15,0
+DA:16,0
+FN:19,WAMServer.Models.ControlPC WAMServer.Repositories.DbControlPCRepository::Get(System.Guid)
+FNDA:0,WAMServer.Models.ControlPC WAMServer.Repositories.DbControlPCRepository::Get(System.Guid)
+DA:20,0
+DA:21,0
+FN:24,System.Collections.Generic.IEnumerable`1<WAMServer.Models.ControlPC> WAMServer.Repositories.DbControlPCRepository::GetAll(System.Func`2<WAMServer.Models.ControlPC,System.Boolean>)
+FNDA:0,System.Collections.Generic.IEnumerable`1<WAMServer.Models.ControlPC> WAMServer.Repositories.DbControlPCRepository::GetAll(System.Func`2<WAMServer.Models.ControlPC,System.Boolean>)
+DA:25,0
+DA:26,0
+FN:29,System.Threading.Tasks.Task`1<System.Collections.Generic.IEnumerable`1<WAMServer.Models.ControlPC>> WAMServer.Repositories.DbControlPCRepository::GetAllAsync()
+FNDA:0,System.Threading.Tasks.Task`1<System.Collections.Generic.IEnumerable`1<WAMServer.Models.ControlPC>> WAMServer.Repositories.DbControlPCRepository::GetAllAsync()
+DA:30,0
+DA:31,0
+FN:34,System.Threading.Tasks.Task`1<WAMServer.Models.ControlPC> WAMServer.Repositories.DbControlPCRepository::UpdateAsync(WAMServer.Models.ControlPC,System.Func`2<WAMServer.Models.ControlPC,System.Boolean>)
+FNDA:0,System.Threading.Tasks.Task`1<WAMServer.Models.ControlPC> WAMServer.Repositories.DbControlPCRepository::UpdateAsync(WAMServer.Models.ControlPC,System.Func`2<WAMServer.Models.ControlPC,System.Boolean>)
+DA:35,0
+DA:36,0
+LF:12
+LH:0
+BRF:0
+BRH:0
+FNF:6
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Repositories\DbGroundWaterLogRepository.cs
+FN:24,System.Threading.Tasks.Task`1<WAMServer.Models.GroundWaterLog> WAMServer.Repositories.DbGroundWaterLogRepository::DeleteAsync(System.Guid)
+FNDA:0,System.Threading.Tasks.Task`1<WAMServer.Models.GroundWaterLog> WAMServer.Repositories.DbGroundWaterLogRepository::DeleteAsync(System.Guid)
+DA:25,0
+DA:26,0
+FN:29,WAMServer.Models.GroundWaterLog WAMServer.Repositories.DbGroundWaterLogRepository::Get(System.Guid)
+FNDA:0,WAMServer.Models.GroundWaterLog WAMServer.Repositories.DbGroundWaterLogRepository::Get(System.Guid)
+DA:30,0
+DA:31,0
+DA:32,0
+FN:34,System.Collections.Generic.IEnumerable`1<WAMServer.Models.GroundWaterLog> WAMServer.Repositories.DbGroundWaterLogRepository::GetAll(System.Func`2<WAMServer.Models.GroundWaterLog,System.Boolean>)
+FNDA:0,System.Collections.Generic.IEnumerable`1<WAMServer.Models.GroundWaterLog> WAMServer.Repositories.DbGroundWaterLogRepository::GetAll(System.Func`2<WAMServer.Models.GroundWaterLog,System.Boolean>)
+DA:35,0
+DA:36,0
+FN:45,System.Threading.Tasks.Task`1<WAMServer.Models.GroundWaterLog> WAMServer.Repositories.DbGroundWaterLogRepository::UpdateAsync(WAMServer.Models.GroundWaterLog,System.Func`2<WAMServer.Models.GroundWaterLog,System.Boolean>)
+FNDA:0,System.Threading.Tasks.Task`1<WAMServer.Models.GroundWaterLog> WAMServer.Repositories.DbGroundWaterLogRepository::UpdateAsync(WAMServer.Models.GroundWaterLog,System.Func`2<WAMServer.Models.GroundWaterLog,System.Boolean>)
+DA:46,0
+DA:47,0
+FN:11,System.Void WAMServer.Repositories.DbGroundWaterLogRepository::.ctor(WAMServer.Models.WamDBContext)
+FNDA:0,System.Void WAMServer.Repositories.DbGroundWaterLogRepository::.ctor(WAMServer.Models.WamDBContext)
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+FN:17,System.Void WAMServer.Repositories.DbGroundWaterLogRepository/<AddAsync>d__2::MoveNext()
+FNDA:0,System.Void WAMServer.Repositories.DbGroundWaterLogRepository/<AddAsync>d__2::MoveNext()
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+FN:39,System.Void WAMServer.Repositories.DbGroundWaterLogRepository/<GetAllAsync>d__6::MoveNext()
+FNDA:0,System.Void WAMServer.Repositories.DbGroundWaterLogRepository/<GetAllAsync>d__6::MoveNext()
+DA:40,0
+DA:41,0
+DA:42,0
+LF:21
+LH:0
+BRF:0
+BRH:0
+FNF:7
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Repositories\DbUserRepository.cs
+FN:32,System.Threading.Tasks.Task`1<WAMServer.Models.User> WAMServer.Repositories.DbUserRepository::DeleteAsync(System.Guid)
+FNDA:0,System.Threading.Tasks.Task`1<WAMServer.Models.User> WAMServer.Repositories.DbUserRepository::DeleteAsync(System.Guid)
+DA:33,0
+DA:34,0
+FN:42,WAMServer.Models.User WAMServer.Repositories.DbUserRepository::Get(System.Guid)
+FNDA:0,WAMServer.Models.User WAMServer.Repositories.DbUserRepository::Get(System.Guid)
+DA:43,0
+DA:44,0
+DA:45,0
+FN:47,System.Threading.Tasks.Task`1<System.Collections.Generic.IEnumerable`1<WAMServer.Models.User>> WAMServer.Repositories.DbUserRepository::GetAllAsync()
+FNDA:0,System.Threading.Tasks.Task`1<System.Collections.Generic.IEnumerable`1<WAMServer.Models.User>> WAMServer.Repositories.DbUserRepository::GetAllAsync()
+DA:48,0
+DA:49,0
+FN:52,System.Collections.Generic.IEnumerable`1<WAMServer.Models.User> WAMServer.Repositories.DbUserRepository::GetAll(System.Func`2<WAMServer.Models.User,System.Boolean>)
+FNDA:0,System.Collections.Generic.IEnumerable`1<WAMServer.Models.User> WAMServer.Repositories.DbUserRepository::GetAll(System.Func`2<WAMServer.Models.User,System.Boolean>)
+DA:53,0
+DA:54,0
+DA:55,0
+FN:14,System.Void WAMServer.Repositories.DbUserRepository::.ctor(WAMServer.Models.WamDBContext)
+FNDA:0,System.Void WAMServer.Repositories.DbUserRepository::.ctor(WAMServer.Models.WamDBContext)
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+FN:25,System.Void WAMServer.Repositories.DbUserRepository/<AddAsync>d__2::MoveNext()
+FNDA:0,System.Void WAMServer.Repositories.DbUserRepository/<AddAsync>d__2::MoveNext()
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+FN:57,System.Void WAMServer.Repositories.DbUserRepository/<UpdateAsync>d__7::MoveNext()
+FNDA:0,System.Void WAMServer.Repositories.DbUserRepository/<UpdateAsync>d__7::MoveNext()
+DA:58,0
+DA:59,0
+DA:60,0
+DA:61,0
+DA:62,0
+DA:64,0
+DA:65,0
+DA:66,0
+DA:67,0
+DA:68,0
+DA:69,0
+DA:70,0
+DA:71,0
+DA:72,0
+DA:73,0
+BRDA:60,67,0,0
+BRDA:60,67,1,0
+LF:34
+LH:0
+BRF:2
+BRH:0
+FNF:7
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Repositories\DbUserSettingRepository.cs
+FN:9,System.Threading.Tasks.Task`1<WAMServer.Models.UserSetting> WAMServer.Repositories.DbUserSettingRepository::AddAsync(WAMServer.Models.UserSetting)
+FNDA:0,System.Threading.Tasks.Task`1<WAMServer.Models.UserSetting> WAMServer.Repositories.DbUserSettingRepository::AddAsync(WAMServer.Models.UserSetting)
+DA:10,0
+DA:11,0
+FN:14,System.Threading.Tasks.Task`1<WAMServer.Models.UserSetting> WAMServer.Repositories.DbUserSettingRepository::DeleteAsync(System.Guid)
+FNDA:0,System.Threading.Tasks.Task`1<WAMServer.Models.UserSetting> WAMServer.Repositories.DbUserSettingRepository::DeleteAsync(System.Guid)
+DA:15,0
+DA:16,0
+FN:19,WAMServer.Models.UserSetting WAMServer.Repositories.DbUserSettingRepository::Get(System.Guid)
+FNDA:0,WAMServer.Models.UserSetting WAMServer.Repositories.DbUserSettingRepository::Get(System.Guid)
+DA:20,0
+DA:21,0
+FN:24,System.Collections.Generic.IEnumerable`1<WAMServer.Models.UserSetting> WAMServer.Repositories.DbUserSettingRepository::GetAll(System.Func`2<WAMServer.Models.UserSetting,System.Boolean>)
+FNDA:0,System.Collections.Generic.IEnumerable`1<WAMServer.Models.UserSetting> WAMServer.Repositories.DbUserSettingRepository::GetAll(System.Func`2<WAMServer.Models.UserSetting,System.Boolean>)
+DA:25,0
+DA:26,0
+FN:29,System.Threading.Tasks.Task`1<System.Collections.Generic.IEnumerable`1<WAMServer.Models.UserSetting>> WAMServer.Repositories.DbUserSettingRepository::GetAllAsync()
+FNDA:0,System.Threading.Tasks.Task`1<System.Collections.Generic.IEnumerable`1<WAMServer.Models.UserSetting>> WAMServer.Repositories.DbUserSettingRepository::GetAllAsync()
+DA:30,0
+DA:31,0
+FN:34,System.Threading.Tasks.Task`1<WAMServer.Models.UserSetting> WAMServer.Repositories.DbUserSettingRepository::UpdateAsync(WAMServer.Models.UserSetting,System.Func`2<WAMServer.Models.UserSetting,System.Boolean>)
+FNDA:0,System.Threading.Tasks.Task`1<WAMServer.Models.UserSetting> WAMServer.Repositories.DbUserSettingRepository::UpdateAsync(WAMServer.Models.UserSetting,System.Func`2<WAMServer.Models.UserSetting,System.Boolean>)
+DA:35,0
+DA:36,0
+LF:12
+LH:0
+BRF:0
+BRH:0
+FNF:6
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Records\LoginBody.cs
+FN:2,System.String WAMServer.Records.LoginBody::get_Email()
+FNDA:0,System.String WAMServer.Records.LoginBody::get_Email()
+DA:3,0
+LF:1
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Records\Bodies\AddressPatchBody.cs
+FN:7,System.String WAMServer.Records.Bodies.AddressPatchBody::get_Street()
+FNDA:0,System.String WAMServer.Records.Bodies.AddressPatchBody::get_Street()
+DA:8,0
+FN:8,System.String WAMServer.Records.Bodies.AddressPatchBody::get_HouseNumber()
+FNDA:0,System.String WAMServer.Records.Bodies.AddressPatchBody::get_HouseNumber()
+DA:9,0
+FN:9,System.String WAMServer.Records.Bodies.AddressPatchBody::get_City()
+FNDA:0,System.String WAMServer.Records.Bodies.AddressPatchBody::get_City()
+DA:10,0
+FN:10,System.String WAMServer.Records.Bodies.AddressPatchBody::get_Zip()
+FNDA:0,System.String WAMServer.Records.Bodies.AddressPatchBody::get_Zip()
+DA:11,0
+FN:11,System.String WAMServer.Records.Bodies.AddressPatchBody::get_Password()
+FNDA:0,System.String WAMServer.Records.Bodies.AddressPatchBody::get_Password()
+DA:12,0
+LF:5
+LH:0
+BRF:0
+BRH:0
+FNF:5
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Records\Bodies\ErrorBody.cs
+FN:2,System.String WAMServer.Records.Bodies.ErrorBody::get_Error()
+FNDA:8,System.String WAMServer.Records.Bodies.ErrorBody::get_Error()
+DA:3,8
+LF:1
+LH:1
+BRF:0
+BRH:0
+FNF:1
+FNH:1
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Records\Bodies\UserBody.cs
+FN:4,System.String WAMServer.Records.Bodies.UserBody::get_Email()
+FNDA:11,System.String WAMServer.Records.Bodies.UserBody::get_Email()
+DA:5,11
+FN:5,System.String WAMServer.Records.Bodies.UserBody::get_Password()
+FNDA:10,System.String WAMServer.Records.Bodies.UserBody::get_Password()
+DA:6,10
+FN:6,System.String WAMServer.Records.Bodies.UserBody::get_FirstName()
+FNDA:8,System.String WAMServer.Records.Bodies.UserBody::get_FirstName()
+DA:7,8
+FN:7,System.String WAMServer.Records.Bodies.UserBody::get_LastName()
+FNDA:8,System.String WAMServer.Records.Bodies.UserBody::get_LastName()
+DA:8,8
+LF:4
+LH:4
+BRF:0
+BRH:0
+FNF:4
+FNH:4
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Models\Actionlog.cs
+FN:11,System.Guid WAMServer.Models.ActionLog::get_Id()
+FNDA:15,System.Guid WAMServer.Models.ActionLog::get_Id()
+DA:12,15
+FN:14,System.Guid WAMServer.Models.ActionLog::get_userId()
+FNDA:15,System.Guid WAMServer.Models.ActionLog::get_userId()
+DA:15,15
+FN:16,System.Int32 WAMServer.Models.ActionLog::get_actionTypeID()
+FNDA:15,System.Int32 WAMServer.Models.ActionLog::get_actionTypeID()
+DA:17,15
+FN:19,System.DateTime WAMServer.Models.ActionLog::get_dateTimeStamp()
+FNDA:15,System.DateTime WAMServer.Models.ActionLog::get_dateTimeStamp()
+DA:20,15
+FN:21,WAMServer.Models.User WAMServer.Models.ActionLog::get_User()
+FNDA:15,WAMServer.Models.User WAMServer.Models.ActionLog::get_User()
+DA:22,15
+FN:22,WAMServer.Models.ActionType WAMServer.Models.ActionLog::get_ActionType()
+FNDA:15,WAMServer.Models.ActionType WAMServer.Models.ActionLog::get_ActionType()
+DA:23,15
+FN:30,System.Void WAMServer.Models.ActionLog::.ctor(System.Guid,System.Int32,System.DateTime)
+FNDA:10,System.Void WAMServer.Models.ActionLog::.ctor(System.Guid,System.Int32,System.DateTime)
+DA:31,10
+DA:32,10
+DA:33,10
+DA:34,10
+DA:35,10
+DA:36,10
+DA:37,10
+LF:13
+LH:13
+BRF:0
+BRH:0
+FNF:7
+FNH:7
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Models\ActionType.cs
+FN:11,System.Int32 WAMServer.Models.ActionType::get_Id()
+FNDA:0,System.Int32 WAMServer.Models.ActionType::get_Id()
+DA:12,0
+FN:14,System.String WAMServer.Models.ActionType::get_title()
+FNDA:0,System.String WAMServer.Models.ActionType::get_title()
+DA:15,0
+FN:17,System.String WAMServer.Models.ActionType::get_details()
+FNDA:0,System.String WAMServer.Models.ActionType::get_details()
+DA:18,0
+FN:19,System.Collections.Generic.List`1<WAMServer.Models.ActionLog> WAMServer.Models.ActionType::get_ActionLogs()
+FNDA:0,System.Collections.Generic.List`1<WAMServer.Models.ActionLog> WAMServer.Models.ActionType::get_ActionLogs()
+DA:20,0
+FN:26,System.Void WAMServer.Models.ActionType::.ctor(System.String,System.String)
+FNDA:0,System.Void WAMServer.Models.ActionType::.ctor(System.String,System.String)
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+LF:9
+LH:0
+BRF:0
+BRH:0
+FNF:5
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Models\Address.cs
+FN:15,System.Guid WAMServer.Models.Address::get_Id()
+FNDA:1,System.Guid WAMServer.Models.Address::get_Id()
+DA:16,1
+FN:19,System.String WAMServer.Models.Address::get_Street()
+FNDA:2,System.String WAMServer.Models.Address::get_Street()
+DA:20,2
+FN:23,System.String WAMServer.Models.Address::get_HouseNumber()
+FNDA:2,System.String WAMServer.Models.Address::get_HouseNumber()
+DA:24,2
+FN:27,System.String WAMServer.Models.Address::get_City()
+FNDA:2,System.String WAMServer.Models.Address::get_City()
+DA:28,2
+FN:31,System.String WAMServer.Models.Address::get_Zip()
+FNDA:2,System.String WAMServer.Models.Address::get_Zip()
+DA:32,2
+FN:35,System.Nullable`1<System.Guid> WAMServer.Models.Address::get_UserId()
+FNDA:1,System.Nullable`1<System.Guid> WAMServer.Models.Address::get_UserId()
+DA:36,1
+FN:39,WAMServer.Models.User WAMServer.Models.Address::get_User()
+FNDA:0,WAMServer.Models.User WAMServer.Models.Address::get_User()
+DA:40,0
+FN:41,System.Void WAMServer.Models.Address::.ctor()
+FNDA:3,System.Void WAMServer.Models.Address::.ctor()
+DA:42,3
+FN:42,System.Void WAMServer.Models.Address::.ctor(WAMServer.Records.Bodies.AddressPatchBody)
+FNDA:0,System.Void WAMServer.Models.Address::.ctor(WAMServer.Records.Bodies.AddressPatchBody)
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+LF:15
+LH:7
+BRF:0
+BRH:0
+FNF:9
+FNH:7
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Models\ControlPC.cs
+FN:11,System.Guid WAMServer.Models.ControlPC::get_Id()
+FNDA:0,System.Guid WAMServer.Models.ControlPC::get_Id()
+DA:12,0
+FN:14,System.Guid WAMServer.Models.ControlPC::get_userId()
+FNDA:0,System.Guid WAMServer.Models.ControlPC::get_userId()
+DA:15,0
+FN:16,System.String WAMServer.Models.ControlPC::get_secret()
+FNDA:0,System.String WAMServer.Models.ControlPC::get_secret()
+DA:17,0
+FN:19,System.String WAMServer.Models.ControlPC::get_meetputBroID()
+FNDA:0,System.String WAMServer.Models.ControlPC::get_meetputBroID()
+DA:20,0
+FN:21,System.String WAMServer.Models.ControlPC::get_ControlPCSecret()
+FNDA:0,System.String WAMServer.Models.ControlPC::get_ControlPCSecret()
+DA:22,0
+FN:30,System.Void WAMServer.Models.ControlPC::.ctor(System.Guid,System.String,System.String,System.String)
+FNDA:0,System.Void WAMServer.Models.ControlPC::.ctor(System.Guid,System.String,System.String,System.String)
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+LF:12
+LH:0
+BRF:0
+BRH:0
+FNF:6
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Models\GroundWaterLog.cs
+FN:11,System.Guid WAMServer.Models.GroundWaterLog::get_Id()
+FNDA:0,System.Guid WAMServer.Models.GroundWaterLog::get_Id()
+DA:12,0
+FN:13,System.String WAMServer.Models.GroundWaterLog::get_controlPCID()
+FNDA:0,System.String WAMServer.Models.GroundWaterLog::get_controlPCID()
+DA:14,0
+FN:16,System.DateTime WAMServer.Models.GroundWaterLog::get_date()
+FNDA:0,System.DateTime WAMServer.Models.GroundWaterLog::get_date()
+DA:17,0
+FN:18,System.Decimal WAMServer.Models.GroundWaterLog::get_level()
+FNDA:0,System.Decimal WAMServer.Models.GroundWaterLog::get_level()
+DA:19,0
+FN:26,System.Void WAMServer.Models.GroundWaterLog::.ctor(System.String,System.DateTime,System.Decimal)
+FNDA:0,System.Void WAMServer.Models.GroundWaterLog::.ctor(System.String,System.DateTime,System.Decimal)
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+LF:11
+LH:0
+BRF:0
+BRH:0
+FNF:5
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Models\User.cs
+FN:12,System.Guid WAMServer.Models.User::get_Id()
+FNDA:16,System.Guid WAMServer.Models.User::get_Id()
+DA:13,16
+FN:14,System.String WAMServer.Models.User::get_FirstName()
+FNDA:17,System.String WAMServer.Models.User::get_FirstName()
+DA:15,17
+FN:16,System.String WAMServer.Models.User::get_LastName()
+FNDA:17,System.String WAMServer.Models.User::get_LastName()
+DA:17,17
+FN:18,System.String WAMServer.Models.User::get_Email()
+FNDA:27,System.String WAMServer.Models.User::get_Email()
+DA:19,27
+FN:20,System.String WAMServer.Models.User::get_Password()
+FNDA:18,System.String WAMServer.Models.User::get_Password()
+DA:21,18
+FN:22,System.Boolean WAMServer.Models.User::get_IsConfirmed()
+FNDA:18,System.Boolean WAMServer.Models.User::get_IsConfirmed()
+DA:23,18
+FN:25,System.Guid WAMServer.Models.User::get_ConfirmationToken()
+FNDA:13,System.Guid WAMServer.Models.User::get_ConfirmationToken()
+DA:26,13
+FN:27,System.Nullable`1<System.Guid> WAMServer.Models.User::get_AddressId()
+FNDA:8,System.Nullable`1<System.Guid> WAMServer.Models.User::get_AddressId()
+DA:28,8
+FN:28,WAMServer.Models.Address WAMServer.Models.User::get_Address()
+FNDA:0,WAMServer.Models.Address WAMServer.Models.User::get_Address()
+DA:29,0
+FN:29,System.Collections.Generic.List`1<WAMServer.Models.ActionLog> WAMServer.Models.User::get_ActionLogs()
+FNDA:0,System.Collections.Generic.List`1<WAMServer.Models.ActionLog> WAMServer.Models.User::get_ActionLogs()
+DA:30,0
+FN:39,System.Void WAMServer.Models.User::.ctor(System.String,System.String,System.String,System.String)
+FNDA:7,System.Void WAMServer.Models.User::.ctor(System.String,System.String,System.String,System.String)
+DA:40,7
+DA:41,7
+DA:42,7
+FN:44,System.Void WAMServer.Models.User::.ctor(System.Guid,System.String,System.String,System.String,System.String,System.Boolean,System.Guid,System.Nullable`1<System.Guid>)
+FNDA:7,System.Void WAMServer.Models.User::.ctor(System.Guid,System.String,System.String,System.String,System.String,System.Boolean,System.Guid,System.Nullable`1<System.Guid>)
+DA:45,7
+DA:46,7
+DA:47,7
+DA:48,7
+DA:49,7
+DA:50,7
+DA:51,7
+DA:52,7
+DA:53,7
+DA:54,7
+DA:55,7
+FN:56,System.Void WAMServer.Models.User::.ctor()
+FNDA:3,System.Void WAMServer.Models.User::.ctor()
+DA:57,3
+DA:58,3
+DA:59,3
+LF:27
+LH:25
+BRF:0
+BRH:0
+FNF:13
+FNH:11
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Models\UserSetting.cs
+FN:11,System.Guid WAMServer.Models.UserSetting::get_Id()
+FNDA:0,System.Guid WAMServer.Models.UserSetting::get_Id()
+DA:12,0
+FN:14,System.Guid WAMServer.Models.UserSetting::get_userId()
+FNDA:0,System.Guid WAMServer.Models.UserSetting::get_userId()
+DA:15,0
+FN:16,System.Guid WAMServer.Models.UserSetting::get_controlPCID()
+FNDA:0,System.Guid WAMServer.Models.UserSetting::get_controlPCID()
+DA:17,0
+FN:18,System.String WAMServer.Models.UserSetting::get_controlPCSecret()
+FNDA:0,System.String WAMServer.Models.UserSetting::get_controlPCSecret()
+DA:19,0
+FN:26,System.Void WAMServer.Models.UserSetting::.ctor(System.Guid,System.Guid,System.String)
+FNDA:0,System.Void WAMServer.Models.UserSetting::.ctor(System.Guid,System.Guid,System.String)
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+LF:11
+LH:0
+BRF:0
+BRH:0
+FNF:5
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Models\WamDBContext.cs
+FN:14,System.Void WAMServer.Models.WamDBContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
+FNDA:0,System.Void WAMServer.Models.WamDBContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+FN:30,Microsoft.EntityFrameworkCore.DbSet`1<WAMServer.Models.User> WAMServer.Models.WamDBContext::get_Users()
+FNDA:0,Microsoft.EntityFrameworkCore.DbSet`1<WAMServer.Models.User> WAMServer.Models.WamDBContext::get_Users()
+DA:31,0
+FN:31,Microsoft.EntityFrameworkCore.DbSet`1<WAMServer.Models.Address> WAMServer.Models.WamDBContext::get_Addresses()
+FNDA:0,Microsoft.EntityFrameworkCore.DbSet`1<WAMServer.Models.Address> WAMServer.Models.WamDBContext::get_Addresses()
+DA:32,0
+FN:32,Microsoft.EntityFrameworkCore.DbSet`1<WAMServer.Models.ControlPC> WAMServer.Models.WamDBContext::get_ControlPCs()
+FNDA:0,Microsoft.EntityFrameworkCore.DbSet`1<WAMServer.Models.ControlPC> WAMServer.Models.WamDBContext::get_ControlPCs()
+DA:33,0
+FN:33,Microsoft.EntityFrameworkCore.DbSet`1<WAMServer.Models.GroundWaterLog> WAMServer.Models.WamDBContext::get_GroundWaterLog()
+FNDA:0,Microsoft.EntityFrameworkCore.DbSet`1<WAMServer.Models.GroundWaterLog> WAMServer.Models.WamDBContext::get_GroundWaterLog()
+DA:34,0
+FN:34,Microsoft.EntityFrameworkCore.DbSet`1<WAMServer.Models.ControlPC> WAMServer.Models.WamDBContext::get_ControlPC()
+FNDA:0,Microsoft.EntityFrameworkCore.DbSet`1<WAMServer.Models.ControlPC> WAMServer.Models.WamDBContext::get_ControlPC()
+DA:35,0
+FN:35,Microsoft.EntityFrameworkCore.DbSet`1<WAMServer.Models.ActionLog> WAMServer.Models.WamDBContext::get_ActionLog()
+FNDA:0,Microsoft.EntityFrameworkCore.DbSet`1<WAMServer.Models.ActionLog> WAMServer.Models.WamDBContext::get_ActionLog()
+DA:36,0
+FN:36,Microsoft.EntityFrameworkCore.DbSet`1<WAMServer.Models.ActionType> WAMServer.Models.WamDBContext::get_ActionType()
+FNDA:0,Microsoft.EntityFrameworkCore.DbSet`1<WAMServer.Models.ActionType> WAMServer.Models.WamDBContext::get_ActionType()
+DA:37,0
+FN:37,Microsoft.EntityFrameworkCore.DbSet`1<WAMServer.Models.UserSetting> WAMServer.Models.WamDBContext::get_UserSetting()
+FNDA:0,Microsoft.EntityFrameworkCore.DbSet`1<WAMServer.Models.UserSetting> WAMServer.Models.WamDBContext::get_UserSetting()
+DA:38,0
+FN:9,System.Void WAMServer.Models.WamDBContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<WAMServer.Models.WamDBContext>)
+FNDA:0,System.Void WAMServer.Models.WamDBContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<WAMServer.Models.WamDBContext>)
+DA:10,0
+DA:11,0
+DA:12,0
+LF:25
+LH:0
+BRF:0
+BRH:0
+FNF:10
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\DTO\UserDTO.cs
+FN:6,System.Guid WAMServer.DTO.UserDTO::get_Id()
+FNDA:0,System.Guid WAMServer.DTO.UserDTO::get_Id()
+DA:7,0
+FN:7,System.String WAMServer.DTO.UserDTO::get_FirstName()
+FNDA:0,System.String WAMServer.DTO.UserDTO::get_FirstName()
+DA:8,0
+FN:8,System.String WAMServer.DTO.UserDTO::get_LastName()
+FNDA:0,System.String WAMServer.DTO.UserDTO::get_LastName()
+DA:9,0
+FN:9,System.String WAMServer.DTO.UserDTO::get_Email()
+FNDA:0,System.String WAMServer.DTO.UserDTO::get_Email()
+DA:10,0
+FN:10,WAMServer.Models.Address WAMServer.DTO.UserDTO::get_Address()
+FNDA:0,WAMServer.Models.Address WAMServer.DTO.UserDTO::get_Address()
+DA:11,0
+FN:12,System.Void WAMServer.DTO.UserDTO::.ctor(System.Guid,System.String,System.String,System.String,WAMServer.Models.Address)
+FNDA:0,System.Void WAMServer.DTO.UserDTO::.ctor(System.Guid,System.String,System.String,System.String,WAMServer.Models.Address)
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+FN:21,System.Void WAMServer.DTO.UserDTO::.ctor(WAMServer.Models.User)
+FNDA:0,System.Void WAMServer.DTO.UserDTO::.ctor(WAMServer.Models.User)
+DA:22,0
+DA:23,0
+LF:15
+LH:0
+BRF:0
+BRH:0
+FNF:7
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Controllers\ActionLogController.cs
+FN:25,System.Void WAMServer.Controllers.ActionLogController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.ActionLog>)
+FNDA:3,System.Void WAMServer.Controllers.ActionLogController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.ActionLog>)
+DA:26,3
+DA:27,3
+DA:28,3
+DA:29,3
+FN:33,System.Void WAMServer.Controllers.ActionLogController/<GetActionLogs>d__2::MoveNext()
+FNDA:3,System.Void WAMServer.Controllers.ActionLogController/<GetActionLogs>d__2::MoveNext()
+DA:34,3
+DA:35,3
+DA:36,3
+DA:37,3
+LF:8
+LH:8
+BRF:0
+BRH:0
+FNF:2
+FNH:2
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Controllers\AddressController.cs
+FN:25,Microsoft.AspNetCore.Mvc.IActionResult WAMServer.Controllers.AddressController::Put(WAMServer.Records.Bodies.AddressPatchBody)
+FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WAMServer.Controllers.AddressController::Put(WAMServer.Records.Bodies.AddressPatchBody)
+DA:26,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:50,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:58,0
+DA:59,0
+DA:60,0
+BRDA:31,14,0,0
+BRDA:31,27,0,0
+BRDA:31,35,0,0
+BRDA:31,43,0,0
+BRDA:31,51,0,0
+BRDA:31,14,1,0
+BRDA:31,27,1,0
+BRDA:31,35,1,0
+BRDA:31,43,1,0
+BRDA:31,51,1,0
+BRDA:31,69,0,0
+BRDA:31,69,1,0
+BRDA:37,151,0,0
+BRDA:37,151,1,0
+BRDA:42,244,0,0
+BRDA:42,244,1,0
+BRDA:48,296,0,0
+BRDA:48,296,1,0
+BRDA:53,344,0,0
+BRDA:53,344,1,0
+BRDA:58,21,0,0
+BRDA:58,21,1,0
+BRDA:58,33,0,0
+BRDA:58,33,1,0
+FN:16,System.Void WAMServer.Controllers.AddressController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.Address>,WAMServer.Interfaces.IRepository`1<WAMServer.Models.User>)
+FNDA:0,System.Void WAMServer.Controllers.AddressController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.Address>,WAMServer.Interfaces.IRepository`1<WAMServer.Models.User>)
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+LF:27
+LH:0
+BRF:24
+BRH:0
+FNF:2
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Controllers\ControlPCController.cs
+FN:29,System.Void WAMServer.Controllers.ControlPCController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.ControlPC>,WAMServer.Interfaces.IRepository`1<WAMServer.Models.User>)
+FNDA:0,System.Void WAMServer.Controllers.ControlPCController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.ControlPC>,WAMServer.Interfaces.IRepository`1<WAMServer.Models.User>)
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+FN:79,System.Boolean WAMServer.Controllers.ControlPCController/<>c::<CreateControlPC>b__6_1(System.Security.Claims.Claim)
+FNDA:0,System.Boolean WAMServer.Controllers.ControlPCController/<>c::<CreateControlPC>b__6_1(System.Security.Claims.Claim)
+DA:80,0
+FN:84,System.Boolean WAMServer.Controllers.ControlPCController/<>c::<CreateControlPC>b__6_0(System.Security.Claims.Claim)
+FNDA:0,System.Boolean WAMServer.Controllers.ControlPCController/<>c::<CreateControlPC>b__6_0(System.Security.Claims.Claim)
+DA:85,0
+FN:118,System.Boolean WAMServer.Controllers.ControlPCController/<>c__DisplayClass7_0::<UpdateControlPC>b__0(WAMServer.Models.ControlPC)
+FNDA:0,System.Boolean WAMServer.Controllers.ControlPCController/<>c__DisplayClass7_0::<UpdateControlPC>b__0(WAMServer.Models.ControlPC)
+DA:119,0
+FN:72,System.Void WAMServer.Controllers.ControlPCController/<CreateControlPC>d__6::MoveNext()
+FNDA:0,System.Void WAMServer.Controllers.ControlPCController/<CreateControlPC>d__6::MoveNext()
+DA:73,0
+DA:74,0
+DA:75,0
+DA:76,0
+DA:79,0
+DA:81,0
+DA:82,0
+DA:86,0
+DA:87,0
+DA:88,0
+DA:91,0
+DA:92,0
+DA:94,0
+DA:95,0
+DA:96,0
+BRDA:74,29,0,0
+BRDA:74,29,1,0
+BRDA:80,133,0,0
+BRDA:80,133,1,0
+BRDA:86,250,0,0
+BRDA:86,250,1,0
+FN:130,System.Void WAMServer.Controllers.ControlPCController/<DeleteControlPC>d__8::MoveNext()
+FNDA:0,System.Void WAMServer.Controllers.ControlPCController/<DeleteControlPC>d__8::MoveNext()
+DA:131,0
+DA:132,0
+DA:133,0
+DA:134,0
+DA:135,0
+DA:138,0
+DA:139,0
+DA:140,0
+BRDA:133,175,0,0
+BRDA:133,175,1,0
+FN:55,System.Void WAMServer.Controllers.ControlPCController/<GetControlPC>d__5::MoveNext()
+FNDA:0,System.Void WAMServer.Controllers.ControlPCController/<GetControlPC>d__5::MoveNext()
+DA:56,0
+DA:57,0
+DA:58,0
+DA:59,0
+DA:60,0
+DA:62,0
+DA:63,0
+BRDA:58,164,0,0
+BRDA:58,164,1,0
+FN:42,System.Void WAMServer.Controllers.ControlPCController/<GetControlPCs>d__4::MoveNext()
+FNDA:0,System.Void WAMServer.Controllers.ControlPCController/<GetControlPCs>d__4::MoveNext()
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+FN:106,System.Void WAMServer.Controllers.ControlPCController/<UpdateControlPC>d__7::MoveNext()
+FNDA:0,System.Void WAMServer.Controllers.ControlPCController/<UpdateControlPC>d__7::MoveNext()
+DA:107,0
+DA:108,0
+DA:109,0
+DA:110,0
+DA:113,0
+DA:114,0
+DA:115,0
+DA:116,0
+DA:120,0
+DA:121,0
+BRDA:108,63,0,0
+BRDA:108,63,1,0
+BRDA:108,97,0,0
+BRDA:108,97,1,0
+BRDA:114,282,0,0
+BRDA:114,282,1,0
+LF:52
+LH:0
+BRF:16
+BRH:0
+FNF:9
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Controllers\GroundWaterLogController.cs
+FN:26,System.Void WAMServer.Controllers.GroundWaterLogController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.GroundWaterLog>)
+FNDA:0,System.Void WAMServer.Controllers.GroundWaterLogController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.GroundWaterLog>)
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+FN:38,System.Void WAMServer.Controllers.GroundWaterLogController/<GetGroundWaterLogs>d__2::MoveNext()
+FNDA:0,System.Void WAMServer.Controllers.GroundWaterLogController/<GetGroundWaterLogs>d__2::MoveNext()
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+LF:9
+LH:0
+BRF:0
+BRH:0
+FNF:2
+FNH:0
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Controllers\LoginController.cs
+FN:49,Microsoft.AspNetCore.Mvc.ActionResult WAMServer.Controllers.LoginController::Login(WAMServer.Records.LoginBody)
+FNDA:0,Microsoft.AspNetCore.Mvc.ActionResult WAMServer.Controllers.LoginController::Login(WAMServer.Records.LoginBody)
+DA:50,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:58,0
+DA:60,0
+DA:61,0
+DA:62,0
+DA:63,0
+DA:64,0
+DA:66,0
+DA:67,0
+BRDA:53,29,0,0
+BRDA:53,29,1,0
+BRDA:60,56,0,0
+BRDA:60,56,1,0
+BRDA:60,71,0,0
+BRDA:60,71,1,0
+FN:75,System.String WAMServer.Controllers.LoginController::GenerateJSONWebToken(WAMServer.Models.User)
+FNDA:2,System.String WAMServer.Controllers.LoginController::GenerateJSONWebToken(WAMServer.Models.User)
+DA:76,2
+DA:77,2
+DA:78,2
+DA:79,2
+DA:80,2
+DA:81,2
+DA:82,2
+DA:83,2
+DA:84,2
+DA:85,2
+DA:86,2
+DA:87,2
+DA:89,2
+DA:90,2
+BRDA:77,23,0,1
+BRDA:77,23,1,2
+FN:99,WAMServer.Models.User WAMServer.Controllers.LoginController::AuthenticateUserReturnNullIfUnable(System.String,System.String)
+FNDA:2,WAMServer.Models.User WAMServer.Controllers.LoginController::AuthenticateUserReturnNullIfUnable(System.String,System.String)
+DA:100,2
+DA:101,2
+DA:103,2
+DA:104,2
+DA:105,1
+DA:106,1
+DA:108,1
+DA:109,1
+DA:110,1
+DA:111,1
+DA:113,1
+DA:114,2
+BRDA:104,22,0,1
+BRDA:104,22,1,1
+BRDA:108,31,0,0
+BRDA:108,31,1,1
+BRDA:108,43,0,0
+BRDA:108,43,1,1
+BRDA:108,61,0,1
+BRDA:108,61,1,1
+FN:35,System.Void WAMServer.Controllers.LoginController::.ctor(WAMServer.Interfaces.ILoginService,Microsoft.Extensions.Configuration.IConfiguration)
+FNDA:4,System.Void WAMServer.Controllers.LoginController::.ctor(WAMServer.Interfaces.ILoginService,Microsoft.Extensions.Configuration.IConfiguration)
+DA:36,4
+DA:37,4
+DA:38,4
+DA:39,4
+DA:40,4
+LF:44
+LH:31
+BRF:16
+BRH:8
+FNF:4
+FNH:3
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Controllers\RegisterController.cs
+FN:19,System.Void WAMServer.Controllers.RegisterController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.User>,WAMServer.Interfaces.IEmailService,Microsoft.Extensions.Configuration.IConfiguration,WAMServer.Interfaces.IRepository`1<WAMServer.Models.Address>)
+FNDA:9,System.Void WAMServer.Controllers.RegisterController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.User>,WAMServer.Interfaces.IEmailService,Microsoft.Extensions.Configuration.IConfiguration,WAMServer.Interfaces.IRepository`1<WAMServer.Models.Address>)
+DA:20,9
+DA:21,9
+DA:22,9
+DA:23,9
+DA:24,9
+DA:25,9
+DA:26,9
+FN:39,System.Boolean WAMServer.Controllers.RegisterController/<>c__DisplayClass5_0::<Post>b__0(WAMServer.Models.User)
+FNDA:4,System.Boolean WAMServer.Controllers.RegisterController/<>c__DisplayClass5_0::<Post>b__0(WAMServer.Models.User)
+DA:40,4
+FN:65,System.Boolean WAMServer.Controllers.RegisterController/<>c__DisplayClass5_0::<Post>b__1(WAMServer.Models.User)
+FNDA:1,System.Boolean WAMServer.Controllers.RegisterController/<>c__DisplayClass5_0::<Post>b__1(WAMServer.Models.User)
+DA:66,1
+FN:99,System.Boolean WAMServer.Controllers.RegisterController/<>c__DisplayClass6_0::<Confirm>b__0(WAMServer.Models.User)
+FNDA:1,System.Boolean WAMServer.Controllers.RegisterController/<>c__DisplayClass6_0::<Confirm>b__0(WAMServer.Models.User)
+DA:100,1
+FN:77,System.Void WAMServer.Controllers.RegisterController/<Confirm>d__6::MoveNext()
+FNDA:4,System.Void WAMServer.Controllers.RegisterController/<Confirm>d__6::MoveNext()
+DA:78,4
+DA:79,4
+DA:80,4
+DA:81,0
+DA:82,0
+DA:85,4
+DA:86,4
+DA:87,4
+DA:88,1
+DA:89,1
+DA:91,3
+DA:92,1
+DA:93,1
+DA:95,2
+DA:96,1
+DA:97,1
+DA:99,1
+DA:101,1
+DA:102,4
+BRDA:80,67,0,0
+BRDA:80,67,1,4
+BRDA:91,165,0,1
+BRDA:91,165,1,2
+BRDA:95,231,0,1
+BRDA:95,231,1,1
+FN:30,System.Void WAMServer.Controllers.RegisterController/<Post>d__5::MoveNext()
+FNDA:5,System.Void WAMServer.Controllers.RegisterController/<Post>d__5::MoveNext()
+DA:31,5
+DA:32,5
+DA:33,5
+DA:34,5
+DA:35,1
+DA:36,1
+DA:41,4
+DA:42,1
+DA:43,1
+DA:45,3
+DA:46,1
+DA:47,1
+DA:49,2
+DA:50,1
+DA:51,1
+DA:53,1
+DA:54,1
+DA:55,1
+DA:56,1
+DA:57,1
+DA:58,1
+DA:59,1
+DA:60,1
+DA:61,1
+DA:62,1
+DA:63,1
+DA:64,1
+DA:65,1
+DA:67,1
+DA:68,0
+DA:69,0
+DA:71,1
+DA:72,1
+DA:73,5
+BRDA:34,131,0,4
+BRDA:34,131,1,1
+BRDA:34,147,0,1
+BRDA:34,147,1,4
+BRDA:41,232,0,1
+BRDA:41,232,1,3
+BRDA:45,290,0,1
+BRDA:45,290,1,2
+BRDA:49,348,0,1
+BRDA:49,348,1,1
+BRDA:67,1007,0,0
+BRDA:67,1007,1,1
+LF:63
+LH:59
+BRF:18
+BRH:16
+FNF:6
+FNH:6
+end_of_record
+SF:C:\Users\Rens\Documents\GitHub\Project-D\server\Controllers\UsersController.cs
+FN:32,Microsoft.AspNetCore.Mvc.ActionResult`1<WAMServer.DTO.UserDTO> WAMServer.Controllers.UsersController::GetUser()
+FNDA:0,Microsoft.AspNetCore.Mvc.ActionResult`1<WAMServer.DTO.UserDTO> WAMServer.Controllers.UsersController::GetUser()
+DA:33,0
+DA:34,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:43,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:52,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:61,0
+DA:62,0
+DA:63,0
+DA:64,0
+DA:67,0
+DA:68,0
+BRDA:37,57,0,0
+BRDA:37,57,1,0
+BRDA:46,141,0,0
+BRDA:46,141,1,0
+BRDA:55,180,0,0
+BRDA:55,180,1,0
+BRDA:61,217,0,0
+BRDA:61,217,1,0
+FN:19,System.Void WAMServer.Controllers.UsersController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.User>,WAMServer.Interfaces.IRepository`1<WAMServer.Models.Address>)
+FNDA:0,System.Void WAMServer.Controllers.UsersController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.User>,WAMServer.Interfaces.IRepository`1<WAMServer.Models.Address>)
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+LF:24
+LH:0
+BRF:8
+BRH:0
+FNF:2
+FNH:0
+end_of_record
