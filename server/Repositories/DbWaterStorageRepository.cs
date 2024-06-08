@@ -26,12 +26,12 @@ namespace WAMServer.Repositories{
 
         public WaterStorage? Get(Guid id)
         {   
-            return _context.WaterStorage.Where(w => w.controlPCID == id).FirstOrDefault();
+            return _context.WaterStorage.Where(w => w.ControlPCID == id).FirstOrDefault();
         }
 
         public IEnumerable<WaterStorage?> GetAll(Func<WaterStorage, bool> predicate)
         {
-            return _context.WaterStorage.Where(predicate);
+            return _context.WaterStorage.Where(predicate).ToList();
 
         }
 

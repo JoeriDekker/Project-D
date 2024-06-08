@@ -213,26 +213,26 @@ namespace server.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("controlPCID")
+                    b.Property<Guid>("ControlPCID")
                         .HasColumnType("uuid");
 
-                    b.Property<string>("regio")
+                    b.Property<string>("Regio")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("state")
+                    b.Property<int>("StorageState")
                         .HasColumnType("integer");
 
-                    b.Property<string>("typeStorage")
+                    b.Property<string>("TypeStorage")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<decimal>("waterStored")
+                    b.Property<decimal>("WaterStored")
                         .HasColumnType("numeric");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("controlPCID");
+                    b.HasIndex("ControlPCID");
 
                     b.ToTable("WaterStorage");
                 });
@@ -269,7 +269,7 @@ namespace server.Migrations
                 {
                     b.HasOne("WAMServer.Models.ControlPC", "ControlPC")
                         .WithMany()
-                        .HasForeignKey("controlPCID")
+                        .HasForeignKey("ControlPCID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace server.Migrations
 {
     /// <inheritdoc />
-    public partial class updatewaterstorage : Migration
+    public partial class dbupdate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -113,18 +113,18 @@ namespace server.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    controlPCID = table.Column<Guid>(type: "uuid", nullable: false),
-                    typeStorage = table.Column<string>(type: "text", nullable: false),
-                    waterStored = table.Column<decimal>(type: "numeric", nullable: false),
-                    regio = table.Column<string>(type: "text", nullable: false),
-                    state = table.Column<int>(type: "integer", nullable: false)
+                    ControlPCID = table.Column<Guid>(type: "uuid", nullable: false),
+                    TypeStorage = table.Column<string>(type: "text", nullable: false),
+                    WaterStored = table.Column<decimal>(type: "numeric", nullable: false),
+                    Regio = table.Column<string>(type: "text", nullable: false),
+                    StorageState = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_WaterStorage", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_WaterStorage_ControlPC_controlPCID",
-                        column: x => x.controlPCID,
+                        name: "FK_WaterStorage_ControlPC_ControlPCID",
+                        column: x => x.ControlPCID,
                         principalTable: "ControlPC",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -173,9 +173,9 @@ namespace server.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_WaterStorage_controlPCID",
+                name: "IX_WaterStorage_ControlPCID",
                 table: "WaterStorage",
-                column: "controlPCID");
+                column: "ControlPCID");
         }
 
         /// <inheritdoc />

@@ -60,20 +60,16 @@ namespace WAMServer.Controllers{
             
             if (controlPC == null)
             {
-                Console.WriteLine("ControlPC not found");
                 return NotFound();
             }
 
-            var waterstorages = _waterStorageRepository.GetAll(w => w.controlPCID == controlPC.Id);
+            var waterstorages = _waterStorageRepository.GetAll(w => w.ControlPCID == controlPC.Id);
 
             if (waterstorages == null)
             {
-                Console.WriteLine("Waterstorage not found");
                 return NotFound();
             }
-            Console.WriteLine("====================================");
-            Console.WriteLine("Waterstorage found!");
-            Console.WriteLine("====================================");
+            
             return Ok(waterstorages);
 
         }

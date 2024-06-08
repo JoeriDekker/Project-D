@@ -12,17 +12,18 @@ namespace WAMServer.Models{
         public Guid Id { get; set; }
 
         [ForeignKey("ControlPC")]
-        public Guid controlPCID { get; set; }
+        public Guid ControlPCID { get; set; }
 
         [Required]
-        public string typeStorage { get; set; } = null!;
+        public string TypeStorage { get; set; } = null!;
 
         [Required]
-        public decimal waterStored { get; set; } = 0;
+        public decimal WaterStored { get; set; } = 0;
 
-        public string regio {get;set;} = null!;
+        public string Regio {get;set;} = null!;
 
-        public int state {get;set;} = 0;
+        // 1 == active, 2 == inactive, 3 == error
+        public int StorageState {get;set;} = 0;
 
         public ControlPC ControlPC {get;set;} = null!;
 
@@ -32,14 +33,14 @@ namespace WAMServer.Models{
         /// <param name="controlPCID">ID of the control PC associated with the log.</param>
         /// <param name="waterStored">amount of water stored.</param>
         /// <param name="regio">region of the water storage.</param>
-        public WaterStorage(Guid controlPCID, string typeStorage, decimal waterStored, string regio, int state)
+        public WaterStorage(Guid ControlPCID, string TypeStorage, decimal WaterStored, string Regio, int StorageState)
         {
             this.Id = Guid.NewGuid();
-            this.controlPCID = controlPCID;
-            this.typeStorage = typeStorage;
-            this.waterStored = waterStored;
-            this.regio = regio;
-            this.state = state;
+            this.ControlPCID = ControlPCID;
+            this.TypeStorage = TypeStorage;
+            this.WaterStored = WaterStored;
+            this.Regio = Regio;
+            this.StorageState = StorageState;
         }
 
     }

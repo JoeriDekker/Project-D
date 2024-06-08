@@ -8,21 +8,21 @@ import { WaterStorageState, UserResponse } from "./waterstorage.state";
 
 function WaterStorage() {
 
-    const WaterStorageEntry = ({ typeStorage, waterStored, state}: WaterStorageState) => {
+    const WaterStorageEntry = ({ typeStorage, waterStored, storageState}: WaterStorageState) => {
         let color = "";
 
-        if ( state == "1") {
+        if ( storageState == "1") {
             color = "text-green-500";
-            state = t("waterstorage.active");
+            storageState = t("waterstorage.active");
         }
-        else if ( state == "2"){
+        else if ( storageState == "2"){
             color = "text-yellow-500";
-            state = t("waterstorage.inactive");
+            storageState = t("waterstorage.inactive");
         }
             
         else{
             color = "text-red-500";
-            state = t("waterstorage.error");
+            storageState = t("waterstorage.error");
         }
 
 
@@ -35,7 +35,7 @@ function WaterStorage() {
                     <span className="font-bold text-lg text-gray-400">{waterStored} {t("waterstorage.liters")}</span>
                 </div>
                 <div className="mr-6 col-span-2 text-left">
-                    <span className={`${color} font-bold text-lg`}>{state}</span>
+                    <span className={`${color} font-bold text-lg`}>{storageState}</span>
                 </div>
             </div>
         );
@@ -106,7 +106,7 @@ function WaterStorage() {
                     key={index} 
                     typeStorage={log.typeStorage}
                     waterStored={log.waterStored}
-                    state={log.state}
+                    storageState={log.storageState}
                 />
             ))}
             </div>
