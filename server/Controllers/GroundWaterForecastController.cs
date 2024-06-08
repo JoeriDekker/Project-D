@@ -51,7 +51,6 @@ namespace WAMServer.Controllers
             // Get the house area of the user or default to 125
             decimal houseArea = user.ControlPC?.HouseArea ?? 125;
 
-            // TODO: Implement the forecast logic
             
 
             return Ok();
@@ -61,7 +60,7 @@ namespace WAMServer.Controllers
         public async Task<IActionResult> Test()
         {
             
-            return Ok(await _groundWaterForecastService.GetGroundWaterForecastForTomorrow(0,0,"Gouda"));
+            return Ok(await _groundWaterForecastService.GetGroundWaterForecastForTomorrow(0,0,"Rotterdam"));
         }
     }
 }

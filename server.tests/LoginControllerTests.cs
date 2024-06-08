@@ -2,7 +2,7 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.Extensions.Configuration;
 using Moq;
 using WAMServer.Controllers;
-using WAMServer.Interfaces;
+using WAMServer.Interfaces.Services;
 using WAMServer.Models;
 
 namespace WAMServer.Tests.Controllers

@@ -50,5 +50,8 @@ namespace WAMServer.Models
             this.ControlPCId = controlPCID;
             this.ControlPCSecret = controlPCSecret;
         }
+        public UserSetting()
+        {
+        }
     }
 }

@@ -26,6 +26,10 @@ namespace WAMServer.Models
                 .HasMany(u => u.ActionLogs)
                 .WithOne(a => a.User)
                 .HasForeignKey(a => a.userId);
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.Address)
+                .WithOne(a => a.User)
+                .HasForeignKey<Address>(a => a.UserId);
         }
 
         public DbSet<User> Users { get; set; } = null!;

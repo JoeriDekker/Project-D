@@ -103,7 +103,7 @@ namespace WAMServer
             services.AddTransient<IRepository<ActionLog>, DbActionLogRepository>();
             services.AddTransient<IRepository<ActionType>, DbActionTypeRepository>();
             services.AddTransient<IGroundWaterForecastService, GroundWaterForecastService>();
-            services.AddTransient<IWindService, WindService>();
+            services.AddTransient<IBuienradarService, BuienradarService>();
         }
 
         /// <summary>
