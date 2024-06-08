@@ -962,22 +962,22 @@ FNH:0
 end_of_record
 SF:/home/rens/school/Project-D/server/Validation/InputValidation.cs
 FN:7,System.Boolean WAMServer.Validation.InputValidation::IsValidEmail(System.String)
-FNDA:3,System.Boolean WAMServer.Validation.InputValidation::IsValidEmail(System.String)
-DA:8,3
-DA:9,3
-DA:10,3
-DA:11,3
-DA:12,2
-DA:13,2
-DA:15,1
-DA:16,1
-DA:17,3
-BRDA:9,8,0,3
-BRDA:9,8,1,0
-BRDA:9,28,0,3
-BRDA:11,44,0,2
-BRDA:11,44,1,1
-BRDA:9,28,1,1
+FNDA:10,System.Boolean WAMServer.Validation.InputValidation::IsValidEmail(System.String)
+DA:8,10
+DA:9,10
+DA:10,8
+DA:11,8
+DA:12,5
+DA:13,5
+DA:15,3
+DA:16,5
+DA:17,10
+BRDA:9,8,0,8
+BRDA:9,8,1,2
+BRDA:9,28,0,8
+BRDA:11,44,0,5
+BRDA:11,44,1,3
+BRDA:9,28,1,5
 FN:19,System.Boolean WAMServer.Validation.InputValidation::IsValidPassword(System.String)
 FNDA:2,System.Boolean WAMServer.Validation.InputValidation::IsValidPassword(System.String)
 DA:20,2
@@ -998,7 +998,7 @@ BRDA:21,28,1,1
 LF:18
 LH:17
 BRF:12
-BRH:10
+BRH:11
 FNF:2
 FNH:2
 end_of_record
@@ -1472,14 +1472,14 @@ FNH:0
 end_of_record
 SF:/home/rens/school/Project-D/server/Records/LoginBody.cs
 FN:2,System.String WAMServer.Records.LoginBody::get_Email()
-FNDA:0,System.String WAMServer.Records.LoginBody::get_Email()
-DA:3,0
+FNDA:30,System.String WAMServer.Records.LoginBody::get_Email()
+DA:3,30
 LF:1
-LH:0
+LH:1
 BRF:0
 BRH:0
 FNF:1
-FNH:0
+FNH:1
 end_of_record
 SF:/home/rens/school/Project-D/server/Records/Bodies/AddressPatchBody.cs
 FN:7,System.String WAMServer.Records.Bodies.AddressPatchBody::get_Street()
@@ -1701,29 +1701,29 @@ FNH:5
 end_of_record
 SF:/home/rens/school/Project-D/server/Models/User.cs
 FN:12,System.Guid WAMServer.Models.User::get_Id()
-FNDA:16,System.Guid WAMServer.Models.User::get_Id()
-DA:13,16
+FNDA:19,System.Guid WAMServer.Models.User::get_Id()
+DA:13,19
 FN:14,System.String WAMServer.Models.User::get_FirstName()
-FNDA:19,System.String WAMServer.Models.User::get_FirstName()
-DA:15,19
+FNDA:23,System.String WAMServer.Models.User::get_FirstName()
+DA:15,23
 FN:16,System.String WAMServer.Models.User::get_LastName()
-FNDA:19,System.String WAMServer.Models.User::get_LastName()
-DA:17,19
+FNDA:23,System.String WAMServer.Models.User::get_LastName()
+DA:17,23
 FN:18,System.String WAMServer.Models.User::get_Email()
-FNDA:29,System.String WAMServer.Models.User::get_Email()
-DA:19,29
+FNDA:34,System.String WAMServer.Models.User::get_Email()
+DA:19,34
 FN:20,System.String WAMServer.Models.User::get_Password()
-FNDA:24,System.String WAMServer.Models.User::get_Password()
-DA:21,24
+FNDA:30,System.String WAMServer.Models.User::get_Password()
+DA:21,30
 FN:22,System.Boolean WAMServer.Models.User::get_IsConfirmed()
-FNDA:20,System.Boolean WAMServer.Models.User::get_IsConfirmed()
-DA:23,20
+FNDA:27,System.Boolean WAMServer.Models.User::get_IsConfirmed()
+DA:23,27
 FN:25,System.Guid WAMServer.Models.User::get_ConfirmationToken()
-FNDA:13,System.Guid WAMServer.Models.User::get_ConfirmationToken()
-DA:26,13
+FNDA:15,System.Guid WAMServer.Models.User::get_ConfirmationToken()
+DA:26,15
 FN:27,System.Nullable`1<System.Guid> WAMServer.Models.User::get_AddressId()
-FNDA:8,System.Nullable`1<System.Guid> WAMServer.Models.User::get_AddressId()
-DA:28,8
+FNDA:10,System.Nullable`1<System.Guid> WAMServer.Models.User::get_AddressId()
+DA:28,10
 FN:28,WAMServer.Models.Address WAMServer.Models.User::get_Address()
 FNDA:0,WAMServer.Models.Address WAMServer.Models.User::get_Address()
 DA:29,0
@@ -1731,23 +1731,23 @@ FN:29,System.Collections.Generic.List`1<WAMServer.Models.ActionLog> WAMServer.Mo
 FNDA:0,System.Collections.Generic.List`1<WAMServer.Models.ActionLog> WAMServer.Models.User::get_ActionLogs()
 DA:30,0
 FN:39,System.Void WAMServer.Models.User::.ctor(System.String,System.String,System.String,System.String)
-FNDA:7,System.Void WAMServer.Models.User::.ctor(System.String,System.String,System.String,System.String)
-DA:40,7
-DA:41,7
-DA:42,7
+FNDA:9,System.Void WAMServer.Models.User::.ctor(System.String,System.String,System.String,System.String)
+DA:40,9
+DA:41,9
+DA:42,9
 FN:44,System.Void WAMServer.Models.User::.ctor(System.Guid,System.String,System.String,System.String,System.String,System.Boolean,System.Guid,System.Nullable`1<System.Guid>)
-FNDA:7,System.Void WAMServer.Models.User::.ctor(System.Guid,System.String,System.String,System.String,System.String,System.Boolean,System.Guid,System.Nullable`1<System.Guid>)
-DA:45,7
-DA:46,7
-DA:47,7
-DA:48,7
-DA:49,7
-DA:50,7
-DA:51,7
-DA:52,7
-DA:53,7
-DA:54,7
-DA:55,7
+FNDA:9,System.Void WAMServer.Models.User::.ctor(System.Guid,System.String,System.String,System.String,System.String,System.Boolean,System.Guid,System.Nullable`1<System.Guid>)
+DA:45,9
+DA:46,9
+DA:47,9
+DA:48,9
+DA:49,9
+DA:50,9
+DA:51,9
+DA:52,9
+DA:53,9
+DA:54,9
+DA:55,9
 FN:56,System.Void WAMServer.Models.User::.ctor()
 FNDA:5,System.Void WAMServer.Models.User::.ctor()
 DA:57,5
@@ -2070,79 +2070,79 @@ FNH:2
 end_of_record
 SF:/home/rens/school/Project-D/server/Controllers/LoginController.cs
 FN:49,Microsoft.AspNetCore.Mvc.ActionResult WAMServer.Controllers.LoginController::Login(WAMServer.Records.LoginBody)
-FNDA:0,Microsoft.AspNetCore.Mvc.ActionResult WAMServer.Controllers.LoginController::Login(WAMServer.Records.LoginBody)
-DA:50,0
-DA:52,0
-DA:53,0
-DA:54,0
-DA:55,0
-DA:58,0
-DA:60,0
-DA:61,0
-DA:62,0
-DA:63,0
-DA:64,0
-DA:66,0
-DA:67,0
-BRDA:53,29,0,0
-BRDA:53,29,1,0
-BRDA:60,56,0,0
-BRDA:60,56,1,0
-BRDA:60,71,0,0
-BRDA:60,71,1,0
+FNDA:7,Microsoft.AspNetCore.Mvc.ActionResult WAMServer.Controllers.LoginController::Login(WAMServer.Records.LoginBody)
+DA:50,7
+DA:52,7
+DA:53,7
+DA:54,4
+DA:55,4
+DA:58,3
+DA:60,3
+DA:61,1
+DA:62,1
+DA:63,1
+DA:64,1
+DA:66,3
+DA:67,7
+BRDA:53,29,0,4
+BRDA:53,29,1,3
+BRDA:60,56,0,2
+BRDA:60,56,1,1
+BRDA:60,71,0,1
+BRDA:60,71,1,3
 FN:75,System.String WAMServer.Controllers.LoginController::GenerateJSONWebToken(WAMServer.Models.User)
-FNDA:2,System.String WAMServer.Controllers.LoginController::GenerateJSONWebToken(WAMServer.Models.User)
-DA:76,2
-DA:77,2
-DA:78,2
-DA:79,2
-DA:80,2
-DA:81,2
-DA:82,2
-DA:83,2
-DA:84,2
-DA:85,2
-DA:86,2
-DA:87,2
-DA:89,2
-DA:90,2
-BRDA:77,23,0,1
-BRDA:77,23,1,2
+FNDA:3,System.String WAMServer.Controllers.LoginController::GenerateJSONWebToken(WAMServer.Models.User)
+DA:76,3
+DA:77,3
+DA:78,3
+DA:79,3
+DA:80,3
+DA:81,3
+DA:82,3
+DA:83,3
+DA:84,3
+DA:85,3
+DA:86,3
+DA:87,3
+DA:89,3
+DA:90,3
+BRDA:77,23,0,2
+BRDA:77,23,1,3
 FN:99,WAMServer.Models.User WAMServer.Controllers.LoginController::AuthenticateUserReturnNullIfUnable(System.String,System.String)
-FNDA:2,WAMServer.Models.User WAMServer.Controllers.LoginController::AuthenticateUserReturnNullIfUnable(System.String,System.String)
-DA:100,2
-DA:101,2
-DA:103,2
-DA:104,2
-DA:105,1
-DA:106,1
-DA:108,1
-DA:109,1
-DA:110,1
-DA:111,1
-DA:113,1
-DA:114,2
-BRDA:104,22,0,1
-BRDA:104,22,1,1
+FNDA:5,WAMServer.Models.User WAMServer.Controllers.LoginController::AuthenticateUserReturnNullIfUnable(System.String,System.String)
+DA:100,5
+DA:101,5
+DA:103,5
+DA:104,5
+DA:105,2
+DA:106,2
+DA:108,3
+DA:109,3
+DA:110,3
+DA:111,3
+DA:113,3
+DA:114,5
+BRDA:104,22,0,2
+BRDA:104,22,1,3
 BRDA:108,31,0,0
-BRDA:108,31,1,1
+BRDA:108,31,1,3
 BRDA:108,43,0,0
-BRDA:108,43,1,1
-BRDA:108,61,0,1
-BRDA:108,61,1,1
+BRDA:108,43,1,3
+BRDA:108,61,0,3
+BRDA:108,61,1,3
 FN:35,System.Void WAMServer.Controllers.LoginController::.ctor(WAMServer.Interfaces.ILoginService,Microsoft.Extensions.Configuration.IConfiguration)
-FNDA:4,System.Void WAMServer.Controllers.LoginController::.ctor(WAMServer.Interfaces.ILoginService,Microsoft.Extensions.Configuration.IConfiguration)
-DA:36,4
-DA:37,4
-DA:38,4
-DA:39,4
-DA:40,4
+FNDA:11,System.Void WAMServer.Controllers.LoginController::.ctor(WAMServer.Interfaces.ILoginService,Microsoft.Extensions.Configuration.IConfiguration)
+DA:36,11
+DA:37,11
+DA:38,11
+DA:39,11
+DA:40,11
 LF:44
-LH:31
+LH:44
 BRF:16
-BRH:8
+BRH:14
 FNF:4
-FNH:3
+FNH:4
 end_of_record
 SF:/home/rens/school/Project-D/server/Controllers/RegisterController.cs
 FN:19,System.Void WAMServer.Controllers.RegisterController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.User>,WAMServer.Interfaces.IEmailService,Microsoft.Extensions.Configuration.IConfiguration,WAMServer.Interfaces.IRepository`1<WAMServer.Models.Address>)
