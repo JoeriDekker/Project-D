@@ -1599,20 +1599,20 @@ FNH:0
 end_of_record
 SF:/home/rens/school/Project-D/server/Models/Address.cs
 FN:15,System.Guid WAMServer.Models.Address::get_Id()
-FNDA:1,System.Guid WAMServer.Models.Address::get_Id()
-DA:16,1
+FNDA:2,System.Guid WAMServer.Models.Address::get_Id()
+DA:16,2
 FN:19,System.String WAMServer.Models.Address::get_Street()
-FNDA:6,System.String WAMServer.Models.Address::get_Street()
-DA:20,6
+FNDA:9,System.String WAMServer.Models.Address::get_Street()
+DA:20,9
 FN:23,System.String WAMServer.Models.Address::get_HouseNumber()
-FNDA:6,System.String WAMServer.Models.Address::get_HouseNumber()
-DA:24,6
+FNDA:9,System.String WAMServer.Models.Address::get_HouseNumber()
+DA:24,9
 FN:27,System.String WAMServer.Models.Address::get_City()
-FNDA:6,System.String WAMServer.Models.Address::get_City()
-DA:28,6
+FNDA:9,System.String WAMServer.Models.Address::get_City()
+DA:28,9
 FN:31,System.String WAMServer.Models.Address::get_Zip()
-FNDA:6,System.String WAMServer.Models.Address::get_Zip()
-DA:32,6
+FNDA:9,System.String WAMServer.Models.Address::get_Zip()
+DA:32,9
 FN:35,System.Nullable`1<System.Guid> WAMServer.Models.Address::get_UserId()
 FNDA:2,System.Nullable`1<System.Guid> WAMServer.Models.Address::get_UserId()
 DA:36,2
@@ -1620,8 +1620,8 @@ FN:39,WAMServer.Models.User WAMServer.Models.Address::get_User()
 FNDA:0,WAMServer.Models.User WAMServer.Models.Address::get_User()
 DA:40,0
 FN:41,System.Void WAMServer.Models.Address::.ctor()
-FNDA:6,System.Void WAMServer.Models.Address::.ctor()
-DA:42,6
+FNDA:9,System.Void WAMServer.Models.Address::.ctor()
+DA:42,9
 FN:42,System.Void WAMServer.Models.Address::.ctor(WAMServer.Records.Bodies.AddressPatchBody)
 FNDA:1,System.Void WAMServer.Models.Address::.ctor(WAMServer.Records.Bodies.AddressPatchBody)
 DA:43,1
@@ -1701,32 +1701,32 @@ FNH:5
 end_of_record
 SF:/home/rens/school/Project-D/server/Models/User.cs
 FN:12,System.Guid WAMServer.Models.User::get_Id()
-FNDA:21,System.Guid WAMServer.Models.User::get_Id()
-DA:13,21
+FNDA:23,System.Guid WAMServer.Models.User::get_Id()
+DA:13,23
 FN:14,System.String WAMServer.Models.User::get_FirstName()
-FNDA:25,System.String WAMServer.Models.User::get_FirstName()
-DA:15,25
+FNDA:28,System.String WAMServer.Models.User::get_FirstName()
+DA:15,28
 FN:16,System.String WAMServer.Models.User::get_LastName()
-FNDA:25,System.String WAMServer.Models.User::get_LastName()
-DA:17,25
+FNDA:28,System.String WAMServer.Models.User::get_LastName()
+DA:17,28
 FN:18,System.String WAMServer.Models.User::get_Email()
-FNDA:36,System.String WAMServer.Models.User::get_Email()
-DA:19,36
+FNDA:38,System.String WAMServer.Models.User::get_Email()
+DA:19,38
 FN:20,System.String WAMServer.Models.User::get_Password()
-FNDA:32,System.String WAMServer.Models.User::get_Password()
-DA:21,32
+FNDA:33,System.String WAMServer.Models.User::get_Password()
+DA:21,33
 FN:22,System.Boolean WAMServer.Models.User::get_IsConfirmed()
-FNDA:29,System.Boolean WAMServer.Models.User::get_IsConfirmed()
-DA:23,29
+FNDA:30,System.Boolean WAMServer.Models.User::get_IsConfirmed()
+DA:23,30
 FN:25,System.Guid WAMServer.Models.User::get_ConfirmationToken()
 FNDA:16,System.Guid WAMServer.Models.User::get_ConfirmationToken()
 DA:26,16
 FN:27,System.Nullable`1<System.Guid> WAMServer.Models.User::get_AddressId()
-FNDA:11,System.Nullable`1<System.Guid> WAMServer.Models.User::get_AddressId()
-DA:28,11
+FNDA:14,System.Nullable`1<System.Guid> WAMServer.Models.User::get_AddressId()
+DA:28,14
 FN:28,WAMServer.Models.Address WAMServer.Models.User::get_Address()
-FNDA:0,WAMServer.Models.Address WAMServer.Models.User::get_Address()
-DA:29,0
+FNDA:2,WAMServer.Models.Address WAMServer.Models.User::get_Address()
+DA:29,2
 FN:29,System.Collections.Generic.List`1<WAMServer.Models.ActionLog> WAMServer.Models.User::get_ActionLogs()
 FNDA:0,System.Collections.Generic.List`1<WAMServer.Models.ActionLog> WAMServer.Models.User::get_ActionLogs()
 DA:30,0
@@ -1749,16 +1749,16 @@ DA:53,10
 DA:54,10
 DA:55,10
 FN:56,System.Void WAMServer.Models.User::.ctor()
-FNDA:5,System.Void WAMServer.Models.User::.ctor()
-DA:57,5
-DA:58,5
-DA:59,5
+FNDA:6,System.Void WAMServer.Models.User::.ctor()
+DA:57,6
+DA:58,6
+DA:59,6
 LF:27
-LH:25
+LH:26
 BRF:0
 BRH:0
 FNF:13
-FNH:11
+FNH:12
 end_of_record
 SF:/home/rens/school/Project-D/server/Models/UserSetting.cs
 FN:11,System.Guid WAMServer.Models.UserSetting::get_Id()
@@ -1844,40 +1844,40 @@ FNH:0
 end_of_record
 SF:/home/rens/school/Project-D/server/DTO/UserDTO.cs
 FN:6,System.Guid WAMServer.DTO.UserDTO::get_Id()
-FNDA:0,System.Guid WAMServer.DTO.UserDTO::get_Id()
-DA:7,0
+FNDA:1,System.Guid WAMServer.DTO.UserDTO::get_Id()
+DA:7,1
 FN:7,System.String WAMServer.DTO.UserDTO::get_FirstName()
-FNDA:0,System.String WAMServer.DTO.UserDTO::get_FirstName()
-DA:8,0
+FNDA:3,System.String WAMServer.DTO.UserDTO::get_FirstName()
+DA:8,3
 FN:8,System.String WAMServer.DTO.UserDTO::get_LastName()
-FNDA:0,System.String WAMServer.DTO.UserDTO::get_LastName()
-DA:9,0
+FNDA:3,System.String WAMServer.DTO.UserDTO::get_LastName()
+DA:9,3
 FN:9,System.String WAMServer.DTO.UserDTO::get_Email()
-FNDA:0,System.String WAMServer.DTO.UserDTO::get_Email()
-DA:10,0
+FNDA:2,System.String WAMServer.DTO.UserDTO::get_Email()
+DA:10,2
 FN:10,WAMServer.Models.Address WAMServer.DTO.UserDTO::get_Address()
-FNDA:0,WAMServer.Models.Address WAMServer.DTO.UserDTO::get_Address()
-DA:11,0
+FNDA:7,WAMServer.Models.Address WAMServer.DTO.UserDTO::get_Address()
+DA:11,7
 FN:12,System.Void WAMServer.DTO.UserDTO::.ctor(System.Guid,System.String,System.String,System.String,WAMServer.Models.Address)
-FNDA:0,System.Void WAMServer.DTO.UserDTO::.ctor(System.Guid,System.String,System.String,System.String,WAMServer.Models.Address)
-DA:13,0
-DA:14,0
-DA:15,0
-DA:16,0
-DA:17,0
-DA:18,0
-DA:19,0
-DA:20,0
+FNDA:1,System.Void WAMServer.DTO.UserDTO::.ctor(System.Guid,System.String,System.String,System.String,WAMServer.Models.Address)
+DA:13,1
+DA:14,1
+DA:15,1
+DA:16,1
+DA:17,1
+DA:18,1
+DA:19,1
+DA:20,1
 FN:21,System.Void WAMServer.DTO.UserDTO::.ctor(WAMServer.Models.User)
-FNDA:0,System.Void WAMServer.DTO.UserDTO::.ctor(WAMServer.Models.User)
-DA:22,0
-DA:23,0
+FNDA:1,System.Void WAMServer.DTO.UserDTO::.ctor(WAMServer.Models.User)
+DA:22,1
+DA:23,2
 LF:15
-LH:0
+LH:15
 BRF:0
 BRH:0
 FNF:7
-FNH:0
+FNH:7
 end_of_record
 SF:/home/rens/school/Project-D/server/Controllers/ActionLogController.cs
 FN:25,System.Void WAMServer.Controllers.ActionLogController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.ActionLog>)
@@ -2246,45 +2246,45 @@ FNH:6
 end_of_record
 SF:/home/rens/school/Project-D/server/Controllers/UsersController.cs
 FN:32,Microsoft.AspNetCore.Mvc.ActionResult`1<WAMServer.DTO.UserDTO> WAMServer.Controllers.UsersController::GetUser()
-FNDA:0,Microsoft.AspNetCore.Mvc.ActionResult`1<WAMServer.DTO.UserDTO> WAMServer.Controllers.UsersController::GetUser()
-DA:33,0
-DA:34,0
-DA:37,0
-DA:38,0
-DA:39,0
-DA:43,0
-DA:46,0
-DA:47,0
-DA:48,0
-DA:52,0
-DA:55,0
-DA:56,0
-DA:57,0
-DA:61,0
-DA:62,0
-DA:63,0
-DA:64,0
-DA:67,0
-DA:68,0
-BRDA:37,57,0,0
-BRDA:37,57,1,0
-BRDA:46,141,0,0
-BRDA:46,141,1,0
-BRDA:55,180,0,0
-BRDA:55,180,1,0
-BRDA:61,217,0,0
-BRDA:61,217,1,0
+FNDA:4,Microsoft.AspNetCore.Mvc.ActionResult`1<WAMServer.DTO.UserDTO> WAMServer.Controllers.UsersController::GetUser()
+DA:33,4
+DA:34,4
+DA:37,7
+DA:38,1
+DA:39,1
+DA:43,6
+DA:46,3
+DA:47,1
+DA:48,1
+DA:52,2
+DA:55,2
+DA:56,1
+DA:57,1
+DA:61,1
+DA:62,1
+DA:63,1
+DA:64,1
+DA:67,1
+DA:68,4
+BRDA:37,57,0,1
+BRDA:37,57,1,3
+BRDA:46,141,0,1
+BRDA:46,141,1,2
+BRDA:55,180,0,1
+BRDA:55,180,1,1
+BRDA:61,217,0,1
+BRDA:61,217,1,1
 FN:19,System.Void WAMServer.Controllers.UsersController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.User>,WAMServer.Interfaces.IRepository`1<WAMServer.Models.Address>)
-FNDA:0,System.Void WAMServer.Controllers.UsersController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.User>,WAMServer.Interfaces.IRepository`1<WAMServer.Models.Address>)
-DA:20,0
-DA:21,0
-DA:22,0
-DA:23,0
-DA:24,0
+FNDA:4,System.Void WAMServer.Controllers.UsersController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.User>,WAMServer.Interfaces.IRepository`1<WAMServer.Models.Address>)
+DA:20,4
+DA:21,4
+DA:22,4
+DA:23,4
+DA:24,4
 LF:24
-LH:0
+LH:24
 BRF:8
-BRH:0
+BRH:8
 FNF:2
-FNH:0
+FNH:2
 end_of_record
