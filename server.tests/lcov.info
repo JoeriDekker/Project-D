@@ -1022,57 +1022,73 @@ FNF:2
 FNH:0
 end_of_record
 SF:/home/rens/school/Project-D/server/Services/DefaultEmailService.cs
-FN:17,System.Void WAMServer.Services.DefaultEmailService::SendEmail(System.String,System.String,System.String)
+FN:16,System.Void WAMServer.Services.DefaultEmailService::SendEmail(System.String,System.String,System.String)
 FNDA:0,System.Void WAMServer.Services.DefaultEmailService::SendEmail(System.String,System.String,System.String)
-DA:18,0
+DA:17,0
+DA:19,0
 DA:20,0
 DA:21,0
 DA:22,0
-DA:23,0
 DA:24,0
 DA:27,0
-DA:28,0
 DA:29,0
+DA:30,0
+DA:31,0
 DA:32,0
 DA:33,0
 DA:34,0
 DA:35,0
-DA:36,0
+FN:37,System.Void WAMServer.Services.DefaultEmailService::ValidateSettings(System.String,System.Int32,System.String,System.String)
+FNDA:0,System.Void WAMServer.Services.DefaultEmailService::ValidateSettings(System.String,System.Int32,System.String,System.String)
+DA:38,0
 DA:39,0
 DA:40,0
 DA:41,0
-DA:42,0
-DA:43,0
 DA:44,0
 DA:45,0
 DA:46,0
 DA:49,0
 DA:50,0
 DA:51,0
-DA:52,0
 DA:53,0
-DA:54,0
-DA:55,0
+BRDA:39,9,0,0
+BRDA:39,9,1,0
+BRDA:44,29,0,0
+BRDA:44,29,1,0
+BRDA:49,49,0,0
+BRDA:49,49,1,0
+BRDA:49,63,0,0
+BRDA:49,63,1,0
+FN:55,MimeKit.MimeMessage WAMServer.Services.DefaultEmailService::CreateMailMessage(System.String,System.String,System.String,System.String)
+FNDA:0,MimeKit.MimeMessage WAMServer.Services.DefaultEmailService::CreateMailMessage(System.String,System.String,System.String,System.String)
 DA:56,0
-BRDA:22,45,0,0
-BRDA:22,45,1,0
-BRDA:27,67,0,0
-BRDA:27,67,1,0
-BRDA:34,121,0,0
-BRDA:34,121,1,0
-BRDA:34,136,0,0
-BRDA:34,136,1,0
-FN:11,System.Void WAMServer.Services.DefaultEmailService::.ctor(Microsoft.Extensions.Configuration.IConfiguration)
+DA:57,0
+DA:58,0
+DA:59,0
+DA:60,0
+DA:61,0
+DA:62,0
+DA:63,0
+DA:64,0
+DA:66,0
+DA:67,0
+FN:69,System.Void WAMServer.Services.DefaultEmailService::ConnectAndAuthenticate(MailKit.Net.Smtp.SmtpClient,System.String,System.Int32,System.String,System.String)
+FNDA:0,System.Void WAMServer.Services.DefaultEmailService::ConnectAndAuthenticate(MailKit.Net.Smtp.SmtpClient,System.String,System.Int32,System.String,System.String)
+DA:70,0
+DA:71,0
+DA:72,0
+DA:73,0
+FN:10,System.Void WAMServer.Services.DefaultEmailService::.ctor(Microsoft.Extensions.Configuration.IConfiguration)
 FNDA:0,System.Void WAMServer.Services.DefaultEmailService::.ctor(Microsoft.Extensions.Configuration.IConfiguration)
+DA:11,0
 DA:12,0
 DA:13,0
 DA:14,0
-DA:15,0
-LF:34
+LF:44
 LH:0
 BRF:8
 BRH:0
-FNF:2
+FNF:5
 FNH:0
 end_of_record
 SF:/home/rens/school/Project-D/server/Seeders/DBInitializer.cs
@@ -1467,31 +1483,31 @@ FNH:0
 end_of_record
 SF:/home/rens/school/Project-D/server/Records/Bodies/AddressPatchBody.cs
 FN:7,System.String WAMServer.Records.Bodies.AddressPatchBody::get_Street()
-FNDA:0,System.String WAMServer.Records.Bodies.AddressPatchBody::get_Street()
-DA:8,0
+FNDA:2,System.String WAMServer.Records.Bodies.AddressPatchBody::get_Street()
+DA:8,2
 FN:8,System.String WAMServer.Records.Bodies.AddressPatchBody::get_HouseNumber()
-FNDA:0,System.String WAMServer.Records.Bodies.AddressPatchBody::get_HouseNumber()
-DA:9,0
+FNDA:2,System.String WAMServer.Records.Bodies.AddressPatchBody::get_HouseNumber()
+DA:9,2
 FN:9,System.String WAMServer.Records.Bodies.AddressPatchBody::get_City()
-FNDA:0,System.String WAMServer.Records.Bodies.AddressPatchBody::get_City()
-DA:10,0
+FNDA:2,System.String WAMServer.Records.Bodies.AddressPatchBody::get_City()
+DA:10,2
 FN:10,System.String WAMServer.Records.Bodies.AddressPatchBody::get_Zip()
-FNDA:0,System.String WAMServer.Records.Bodies.AddressPatchBody::get_Zip()
-DA:11,0
+FNDA:1,System.String WAMServer.Records.Bodies.AddressPatchBody::get_Zip()
+DA:11,1
 FN:11,System.String WAMServer.Records.Bodies.AddressPatchBody::get_Password()
-FNDA:0,System.String WAMServer.Records.Bodies.AddressPatchBody::get_Password()
-DA:12,0
+FNDA:4,System.String WAMServer.Records.Bodies.AddressPatchBody::get_Password()
+DA:12,4
 LF:5
-LH:0
+LH:5
 BRF:0
 BRH:0
 FNF:5
-FNH:0
+FNH:5
 end_of_record
 SF:/home/rens/school/Project-D/server/Records/Bodies/ErrorBody.cs
 FN:2,System.String WAMServer.Records.Bodies.ErrorBody::get_Error()
-FNDA:8,System.String WAMServer.Records.Bodies.ErrorBody::get_Error()
-DA:3,8
+FNDA:16,System.String WAMServer.Records.Bodies.ErrorBody::get_Error()
+DA:3,16
 LF:1
 LH:1
 BRF:0
@@ -1586,17 +1602,17 @@ FN:15,System.Guid WAMServer.Models.Address::get_Id()
 FNDA:1,System.Guid WAMServer.Models.Address::get_Id()
 DA:16,1
 FN:19,System.String WAMServer.Models.Address::get_Street()
-FNDA:2,System.String WAMServer.Models.Address::get_Street()
-DA:20,2
+FNDA:4,System.String WAMServer.Models.Address::get_Street()
+DA:20,4
 FN:23,System.String WAMServer.Models.Address::get_HouseNumber()
-FNDA:2,System.String WAMServer.Models.Address::get_HouseNumber()
-DA:24,2
+FNDA:4,System.String WAMServer.Models.Address::get_HouseNumber()
+DA:24,4
 FN:27,System.String WAMServer.Models.Address::get_City()
-FNDA:2,System.String WAMServer.Models.Address::get_City()
-DA:28,2
+FNDA:4,System.String WAMServer.Models.Address::get_City()
+DA:28,4
 FN:31,System.String WAMServer.Models.Address::get_Zip()
-FNDA:2,System.String WAMServer.Models.Address::get_Zip()
-DA:32,2
+FNDA:4,System.String WAMServer.Models.Address::get_Zip()
+DA:32,4
 FN:35,System.Nullable`1<System.Guid> WAMServer.Models.Address::get_UserId()
 FNDA:1,System.Nullable`1<System.Guid> WAMServer.Models.Address::get_UserId()
 DA:36,1
@@ -1607,20 +1623,20 @@ FN:41,System.Void WAMServer.Models.Address::.ctor()
 FNDA:3,System.Void WAMServer.Models.Address::.ctor()
 DA:42,3
 FN:42,System.Void WAMServer.Models.Address::.ctor(WAMServer.Records.Bodies.AddressPatchBody)
-FNDA:0,System.Void WAMServer.Models.Address::.ctor(WAMServer.Records.Bodies.AddressPatchBody)
-DA:43,0
-DA:44,0
-DA:45,0
-DA:46,0
-DA:47,0
-DA:48,0
-DA:49,0
+FNDA:1,System.Void WAMServer.Models.Address::.ctor(WAMServer.Records.Bodies.AddressPatchBody)
+DA:43,1
+DA:44,1
+DA:45,1
+DA:46,1
+DA:47,1
+DA:48,1
+DA:49,1
 LF:15
-LH:7
+LH:14
 BRF:0
 BRH:0
 FNF:9
-FNH:7
+FNH:8
 end_of_record
 SF:/home/rens/school/Project-D/server/Models/ControlPC.cs
 FN:11,System.Guid WAMServer.Models.ControlPC::get_Id()
@@ -1656,52 +1672,52 @@ FNH:6
 end_of_record
 SF:/home/rens/school/Project-D/server/Models/GroundWaterLog.cs
 FN:11,System.Guid WAMServer.Models.GroundWaterLog::get_Id()
-FNDA:0,System.Guid WAMServer.Models.GroundWaterLog::get_Id()
-DA:12,0
+FNDA:3,System.Guid WAMServer.Models.GroundWaterLog::get_Id()
+DA:12,3
 FN:13,System.String WAMServer.Models.GroundWaterLog::get_controlPCID()
-FNDA:0,System.String WAMServer.Models.GroundWaterLog::get_controlPCID()
-DA:14,0
+FNDA:6,System.String WAMServer.Models.GroundWaterLog::get_controlPCID()
+DA:14,6
 FN:16,System.DateTime WAMServer.Models.GroundWaterLog::get_date()
-FNDA:0,System.DateTime WAMServer.Models.GroundWaterLog::get_date()
-DA:17,0
+FNDA:3,System.DateTime WAMServer.Models.GroundWaterLog::get_date()
+DA:17,3
 FN:18,System.Decimal WAMServer.Models.GroundWaterLog::get_level()
-FNDA:0,System.Decimal WAMServer.Models.GroundWaterLog::get_level()
-DA:19,0
+FNDA:6,System.Decimal WAMServer.Models.GroundWaterLog::get_level()
+DA:19,6
 FN:26,System.Void WAMServer.Models.GroundWaterLog::.ctor(System.String,System.DateTime,System.Decimal)
-FNDA:0,System.Void WAMServer.Models.GroundWaterLog::.ctor(System.String,System.DateTime,System.Decimal)
-DA:27,0
-DA:28,0
-DA:29,0
-DA:30,0
-DA:31,0
-DA:32,0
-DA:33,0
+FNDA:3,System.Void WAMServer.Models.GroundWaterLog::.ctor(System.String,System.DateTime,System.Decimal)
+DA:27,3
+DA:28,3
+DA:29,3
+DA:30,3
+DA:31,3
+DA:32,3
+DA:33,3
 LF:11
-LH:0
+LH:11
 BRF:0
 BRH:0
 FNF:5
-FNH:0
+FNH:5
 end_of_record
 SF:/home/rens/school/Project-D/server/Models/User.cs
 FN:12,System.Guid WAMServer.Models.User::get_Id()
 FNDA:16,System.Guid WAMServer.Models.User::get_Id()
 DA:13,16
 FN:14,System.String WAMServer.Models.User::get_FirstName()
-FNDA:17,System.String WAMServer.Models.User::get_FirstName()
-DA:15,17
+FNDA:19,System.String WAMServer.Models.User::get_FirstName()
+DA:15,19
 FN:16,System.String WAMServer.Models.User::get_LastName()
-FNDA:17,System.String WAMServer.Models.User::get_LastName()
-DA:17,17
+FNDA:19,System.String WAMServer.Models.User::get_LastName()
+DA:17,19
 FN:18,System.String WAMServer.Models.User::get_Email()
-FNDA:27,System.String WAMServer.Models.User::get_Email()
-DA:19,27
+FNDA:29,System.String WAMServer.Models.User::get_Email()
+DA:19,29
 FN:20,System.String WAMServer.Models.User::get_Password()
-FNDA:18,System.String WAMServer.Models.User::get_Password()
-DA:21,18
+FNDA:24,System.String WAMServer.Models.User::get_Password()
+DA:21,24
 FN:22,System.Boolean WAMServer.Models.User::get_IsConfirmed()
-FNDA:18,System.Boolean WAMServer.Models.User::get_IsConfirmed()
-DA:23,18
+FNDA:20,System.Boolean WAMServer.Models.User::get_IsConfirmed()
+DA:23,20
 FN:25,System.Guid WAMServer.Models.User::get_ConfirmationToken()
 FNDA:13,System.Guid WAMServer.Models.User::get_ConfirmationToken()
 DA:26,13
@@ -1733,10 +1749,10 @@ DA:53,7
 DA:54,7
 DA:55,7
 FN:56,System.Void WAMServer.Models.User::.ctor()
-FNDA:3,System.Void WAMServer.Models.User::.ctor()
-DA:57,3
-DA:58,3
-DA:59,3
+FNDA:5,System.Void WAMServer.Models.User::.ctor()
+DA:57,5
+DA:58,5
+DA:59,5
 LF:27
 LH:25
 BRF:0
@@ -1885,64 +1901,49 @@ FNH:2
 end_of_record
 SF:/home/rens/school/Project-D/server/Controllers/AddressController.cs
 FN:25,Microsoft.AspNetCore.Mvc.IActionResult WAMServer.Controllers.AddressController::Put(WAMServer.Records.Bodies.AddressPatchBody)
-FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WAMServer.Controllers.AddressController::Put(WAMServer.Records.Bodies.AddressPatchBody)
-DA:26,0
-DA:31,0
-DA:32,0
-DA:33,0
-DA:36,0
-DA:37,0
-DA:38,0
-DA:39,0
-DA:41,0
-DA:42,0
-DA:43,0
-DA:44,0
-DA:47,0
-DA:48,0
-DA:49,0
-DA:50,0
-DA:53,0
-DA:54,0
-DA:55,0
-DA:58,0
-DA:59,0
-DA:60,0
-BRDA:31,14,0,0
-BRDA:31,27,0,0
-BRDA:31,35,0,0
-BRDA:31,43,0,0
-BRDA:31,51,0,0
-BRDA:31,14,1,0
-BRDA:31,27,1,0
-BRDA:31,35,1,0
-BRDA:31,43,1,0
-BRDA:31,51,1,0
-BRDA:31,69,0,0
-BRDA:31,69,1,0
-BRDA:37,151,0,0
-BRDA:37,151,1,0
-BRDA:42,244,0,0
-BRDA:42,244,1,0
-BRDA:48,296,0,0
-BRDA:48,296,1,0
-BRDA:53,344,0,0
-BRDA:53,344,1,0
-BRDA:58,21,0,0
-BRDA:58,21,1,0
+FNDA:5,Microsoft.AspNetCore.Mvc.IActionResult WAMServer.Controllers.AddressController::Put(WAMServer.Records.Bodies.AddressPatchBody)
+DA:26,5
+DA:30,5
+DA:31,9
+DA:32,1
+DA:33,1
+DA:35,8
+DA:36,4
+DA:37,1
+DA:38,1
+DA:41,3
+DA:42,3
+DA:43,1
+DA:44,1
+DA:47,2
+DA:48,1
+DA:49,1
+DA:52,1
+DA:53,1
+DA:54,5
+BRDA:31,63,0,1
+BRDA:31,63,1,4
+BRDA:36,156,0,1
+BRDA:36,156,1,3
+BRDA:42,208,0,1
+BRDA:42,208,1,2
+BRDA:47,256,0,1
+BRDA:47,256,1,1
+BRDA:52,21,0,0
+BRDA:52,21,1,0
 FN:16,System.Void WAMServer.Controllers.AddressController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.Address>,WAMServer.Interfaces.IRepository`1<WAMServer.Models.User>)
-FNDA:0,System.Void WAMServer.Controllers.AddressController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.Address>,WAMServer.Interfaces.IRepository`1<WAMServer.Models.User>)
-DA:17,0
-DA:18,0
-DA:19,0
-DA:20,0
-DA:21,0
-LF:27
-LH:0
-BRF:22
-BRH:0
+FNDA:5,System.Void WAMServer.Controllers.AddressController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.Address>,WAMServer.Interfaces.IRepository`1<WAMServer.Models.User>)
+DA:17,5
+DA:18,5
+DA:19,5
+DA:20,5
+DA:21,5
+LF:24
+LH:24
+BRF:10
+BRH:8
 FNF:2
-FNH:0
+FNH:2
 end_of_record
 SF:/home/rens/school/Project-D/server/Controllers/ControlPCController.cs
 FN:29,System.Void WAMServer.Controllers.ControlPCController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.ControlPC>,WAMServer.Interfaces.IRepository`1<WAMServer.Models.User>,WAMServer.Interfaces.IControlPC`1<WAMServer.Models.ControlPC>)
@@ -2049,24 +2050,23 @@ FNH:9
 end_of_record
 SF:/home/rens/school/Project-D/server/Controllers/GroundWaterLogController.cs
 FN:26,System.Void WAMServer.Controllers.GroundWaterLogController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.GroundWaterLog>)
-FNDA:0,System.Void WAMServer.Controllers.GroundWaterLogController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.GroundWaterLog>)
-DA:27,0
-DA:28,0
-DA:29,0
-DA:30,0
+FNDA:2,System.Void WAMServer.Controllers.GroundWaterLogController::.ctor(WAMServer.Interfaces.IRepository`1<WAMServer.Models.GroundWaterLog>)
+DA:27,2
+DA:28,2
+DA:29,2
+DA:30,2
 FN:38,System.Void WAMServer.Controllers.GroundWaterLogController/<GetGroundWaterLogs>d__2::MoveNext()
-FNDA:0,System.Void WAMServer.Controllers.GroundWaterLogController/<GetGroundWaterLogs>d__2::MoveNext()
-DA:39,0
-DA:40,0
-DA:41,0
-DA:42,0
-DA:43,0
-LF:9
-LH:0
+FNDA:2,System.Void WAMServer.Controllers.GroundWaterLogController/<GetGroundWaterLogs>d__2::MoveNext()
+DA:39,2
+DA:40,2
+DA:41,2
+DA:42,2
+LF:8
+LH:8
 BRF:0
 BRH:0
 FNF:2
-FNH:0
+FNH:2
 end_of_record
 SF:/home/rens/school/Project-D/server/Controllers/LoginController.cs
 FN:49,Microsoft.AspNetCore.Mvc.ActionResult WAMServer.Controllers.LoginController::Login(WAMServer.Records.LoginBody)

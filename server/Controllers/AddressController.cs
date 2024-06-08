@@ -27,12 +27,6 @@ namespace WAMServer.Controllers
             const string passincorrectmsg = "Errors.incorrectpassword";
             const string unauthorizedmsg = "Errors.unauth";
 
-            // Check if the body is null or if any of the fields are null. If so, it is probably an unwanted request. Return a bad request.
-            if (addressPatchBody == null || string.IsNullOrEmpty(addressPatchBody.Password) || addressPatchBody.Street == null || addressPatchBody.HouseNumber == null || addressPatchBody.City == null || addressPatchBody.Zip == null)
-            {
-                return BadRequest(new ErrorBody("Missing fields, incident reported."));
-            }
-
             var currentUser = HttpContext.User;
             if (!currentUser.HasClaim(c => c.Type == "Id"))
             {
@@ -56,7 +50,7 @@ namespace WAMServer.Controllers
             }
 
             _addressRepository.UpdateAsync(new Address(addressPatchBody), _ => _.UserId == id);
-            return Ok();
+            return NoContent();
         }
     }
 }
