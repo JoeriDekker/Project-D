@@ -35,7 +35,7 @@ namespace WAMServer.Seeders
                     {
                         IsConfirmed = true
                     };
-                    var controlPC = new ControlPC(user.Id, "geheimPC", "123", "Uhhhhwaarvoorstaatdit?");
+                    
                     address.UserId = user.Id;
                     context.Users.Add(user);
                     context.SaveChanges();
@@ -45,6 +45,11 @@ namespace WAMServer.Seeders
                     {
                         editUser.AddressId = address.Id;
                     }
+                    context.SaveChanges();
+
+                    var controlPC = new ControlPC(user.Id, "geheimPC", "123", "Uhhhhwaarvoorstaatdit?");
+
+                    context.ControlPC.Add(controlPC);
                     context.SaveChanges();
 
                     // add ground water logs
@@ -87,6 +92,16 @@ namespace WAMServer.Seeders
 
                     context.ActionLog.AddRange(actionlogs);
 
+                    context.SaveChanges();
+
+                    // Add water storage
+                    var WaterStorageList = new List<WaterStorage>(){
+                        new (controlPC.Id, "Rain Barrel" , 56, "Kaden buurt", 1),
+                        new (controlPC.Id, "Graywater Tank" , 243, "Kaden buurt", 2),
+                        new (controlPC.Id, "Street Tank" , 556, "Kaden buurt", 3)
+                    };
+
+                    context.WaterStorage.AddRange(WaterStorageList);
                     context.SaveChanges();
                 }
             }
