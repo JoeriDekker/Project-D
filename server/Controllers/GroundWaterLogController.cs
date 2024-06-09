@@ -38,7 +38,6 @@ namespace WAMServer.Controllers
         public async Task<ActionResult<IEnumerable<GroundWaterLog>>> GetGroundWaterLogs()
         {
             var groundwaterlogs = await _groundWaterLogRepository.GetAllAsync();
-            Console.WriteLine(groundwaterlogs);
             return Ok(groundwaterlogs);
         }
 

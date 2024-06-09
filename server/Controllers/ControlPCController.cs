@@ -20,17 +20,18 @@ namespace WAMServer.Controllers
         private readonly IRepository<ControlPC> _controlPCRepository;
         private readonly IRepository<User> _userRepository;
 
-        private readonly IControlPC<ControlPC> _controlPCRepository2;
+        private readonly IControlPC<ControlPC> _controlPCService;
 
         /// <summary>
         /// The constructor of the ControlPC controller.
         /// </summary>
         /// <param name="controlPCRepository">The ControlPC repository.</param>
         /// <param name="userRepository">The user repository.</param>
-        public ControlPCController(IRepository<ControlPC> controlPCRepository, IRepository<User> userRepository)
+        public ControlPCController(IRepository<ControlPC> controlPCRepository, IRepository<User> userRepository, IControlPC<ControlPC> controlPCService)
         {
             _controlPCRepository = controlPCRepository;
             _userRepository = userRepository;
+            _controlPCService = controlPCService;
         }
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace WAMServer.Controllers
         [Authorize]
         public async Task<ActionResult<ControlPC>> GetControlPC(Guid id)
         {
-            var controlPC = await _controlPCRepository2.GetAsync(id);
+            var controlPC = await _controlPCService.GetAsync(id);
             if (controlPC == null)
             {
                 return NotFound();
@@ -90,8 +91,13 @@ namespace WAMServer.Controllers
 
             controlPC.userId = id;
             controlPC.Id = Guid.NewGuid();
-
-            await _controlPCRepository2.CreateAsync(controlPC);
+            try
+            {
+                await _controlPCService.CreateAsync(controlPC);
+            } catch (Exception e)
+            {
+                return StatusCode(500, new { message = e.Message });
+            }
             return CreatedAtAction(nameof(GetControlPC), new { id = controlPC.Id }, controlPC);
         }
 
@@ -110,13 +116,19 @@ namespace WAMServer.Controllers
                 return BadRequest(new { message = "Data mismatch." });
             }
 
-            var existingControlPC = await _controlPCRepository2.GetAsync(id);
+            var existingControlPC = await _controlPCService.GetAsync(id);
             if (existingControlPC == null)
             {
                 return NotFound();
             }
 
-            await _controlPCRepository.UpdateAsync(controlPC, _ => _.Id == id);
+            try
+            {
+                await _controlPCRepository.UpdateAsync(controlPC, _ => _.Id == id);
+            } catch (Exception e)
+            {
+                return StatusCode(500, new { message = e.Message });
+            }
             return NoContent();
         }
 
@@ -129,7 +141,7 @@ namespace WAMServer.Controllers
         [Authorize]
         public async Task<IActionResult> DeleteControlPC(Guid id)
         {
-            var controlPC = await _controlPCRepository2.GetAsync(id);
+            var controlPC = await _controlPCService.GetAsync(id);
             if (controlPC == null)
             {
                 return NotFound();

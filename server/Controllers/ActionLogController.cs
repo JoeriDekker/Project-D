@@ -30,10 +30,9 @@ namespace WAMServer.Controllers{
 
         [HttpGet]
         [Authorize]
-        public async Task<ActionResult<IEnumerable<ActionLog>>> GetActionLogs()
+        public async Task<ActionResult<List<ActionLog>>> GetActionLogs()
         {
             var actionlogs = await _actionRepository.GetAllAsync();
-            Console.WriteLine(actionlogs);
             return Ok(actionlogs);
         }
 
