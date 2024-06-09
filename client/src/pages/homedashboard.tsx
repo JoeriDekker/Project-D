@@ -4,6 +4,7 @@ import Modal from "../components/Modal/Modal";
 import Navbar from '../components/navbar/navbar'
 import Logboek from "../components/logboek/waterpeillogboek";
 import WaterLevelVisual from "../components/waterlevelvisual/waterlevelvisual"
+import { WaterLevel } from "../components/waterlevelvisual/waterlevelvisual.state";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -14,7 +15,10 @@ interface HomeProps {
     setWelcomeState: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+
 const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) => {
+    const [currentLevel, setCurrentLevel] = useState<WaterLevel | null>(null);
+
     /*
     This data is real data from the openweatherAPI.
     TODO: implement that it gets the forecast of today at X time
@@ -50,7 +54,7 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
         "winddirectiondegrees": 255
     }
 
-    const waterlevel = -2.15;
+    const waterlevel = (currentLevel?.level) ? parseFloat(currentLevel.level) : null; // check if the value is not null otherwise show the level
     const waterlevel_perc = 65;
 
     const paalkop = -2.05;
@@ -65,7 +69,20 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
             return;
         }
 
-        if (waterlevel < ideal) {
+        if(!currentLevel) {
+            return toast.error("Er is iets mis gegaan, probeer het later opnieuw", {
+                position: "top-center",
+                autoClose: false,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            })
+        }
+
+        if (!waterlevel || waterlevel < ideal) {
 
             return toast.error("Je waterpeil is laag!", {
                 position: "top-center",
@@ -120,7 +137,7 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
 
                     {/* water level visual */}
                     <div className="bg-gray-800 m-2 p-4 rounded-xl">
-                        <WaterLevelVisual />
+                        <WaterLevelVisual currentLevel={currentLevel} setCurrentLevel={setCurrentLevel}/>
                     </div>
 
                     <div className="bg-gray-100 m-2 p-4 rounded-xl">
