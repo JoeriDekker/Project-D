@@ -14,6 +14,11 @@ namespace WAMServer.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<WaterStorage>()
+                .Property(w => w.Id)
+                .ValueGeneratedOnAdd();
+
             modelBuilder.Entity<ActionType>()
                 .Property(a => a.Id)
                 .ValueGeneratedOnAdd();
@@ -36,5 +41,6 @@ namespace WAMServer.Models
         public DbSet<ActionLog> ActionLog { get; set; } = null!;
         public DbSet<ActionType> ActionType { get; set; } = null!;
         public DbSet<UserSetting> UserSetting { get; set; } = null!;
+        public DbSet<WaterStorage> WaterStorage { get; set; } = null!;
     }
 }

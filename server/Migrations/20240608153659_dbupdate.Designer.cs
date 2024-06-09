@@ -12,8 +12,8 @@ using WAMServer.Models;
 namespace server.Migrations
 {
     [DbContext(typeof(WamDBContext))]
-    [Migration("20240527120349_dbbroken")]
-    partial class dbbroken
+    [Migration("20240608153659_dbupdate")]
+    partial class dbupdate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -210,6 +210,36 @@ namespace server.Migrations
                     b.ToTable("UserSetting");
                 });
 
+            modelBuilder.Entity("WAMServer.Models.WaterStorage", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ControlPCID")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Regio")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("StorageState")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("TypeStorage")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<decimal>("WaterStored")
+                        .HasColumnType("numeric");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ControlPCID");
+
+                    b.ToTable("WaterStorage");
+                });
+
             modelBuilder.Entity("WAMServer.Models.ActionLog", b =>
                 {
                     b.HasOne("WAMServer.Models.ActionType", "ActionType")
@@ -236,6 +266,17 @@ namespace server.Migrations
                         .HasForeignKey("WAMServer.Models.User", "AddressId");
 
                     b.Navigation("Address");
+                });
+
+            modelBuilder.Entity("WAMServer.Models.WaterStorage", b =>
+                {
+                    b.HasOne("WAMServer.Models.ControlPC", "ControlPC")
+                        .WithMany()
+                        .HasForeignKey("ControlPCID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ControlPC");
                 });
 
             modelBuilder.Entity("WAMServer.Models.ActionType", b =>

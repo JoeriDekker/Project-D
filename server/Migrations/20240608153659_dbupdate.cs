@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace server.Migrations
 {
     /// <inheritdoc />
-    public partial class dbbroken : Migration
+    public partial class dbupdate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -109,6 +109,28 @@ namespace server.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "WaterStorage",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    ControlPCID = table.Column<Guid>(type: "uuid", nullable: false),
+                    TypeStorage = table.Column<string>(type: "text", nullable: false),
+                    WaterStored = table.Column<decimal>(type: "numeric", nullable: false),
+                    Regio = table.Column<string>(type: "text", nullable: false),
+                    StorageState = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_WaterStorage", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_WaterStorage_ControlPC_ControlPCID",
+                        column: x => x.ControlPCID,
+                        principalTable: "ControlPC",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ActionLog",
                 columns: table => new
                 {
@@ -149,6 +171,11 @@ namespace server.Migrations
                 table: "Users",
                 column: "AddressId",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_WaterStorage_ControlPCID",
+                table: "WaterStorage",
+                column: "ControlPCID");
         }
 
         /// <inheritdoc />
@@ -158,19 +185,22 @@ namespace server.Migrations
                 name: "ActionLog");
 
             migrationBuilder.DropTable(
-                name: "ControlPC");
-
-            migrationBuilder.DropTable(
                 name: "GroundWaterLog");
 
             migrationBuilder.DropTable(
                 name: "UserSetting");
 
             migrationBuilder.DropTable(
+                name: "WaterStorage");
+
+            migrationBuilder.DropTable(
                 name: "ActionType");
 
             migrationBuilder.DropTable(
                 name: "Users");
+
+            migrationBuilder.DropTable(
+                name: "ControlPC");
 
             migrationBuilder.DropTable(
                 name: "Addresses");
