@@ -13,7 +13,7 @@ function LogboekScreen() {
         <>
             <div className="bg-backgroundCol w-screen h-screen py-5 flex dir-row">
                 <Navbar />
-                <div className="bg-white w-full h-full rounded-xl mr-5">
+                <div className="ml-80 bg-white w-full h-full rounded-xl mr-5">
                     <div className="container mx-auto ">
                         <h1 className="text-3xl font-bold flex justify-center ">
                             Logboek

@@ -126,7 +126,7 @@ function AnyPage() {
     return (
         <div className="w-screen h-screen py-5 flex dir-row max-w-screen bg-backgroundCol overflow-x-hidden">
             <Navbar />
-            <div className="space-y-10 bg-white w-full h-fit min-h-full rounded-xl mr-5 p-5 flex flex-col">
+            <div className="ml-80 space-y-10 bg-white w-full h-fit min-h-full rounded-xl mr-5 p-5 flex flex-col">
 
                 {/* Account setting section  */}
                 <form onSubmit={addressFormik.handleSubmit}>

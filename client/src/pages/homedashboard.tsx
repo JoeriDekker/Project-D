@@ -115,7 +115,7 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
                 theme="light"
             />
             {/* grid setup */}
-            <div className="bg-white w-full h-full rounded-xl mr-5 pb-4">
+            <div className="ml-80 bg-white w-full h-full rounded-xl mr-5 pb-4">
                 <div className="grid grid-cols-2 grid-rows-2 h-[100%] m-2">
 
                     {/* water level visual */}
@@ -135,12 +135,12 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
 
                     </div>
                 </div>
-            <Modal
-                header="Oh nee! Je waterpeil is laag🤯"
-                text="Als u geen paalrot wil hebben moet u uw waterpeil verhogen door op de knop op de home pagina te drukken. Als u dit niet doet, ligt de verantwoordelijkheid bij u."
-                buttonText="Begrepen!"
-                hiddenState={modalState}
-            />
+                <Modal
+                    header="Oh nee! Je waterpeil is laag🤯"
+                    text="Als u geen paalrot wil hebben moet u uw waterpeil verhogen door op de knop op de home pagina te drukken. Als u dit niet doet, ligt de verantwoordelijkheid bij u."
+                    buttonText="Begrepen!"
+                    hiddenState={modalState}
+                />
             </div>
         </div>
     );
