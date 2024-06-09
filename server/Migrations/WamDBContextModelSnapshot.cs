@@ -213,6 +213,36 @@ namespace server.Migrations
                     b.ToTable("UserSetting");
                 });
 
+            modelBuilder.Entity("WAMServer.Models.WaterStorage", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ControlPCID")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Regio")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("StorageState")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("TypeStorage")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<decimal>("WaterStored")
+                        .HasColumnType("numeric");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ControlPCID");
+
+                    b.ToTable("WaterStorage");
+                });
+
             modelBuilder.Entity("WAMServer.Models.WaterLevelSettings", b =>
                 {
                     b.Property<Guid>("Id")
@@ -265,8 +295,17 @@ namespace server.Migrations
                         .HasForeignKey("WAMServer.Models.User", "WaterLevelSettingsId");
 
                     b.Navigation("Address");
+                });
 
-                    b.Navigation("WaterLevelSettings");
+            modelBuilder.Entity("WAMServer.Models.WaterStorage", b =>
+                {
+                    b.HasOne("WAMServer.Models.ControlPC", "ControlPC")
+                        .WithMany()
+                        .HasForeignKey("ControlPCID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ControlPC");
                 });
 
             modelBuilder.Entity("WAMServer.Models.ActionType", b =>

@@ -69,5 +69,12 @@
         "october": "Oktober",
         "november": "November",
         "december": "December"
+    },
+    "waterstorage" : {
+        "source": "Bronnen",
+        "liters": "Liter",
+        "active": "Actief",
+        "inactive": "Inactief",
+        "error": "Fout"
     }
 }

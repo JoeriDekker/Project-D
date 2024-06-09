@@ -1,9 +1,11 @@
 using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Moq;
 using WAMServer.Controllers;
 using WAMServer.Interfaces;
 using WAMServer.Models;
+using WAMServer.Records;
 
 namespace WAMServer.Tests.Controllers
 {
@@ -91,6 +93,81 @@ namespace WAMServer.Tests.Controllers
             Assert.Equal(DateTime.Now.AddMinutes(120).ToUniversalTime().Date, jwtToken.ValidTo.Date); // Check expiry
             Assert.Contains(jwtToken.Claims, claim => claim.Type == JwtRegisteredClaimNames.Email && claim.Value == userInfo.Email);
             Assert.Contains(jwtToken.Claims, claim => claim.Type == "Id" && claim.Value == userInfo.Id.ToString());
+        }
+
+        [Theory]
+        [InlineData("")]
+        [InlineData("aa")]
+        [InlineData("aaaaaa")]
+        [InlineData("a@a.a")]
+        public void Login_Returns_Unauthorized_When_Email_Invalid(string email)
+        {
+            // Arrange
+            var loginBody = new LoginBody(email, "password");
+            var controller = new LoginController(null!, config.Object);
+            var expected = "The email address and/or the password did not match.";
+
+            // Act
+            var result = controller.Login(loginBody);
+
+            // Assert
+            var unauthorizedResult = Assert.IsType<UnauthorizedObjectResult>(result);
+            Assert.Equal(expected, unauthorizedResult.Value);
+        }
+
+        [Fact]
+        public void Login_Returns_Unauthorized_When_User_Not_Found()
+        {
+            // Arrange
+            var loginBody = new LoginBody("email@email.com", "password");
+            var controller = new LoginController(loginService.Object, config.Object);
+            var expected = "The email address and/or the password did not match.";
+            loginService.Setup(x => x.GetUser(loginBody.Email)).Returns((User)null!);
+
+            // Act
+            var result = controller.Login(loginBody);
+
+            // Assert
+            var unauthorizedResult = Assert.IsType<UnauthorizedObjectResult>(result);
+            Assert.Equal(expected, unauthorizedResult.Value);
+        }
+
+        [Fact]
+        public void Login_Returns_Unauthorized_When_User_Not_Confirmed()
+        {
+            // Arrange
+            var loginBody = new LoginBody("email@email.com", "password");
+            var controller = new LoginController(loginService.Object, config.Object);
+            var expected = "The email address and/or the password did not match.";
+
+            var user = new User("John", "Doe", loginBody.Email, BCrypt.Net.BCrypt.EnhancedHashPassword(loginBody.Password));
+            loginService.Setup(x => x.GetUser(loginBody.Email)).Returns(user);
+
+            // Act
+            var result = controller.Login(loginBody);
+
+            // Assert
+            var unauthorizedResult = Assert.IsType<UnauthorizedObjectResult>(result);
+            Assert.Equal(expected, unauthorizedResult.Value);
+        }
+
+        [Fact]
+        public void Login_Returns_Ok_When_User_Found_And_Confirmed()
+        {
+            // Arrange
+            var loginBody = new LoginBody("email@email.com", "password");
+            var controller = new LoginController(loginService.Object, config.Object);
+
+            var user = new User("John", "Doe", loginBody.Email, BCrypt.Net.BCrypt.EnhancedHashPassword(loginBody.Password));
+            user.IsConfirmed = true;
+            loginService.Setup(x => x.GetUser(loginBody.Email)).Returns(user);
+
+            // Act
+            var result = controller.Login(loginBody);
+
+            // Assert
+            var okResult = Assert.IsType<OkObjectResult>(result);
+            Assert.NotNull(okResult.Value);
         }
     }
 }

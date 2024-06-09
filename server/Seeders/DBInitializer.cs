@@ -62,6 +62,9 @@ namespace WAMServer.Seeders
                     }
                     context.SaveChanges();
 
+                    context.ControlPC.Add(controlPC);
+                    context.SaveChanges();
+
                     // add ground water logs
                     // By specifying a CultureInfo when parsing or formatting data, you ensure that the data is interpreted or presented according to the conventions of that specific culture. In cases where you want to ensure consistent behavior regardless of culture, you can use CultureInfo.InvariantCulture, which represents a culture-independent (invariant) format that is not tied to any particular culture's conventions.
                     var groundWaterLog = new List<GroundWaterLog>()
@@ -104,15 +107,15 @@ namespace WAMServer.Seeders
 
                     context.SaveChanges();
 
-                    // //Add waterlevel settings
-                    // var waterlevelSettings = new List<WaterLevelSettings>()
-                    // {
-                    //     new WaterLevelSettings(user.Id, decimal.Parse("-2.05"), decimal.Parse("-1.85"))
-                    // };
+                    // Add water storage
+                    var WaterStorageList = new List<WaterStorage>(){
+                        new (controlPC.Id, "Rain Barrel" , 56, "Kaden buurt", 1),
+                        new (controlPC.Id, "Graywater Tank" , 243, "Kaden buurt", 2),
+                        new (controlPC.Id, "Street Tank" , 556, "Kaden buurt", 3)
+                    };
 
-                    // context.WaterLevelSettings.AddRange(waterlevelSettings);
-
-                    // context.SaveChanges();
+                    context.WaterStorage.AddRange(WaterStorageList);
+                    context.SaveChanges();
                 }
             }
         }
