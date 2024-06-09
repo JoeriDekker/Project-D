@@ -64,11 +64,20 @@ namespace WAMServer.Repositories
         /// Gets all ControlPCs from the database in an asynchronous manner.
         /// </summary>
         /// <returns>A list of all ControlPCs.</returns>
-        public async Task<IEnumerable<ControlPC?>> GetAllAsync()
+        public async Task<IEnumerable<ControlPC>> GetAllAsync()
         {
             return await _context.ControlPC.ToListAsync();
         }
 
+        /// <summary>
+        /// Gets a ControlPC from the database by its id in an asynchronous manner.
+        /// </summary>
+        /// <param name="id">The id that's used for fetching the ControlPC.</param>
+        /// <returns>The ControlPC object if it exists in the database, otherwise null.</returns>
+        public async Task<ControlPC?> GetAsync(Guid id)
+        {
+            return await _context.ControlPC.FindAsync(id);
+        }
 
         /// <summary>
         /// Gets a ControlPC from the database by its id in an asynchronous manner.
@@ -76,6 +85,7 @@ namespace WAMServer.Repositories
         /// <param name="id">The id that's used for fetching the ControlPC.</param>
         /// <returns>The ControlPC object if it exists in the database, otherwise null.</returns>
         //public async Task<ControlPC?> GetAsync(Guid id)
+
         public IEnumerable<ControlPC?> GetAll(Func<ControlPC, bool> predicate)
         {
             throw new NotImplementedException();
