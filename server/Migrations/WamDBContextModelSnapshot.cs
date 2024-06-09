@@ -213,6 +213,28 @@ namespace server.Migrations
                     b.ToTable("UserSetting");
                 });
 
+            modelBuilder.Entity("WAMServer.Models.WaterLevelSettings", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<decimal?>("IdealHeight")
+                        .IsRequired()
+                        .HasColumnType("decimal");
+
+                    b.Property<decimal?>("PoleHeight")
+                        .IsRequired()
+                        .HasColumnType("decimal");
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("WaterLevelSettings");
+                });
+
             modelBuilder.Entity("WAMServer.Models.WaterStorage", b =>
                 {
                     b.Property<Guid>("Id")
@@ -241,28 +263,6 @@ namespace server.Migrations
                     b.HasIndex("ControlPCID");
 
                     b.ToTable("WaterStorage");
-                });
-
-            modelBuilder.Entity("WAMServer.Models.WaterLevelSettings", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<decimal?>("IdealHeight")
-                        .IsRequired()
-                        .HasColumnType("decimal");
-
-                    b.Property<decimal?>("PoleHeight")
-                        .IsRequired()
-                        .HasColumnType("decimal");
-
-                    b.Property<Guid?>("UserId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("WaterLevelSettings");
                 });
 
             modelBuilder.Entity("WAMServer.Models.ActionLog", b =>
@@ -295,6 +295,8 @@ namespace server.Migrations
                         .HasForeignKey("WAMServer.Models.User", "WaterLevelSettingsId");
 
                     b.Navigation("Address");
+
+                    b.Navigation("WaterLevelSettings");
                 });
 
             modelBuilder.Entity("WAMServer.Models.WaterStorage", b =>
