@@ -3,7 +3,7 @@ using WAMServer.Models;
 
 namespace WAMServer.Interfaces
 {
-    public interface IWaterLevelSettings
+    public interface IWaterLevelSettingsService
     {
         WaterLevelSettings? GetByUserId(Guid id);
  

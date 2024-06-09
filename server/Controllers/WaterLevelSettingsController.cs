@@ -14,10 +14,10 @@ namespace WAMServer.Controllers
     public class WaterLevelSettingsController : ControllerBase
     {
         private readonly IRepository<WaterLevelSettings> _waterlevelsettingsRepository;
-        private readonly IWaterLevelSettings _WaterLevelSettingsService;
+        private readonly IWaterLevelSettingsService _WaterLevelSettingsService;
         private readonly IRepository<User> _userRepository;
 
-        public WaterLevelSettingsController(IRepository<WaterLevelSettings> waterlevelsettingsRepository, IRepository<User> userRepository, IWaterLevelSettings waterLevelSettingsService)
+        public WaterLevelSettingsController(IRepository<WaterLevelSettings> waterlevelsettingsRepository, IRepository<User> userRepository, IWaterLevelSettingsService waterLevelSettingsService)
         {
             _waterlevelsettingsRepository = waterlevelsettingsRepository;
             _userRepository = userRepository;
@@ -29,8 +29,6 @@ namespace WAMServer.Controllers
         [Authorize]
         public async Task<IActionResult> Put([FromBody] WaterLevelSettingsPatchBody waterlevelsettingsPatchBody)
         {
-            Console.WriteLine(waterlevelsettingsPatchBody);
-
             const string unauthorizedmsg = "Errors.unauth";
 
             if (waterlevelsettingsPatchBody == null || (waterlevelsettingsPatchBody.PoleHeight == "" && waterlevelsettingsPatchBody.IdealHeight == ""))
@@ -72,8 +70,6 @@ namespace WAMServer.Controllers
                 return Unauthorized(new ErrorBody(unauthorizedmsg));
             }
             
-            Console.WriteLine(user.Id);
-
             var existingSettings = _WaterLevelSettingsService.GetByUserId(user.Id);
             if (existingSettings == null)
             {

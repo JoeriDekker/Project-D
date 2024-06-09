@@ -6,7 +6,7 @@ namespace WAMServer.Services
     /// <summary>
     /// Service for handling user authentication through the database.
     /// </summary>
-    public class DBWaterlevelSettingsService : IWaterLevelSettings
+    public class DBWaterlevelSettingsService : IWaterLevelSettingsService
     {
         private WamDBContext _context;
 
