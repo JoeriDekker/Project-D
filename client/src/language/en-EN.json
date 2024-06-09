@@ -20,6 +20,7 @@
     },
     "Navigation": {
         "account": "Account",
+        "waterlevelsettings": "Waterlevel Settings",
         "close": "Close",
         "contact": "Uncertainties? Contact us!",
         "dashboard": "Dashboard",
@@ -87,7 +88,9 @@
         "ideal": "Ideal",
         "poleheight": "Poleheight",
         "badstatus": "Your waterlevel is NOT right!",
-        "goodstatus": "Your waterlevel is RIGHT!"
+        "goodstatus": "Your waterlevel is RIGHT!",
+        "adjust": "Change Waterlevel Settings",
+        "current": "Current Waterlevel Settings"
     },
     "logboek" : {
         "waterleverlogbook": "Water Level Logbook",
@@ -107,5 +110,12 @@
         "october": "October",
         "november": "November",
         "december": "December"
+    },
+    "waterstorage" : {
+        "source": "Sources",
+        "liters": "Liters",
+        "active": "Active",
+        "inactive": "Inactive",
+        "error": "Error"
     }
 }

@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import axios, { AxiosError } from "axios";
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 
-import { WaterpeilLogboekState, UserResponse } from "./waterpeillogboek.state";
+import { WaterpeilLogboekState} from "./waterpeillogboek.state";
+import { UserResponse } from "../../pages/LoginScreen/LoginScreen.state";
 import { t } from "i18next";
 
 function WaterpeilLogboek(){
@@ -11,20 +12,13 @@ function WaterpeilLogboek(){
 
     const WaterpeilLogboekEntry = ({date, address, level }: WaterpeilLogboekState) => {
         let peilcolor: string = 'text-green-600';
-        if (level.toString().includes('-')) {
+        let idealHeight = user?.waterLevelSettings.idealHeight ?? 0;
+        if (parseFloat(level) < idealHeight) {
             peilcolor = 'text-red-600';
         }
 
         // get only firt 5 characters of date
         let smalldate = date.substring(5, 10);
-
-        // return (
-        //     <div className="grid grid-cols-3 gap-2 mt-2 shadow-md text-center">
-        //         <div className="py-1 px-2 mr-20 rounded-md bg-slate-100"><b>{date}</b></div>
-        //         <div className="mr-6">Street: <text>{street}</text></div>
-        //         <div className="mr-6">Peil: <text className={`${peilcolor}`}>{peil}</text></div>
-        //     </div>
-        // );
 
         return (
             <div className="grid grid-cols-10 gap-2 mt-2 shadow-md text-center p-1">
@@ -72,15 +66,6 @@ function WaterpeilLogboek(){
     }, [authHeader]);
         
 
-    // const data = [
-    //     { date: '08/12', peil: '+0.12m', street: 'Street 1' },
-    //     { date: '09/12', peil: '-0.13m', street: 'Street 2' },
-    //     { date: '10/12', peil: '+0.13m', street: 'Street 3' },
-    //     { date: '11/12', peil: '-0.15m', street: 'Street 4' },
-    //     { date: '12/12', peil: '+0.03m', street: 'Street 5' },
-    //     { date: '13/12', peil: '-0.13m', street: 'Street 6' },
-    // ];
-
     return (
         <div className=" justify-center">
                             <div className="grid grid-cols-4 ">
@@ -112,7 +97,7 @@ function WaterpeilLogboek(){
                                 
                             </div>
                             <hr className="my-4"></hr>
-                            <div className="max-h-[300px] overflow-y-auto mt-1 shadow-md">
+                            <div className="max-h-[335px] overflow-y-auto mt-1 shadow-md">
                                 {/* {data.map((entry, index) => <WaterpeilLogboekEntry key={index} {...entry} />)} */}
                                 {waterlogs.map((log, index) => (
                                     <WaterpeilLogboekEntry key={index} date={log.date} address={user?.address?.street ?? "Unknown"} level={log.level}  />

@@ -60,14 +60,17 @@ namespace WAMServer.Controllers
                 HouseNumber = "",
                 UserId = user.Id
             };
-            User registeredUser = await _userRepository.AddAsync(user);
-            await _addressRepository.AddAsync(address);
-            user.AddressId = address.Id;
-            await _userRepository.UpdateAsync(user, u => u.Id == user.Id);
-            if (registeredUser == null)
+            User registeredUser;
+            try
+            {
+                registeredUser = await _userRepository.AddAsync(user);
+            } catch (Exception)
             {
                 return BadRequest(new ErrorBody("Register.failed"));
             }
+            await _addressRepository.AddAsync(address);
+            user.AddressId = address.Id;
+            await _userRepository.UpdateAsync(user, u => u.Id == user.Id);
             _mailService.SendEmail(user.Email, "Welcome to WAM", $"We are pleased to hear you want to join the fight against polerot. In order to log in, please confirm your email address by clicking the following link: {frontendURL}/verify/" + user.Id + "/" + user.ConfirmationToken);
             return Ok();
         }

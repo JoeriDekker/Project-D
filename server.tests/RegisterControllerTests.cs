@@ -110,6 +110,27 @@ namespace WAMServer.Tests.Controllers
         }
 
         [Fact]
+        public async Task Post_Should_Return_BadRequest_When_User_Registration_Fails()
+        {
+            // Arrange
+            _configurationMock.Setup(x => x["JWT:Issuer"]).Returns("http://localhost:5000");
+            _configurationMock.Setup(x => x["FrontendURL"]).Returns("http://localhost:3000");
+            _mailServiceMock.Setup(x => x.SendEmail(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()));
+            var userBody = new UserBody { Email = "test@example.com", Password = "My_Super_securePassword!231", FirstName = "John", LastName = "Doe" };
+
+            _userRepositoryMock.Setup(x => x.AddAsync(It.IsAny<User>())).Throws(new Exception());
+
+            // Act
+            var result = await _controller.Post(userBody);
+
+            // Assert
+            Assert.IsType<BadRequestObjectResult>(result);
+            var badRequestResult = result as BadRequestObjectResult;
+            Assert.NotNull(badRequestResult!.Value);
+            Assert.Equal("Register.failed", (badRequestResult.Value as ErrorBody)!.Error);
+        }
+
+        [Fact]
         public async Task Post_Should_Return_Ok_When_User_Is_Registered()
         {
             // Arrange
@@ -194,6 +215,21 @@ namespace WAMServer.Tests.Controllers
             var okResult = result as OkObjectResult;
             Assert.NotNull(okResult!.Value);
             Assert.Equal("http://localhost:3000", okResult!.Value);
+        }
+
+        [Fact]
+        public async Task Confirm_Should_Return_BadRequest_When_FrontendURL_Is_Null()
+        {
+            // Arrange
+            _configurationMock.Setup(x => x["JWT:Issuer"]).Returns("http://localhost:5000");
+            _configurationMock.Setup(x => x["FrontendURL"]).Returns((string?)null);
+            _mailServiceMock.Setup(x => x.SendEmail(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()));
+
+            // Act
+            var result = await _controller.Confirm(Guid.NewGuid().ToString(), Guid.NewGuid().ToString());
+
+            // Assert
+            Assert.IsType<BadRequestResult>(result);
         }
     }
 }
