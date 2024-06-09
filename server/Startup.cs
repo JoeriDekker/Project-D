@@ -75,7 +75,6 @@ namespace WAMServer
             services.AddTransient<IRepository<ActionType>, DbActionTypeRepository>();
             services.AddTransient<IWaterLevelSettingsService, DBWaterlevelSettingsService>();
             services.AddTransient<IRepository<WaterStorage>, DbWaterStorageRepository>();
-            
         }
 
         /// <summary>

@@ -47,8 +47,6 @@ namespace WAMServer.Seeders
                     };
 
                     waterlevelsetting.UserId = user.Id;
-
-
                     var controlPC = new ControlPC(user.Id, "geheimPC", "123", "Uhhhhwaarvoorstaatdit?");
                     address.UserId = user.Id;
                     context.Users.Add(user);
@@ -61,13 +59,20 @@ namespace WAMServer.Seeders
                         editUser.WaterLevelSettingsId = waterlevelsetting.Id;
                     }
                     context.SaveChanges();
+                    context.ControlPC.Add(controlPC);
+                    Console.WriteLine(context);
+                    // add a ground water log
+                    var groundWaterLog = new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.Parse("17/05/2024"), Decimal.Parse("-1.33"));
+
+                    context.GroundWaterLog.Add(groundWaterLog);
+
 
                     context.ControlPC.Add(controlPC);
                     context.SaveChanges();
 
                     // add ground water logs
                     // By specifying a CultureInfo when parsing or formatting data, you ensure that the data is interpreted or presented according to the conventions of that specific culture. In cases where you want to ensure consistent behavior regardless of culture, you can use CultureInfo.InvariantCulture, which represents a culture-independent (invariant) format that is not tied to any particular culture's conventions.
-                    var groundWaterLog = new List<GroundWaterLog>()
+                    var groundWaterLogs = new List<GroundWaterLog>()
                     {
                         new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("28/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-1.75")),
                         new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("13/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-2.00")),
@@ -81,8 +86,8 @@ namespace WAMServer.Seeders
                         new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("24/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-1.95")),
                         new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.ParseExact("25/05/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture), decimal.Parse("-2.05")),
                     };
-                  
-                    context.GroundWaterLog.AddRange(groundWaterLog);
+
+                    context.GroundWaterLog.AddRange(groundWaterLogs);
                     context.SaveChanges();
 
                     //Add action types

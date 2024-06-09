@@ -2,14 +2,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace WAMServer.Models
 {
-    /// <summary>
-    /// The WamDBContext class is responsible for connecting to the database.
-    /// </summary>
-    public class WamDBContext : DbContext
-    {
-        public WamDBContext(DbContextOptions<WamDBContext> options) : base(options)
+        /// <summary>
+        /// The WamDBContext class is responsible for connecting to the database.
+        /// </summary>
+        public class WamDBContext : DbContext
         {
-        }
+                public WamDBContext(DbContextOptions<WamDBContext> options) : base(options)
+                {
+                }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

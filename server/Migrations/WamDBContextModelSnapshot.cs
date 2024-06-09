@@ -124,11 +124,11 @@ namespace server.Migrations
                 });
 
             modelBuilder.Entity("WAMServer.Models.GroundWaterLog", b =>
+
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
-
                     b.Property<string>("controlPCID")
                         .IsRequired()
                         .HasColumnType("varchar(100)");

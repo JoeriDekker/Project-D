@@ -137,7 +137,7 @@ namespace WAMServer.Tests.Controllers
             ));
 
             // Assert
-            Assert.IsType<UnauthorizedObjectResult>(result.Result);
+            Assert.IsType<UnauthorizedResult>(result.Result);
         }
 
         [Fact]
@@ -165,7 +165,7 @@ namespace WAMServer.Tests.Controllers
             ));
 
             // Assert
-            Assert.IsType<UnauthorizedObjectResult>(result.Result);
+            Assert.IsType<UnauthorizedResult>(result.Result);
         }
 
         [Fact]

@@ -46,22 +46,6 @@ function AnyPage() {
         onSubmit: async (values) => handleAddressChange(values),
         validationSchema: addressValidationScheme,
     });
-
-    useEffect(() => {
-        async function fetchUser() {
-            const res = await axios.get(
-                process.env.REACT_APP_API_URL + "/api/users",
-                {
-                    headers: {
-                        Authorization: authHeader,
-                    },
-                }
-            );
-            setUser(res.data);
-        }
-        fetchUser();
-    }, [authHeader]);
-
     async function handleAddressChange(values: {
         street: string;
         houseNumber: string;
@@ -106,6 +90,7 @@ function AnyPage() {
                 },
             });
             if (res.status === 200) {
+                // TODO: Pop up the nice notification from ccd709377621b99c0704b0d8360858fb4207213e (commit)
                 alert("controlPC updated successfully");
             }
         } catch (e) {
@@ -117,15 +102,21 @@ function AnyPage() {
 
     useEffect(() => {
         async function fetchUser() {
-            const res = await axios.get(
-                process.env.REACT_APP_API_URL + "/api/users",
-                {
-                    headers: {
-                        Authorization: authHeader,
-                    },
-                }
-            );
-            setUser(res.data);
+            try {
+                const res = await axios.get(
+                    process.env.REACT_APP_API_URL + "/api/users",
+                    {
+                        headers: {
+                            Authorization: authHeader,
+                        },
+                    }
+                );
+                setUser(res.data);
+            } catch (e) {
+                const error = e as AxiosError;
+                console.error(error);
+                // Todo: Give the user a nice error message (ccd709377621b99c0704b0d8360858fb4207213e commit)
+            }
         }
         fetchUser();
     }, [authHeader]);

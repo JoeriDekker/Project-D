@@ -74,21 +74,21 @@ namespace WAMServer.Controllers
         {
             if (controlPC == null)
             {
-                return BadRequest(new { message = "Invalid data." });
+                return BadRequest(new ErrorBody("Invalid data."));
             }
 
             var currentUser = HttpContext.User;
             if (!currentUser.HasClaim(c => c.Type == "Id"))
             {
-                return Unauthorized(new { message = "Unauthorized." });
+                return Unauthorized();
             }
 
             string userId = currentUser.Claims.FirstOrDefault(c => c.Type == "Id")!.Value;
             if (!Guid.TryParse(userId, out Guid id))
             {
-                return Unauthorized(new { message = "Invalid user ID." });
+                return Unauthorized();
             }
-
+            
             controlPC.userId = id;
             controlPC.Id = Guid.NewGuid();
             try
@@ -113,7 +113,7 @@ namespace WAMServer.Controllers
         {
             if (controlPC == null || id != controlPC.Id)
             {
-                return BadRequest(new { message = "Data mismatch." });
+                return BadRequest(new ErrorBody("Data mismatch"));
             }
 
             var existingControlPC = await _controlPCService.GetAsync(id);
