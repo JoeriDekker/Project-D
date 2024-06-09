@@ -26,8 +26,7 @@ namespace WAMServer.Tests.Controllers
 
         public UsersController CreateUsersController()
         {
-            // had to add the water level settings here so the build would work, but it was achting up. i know this aint the best solution
-            return new UsersController(_mockUserRepository.Object, _mockAddressRepository.Object, (IRepository<WaterLevelSettings>)_mockWaterLevelSettingsRepository);
+            return new UsersController(_mockUserRepository.Object, _mockAddressRepository.Object, _mockWaterLevelSettingsRepository.Object);
         }
 
         [Fact]
