@@ -13,16 +13,20 @@ namespace WAMServer.Tests.Controllers
     {
         private Mock<IRepository<User>> _mockUserRepository;
         private Mock<IRepository<Address>> _mockAddressRepository;
+        private Mock<IRepository<WaterLevelSettings>> _mockWaterLevelSettingsRepository;
+
 
         public UsersControllerTests()
         {
             _mockUserRepository = new Mock<IRepository<User>>();
             _mockAddressRepository = new Mock<IRepository<Address>>();
+            _mockWaterLevelSettingsRepository = new Mock<IRepository<WaterLevelSettings>>();
+
         }
 
         public UsersController CreateUsersController()
         {
-            return new UsersController(_mockUserRepository.Object, _mockAddressRepository.Object);
+            return new UsersController(_mockUserRepository.Object, _mockAddressRepository.Object, _mockWaterLevelSettingsRepository.Object);
         }
 
         [Fact]

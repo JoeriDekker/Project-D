@@ -68,6 +68,7 @@ namespace WAMServer.Repositories
             user.IsConfirmed = entity.IsConfirmed;
             user.ConfirmationToken = entity.ConfirmationToken;
             user.AddressId = entity.AddressId;
+            user.WaterLevelSettings = entity.WaterLevelSettings;
             await _context.SaveChangesAsync();
             return user;
         }

@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import axios, { AxiosError } from "axios";
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 
-import { WaterpeilLogboekState, UserResponse } from "./waterpeillogboek.state";
+import { WaterpeilLogboekState} from "./waterpeillogboek.state";
+import { UserResponse } from "../../pages/LoginScreen/LoginScreen.state";
 import { t } from "i18next";
 
 function WaterpeilLogboek(){
@@ -11,7 +12,8 @@ function WaterpeilLogboek(){
 
     const WaterpeilLogboekEntry = ({date, address, level }: WaterpeilLogboekState) => {
         let peilcolor: string = 'text-green-600';
-        if (level.toString().includes('-')) {
+        let idealHeight = user?.waterLevelSettings.idealHeight ?? 0;
+        if (parseFloat(level) < idealHeight) {
             peilcolor = 'text-red-600';
         }
 

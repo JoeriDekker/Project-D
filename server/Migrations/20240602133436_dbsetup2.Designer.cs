@@ -12,8 +12,8 @@ using WAMServer.Models;
 namespace server.Migrations
 {
     [DbContext(typeof(WamDBContext))]
-    [Migration("20240608153659_dbupdate")]
-    partial class dbupdate
+    [Migration("20240602133436_dbsetup2")]
+    partial class dbsetup2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -179,9 +179,15 @@ namespace server.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(100)");
 
+                    b.Property<Guid?>("WaterLevelSettingsId")
+                        .HasColumnType("uuid");
+
                     b.HasKey("Id");
 
                     b.HasIndex("AddressId")
+                        .IsUnique();
+
+                    b.HasIndex("WaterLevelSettingsId")
                         .IsUnique();
 
                     b.ToTable("Users");
@@ -210,34 +216,26 @@ namespace server.Migrations
                     b.ToTable("UserSetting");
                 });
 
-            modelBuilder.Entity("WAMServer.Models.WaterStorage", b =>
+            modelBuilder.Entity("WAMServer.Models.WaterLevelSettings", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("ControlPCID")
+                    b.Property<decimal?>("IdealHeight")
+                        .IsRequired()
+                        .HasColumnType("decimal");
+
+                    b.Property<decimal?>("PoleHeight")
+                        .IsRequired()
+                        .HasColumnType("decimal");
+
+                    b.Property<Guid?>("UserId")
                         .HasColumnType("uuid");
-
-                    b.Property<string>("Regio")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("StorageState")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("TypeStorage")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<decimal>("WaterStored")
-                        .HasColumnType("numeric");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ControlPCID");
-
-                    b.ToTable("WaterStorage");
+                    b.ToTable("WaterLevelSettings");
                 });
 
             modelBuilder.Entity("WAMServer.Models.ActionLog", b =>
@@ -265,18 +263,13 @@ namespace server.Migrations
                         .WithOne("User")
                         .HasForeignKey("WAMServer.Models.User", "AddressId");
 
+                    b.HasOne("WAMServer.Models.WaterLevelSettings", "WaterLevelSettings")
+                        .WithOne("User")
+                        .HasForeignKey("WAMServer.Models.User", "WaterLevelSettingsId");
+
                     b.Navigation("Address");
-                });
 
-            modelBuilder.Entity("WAMServer.Models.WaterStorage", b =>
-                {
-                    b.HasOne("WAMServer.Models.ControlPC", "ControlPC")
-                        .WithMany()
-                        .HasForeignKey("ControlPCID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ControlPC");
+                    b.Navigation("WaterLevelSettings");
                 });
 
             modelBuilder.Entity("WAMServer.Models.ActionType", b =>
@@ -292,6 +285,11 @@ namespace server.Migrations
             modelBuilder.Entity("WAMServer.Models.User", b =>
                 {
                     b.Navigation("ActionLogs");
+                });
+
+            modelBuilder.Entity("WAMServer.Models.WaterLevelSettings", b =>
+                {
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

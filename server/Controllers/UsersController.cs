@@ -16,11 +16,14 @@ namespace WAMServer.Controllers
     {
         private readonly IRepository<User> _userRepository;
         private readonly IRepository<Address> _addressRepository;
+        private readonly IRepository<WaterLevelSettings> _waterlevelsettingsRepository;
 
-        public UsersController(IRepository<User> userRepository, IRepository<Address> addressRepo)
+
+        public UsersController(IRepository<User> userRepository, IRepository<Address> addressRepo, IRepository<WaterLevelSettings> settingsRepo)
         {
             _userRepository = userRepository;
             _addressRepository = addressRepo;
+            _waterlevelsettingsRepository = settingsRepo;
         }
 
         /// <summary>
@@ -61,6 +64,11 @@ namespace WAMServer.Controllers
             if (user.AddressId != null)
             {
                 user.Address = _addressRepository.Get(user.AddressId.Value);
+            }
+            // same for the waterlevel settings
+            if (user.WaterLevelSettingsId != null)
+            {
+                user.WaterLevelSettings = _waterlevelsettingsRepository.Get(user.WaterLevelSettingsId.Value);
             }
 
             // Return the user DTO as OK response

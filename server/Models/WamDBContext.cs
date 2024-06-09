@@ -37,6 +37,7 @@ namespace WAMServer.Models
         public DbSet<Address> Addresses { get; set; } = null!;
         public DbSet<ControlPC> ControlPCs { get; set; } = null!;
         public DbSet<GroundWaterLog> GroundWaterLog { get; set; } = null!;
+        public DbSet<WaterLevelSettings> WaterLevelSettings { get; set; } = null!;
         public DbSet<ControlPC> ControlPC { get; set; } = null!;
         public DbSet<ActionLog> ActionLog { get; set; } = null!;
         public DbSet<ActionType> ActionType { get; set; } = null!;
