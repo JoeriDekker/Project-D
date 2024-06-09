@@ -64,7 +64,7 @@ namespace WAMServer.Repositories
         /// Gets all ControlPCs from the database in an asynchronous manner.
         /// </summary>
         /// <returns>A list of all ControlPCs.</returns>
-        public async Task<IEnumerable<ControlPC>> GetAllAsync()
+        public async Task<IEnumerable<ControlPC?>> GetAllAsync()
         {
             return await _context.ControlPC.ToListAsync();
         }
@@ -88,7 +88,8 @@ namespace WAMServer.Repositories
 
         public IEnumerable<ControlPC?> GetAll(Func<ControlPC, bool> predicate)
         {
-            throw new NotImplementedException();
+
+            return _context.ControlPC.Where(predicate);
         }
 
         /// <summary>
