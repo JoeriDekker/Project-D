@@ -1,4 +1,5 @@
 import React, { useEffect, useState, FC } from "react";
+import axios from "axios";
 
 import Modal from "../components/Modal/Modal";
 import Navbar from '../components/navbar/navbar'
@@ -9,6 +10,9 @@ import { WaterLevel } from "../components/waterlevelvisual/waterlevelvisual.stat
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import WaterStorage from "../components/waterstorage/waterstorage";
+import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
+import { UserResponse } from "./LoginScreen/LoginScreen.state";
+
 
 interface HomeProps {
     hasWelcomeBeenShown: boolean;
@@ -18,6 +22,8 @@ interface HomeProps {
 
 const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) => {
     const [currentLevel, setCurrentLevel] = useState<WaterLevel | null>(null);
+    const authHeader = useAuthHeader();
+    const [user, setUser] = React.useState<UserResponse | null>(null);
 
     /*
     This data is real data from the openweatherAPI.
@@ -25,51 +31,15 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
     */
     const [modalState, setModalState] = useState("hidden");
 
-    const weatherForecast = {
-        "$id": "36",
-        "stationid": 6344,
-        "stationname": "Meetstation Rotterdam",
-        "lat": 51.95,
-        "lon": 4.45,
-        "regio": "Rotterdam",
-        "timestamp": "2024-05-23T15:00:00",
-        "weatherdescription": "Zwaar bewolkt",
-        "iconurl": "https://www.buienradar.nl/resources/images/icons/weather/30x30/c.png",
-        "fullIconUrl": "https://www.buienradar.nl/resources/images/icons/weather/96x96/C.png",
-        "graphUrl": "https://www.buienradar.nl/nederland/weerbericht/weergrafieken/c",
-        "winddirection": "WZW",
-        "airpressure": 1014.5,
-        "temperature": 18.3,
-        "groundtemperature": 20.9,
-        "feeltemperature": 18.3,
-        "visibility": 28600.0,
-        "windgusts": 11.2,
-        "windspeed": 5.6,
-        "windspeedBft": 4,
-        "humidity": 67.0,
-        "precipitation": 0.0, // neerslag
-        "sunpower": 615.0,
-        "rainFallLast24Hour": 0.0,
-        "rainFallLastHour": 0.0,
-        "winddirectiondegrees": 255
-    }
 
-    const waterlevel = (currentLevel?.level) ? parseFloat(currentLevel.level) : null; // check if the value is not null otherwise show the level
-    const waterlevel_perc = 65;
+    // check if the value is not null otherwise show the level
+    const waterlevel = currentLevel ? parseFloat(currentLevel.level) : null;
+    const ideal = user?.waterLevelSettings.idealHeight;
 
-    const paalkop = -2.05;
-    const paalkop_perc = 70;
 
-    const ideal = -1.85;
-    const ideal_perc = 80;
 
     function defineNotifcation() {
-        // TODO: de amth.random vervangen door de API call bijvoorbeeld: /api/checkWaterStand
-        if (hasWelcomeBeenShown) {
-            return;
-        }
-
-        if(!currentLevel) {
+        if (!currentLevel) {
             return toast.error("Er is iets mis gegaan, probeer het later opnieuw", {
                 position: "top-center",
                 autoClose: false,
@@ -79,11 +49,10 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
                 draggable: true,
                 progress: undefined,
                 theme: "colored",
-            })
+            });
         }
 
-        if (!waterlevel || waterlevel < ideal) {
-
+        if (!waterlevel || !ideal || waterlevel < ideal) {
             return toast.error("Je waterpeil is laag!", {
                 position: "top-center",
                 autoClose: false,
@@ -93,14 +62,16 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
                 draggable: true,
                 progress: undefined,
                 theme: "colored",
-            })
+            });
         }
+
+        setModalState("hidden");
 
         return toast.success("Welkom terug!", {
             position: "top-center",
             autoClose: 5000,
             hideProgressBar: false,
-            closeOnClick: true,
+            closeOnClick: false,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
@@ -109,12 +80,92 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
     }
 
     useEffect(() => {
-        if (!hasWelcomeBeenShown) {
-            setWelcomeState(true);
-            setModalState("")
+        async function fetchUser() {
+            try {
+                const res = await axios.get(process.env.REACT_APP_API_URL + "/api/users", {
+                    headers: { Authorization: authHeader },
+                });
+                setUser(res.data);
+            } catch (error) {
+                console.error("Error fetching user data", error);
+            }
         }
-        defineNotifcation();
-    })
+
+        fetchUser();
+    }, [authHeader]);
+
+    useEffect(() => {
+        async function fetchCurrentLevel() {
+            try {
+                const res = await axios.get(
+                    process.env.REACT_APP_API_URL + "/api/groundwaterlog",
+                    {
+                        headers: {
+                            Authorization: authHeader,
+                        },
+                    }
+                );
+
+                if (res.data.length > 0) {
+                    setCurrentLevel(res.data[0]);
+                } else {
+                    console.log("No data available.");
+                }
+            } catch (error) {
+                console.error("Error fetching current level:", error);
+            }
+        }
+        fetchCurrentLevel();
+    }, [authHeader]);
+
+    useEffect(() => {
+        if (!user || !currentLevel) {
+            return;
+        }
+
+        const waterlevel = currentLevel ? parseFloat(currentLevel.level) : null;
+        const ideal = user?.waterLevelSettings.idealHeight;
+
+
+
+        if (!hasWelcomeBeenShown) {
+            defineNotifcation();
+            setWelcomeState(true);
+        }
+
+        if(!waterlevel || !ideal || waterlevel < ideal) {
+            setModalState("");
+        }
+
+    }, [user, currentLevel]);
+
+
+    // useEffect(() => {
+    //     async function fetchUser() {
+    //       const res = await axios.get(
+    //         process.env.REACT_APP_API_URL + "/api/users",
+    //         {
+    //           headers: {
+    //             Authorization: authHeader,
+    //           },
+    //         }
+    //       );
+    //       setUser(res.data);
+    //       console.log('ideal: ' + ideal)
+    //       console.log('waterlvevel: ' + waterlevel)
+
+    //     }
+    //     fetchUser();
+    //     if (!hasWelcomeBeenShown) {
+    //         setWelcomeState(true);
+    //         setModalState("")
+    //     }
+    //     defineNotifcation();
+    //   }, [authHeader]);
+
+    // useEffect(() => {
+
+    // })
 
     return (
         <div className="bg-secondaryCol w-screen h-screen py-5 flex">
