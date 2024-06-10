@@ -3,94 +3,39 @@ import axios from "axios";
 import { t } from "i18next";
 
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
-import {WaterLevel} from "./waterlevelvisual.state";
+import { WaterLevel } from "./waterlevelvisual.state";
 import { UserResponse } from "./../../pages/LoginScreen/LoginScreen.state";
 
-function WaterLevelVisual(){
+function WaterLevelVisual({ currentLevel, idealLevel, poleLevel, minScale, maxScale }: { currentLevel: number, idealLevel: number, poleLevel: number, minScale: number, maxScale: number }) {
 
-   
-
-    const authHeader = useAuthHeader();
-    const [user, setUser] = React.useState<UserResponse | null>(null);
-    const [currentLevel, setCurrentLevel] = React.useState<WaterLevel | null>(null);
+    // const [currentLevel, setCurrentLevel] = React.useState<WaterLevel | null>(null);
     const [statusColor, setStatusColor] = React.useState<string | null>(null);
     const [statusText, setStatusText] = React.useState<string | null>(null);
 
     useEffect(() => {
-        async function fetchUser() {
-          const res = await axios.get(
-            process.env.REACT_APP_API_URL + "/api/users",
-            {
-              headers: {
-                Authorization: authHeader,
-              },
-            }
-          );
-          setUser(res.data);
-        }
-        fetchUser();
-      }, [authHeader]);
-
-      const poleLevel = user?.waterLevelSettings.poleHeight ?? 0;
-      const idealLevel = user?.waterLevelSettings.idealHeight ?? 0;
-
-      const minScale = poleLevel - 4.5;
-      const maxScale = poleLevel + 1;
-
-    useEffect(() => {
-        async function fetchCurrentLevel() {
-            try {
-                const res = await axios.get(
-                    process.env.REACT_APP_API_URL + "/api/groundwaterlog",
-                    {
-                        headers: {
-                            Authorization: authHeader,
-                        },
-                    }
-                );
-
-                if (res.data.length > 0) {
-                    setCurrentLevel(res.data[0]);
-                } else {
-                    console.log("No data available.");
-                }
-            } catch (error) {
-                console.error("Error fetching current level:", error);
-            }
-        }
-        fetchCurrentLevel();
-    }, [authHeader]);
-
-    useEffect(() => {
-        function setStatus() 
-        {
-            if (typeof currentLevel?.level === 'number' && !isNaN(currentLevel?.level)) 
-            {
-                if (currentLevel.level >= idealLevel) 
-                {
+        function setStatus() {
+            if (typeof currentLevel === 'number' && !isNaN(currentLevel)) {
+                if (currentLevel >= idealLevel) {
                     setStatusColor("#22c55e");
                     setStatusText(t("waterlevel.goodstatus"));
-                } 
-                else 
-                {
+                }
+                else {
                     setStatusColor("#ef4444");
                     setStatusText(t("waterlevel.badstatus"));
                 }
-            } 
-            else 
-            {
+            }
+            else {
                 console.error("Error setting water level status.");
             }
         }
         setStatus();
     }, [currentLevel, idealLevel]);
 
-    function calculatePercentage(value : any, min : number, max : number) 
-    {
+    function calculatePercentage(value: any, min: number, max: number) {
         return (typeof value === 'number' && !isNaN(value)) ? ((value - min) / (max - min)) * 100 : 0;
     }
 
-    const waterLevelPerc = calculatePercentage(currentLevel?.level, minScale, maxScale);
+    const waterLevelPerc = calculatePercentage(currentLevel, minScale, maxScale);
     const poleLevelPerc = calculatePercentage(poleLevel, minScale, maxScale);
     const idealLevelPerc = calculatePercentage(idealLevel, minScale, maxScale);
 
@@ -107,7 +52,7 @@ function WaterLevelVisual(){
 
                 {/* current level */}
                 <div className="flex-col pl-6 pb-6 flex justify-center items-center">
-                    <h1 className="text-[350%] font-semibold" style={{ color: `${statusColor}` }}>{currentLevel?.level}</h1>
+                    <h1 className="text-[350%] font-semibold" style={{ color: `${statusColor}` }}>{currentLevel}</h1>
                     <h1 className="text-white text-[350%] font-semibold mt-[-10%]">NAP</h1>
                 </div>
 
@@ -115,7 +60,7 @@ function WaterLevelVisual(){
                 <div className="flex-1 pl-6 flex flex-col items-center">
 
                     <div className="flex justify-center">
-                        <p className="text-white mr-1">{t("waterlevel.ideal")}</p>    
+                        <p className="text-white mr-1">{t("waterlevel.ideal")}</p>
                         <p className="text-green-500">{idealLevel}</p>
                     </div>
 
