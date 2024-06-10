@@ -100,7 +100,7 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
                 );
 
                 if (res.data.length > 0) {
-                    setCurrentLevel(res.data[0]);
+                    setCurrentImportLevel(res.data[0]);
                 } else {
                     console.log("No data available.");
                 }

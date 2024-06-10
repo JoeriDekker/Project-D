@@ -1,14 +1,9 @@
 import React, { useEffect } from "react";
-import axios from "axios";
 import { t } from "i18next";
 
-import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
-import { WaterLevel } from "./waterlevelvisual.state";
-import { UserResponse } from "./../../pages/LoginScreen/LoginScreen.state";
 
 function WaterLevelVisual({ currentLevel, idealLevel, poleLevel, minScale, maxScale }: { currentLevel: number, idealLevel: number, poleLevel: number, minScale: number, maxScale: number }) {
 
-    // const [currentLevel, setCurrentLevel] = React.useState<WaterLevel | null>(null);
     const [statusColor, setStatusColor] = React.useState<string | null>(null);
     const [statusText, setStatusText] = React.useState<string | null>(null);
 
@@ -31,8 +26,8 @@ function WaterLevelVisual({ currentLevel, idealLevel, poleLevel, minScale, maxSc
         setStatus();
     }, [currentLevel, idealLevel]);
 
-    function calculatePercentage(value: any, min: number, max: number) {
-        return (typeof value === 'number' && !isNaN(value)) ? ((value - min) / (max - min)) * 100 : 0;
+    function calculatePercentage(value: number, min: number, max: number) {
+        return (value) ? ((value - min) / (max - min)) * 100 : 0;
     }
 
     const waterLevelPerc = calculatePercentage(currentLevel, minScale, maxScale);

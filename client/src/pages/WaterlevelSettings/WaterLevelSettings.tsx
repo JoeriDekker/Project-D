@@ -38,12 +38,10 @@ function WaterLevelSettings() {
         idealheight: number | string;
     }) {
         try {
-            if (values.poleheight == "")
-            {
+            if (values.poleheight === "") {
                 values.poleheight = user?.waterLevelSettings.poleHeight.toString() || ""
             }
-            if (values.idealheight == "")
-            {
+            if (values.idealheight === "") {
                 values.idealheight = user?.waterLevelSettings.idealHeight.toString() || ""
             }
             const res = await axios.put(process.env.REACT_APP_API_URL + "/api/waterlevelsettings", {
@@ -65,29 +63,29 @@ function WaterLevelSettings() {
             const error = e as AxiosError;
             console.error(error);
         }
-        
+
     }
 
     useEffect(() => {
         async function fetchUser() {
-          const res = await axios.get(
-            process.env.REACT_APP_API_URL + "/api/users",
-            {
-              headers: {
-                Authorization: authHeader,
-              },
-            }
-          );
-          setUser(res.data);
+            const res = await axios.get(
+                process.env.REACT_APP_API_URL + "/api/users",
+                {
+                    headers: {
+                        Authorization: authHeader,
+                    },
+                }
+            );
+            setUser(res.data);
         }
         fetchUser();
-      }, [authHeader, handleWaterLevelSettingsChange]);
+    }, [authHeader, handleWaterLevelSettingsChange]);
 
     return (
         <div className="w-screen h-screen py-5 flex dir-row max-w-screen bg-backgroundCol overflow-x-hidden">
             <Navbar />
             <div className="ml-80 space-y-10 bg-white w-full h-fit min-h-full rounded-xl mr-5 p-5 flex flex-col">
-                
+
                 {/* water level settings section */}
                 <form onSubmit={waterlevelFormik.handleSubmit}>
                     <h1 className="text-xl font-medium">{t("waterlevel.adjust")}</h1>
@@ -95,15 +93,15 @@ function WaterLevelSettings() {
                         {t("waterlevel.current")}
                     </h2>
                     <div className="flex dir-row w-full gap-5 px-5 pt-5">
-                    <Input
-                        label={t("waterlevel.poleheight")}
-                        placeholder={"" + user?.waterLevelSettings.poleHeight}
-                        width="1/3"
-                        onChange={waterlevelFormik.handleChange}
-                        value={waterlevelFormik.values.poleheight}
-                        name="poleheight"
-                        error={waterlevelFormik.errors.poleheight}
-                    />
+                        <Input
+                            label={t("waterlevel.poleheight")}
+                            placeholder={"" + user?.waterLevelSettings.poleHeight}
+                            width="1/3"
+                            onChange={waterlevelFormik.handleChange}
+                            value={waterlevelFormik.values.poleheight}
+                            name="poleheight"
+                            error={waterlevelFormik.errors.poleheight}
+                        />
                     </div>
 
                     <div className="flex dir-col w-full gap-5 px-5 pt-5">
