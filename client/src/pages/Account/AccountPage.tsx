@@ -46,22 +46,6 @@ function AnyPage() {
         onSubmit: async (values) => handleAddressChange(values),
         validationSchema: addressValidationScheme,
     });
-
-  useEffect(() => {
-    async function fetchUser() {
-      const res = await axios.get(
-        process.env.REACT_APP_API_URL + "/api/users",
-        {
-          headers: {
-            Authorization: authHeader,
-          },
-        }
-      );
-      setUser(res.data);
-    }
-    fetchUser();
-  }, [authHeader]);
-
     async function handleAddressChange(values: {
         street: string;
         houseNumber: string;
@@ -106,6 +90,7 @@ function AnyPage() {
                 },
             });
             if (res.status === 200) {
+                // TODO: Pop up the nice notification from ccd709377621b99c0704b0d8360858fb4207213e (commit)
                 alert("controlPC updated successfully");
             }
         } catch (e) {
@@ -117,15 +102,21 @@ function AnyPage() {
 
     useEffect(() => {
         async function fetchUser() {
-            const res = await axios.get(
-                process.env.REACT_APP_API_URL + "/api/users",
-                {
-                    headers: {
-                        Authorization: authHeader,
-                    },
-                }
-            );
-            setUser(res.data);
+            try {
+                const res = await axios.get(
+                    process.env.REACT_APP_API_URL + "/api/users",
+                    {
+                        headers: {
+                            Authorization: authHeader,
+                        },
+                    }
+                );
+                setUser(res.data);
+            } catch (e) {
+                const error = e as AxiosError;
+                console.error(error);
+                // Todo: Give the user a nice error message (ccd709377621b99c0704b0d8360858fb4207213e commit)
+            }
         }
         fetchUser();
     }, [authHeader]);
@@ -153,49 +144,49 @@ function AnyPage() {
                             error={addressFormik.errors.street}
                         />
 
-            <Input
-              label={t("Login.housenum")}
-              placeholder={user?.address.houseNumber || ""}
-              width="1/2"
-              onChange={addressFormik.handleChange}
-              value={addressFormik.values.houseNumber}
-              name="houseNumber"
-              error={addressFormik.errors.houseNumber}
-            />
-          </div>
-          <div className="flex dir-row w-full gap-5 px-5 pt-5">
-            <Input
-              label={t("Login.zipcode")}
-              placeholder={user?.address.zip || ""}
-              width="1/2"
-              onChange={addressFormik.handleChange}
-              value={addressFormik.values.zip}
-              error={addressFormik.errors.zip}
-              name="zip"
-            />
-            <Input
-              label={t("Login.place")}
-              placeholder={user?.address.city || ""}
-              width="full"
-              onChange={addressFormik.handleChange}
-              value={addressFormik.values.city}
-              name="city"
-              error={addressFormik.errors.city}
-            />
-          </div>
-          <Input
-            label={t("Login.password")}
-            placeholder="***************"
-            width="1/2 px-5 pt-5"
-            onChange={addressFormik.handleChange}
-            value={addressFormik.values.password}
-            name="password"
-            error={addressFormik.errors.password}
-          />
-          {/* TODO: Link this do an actual forget page */}
-          <a href="/wwforgor" className="px-5 underline text-secondaryCol">
-            {t("Login.adjustpass")}
-          </a>
+                        <Input
+                            label={t("Login.housenum")}
+                            placeholder={user?.address.houseNumber || ""}
+                            width="1/2"
+                            onChange={addressFormik.handleChange}
+                            value={addressFormik.values.houseNumber}
+                            name="houseNumber"
+                            error={addressFormik.errors.houseNumber}
+                        />
+                    </div>
+                    <div className="flex dir-row w-full gap-5 px-5 pt-5">
+                        <Input
+                            label={t("Login.zipcode")}
+                            placeholder={user?.address.zip || ""}
+                            width="1/2"
+                            onChange={addressFormik.handleChange}
+                            value={addressFormik.values.zip}
+                            error={addressFormik.errors.zip}
+                            name="zip"
+                        />
+                        <Input
+                            label={t("Login.place")}
+                            placeholder={user?.address.city || ""}
+                            width="full"
+                            onChange={addressFormik.handleChange}
+                            value={addressFormik.values.city}
+                            name="city"
+                            error={addressFormik.errors.city}
+                        />
+                    </div>
+                    <Input
+                        label={t("Login.password")}
+                        placeholder="***************"
+                        width="1/2 px-5 pt-5"
+                        onChange={addressFormik.handleChange}
+                        value={addressFormik.values.password}
+                        name="password"
+                        error={addressFormik.errors.password}
+                    />
+                    {/* TODO: Link this do an actual forget page */}
+                    <a href="/wwforgor" className="px-5 underline text-secondaryCol">
+                        {t("Login.adjustpass")}
+                    </a>
 
                     <div className="mx-5">
                         <LinkLessButton text={t("Login.adjustbutton")} />

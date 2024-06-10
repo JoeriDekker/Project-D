@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -18,11 +18,15 @@ import AnyPage from "./pages/anypage";
 import LogboekScreen from "./pages/Logboek/logboekScreen";
 import Register from "./pages/Register/RegisterPage";
 import VerificationScreen from "./pages/Verification/VerificationScreen"; import Home from './pages/homedashboard';
+import WaterLevelSettings from "./pages/WaterlevelSettings/WaterLevelSettings";
 
 function App() {
   const authHeader = useAuthHeader();
   const authState = useIsAuthenticated();
   const SignOut = useSignOut();
+
+  const [welcomeState, setWelcomeState] = useState(false);
+
   async function isTokenValid() {
     if (!authState) return;
     try {
@@ -48,16 +52,17 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* <Route path="/register" Component={Register} />
+        <Route path="/register" Component={Register} />
         <Route path="/login" Component={LoginScreen} />
-        <Route path="/verify/:userId/:token" Component={VerificationScreen} /> */}
-        {/* <Route element={<AuthOutlet fallbackPath="/login" />}> */}
-        <Route path="/account" element={<AccountPage />} />
-        <Route path="/*" element={<Navigate to="/home" />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/logboek" element={<LogboekScreen />} />
-        {/* </Route> */}
-        {/* <Route path="/*" element={<Navigate to="/" />} /> */}
+        <Route path="/verify/:userId/:token" Component={VerificationScreen} />
+        <Route element={<AuthOutlet fallbackPath="/login" />}>
+          <Route path="/account" element={<AccountPage />} />
+          <Route path="/waterlevelsettings" element={<WaterLevelSettings />} />
+          <Route path="/home" element={<Home hasWelcomeBeenShown={welcomeState} setWelcomeState={setWelcomeState} />} />
+          <Route path="/*" element={<Navigate to="/home" />} />
+          <Route path="/logboek" element={<LogboekScreen />} />
+        </Route>
+        <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );

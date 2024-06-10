@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, FC } from "react";
 import { t } from "i18next";
 import Input from "../components/Input/Input"
-
+import Modal from "../components/Modal/Modal";
 import Navbar from '../components/navbar/navbar'
 import WaterlevelDial from '../components/waterleveldial/waterleveldial'
 import Logboek from "../components/logboek/waterpeillogboek";
@@ -10,10 +10,52 @@ import Automatic from "../components/Validation/Automatic";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import WaterStorage from "../components/waterstorage/waterstorage";
 
-function HomeDashboard() {
+interface HomeProps {
+    hasWelcomeBeenShown: boolean;
+    setWelcomeState: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) => {
+    /*
+    This data is real data from the openweatherAPI.
+    TODO: implement that it gets the forecast of today at X time
+    */
+    const [modalState, setModalState] = useState("hidden");
     const [dialtoggle, setdialtoggle] = useState(false);
-    const [waterlevel, setwaterlevel] = useState(-1.15);
+    const [waterlevel, setwaterlevel] = useState(-2.15);
+
+    const weatherForecast = {
+        "$id": "36",
+        "stationid": 6344,
+        "stationname": "Meetstation Rotterdam",
+        "lat": 51.95,
+        "lon": 4.45,
+        "regio": "Rotterdam",
+        "timestamp": "2024-05-23T15:00:00",
+        "weatherdescription": "Zwaar bewolkt",
+        "iconurl": "https://www.buienradar.nl/resources/images/icons/weather/30x30/c.png",
+        "fullIconUrl": "https://www.buienradar.nl/resources/images/icons/weather/96x96/C.png",
+        "graphUrl": "https://www.buienradar.nl/nederland/weerbericht/weergrafieken/c",
+        "winddirection": "WZW",
+        "airpressure": 1014.5,
+        "temperature": 18.3,
+        "groundtemperature": 20.9,
+        "feeltemperature": 18.3,
+        "visibility": 28600.0,
+        "windgusts": 11.2,
+        "windspeed": 5.6,
+        "windspeedBft": 4,
+        "humidity": 67.0,
+        "precipitation": 0.0, // neerslag
+        "sunpower": 615.0,
+        "rainFallLast24Hour": 0.0,
+        "rainFallLastHour": 0.0,
+        "winddirectiondegrees": 255
+    }
+
+    // const waterlevel = -2.15;
     const waterlevel_perc = 65;
 
     const paalkop = -2.05;
@@ -24,18 +66,22 @@ function HomeDashboard() {
 
     function defineNotifcation() {
         // TODO: de amth.random vervangen door de API call bijvoorbeeld: /api/checkWaterStand
+        if (hasWelcomeBeenShown) {
+            return;
+        }
 
         if (waterlevel < ideal) {
-            return toast.error("Let op! Je waterpeil is gevaarlijk laag!", {
+
+            return toast.error("Je waterpeil is laag!", {
                 position: "top-center",
-                autoClose: 5000,
+                autoClose: false,
                 hideProgressBar: false,
-                closeOnClick: true,
+                closeOnClick: false,
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
                 theme: "colored",
-            });
+            })
         }
 
         return toast.success("Welkom terug!", {
@@ -51,10 +97,12 @@ function HomeDashboard() {
     }
 
     useEffect(() => {
+        if (!hasWelcomeBeenShown) {
+            setWelcomeState(true);
+            setModalState("")
+        }
         defineNotifcation();
     })
-
-
 
     return (
         <div className="bg-secondaryCol w-screen h-screen py-5 flex">
@@ -72,7 +120,7 @@ function HomeDashboard() {
                 theme="light"
             />
             {/* grid setup */}
-            <div className="bg-white w-full h-full rounded-xl mr-5 pb-4">
+            <div className="ml-80 bg-white w-full h-full rounded-xl mr-5 pb-4">
                 <div className="grid grid-cols-2 grid-rows-2 h-[100%] m-2">
 
                     {/* water level visual */}
@@ -85,7 +133,7 @@ function HomeDashboard() {
                     </div>
 
                     <div className="bg-gray-100 m-2 p-4 rounded-xl">
-
+                        <WaterStorage />
                     </div>
 
                     <div className="flex flex-col justify-between p-8 items-center bg-gray-100 m-2 p-4 rounded-xl">
@@ -101,9 +149,15 @@ function HomeDashboard() {
                             {t("Water.toggle")}
                         </label>
                     </div>
-                </div >
-            </div >
-        </div >
+                </div>
+                <Modal
+                    header="Oh nee! Je waterpeil is laag🤯"
+                    text="Als u geen paalrot wil hebben moet u uw waterpeil verhogen door op de knop op de home pagina te drukken. Als u dit niet doet, ligt de verantwoordelijkheid bij u."
+                    buttonText="Begrepen!"
+                    hiddenState={modalState}
+                />
+            </div>
+        </div>
     );
 }
 

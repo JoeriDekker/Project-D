@@ -20,17 +20,18 @@ namespace WAMServer.Controllers
         private readonly IRepository<ControlPC> _controlPCRepository;
         private readonly IRepository<User> _userRepository;
 
-        private readonly IControlPC<ControlPC> _controlPCRepository2;
+        private readonly IControlPC<ControlPC> _controlPCService;
 
         /// <summary>
         /// The constructor of the ControlPC controller.
         /// </summary>
         /// <param name="controlPCRepository">The ControlPC repository.</param>
         /// <param name="userRepository">The user repository.</param>
-        public ControlPCController(IRepository<ControlPC> controlPCRepository, IRepository<User> userRepository)
+        public ControlPCController(IRepository<ControlPC> controlPCRepository, IRepository<User> userRepository, IControlPC<ControlPC> controlPCService)
         {
             _controlPCRepository = controlPCRepository;
             _userRepository = userRepository;
+            _controlPCService = controlPCService;
         }
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace WAMServer.Controllers
         [Authorize]
         public async Task<ActionResult<ControlPC>> GetControlPC(Guid id)
         {
-            var controlPC = await _controlPCRepository2.GetAsync(id);
+            var controlPC = await _controlPCService.GetAsync(id);
             if (controlPC == null)
             {
                 return NotFound();
@@ -73,25 +74,30 @@ namespace WAMServer.Controllers
         {
             if (controlPC == null)
             {
-                return BadRequest(new { message = "Invalid data." });
+                return BadRequest(new ErrorBody("Invalid data."));
             }
 
             var currentUser = HttpContext.User;
             if (!currentUser.HasClaim(c => c.Type == "Id"))
             {
-                return Unauthorized(new { message = "Unauthorized." });
+                return Unauthorized();
             }
 
             string userId = currentUser.Claims.FirstOrDefault(c => c.Type == "Id")!.Value;
             if (!Guid.TryParse(userId, out Guid id))
             {
-                return Unauthorized(new { message = "Invalid user ID." });
+                return Unauthorized();
             }
-
+            
             controlPC.userId = id;
             controlPC.Id = Guid.NewGuid();
-
-            await _controlPCRepository2.CreateAsync(controlPC);
+            try
+            {
+                await _controlPCService.CreateAsync(controlPC);
+            } catch (Exception e)
+            {
+                return StatusCode(500, new { message = e.Message });
+            }
             return CreatedAtAction(nameof(GetControlPC), new { id = controlPC.Id }, controlPC);
         }
 
@@ -107,16 +113,22 @@ namespace WAMServer.Controllers
         {
             if (controlPC == null || id != controlPC.Id)
             {
-                return BadRequest(new { message = "Data mismatch." });
+                return BadRequest(new ErrorBody("Data mismatch"));
             }
 
-            var existingControlPC = await _controlPCRepository2.GetAsync(id);
+            var existingControlPC = await _controlPCService.GetAsync(id);
             if (existingControlPC == null)
             {
                 return NotFound();
             }
 
-            await _controlPCRepository.UpdateAsync(controlPC, _ => _.Id == id);
+            try
+            {
+                await _controlPCRepository.UpdateAsync(controlPC, _ => _.Id == id);
+            } catch (Exception e)
+            {
+                return StatusCode(500, new { message = e.Message });
+            }
             return NoContent();
         }
 
@@ -129,7 +141,7 @@ namespace WAMServer.Controllers
         [Authorize]
         public async Task<IActionResult> DeleteControlPC(Guid id)
         {
-            var controlPC = await _controlPCRepository2.GetAsync(id);
+            var controlPC = await _controlPCService.GetAsync(id);
             if (controlPC == null)
             {
                 return NotFound();

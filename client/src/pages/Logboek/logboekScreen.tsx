@@ -5,6 +5,7 @@ import Navbar from '../../components/navbar/navbar'
 import Logboek from '../../components/logboek/logboek'
 import WaterpeilLogboek from "../../components/logboek/waterpeillogboek";
 import ActionLogboek from "../../components/logboek/actionlogboek";
+import WaterStorage from "../../components/waterstorage/waterstorage";
 
 function LogboekScreen() {
 
@@ -12,7 +13,7 @@ function LogboekScreen() {
         <>
             <div className="bg-backgroundCol w-screen h-screen py-5 flex dir-row">
                 <Navbar />
-                <div className="bg-white w-full h-full rounded-xl mr-5">
+                <div className="ml-80 bg-white w-full h-full rounded-xl mr-5">
                     <div className="container mx-auto ">
                         <h1 className="text-3xl font-bold flex justify-center ">
                             Logboek
@@ -22,6 +23,7 @@ function LogboekScreen() {
                             <WaterpeilLogboek />
                             <Logboek />
                             <ActionLogboek />
+                            <WaterStorage />
                         </div>
                     </div>
                 </div>

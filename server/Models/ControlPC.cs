@@ -31,6 +31,7 @@ namespace WAMServer.Models
         public ControlPC(Guid userId, string secret, string meetputBroID, string controlPCSecret)
         {
             this.Id = Guid.NewGuid();
+            this.userId = userId;
             this.secret = secret;
             this.meetputBroID = meetputBroID;
             this.ControlPCSecret = controlPCSecret;
