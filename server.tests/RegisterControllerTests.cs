@@ -16,6 +16,7 @@ namespace WAMServer.Tests.Controllers
         private readonly Mock<IEmailService> _mailServiceMock;
         private readonly Mock<IConfiguration> _configurationMock;
         private readonly Mock<IRepository<Address>> _addressRepositoryMock;
+        private readonly Mock<IRepository<WaterLevelSettings>> _waterLevelSettingsRepositoryMock;
         private readonly RegisterController _controller;
 
         public RegisterControllerTests()
@@ -24,11 +25,12 @@ namespace WAMServer.Tests.Controllers
             _userRepositoryMock = new Mock<IRepository<User>>();
             _mailServiceMock = new Mock<IEmailService>();
             _addressRepositoryMock = new Mock<IRepository<Address>>();
-            
+            _waterLevelSettingsRepositoryMock = new Mock<IRepository<WaterLevelSettings>>();
+
 
             _mailServiceMock.Setup(x => x.SendEmail(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()));
 
-            _controller = new RegisterController(_userRepositoryMock.Object, _mailServiceMock.Object, _configurationMock.Object, _addressRepositoryMock.Object);
+            _controller = new RegisterController(_userRepositoryMock.Object, _mailServiceMock.Object, _configurationMock.Object, _addressRepositoryMock.Object, _waterLevelSettingsRepositoryMock.Object);
         }
 
         [Fact]
@@ -141,7 +143,12 @@ namespace WAMServer.Tests.Controllers
             var user = new User(userBody.FirstName, userBody.LastName, userBody.Email, userBody.Password);
             _userRepositoryMock.Setup(x => x.GetAll(It.IsAny<Func<User, bool>>())).Returns(new List<User>().AsQueryable());
             _userRepositoryMock.Setup(x => x.AddAsync(It.IsAny<User>())).ReturnsAsync(user);
-
+            _waterLevelSettingsRepositoryMock.Setup(x => x.AddAsync(It.IsAny<WaterLevelSettings>())).ReturnsAsync(new WaterLevelSettings()
+            {
+                UserId = user.Id,
+                IdealHeight = -1.85m,
+                PoleHeight = -2.05m
+            });
             // Act
             var result = await _controller.Post(userBody);
 
