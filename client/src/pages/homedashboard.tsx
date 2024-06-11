@@ -139,34 +139,6 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
 
     }, [user, currentLevel]);
 
-
-    // useEffect(() => {
-    //     async function fetchUser() {
-    //       const res = await axios.get(
-    //         process.env.REACT_APP_API_URL + "/api/users",
-    //         {
-    //           headers: {
-    //             Authorization: authHeader,
-    //           },
-    //         }
-    //       );
-    //       setUser(res.data);
-    //       console.log('ideal: ' + ideal)
-    //       console.log('waterlvevel: ' + waterlevel)
-
-    //     }
-    //     fetchUser();
-    //     if (!hasWelcomeBeenShown) {
-    //         setWelcomeState(true);
-    //         setModalState("")
-    //     }
-    //     defineNotifcation();
-    //   }, [authHeader]);
-
-    // useEffect(() => {
-
-    // })
-
     return (
         <div className="bg-secondaryCol w-screen h-screen py-5 flex">
             <Navbar />
