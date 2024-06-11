@@ -47,7 +47,7 @@ function WaterLevelVisual({ currentLevel, idealLevel, poleLevel, minScale, maxSc
 
                 {/* current level */}
                 <div className="flex-col pl-6 pb-6 flex justify-center items-center">
-                    <h1 className="text-[350%] font-semibold" style={{ color: `${statusColor}` }}>{currentLevel}</h1>
+                    <h1 className="text-[350%] font-semibold" style={{ color: `${statusColor}` }}>{currentLevel?.toFixed(2)}</h1>
                     <h1 className="text-white text-[350%] font-semibold mt-[-10%]">NAP</h1>
                 </div>
 
@@ -61,7 +61,7 @@ function WaterLevelVisual({ currentLevel, idealLevel, poleLevel, minScale, maxSc
 
                     <div className="flex justify-center">
                         <p className="text-white mr-1">{t("waterlevel.poleheight")}</p>
-                        <p className="text-gray-400">{poleLevel}</p>
+                        <p className="text-orange-300">{poleLevel}</p>
                     </div>
 
                 </div>

@@ -63,9 +63,9 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
 
     const authHeader = useAuthHeader();
     const [user, setUser] = React.useState<UserResponse | null>(null);
-    const [currentImportLevel, setCurrentImportLevel] = React.useState<WaterLevel | null>(null);
+    // const [currentImportLevel, setCurrentImportLevel] = React.useState<WaterLevel | null>(null);
     // console.log(currentImportLevel)
-    const [currentLevel, setCurrentLevel] = useState(currentImportLevel != null ? parseFloat(currentImportLevel.level) : 0);
+    const [currentLevel, setCurrentLevel] = useState(0);
     const [waterlevelDial, setWaterlevelDial] = useState(currentLevel);
 
     const poleLevel = user?.waterLevelSettings.poleHeight ?? 0;
@@ -100,7 +100,7 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
                 );
 
                 if (res.data.length > 0) {
-                    setCurrentImportLevel(res.data[0]);
+                    setCurrentLevel(res.data[0].level);
                 } else {
                     console.log("No data available.");
                 }

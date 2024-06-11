@@ -13,6 +13,7 @@ type Props = {
 }
 
 function WaterlevelDial(props: Props) {
+
     const [currentDialValue, setCurrentDialValue] = useState(props.water);
 
     function waterlevelLogic(plus: boolean = false) {
@@ -22,21 +23,25 @@ function WaterlevelDial(props: Props) {
         }
         else {
             if (plus) {
-                tempChangedWaterLevel += 0.25;
+                tempChangedWaterLevel += 0.15;
                 setCurrentDialValue(tempChangedWaterLevel);
             }
             else {
-                tempChangedWaterLevel -= 0.25;
+                tempChangedWaterLevel -= 0.15;
                 setCurrentDialValue(tempChangedWaterLevel);
             }
         }
     }
 
     useEffect(() => {
+        if (currentDialValue === 0 || undefined) {
+            setCurrentDialValue(props.water as number);
+        }
         setTimeout(() => {
-            return props.currentwaterstate(currentDialValue)
+
+            props.currentwaterstate(currentDialValue)
         }, 1000)
-    })
+    }, [currentDialValue, props, props.water])
 
     return (
         <div className="circulardial h-72 flex justify-center items-center overflow-hidden">
