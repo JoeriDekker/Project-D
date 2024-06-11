@@ -16,6 +16,7 @@ namespace WAMServer.Tests.Controllers
         private readonly Mock<IEmailService> _mailServiceMock;
         private readonly Mock<IConfiguration> _configurationMock;
         private readonly Mock<IRepository<Address>> _addressRepositoryMock;
+        private readonly Mock<IRepository<WaterLevelSettings>> _waterLevelSettingsRepositoryMock;
         private readonly RegisterController _controller;
 
         public RegisterControllerTests()
@@ -24,11 +25,12 @@ namespace WAMServer.Tests.Controllers
             _userRepositoryMock = new Mock<IRepository<User>>();
             _mailServiceMock = new Mock<IEmailService>();
             _addressRepositoryMock = new Mock<IRepository<Address>>();
-            
+            _waterLevelSettingsRepositoryMock = new Mock<IRepository<WaterLevelSettings>>();
+
 
             _mailServiceMock.Setup(x => x.SendEmail(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()));
 
-            _controller = new RegisterController(_userRepositoryMock.Object, _mailServiceMock.Object, _configurationMock.Object, _addressRepositoryMock.Object);
+            _controller = new RegisterController(_userRepositoryMock.Object, _mailServiceMock.Object, _configurationMock.Object, _addressRepositoryMock.Object, _waterLevelSettingsRepositoryMock.Object);
         }
 
         [Fact]
@@ -110,6 +112,27 @@ namespace WAMServer.Tests.Controllers
         }
 
         [Fact]
+        public async Task Post_Should_Return_BadRequest_When_User_Registration_Fails()
+        {
+            // Arrange
+            _configurationMock.Setup(x => x["JWT:Issuer"]).Returns("http://localhost:5000");
+            _configurationMock.Setup(x => x["FrontendURL"]).Returns("http://localhost:3000");
+            _mailServiceMock.Setup(x => x.SendEmail(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()));
+            var userBody = new UserBody { Email = "test@example.com", Password = "My_Super_securePassword!231", FirstName = "John", LastName = "Doe" };
+
+            _userRepositoryMock.Setup(x => x.AddAsync(It.IsAny<User>())).Throws(new Exception());
+
+            // Act
+            var result = await _controller.Post(userBody);
+
+            // Assert
+            Assert.IsType<BadRequestObjectResult>(result);
+            var badRequestResult = result as BadRequestObjectResult;
+            Assert.NotNull(badRequestResult!.Value);
+            Assert.Equal("Register.failed", (badRequestResult.Value as ErrorBody)!.Error);
+        }
+
+        [Fact]
         public async Task Post_Should_Return_Ok_When_User_Is_Registered()
         {
             // Arrange
@@ -120,7 +143,12 @@ namespace WAMServer.Tests.Controllers
             var user = new User(userBody.FirstName, userBody.LastName, userBody.Email, userBody.Password);
             _userRepositoryMock.Setup(x => x.GetAll(It.IsAny<Func<User, bool>>())).Returns(new List<User>().AsQueryable());
             _userRepositoryMock.Setup(x => x.AddAsync(It.IsAny<User>())).ReturnsAsync(user);
-
+            _waterLevelSettingsRepositoryMock.Setup(x => x.AddAsync(It.IsAny<WaterLevelSettings>())).ReturnsAsync(new WaterLevelSettings()
+            {
+                UserId = user.Id,
+                IdealHeight = -1.85m,
+                PoleHeight = -2.05m
+            });
             // Act
             var result = await _controller.Post(userBody);
 
@@ -194,6 +222,21 @@ namespace WAMServer.Tests.Controllers
             var okResult = result as OkObjectResult;
             Assert.NotNull(okResult!.Value);
             Assert.Equal("http://localhost:3000", okResult!.Value);
+        }
+
+        [Fact]
+        public async Task Confirm_Should_Return_BadRequest_When_FrontendURL_Is_Null()
+        {
+            // Arrange
+            _configurationMock.Setup(x => x["JWT:Issuer"]).Returns("http://localhost:5000");
+            _configurationMock.Setup(x => x["FrontendURL"]).Returns((string?)null);
+            _mailServiceMock.Setup(x => x.SendEmail(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()));
+
+            // Act
+            var result = await _controller.Confirm(Guid.NewGuid().ToString(), Guid.NewGuid().ToString());
+
+            // Assert
+            Assert.IsType<BadRequestResult>(result);
         }
     }
 }

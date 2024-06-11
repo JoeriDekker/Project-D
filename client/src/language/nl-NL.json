@@ -9,6 +9,7 @@
         "logbooks": "Logboeken",
         "neighbourhood": "Mijn buurt",
         "account": "Account",
+        "waterlevelsettings": "Waterpeil Instellingen",
         "close": "Sluiten"
     },
     "Contact": {
@@ -41,5 +42,39 @@
         "statusexplain": "De huidige status van het apparaat. Dit wordt gebruikt om te bepalen of het apparaat met de server is verbonden.",
         "foundon": "De UUID gevonden op de achterkant van het apparaat.",
         "keyon": "De beveiligingssleutel gevonden in een e-mail die naar de gebruiker is verzonden."
+    },
+    "waterlevel": {
+        "ideal": "Ideaal",
+        "poleheight": "Paalkop",
+        "badstatus": "Je waterpeil is NIET goed!",
+        "goodstatus": "Je waterpeil is GOED!",
+        "adjust": "Waterpeil instellingen wijzigen",
+        "current": "Huidige Waterpeil instellingen"
+    },
+    "logboek" : {
+        "waterleverlogbook": "Waterpeil Logbook",
+        "actionlogbook": "Actie logboek",
+        "level": "Peil",
+        "records": "Opnamen",
+        "selectmonth": "Selecteer een maand",
+        "january": "Januari",
+        "february": "Februari",
+        "march": "Maart",
+        "april": "April",
+        "may": "Mei",
+        "june": "Juni",
+        "july": "Juli",
+        "august": "Augustus",
+        "september": "September",
+        "october": "Oktober",
+        "november": "November",
+        "december": "December"
+    },
+    "waterstorage" : {
+        "source": "Bronnen",
+        "liters": "Liter",
+        "active": "Actief",
+        "inactive": "Inactief",
+        "error": "Fout"
     }
 }

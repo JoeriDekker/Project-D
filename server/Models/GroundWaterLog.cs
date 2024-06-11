@@ -13,7 +13,6 @@ namespace WAMServer.Models
         [Required, Column(TypeName = "varchar(100)")]
         public string controlPCID { get; set; } = null!;
         [Required, Column(TypeName = "varchar(100)")]
-        // TODO: Change to DateTime
         public DateTime date { get; set; }
         [Required, Column(TypeName = "decimal")]
         public decimal level { get; set; } = 0;

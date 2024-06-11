@@ -31,7 +31,7 @@ function Navbar() {
     }
 
     return (
-        <aside className="flex flex-col w-20r min-w-80 h-full pb-8 overflow-y-hidden">
+        <aside className="flex fixed flex-col w-20r min-w-80 h-full pb-8 overflow-y-hidden">
             <a href="/home" className="px-14"> {/* TODO: Add link to homepage */}
                 <Icons iconName="Logo" />
             </a>
@@ -50,6 +50,7 @@ function Navbar() {
                         <label className="px-14 text-sm text-gray-500">{t('Navigation.settings')}</label>
 
                         <NavItem icon="Neighbourhood" text={t('Navigation.neighbourhood')} link="/anypage" />
+                        <NavItem icon="Settings" text={t('Navigation.waterlevelsettings')} link="/waterlevelsettings" />
                         <NavItem icon="Account" text={t('Navigation.account')} link="/account" />
                     </div>
 
@@ -76,7 +77,7 @@ function Navbar() {
                     {/* <AnyButton link="/" text={t('Navigation.logout')} /> */}
                     {/* onClick={handleLogout} */}
 
-                    <button className="ring-offset-background mx-14 focus-visible:ring-ring flex h-10 w-50 items-center justify-center whitespace-nowrap rounded-md bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-black/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                    <button className="ring-offset-background mx-14 mb-2 focus-visible:ring-ring flex h-10 w-50 items-center justify-center whitespace-nowrap rounded-md bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-black/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                         type="submit" onClick={handleLogout}>
                         {t('Navigation.logout')}
                     </button>

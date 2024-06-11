@@ -20,6 +20,7 @@
     },
     "Navigation": {
         "account": "Account",
+        "waterlevelsettings": "Waterlevel Settings",
         "close": "Close",
         "contact": "Uncertainties? Contact us!",
         "dashboard": "Dashboard",
@@ -82,5 +83,39 @@
         "street": "Street name",
         "success": "You have successfully registered. A confirmation email has been sent to your email address. After confirming your email address, you can log in.",
         "zipcode": "Postal code"
+    },
+    "waterlevel": {
+        "ideal": "Ideal",
+        "poleheight": "Poleheight",
+        "badstatus": "Your waterlevel is NOT right!",
+        "goodstatus": "Your waterlevel is RIGHT!",
+        "adjust": "Change Waterlevel Settings",
+        "current": "Current Waterlevel Settings"
+    },
+    "logboek" : {
+        "waterleverlogbook": "Water Level Logbook",
+        "actionlogbook": "Action logbook",
+        "level": "Level",
+        "records": "Records",
+        "selectmonth": "Select a month",
+        "january": "January",
+        "february": "February",
+        "march": "March",
+        "april": "April",
+        "may": "May",
+        "june": "June",
+        "july": "July",
+        "august": "August",
+        "september": "September",
+        "october": "October",
+        "november": "November",
+        "december": "December"
+    },
+    "waterstorage" : {
+        "source": "Sources",
+        "liters": "Liters",
+        "active": "Active",
+        "inactive": "Inactive",
+        "error": "Error"
     }
 }
