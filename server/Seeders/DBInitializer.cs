@@ -62,7 +62,7 @@ namespace WAMServer.Seeders
                     context.ControlPC.Add(controlPC);
                     Console.WriteLine(context);
                     // add a ground water log
-                    var groundWaterLog = new GroundWaterLog(Guid.NewGuid().ToString(), DateOnly.Parse("17-05-2024").ToDateTime(TimeOnly.Parse("12:00")), Decimal.Parse("-1.33"));
+                    var groundWaterLog = new GroundWaterLog(Guid.NewGuid().ToString(), DateOnly.Parse("17/05/2024").ToDateTime(TimeOnly.Parse("12:00")), Decimal.Parse("-1.33"));
 
                     context.GroundWaterLog.Add(groundWaterLog);
 
