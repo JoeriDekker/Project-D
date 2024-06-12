@@ -11,11 +11,7 @@ function WaterpeilLogboek(){
     const currentYear = new Date().getFullYear();
 
     const WaterpeilLogboekEntry = ({date, address, level }: WaterpeilLogboekState) => {
-        let peilcolor: string = 'text-green-600';
-        let idealHeight = user?.waterLevelSettings.idealHeight ?? 0;
-        if (parseFloat(level) < idealHeight) {
-            peilcolor = 'text-red-600';
-        }
+        let idealHeight = user?.waterLevelSettings?.idealHeight ?? 0;
 
         // get only firt 5 characters of date
         let smalldate = date.substring(5, 10);
@@ -24,7 +20,7 @@ function WaterpeilLogboek(){
             <div className="grid grid-cols-10 gap-2 mt-2 shadow-md text-center p-1">
                 <div className="py-1 px-2 mr-20 rounded-md bg-slate-100 col-span-3 ml-4"><text className="font-bold">{smalldate}</text></div>
                 <div className="mr-6 col-span-5 text-left"><text className="font-bold text-lg text-gray-400">{address}</text></div>
-                <div className="mr-6 col-span-2">Peil: <text className={`${peilcolor}`}>{parseFloat(level).toFixed(2)}</text></div>
+                <div className="mr-6 col-span-2">Peil: <text className={parseFloat(level) < idealHeight ? "text-red-600" : "text-green-600"}>{parseFloat(level).toFixed(2)}</text></div>
             </div>
         );
     };
