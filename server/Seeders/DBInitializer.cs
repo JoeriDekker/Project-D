@@ -60,7 +60,6 @@ namespace WAMServer.Seeders
                     }
                     context.SaveChanges();
                     context.ControlPC.Add(controlPC);
-                    // add a ground water log
                     context.SaveChanges();
 
                     // add ground water logs

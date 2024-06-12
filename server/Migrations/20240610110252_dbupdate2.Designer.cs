@@ -12,8 +12,8 @@ using WAMServer.Models;
 namespace server.Migrations
 {
     [DbContext(typeof(WamDBContext))]
-    [Migration("20240609115504_dbupdate")]
-    partial class dbupdate
+    [Migration("20240610110252_dbupdate2")]
+    partial class dbupdate2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
