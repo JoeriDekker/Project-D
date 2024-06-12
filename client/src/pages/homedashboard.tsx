@@ -76,12 +76,21 @@ const HomeDashboard: FC<HomeProps> = ({
   const [currentLevel, setCurrentLevel] = useState(0);
   const [waterlevelDial, setWaterlevelDial] = useState(currentLevel);
   const [waterLevelFetched, setWaterLevelFetched] = useState(false);
+  const [idealLevel, setIdealLevel] = useState(0);
+  const [poleLevel, setPoleLevel] = useState(0);
 
-  const poleLevel = user?.waterLevelSettings.poleHeight ?? 0;
-  const idealLevel = user?.waterLevelSettings.idealHeight ?? 0;
+  // const poleLevel = user?.waterLevelSettings?.poleHeight ?? 0;
+  // const idealLevel = user?.waterLevelSettings?.idealHeight ?? 0;
 
   const minScale = poleLevel - 4.5;
   const maxScale = poleLevel + 1;
+
+  useEffect(() => {
+    if (user == null) return;
+    if (user.waterLevelSettings == null) return;
+    setIdealLevel(user.waterLevelSettings.idealHeight);
+    setPoleLevel(user.waterLevelSettings.poleHeight);
+  }, [user])
 
   useEffect(() => {
     async function fetchUser() {
