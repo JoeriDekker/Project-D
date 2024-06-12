@@ -9,19 +9,15 @@ import WaterlevelDial from '../components/waterleveldial/waterleveldial'
 import Logboek from "../components/logboek/waterpeillogboek";
 import WaterLevelVisual from "../components/waterlevelvisual/waterlevelvisual"
 import Automatic from "../components/Validation/Automatic";
-import { WaterLevel } from "../components/waterlevelvisual/waterlevelvisual.state";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import WaterStorage from "../components/waterstorage/waterstorage";
-import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
-import { UserResponse } from "./LoginScreen/LoginScreen.state";
 
 
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 import { WaterLevel } from "../components/waterlevelvisual/waterlevelvisual.state";
 import { UserResponse } from "./LoginScreen/LoginScreen.state";
-import axios from "axios";
 
 interface HomeProps {
     hasWelcomeBeenShown: boolean;
@@ -30,9 +26,9 @@ interface HomeProps {
 
 
 const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) => {
-    const [currentLevel, setCurrentLevel] = useState<WaterLevel | null>(null);
-    const authHeader = useAuthHeader();
-    const [user, setUser] = React.useState<UserResponse | null>(null);
+    // const [currentLevel, setCurrentLevel] = useState<WaterLevel | null>(null);
+    // const authHeader = useAuthHeader();
+    // const [user, setUser] = React.useState<UserResponse | null>(null);
 
     /*
     This data is real data from the openweatherAPI.
@@ -142,7 +138,7 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
             });
         }
 
-        if (!waterlevel || !ideal || currentLevel < idealLevel) {
+        if (!currentLevel || !idealLevel || currentLevel < idealLevel) {
 
             return toast.error("Je waterpeil is laag!", {
                 position: "top-center",
@@ -214,17 +210,13 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
             return;
         }
 
-        const waterlevel = currentLevel ? parseFloat(currentLevel.level) : null;
-        const ideal = user?.waterLevelSettings.idealHeight;
-
-
 
         if (!hasWelcomeBeenShown) {
             defineNotifcation();
             setWelcomeState(true);
         }
 
-        if(!waterlevel || !ideal || waterlevel < ideal) {
+        if (!currentLevel || !idealLevel || currentLevel < idealLevel) {
             setModalState("");
         }
 
@@ -256,7 +248,7 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
                         {/* <WaterLevelVisual currentLevel={currentLevel} idealLevel={idealLevel} poleLevel={poleLevel} maxScale={maxScale} minScale={minScale} /> */}
                         <WaterLevelVisual currentLevel={currentLevel} idealLevel={idealLevel} poleLevel={poleLevel} maxScale={maxScale} minScale={minScale} />
 
-                        //<WaterLevelVisual currentLevel={currentLevel} setCurrentLevel={setCurrentLevel}/>
+                        {/* //<WaterLevelVisual currentLevel={currentLevel} setCurrentLevel={setCurrentLevel} /> */}
                     </div>
 
                     <div className="bg-gray-100 m-2 p-4 rounded-xl">
