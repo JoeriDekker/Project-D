@@ -19,7 +19,7 @@ function WaterLevelVisual({ currentLevel, idealLevel, poleLevel, minScale, maxSc
     useEffect(() => {
 
         function setStatus() {
-            if (typeof currentLevel === 'number' && !isNaN(currentLevel)) {
+            if (typeof currentLevel === 'number') {
                 if (currentLevel >= idealLevel) {
                     setStatusColor("#22c55e");
                     setStatusText(t("waterlevel.goodstatus"));
