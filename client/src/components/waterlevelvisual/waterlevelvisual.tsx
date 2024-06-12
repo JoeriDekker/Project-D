@@ -41,6 +41,14 @@ function WaterLevelVisual({ currentLevel, idealLevel, poleLevel, minScale, maxSc
         return (value) ? ((value - min) / (max - min)) * 100 : 0;
     }
 
+    function fixedCurrentWaterLevel()
+    {
+        if (currentLevel === null || isNaN(currentLevel)) {
+            return 0;
+        }
+        return currentLevel;
+    }
+
     const waterLevelPerc = calculatePercentage(currentLevel, minScale, maxScale);
     const poleLevelPerc = calculatePercentage(poleLevel, minScale, maxScale);
     const idealLevelPerc = calculatePercentage(idealLevel, minScale, maxScale);
@@ -58,7 +66,7 @@ function WaterLevelVisual({ currentLevel, idealLevel, poleLevel, minScale, maxSc
 
                 {/* current level */}
                 <div className="flex-col pl-6 pb-6 flex justify-center items-center">
-                    <h1 className="text-[350%] font-semibold" style={{ color: `${statusColor}` }}>{currentLevel?.toFixed(2)}</h1>
+                    <h1 className="text-[350%] font-semibold" style={{ color: `${statusColor}` }}>{fixedCurrentWaterLevel()}</h1>
                     <h1 className="text-white text-[350%] font-semibold mt-[-10%]">NAP</h1>
                 </div>
 
