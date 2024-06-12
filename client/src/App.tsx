@@ -17,7 +17,7 @@ import useIsAuthenticated from 'react-auth-kit/hooks/useIsAuthenticated'
 import AnyPage from "./pages/anypage";
 import LogboekScreen from "./pages/Logboek/logboekScreen";
 import Register from "./pages/Register/RegisterPage";
-import VerificationScreen from "./pages/Verification/VerificationScreen";import Home from './pages/homedashboard';
+import VerificationScreen from "./pages/Verification/VerificationScreen"; import Home from './pages/homedashboard';
 import WaterLevelSettings from "./pages/WaterlevelSettings/WaterLevelSettings";
 
 function App() {
@@ -58,7 +58,7 @@ function App() {
         <Route element={<AuthOutlet fallbackPath="/login" />}>
           <Route path="/account" element={<AccountPage />} />
           <Route path="/waterlevelsettings" element={<WaterLevelSettings />} />
-          <Route path="/home" element={<Home hasWelcomeBeenShown={welcomeState} setWelcomeState={setWelcomeState}/>} />
+          <Route path="/home" element={<Home hasWelcomeBeenShown={welcomeState} setWelcomeState={setWelcomeState} />} />
           <Route path="/*" element={<Navigate to="/home" />} />
           <Route path="/logboek" element={<LogboekScreen />} />
         </Route>

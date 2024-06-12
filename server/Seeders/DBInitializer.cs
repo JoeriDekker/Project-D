@@ -31,7 +31,8 @@ namespace WAMServer.Seeders
                         Zip = "2806BE"
                     };
 
-                    var waterlevelsetting = new WaterLevelSettings(){
+                    var waterlevelsetting = new WaterLevelSettings()
+                    {
                         Id = Guid.NewGuid(),
                         PoleHeight = decimal.Parse("-2.05"),
                         IdealHeight = decimal.Parse("-1.85")
@@ -60,6 +61,15 @@ namespace WAMServer.Seeders
                     }
                     context.SaveChanges();
                     context.ControlPC.Add(controlPC);
+
+                    // add a ground water log
+                    // var groundWaterLog = new GroundWaterLog(Guid.NewGuid().ToString(), DateTime.Parse("17/05/2024"), Decimal.Parse("-1.33"));
+
+                    // context.GroundWaterLog.Add(groundWaterLog);
+
+
+                    context.ControlPC.Add(controlPC);
+
                     context.SaveChanges();
 
                     // add ground water logs
@@ -83,8 +93,8 @@ namespace WAMServer.Seeders
                     context.SaveChanges();
 
                     //Add action types
-                    var actionType1 = new ActionType("Pump" , "Pump water to the ground");
-                    var actionType2 = new ActionType("Stop Pump" , "Stop pumping water to the ground");
+                    var actionType1 = new ActionType("Pump", "Pump water to the ground");
+                    var actionType2 = new ActionType("Stop Pump", "Stop pumping water to the ground");
 
                     context.ActionType.Add(actionType1);
                     context.ActionType.Add(actionType2);
