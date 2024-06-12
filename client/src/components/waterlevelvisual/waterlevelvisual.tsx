@@ -19,6 +19,7 @@ function WaterLevelVisual({ currentLevel, idealLevel, poleLevel, minScale, maxSc
     useEffect(() => {
 
         function setStatus() {
+            console.log("currentLevel", currentLevel);
             if (typeof currentLevel === 'number') {
                 if (currentLevel >= idealLevel) {
                     setStatusColor("#22c55e");
@@ -46,7 +47,7 @@ function WaterLevelVisual({ currentLevel, idealLevel, poleLevel, minScale, maxSc
         if (currentLevel === null || isNaN(currentLevel)) {
             return 0;
         }
-        return currentLevel;
+        return currentLevel.toFixed(2);
     }
 
     const waterLevelPerc = calculatePercentage(currentLevel, minScale, maxScale);

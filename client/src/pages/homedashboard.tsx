@@ -1,4 +1,4 @@
-import React, { useEffect, useState, FC } from "react";
+import React, { useEffect, useState, FC, useCallback } from "react";
 import { t } from "i18next";
 import Input from "../components/Input/Input"
 import axios from "axios";
@@ -74,6 +74,7 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
     // console.log(currentImportLevel)
     const [currentLevel, setCurrentLevel] = useState(0);
     const [waterlevelDial, setWaterlevelDial] = useState(currentLevel);
+    const [waterLevelFetched, setWaterLevelFetched] = useState(false);
 
     const poleLevel = user?.waterLevelSettings.poleHeight ?? 0;
     const idealLevel = user?.waterLevelSettings.idealHeight ?? 0;
@@ -108,6 +109,7 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
 
                 if (res.data.length > 0) {
                     setCurrentLevel(res.data[0].level);
+                    setWaterLevelFetched(true);
                 } else {
                     console.log("No data available.");
                 }
@@ -124,7 +126,8 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
         defineNotifcation();
     }, [authHeader]);
 
-    function defineNotifcation() {
+    const defineNotifcation = () => {
+        if (!waterLevelFetched) return;
         if (!currentLevel) {
             return toast.error("Er is iets mis gegaan, probeer het later opnieuw", {
                 position: "top-center",
@@ -137,9 +140,9 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
                 theme: "colored",
             });
         }
-
+    
         if (!currentLevel || !idealLevel || currentLevel < idealLevel) {
-
+    
             return toast.error("Je waterpeil is laag!", {
                 position: "top-center",
                 autoClose: false,
@@ -151,9 +154,9 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
                 theme: "colored",
             });
         }
-
+    
         setModalState("hidden");
-
+    
         return toast.success("Welkom terug!", {
             position: "top-center",
             autoClose: 5000,
@@ -164,7 +167,7 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
             progress: undefined,
             theme: "colored",
         });
-    }
+    };
 
     useEffect(() => {
         async function fetchUser() {
@@ -179,30 +182,6 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
         }
 
         fetchUser();
-    }, [authHeader]);
-
-    useEffect(() => {
-        async function fetchCurrentLevel() {
-            try {
-                const res = await axios.get(
-                    process.env.REACT_APP_API_URL + "/api/groundwaterlog",
-                    {
-                        headers: {
-                            Authorization: authHeader,
-                        },
-                    }
-                );
-
-                if (res.data.length > 0) {
-                    setCurrentLevel(res.data[0]);
-                } else {
-                    console.log("No data available.");
-                }
-            } catch (error) {
-                console.error("Error fetching current level:", error);
-            }
-        }
-        fetchCurrentLevel();
     }, [authHeader]);
 
     useEffect(() => {

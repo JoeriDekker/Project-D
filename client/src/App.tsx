@@ -17,7 +17,8 @@ import useIsAuthenticated from 'react-auth-kit/hooks/useIsAuthenticated'
 import AnyPage from "./pages/anypage";
 import LogboekScreen from "./pages/Logboek/logboekScreen";
 import Register from "./pages/Register/RegisterPage";
-import VerificationScreen from "./pages/Verification/VerificationScreen"; import Home from './pages/homedashboard';
+import VerificationScreen from "./pages/Verification/VerificationScreen";
+import Home from './pages/homedashboard';
 import WaterLevelSettings from "./pages/WaterlevelSettings/WaterLevelSettings";
 
 function App() {
