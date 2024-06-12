@@ -16,6 +16,7 @@ const WaterLevelVisual: FC<WaterLevelProps> = ({ currentLevel, setCurrentLevel }
     const [user, setUser] = React.useState<UserResponse | null>(null);
     const [statusColor, setStatusColor] = React.useState<string | null>(null);
     const [statusText, setStatusText] = React.useState<string | null>(null);
+    const [isCurrentLevelFetched, setCurrentLevelFetched] = React.useState<boolean>(false);
 
     useEffect(() => {
         async function fetchUser() {
@@ -65,7 +66,7 @@ const WaterLevelVisual: FC<WaterLevelProps> = ({ currentLevel, setCurrentLevel }
     useEffect(() => {
         function setStatus()
         {
-            if (typeof currentLevel?.level === 'number' && !isNaN(currentLevel?.level))
+            if (typeof currentLevel?.level === 'number')
             {
                 if (currentLevel.level >= idealLevel)
                 {
@@ -77,10 +78,12 @@ const WaterLevelVisual: FC<WaterLevelProps> = ({ currentLevel, setCurrentLevel }
                     setStatusColor("#ef4444");
                     setStatusText(t("waterlevel.badstatus"));
                 }
+                setCurrentLevelFetched(true);
             }
             else
             {
-                console.error("Error setting water level status.");
+                if (isCurrentLevelFetched)
+                    console.error("Error setting water level status.");
             }
         }
         setStatus();

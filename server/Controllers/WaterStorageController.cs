@@ -49,9 +49,13 @@ namespace WAMServer.Controllers{
         //     return Ok(waterstorages);
         // }
 
+        /// <summary>
+        /// Gets a water storages by the id of the user.
+        /// </summary>
+        /// <param name="id">The id of the user having waterstorages</param>
         [HttpGet("{id}")]
         [Authorize]
-        public ActionResult<WaterStorage> GetWaterStorageFromID(Guid id)
+        public ActionResult<List<WaterStorage>> GetWaterStorageFromID(Guid id)
         {
             // Get all Waterstoreges from the user with the given id in getall() method
 

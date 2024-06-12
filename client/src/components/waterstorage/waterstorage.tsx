@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 
 import { t } from "i18next";
@@ -11,11 +11,11 @@ function WaterStorage() {
     const WaterStorageEntry = ({ typeStorage, waterStored, storageState}: WaterStorageState) => {
         let color = "";
 
-        if ( storageState == "1") {
+        if ( storageState === "1") {
             color = "text-green-500";
             storageState = t("waterstorage.active");
         }
-        else if ( storageState == "2"){
+        else if ( storageState === "2"){
             color = "text-yellow-500";
             storageState = t("waterstorage.inactive");
         }
@@ -84,7 +84,12 @@ function WaterStorage() {
                 } else {
                     console.error("Error: expected an array but received", res.data);
                 }
-            } catch (error) {
+            } catch (e) {
+                const error = e as AxiosError;
+                if (error.response && error.response.status === 404) {
+                    setWaterStorage([]);
+                    return;
+                }
                 console.error("Error fetching water storage", error);
             }
         }
