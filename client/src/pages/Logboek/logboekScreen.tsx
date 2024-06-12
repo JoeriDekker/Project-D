@@ -2,7 +2,6 @@ import React from "react";
 import axios, { AxiosError } from "axios";
 
 import Navbar from '../../components/navbar/navbar'
-import Logboek from '../../components/logboek/logboek'
 import WaterpeilLogboek from "../../components/logboek/waterpeillogboek";
 import ActionLogboek from "../../components/logboek/actionlogboek";
 import WaterStorage from "../../components/waterstorage/waterstorage";
@@ -21,7 +20,6 @@ function LogboekScreen() {
                         <br />
                         <div className="grid grid-cols-2 grid-rows-2 gap-10  px-5 pt-5">
                             <WaterpeilLogboek />
-                            <Logboek />
                             <ActionLogboek />
                             <WaterStorage />
                         </div>
