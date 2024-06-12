@@ -6,15 +6,17 @@ type Props = {
     least?: number;
     most?: number;
     steps?: number;
-    water?: number;
+    water: number;
     waterdialvalue: number;
-    waterdialstate: (value: any) => void;
+    waterdialstate: (value: number) => void;
     currentwaterstate: (value: any) => void;
 }
 
 function WaterlevelDial(props: Props) {
 
     const [currentDialValue, setCurrentDialValue] = useState(props.water);
+
+    const {currentwaterstate} = props;
 
     function waterlevelLogic(plus: boolean = false) {
         let tempChangedWaterLevel = currentDialValue;
@@ -23,11 +25,11 @@ function WaterlevelDial(props: Props) {
         }
         else {
             if (plus) {
-                tempChangedWaterLevel += 0.15;
+                tempChangedWaterLevel += props.steps ?? 0.15;
                 setCurrentDialValue(tempChangedWaterLevel);
             }
             else {
-                tempChangedWaterLevel -= 0.15;
+                tempChangedWaterLevel -= props.steps ?? 0.15;
                 setCurrentDialValue(tempChangedWaterLevel);
             }
         }
@@ -42,9 +44,9 @@ function WaterlevelDial(props: Props) {
     useEffect(() => {
         setTimeout(() => {
 
-            props.currentwaterstate(currentDialValue)
+            currentwaterstate(currentDialValue)
         }, 1000)
-    }, [currentDialValue]);
+    }, [currentDialValue, currentwaterstate]);
 
     function WaterLevelDialToFixed() {
         if (currentDialValue == null || typeof currentDialValue !== 'number') {
