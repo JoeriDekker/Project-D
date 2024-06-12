@@ -42,7 +42,7 @@ function Navbar() {
                         <label className="px-14 text-sm text-gray-500">{t('Navigation.dashboard')}</label>
 
                         <NavItem icon="Home" text={t('Navigation.overview')} link="/" />
-                        <NavItem icon="Measure" text={t('Navigation.waterdata')} link="/anypage" />
+                        {/* <NavItem icon="Measure" text={t('Navigation.waterdata')} link="/anypage" /> */}
                         <NavItem icon="Logbook" text={t('Navigation.logbooks')} link="/logboek" />
                     </div>
 
