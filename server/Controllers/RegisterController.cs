@@ -54,6 +54,14 @@ namespace WAMServer.Controllers
             }
             string hashedPassword = BCrypt.Net.BCrypt.EnhancedHashPassword(body.Password);
             var user = new User(body.FirstName, body.LastName, body.Email, hashedPassword);
+            var waterLevelSettings = await _waterLevelSettingsRepository.AddAsync(
+                new WaterLevelSettings()
+                {
+                    UserId = user.Id,
+                    IdealHeight = -1.85m,
+                    PoleHeight = -2.05m
+                }
+            );
             var address = new Address
             {
                 Street = "",
@@ -63,24 +71,14 @@ namespace WAMServer.Controllers
                 UserId = user.Id
             };
             User registeredUser;
-            WaterLevelSettings waterLevelSettings;
             try
             {
                 registeredUser = await _userRepository.AddAsync(user);
-                waterLevelSettings = await _waterLevelSettingsRepository.AddAsync(
-                new WaterLevelSettings()
-                {
-                    UserId = user.Id,
-                    IdealHeight = -1.85m,
-                    PoleHeight = -2.05m
-                }
-            );
-            await _addressRepository.AddAsync(address);
             } catch (Exception)
             {
                 return BadRequest(new ErrorBody("Register.failed"));
             }
-            
+            await _addressRepository.AddAsync(address);
             user.AddressId = address.Id;
             user.WaterLevelSettingsId = waterLevelSettings.Id;
             await _userRepository.UpdateAsync(user, u => u.Id == user.Id);
