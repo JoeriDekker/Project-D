@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { FC, useEffect } from "react";
 import axios from "axios";
 import { t } from "i18next";
 
@@ -6,13 +6,14 @@ import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 import {WaterLevel} from "./waterlevelvisual.state";
 import { UserResponse } from "./../../pages/LoginScreen/LoginScreen.state";
 
-function WaterLevelVisual(){
+interface WaterLevelProps {
+    currentLevel: WaterLevel | null;
+    setCurrentLevel: React.Dispatch<React.SetStateAction<WaterLevel | null>>;
+}
 
-   
-
+const WaterLevelVisual: FC<WaterLevelProps> = ({ currentLevel, setCurrentLevel }) => {
     const authHeader = useAuthHeader();
     const [user, setUser] = React.useState<UserResponse | null>(null);
-    const [currentLevel, setCurrentLevel] = React.useState<WaterLevel | null>(null);
     const [statusColor, setStatusColor] = React.useState<string | null>(null);
     const [statusText, setStatusText] = React.useState<string | null>(null);
 
@@ -62,22 +63,22 @@ function WaterLevelVisual(){
     }, [authHeader]);
 
     useEffect(() => {
-        function setStatus() 
+        function setStatus()
         {
-            if (typeof currentLevel?.level === 'number' && !isNaN(currentLevel?.level)) 
+            if (typeof currentLevel?.level === 'number' && !isNaN(currentLevel?.level))
             {
-                if (currentLevel.level >= idealLevel) 
+                if (currentLevel.level >= idealLevel)
                 {
                     setStatusColor("#22c55e");
                     setStatusText(t("waterlevel.goodstatus"));
-                } 
-                else 
+                }
+                else
                 {
                     setStatusColor("#ef4444");
                     setStatusText(t("waterlevel.badstatus"));
                 }
-            } 
-            else 
+            }
+            else
             {
                 console.error("Error setting water level status.");
             }
@@ -85,7 +86,7 @@ function WaterLevelVisual(){
         setStatus();
     }, [currentLevel, idealLevel]);
 
-    function calculatePercentage(value : any, min : number, max : number) 
+    function calculatePercentage(value : any, min : number, max : number)
     {
         return (typeof value === 'number' && !isNaN(value)) ? ((value - min) / (max - min)) * 100 : 0;
     }
@@ -115,7 +116,7 @@ function WaterLevelVisual(){
                 <div className="flex-1 pl-6 flex flex-col items-center">
 
                     <div className="flex justify-center">
-                        <p className="text-white mr-1">{t("waterlevel.ideal")}</p>    
+                        <p className="text-white mr-1">{t("waterlevel.ideal")}</p>
                         <p className="text-green-500">{idealLevel}</p>
                     </div>
 
