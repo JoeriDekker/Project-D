@@ -1,16 +1,22 @@
 import React, { useEffect, useState, FC } from "react";
 import { t } from "i18next";
 import Input from "../components/Input/Input"
+import axios from "axios";
+
 import Modal from "../components/Modal/Modal";
 import Navbar from '../components/navbar/navbar'
 import WaterlevelDial from '../components/waterleveldial/waterleveldial'
 import Logboek from "../components/logboek/waterpeillogboek";
 import WaterLevelVisual from "../components/waterlevelvisual/waterlevelvisual"
 import Automatic from "../components/Validation/Automatic";
+import { WaterLevel } from "../components/waterlevelvisual/waterlevelvisual.state";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import WaterStorage from "../components/waterstorage/waterstorage";
+import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
+import { UserResponse } from "./LoginScreen/LoginScreen.state";
+
 
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 import { WaterLevel } from "../components/waterlevelvisual/waterlevelvisual.state";
@@ -22,7 +28,12 @@ interface HomeProps {
     setWelcomeState: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+
 const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) => {
+    const [currentLevel, setCurrentLevel] = useState<WaterLevel | null>(null);
+    const authHeader = useAuthHeader();
+    const [user, setUser] = React.useState<UserResponse | null>(null);
+
     /*
     This data is real data from the openweatherAPI.
     TODO: implement that it gets the forecast of today at X time
@@ -118,12 +129,20 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
     }, [authHeader]);
 
     function defineNotifcation() {
-        // TODO: de amth.random vervangen door de API call bijvoorbeeld: /api/checkWaterStand
-        if (hasWelcomeBeenShown) {
-            return;
+        if (!currentLevel) {
+            return toast.error("Er is iets mis gegaan, probeer het later opnieuw", {
+                position: "top-center",
+                autoClose: false,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
         }
 
-        if (currentLevel < idealLevel) {
+        if (!waterlevel || !ideal || currentLevel < idealLevel) {
 
             return toast.error("Je waterpeil is laag!", {
                 position: "top-center",
@@ -134,20 +153,83 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
                 draggable: true,
                 progress: undefined,
                 theme: "colored",
-            })
+            });
         }
+
+        setModalState("hidden");
 
         return toast.success("Welkom terug!", {
             position: "top-center",
             autoClose: 5000,
             hideProgressBar: false,
-            closeOnClick: true,
+            closeOnClick: false,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
             theme: "colored",
         });
     }
+
+    useEffect(() => {
+        async function fetchUser() {
+            try {
+                const res = await axios.get(process.env.REACT_APP_API_URL + "/api/users", {
+                    headers: { Authorization: authHeader },
+                });
+                setUser(res.data);
+            } catch (error) {
+                console.error("Error fetching user data", error);
+            }
+        }
+
+        fetchUser();
+    }, [authHeader]);
+
+    useEffect(() => {
+        async function fetchCurrentLevel() {
+            try {
+                const res = await axios.get(
+                    process.env.REACT_APP_API_URL + "/api/groundwaterlog",
+                    {
+                        headers: {
+                            Authorization: authHeader,
+                        },
+                    }
+                );
+
+                if (res.data.length > 0) {
+                    setCurrentLevel(res.data[0]);
+                } else {
+                    console.log("No data available.");
+                }
+            } catch (error) {
+                console.error("Error fetching current level:", error);
+            }
+        }
+        fetchCurrentLevel();
+    }, [authHeader]);
+
+    useEffect(() => {
+        if (!user || !currentLevel) {
+            return;
+        }
+
+        const waterlevel = currentLevel ? parseFloat(currentLevel.level) : null;
+        const ideal = user?.waterLevelSettings.idealHeight;
+
+
+
+        if (!hasWelcomeBeenShown) {
+            defineNotifcation();
+            setWelcomeState(true);
+        }
+
+        if(!waterlevel || !ideal || waterlevel < ideal) {
+            setModalState("");
+        }
+
+    }, [user, currentLevel]);
+
 
     return (
         <div className="bg-secondaryCol w-screen h-screen py-5 flex">
@@ -170,8 +252,11 @@ const HomeDashboard: FC<HomeProps> = ({ hasWelcomeBeenShown, setWelcomeState }) 
 
                     {/* water level visual */}
                     <div className="bg-gray-800 m-2 p-4 rounded-xl">
+
                         {/* <WaterLevelVisual currentLevel={currentLevel} idealLevel={idealLevel} poleLevel={poleLevel} maxScale={maxScale} minScale={minScale} /> */}
                         <WaterLevelVisual currentLevel={currentLevel} idealLevel={idealLevel} poleLevel={poleLevel} maxScale={maxScale} minScale={minScale} />
+
+                        //<WaterLevelVisual currentLevel={currentLevel} setCurrentLevel={setCurrentLevel}/>
                     </div>
 
                     <div className="bg-gray-100 m-2 p-4 rounded-xl">

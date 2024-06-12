@@ -1,13 +1,23 @@
-import React, { useEffect } from "react";
+import React, { FC, useEffect } from "react";
+import axios from "axios";
 import { t } from "i18next";
 
 
 function WaterLevelVisual({ currentLevel, idealLevel, poleLevel, minScale, maxScale }: { currentLevel: number, idealLevel: number, poleLevel: number, minScale: number, maxScale: number }) {
+//interface WaterLevelProps {
+//    currentLevel: WaterLevel | null;
+//    setCurrentLevel: React.Dispatch<React.SetStateAction<WaterLevel | null>>;
+//}
+
+//const WaterLevelVisual: FC<WaterLevelProps> = ({ currentLevel, setCurrentLevel }) => {
+//    const authHeader = useAuthHeader();
+//    const [user, setUser] = React.useState<UserResponse | null>(null);
 
     const [statusColor, setStatusColor] = React.useState<string | null>(null);
     const [statusText, setStatusText] = React.useState<string | null>(null);
 
     useEffect(() => {
+
         function setStatus() {
             if (typeof currentLevel === 'number' && !isNaN(currentLevel)) {
                 if (currentLevel >= idealLevel) {
@@ -19,7 +29,8 @@ function WaterLevelVisual({ currentLevel, idealLevel, poleLevel, minScale, maxSc
                     setStatusText(t("waterlevel.badstatus"));
                 }
             }
-            else {
+            else
+            {
                 console.error("Error setting water level status.");
             }
         }
