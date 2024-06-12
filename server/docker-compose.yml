@@ -12,7 +12,7 @@ services:
     networks:
       - wam
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - ../../postgresdata:/var/lib/postgresql/data
   pgadmin:
     container_name: database-controlpanel
     image: dpage/pgadmin4
