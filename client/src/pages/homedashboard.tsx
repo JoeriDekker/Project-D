@@ -95,7 +95,6 @@ const HomeDashboard: FC<HomeProps> = ({
       );
       setUser(res.data);
     }
-    fetchUser();
 
     async function fetchCurrentLevel() {
       try {
@@ -118,9 +117,12 @@ const HomeDashboard: FC<HomeProps> = ({
         console.error("Error fetching current level:", error);
       }
     }
+    // Fetch required data
+    fetchUser();
     fetchCurrentLevel();
   }, [authHeader]);
 
+  // Notification hook
   useEffect(() => {
     const defineNotifcation = () => {
       if (!currentLevel) {
@@ -197,7 +199,7 @@ const HomeDashboard: FC<HomeProps> = ({
     if (!currentLevel || !idealLevel || currentLevel < idealLevel) {
       setModalState("");
     }
-  }, [user, currentLevel]);
+  }, [user, currentLevel, idealLevel]);
 
   return (
     <div className="bg-secondaryCol w-screen h-screen py-5 flex">
