@@ -43,7 +43,7 @@ function App() {
       if (axiosError.response?.status === 401 || axiosError.response?.status === 404) {
         // If the token is invalid, sign out the user and redirect to the login page
         SignOut();
-        // window.location.href = "/login";
+        window.location.href = "/login";
         return null;
       }
     }
