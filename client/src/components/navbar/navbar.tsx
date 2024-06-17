@@ -42,14 +42,14 @@ function Navbar() {
                         <label className="px-14 text-sm text-gray-500">{t('Navigation.dashboard')}</label>
 
                         <NavItem icon="Home" text={t('Navigation.overview')} link="/" />
-                        <NavItem icon="Measure" text={t('Navigation.waterdata')} link="/anypage" />
+                        {/* <NavItem icon="Measure" text={t('Navigation.waterdata')} link="/anypage" /> */}
                         <NavItem icon="Logbook" text={t('Navigation.logbooks')} link="/logboek" />
                     </div>
 
                     <div className="space-y-2 pb-8 flex flex-col">
                         <label className="px-14 text-sm text-gray-500">{t('Navigation.settings')}</label>
 
-                        <NavItem icon="Neighbourhood" text={t('Navigation.neighbourhood')} link="/anypage" />
+                        {/* <NavItem icon="Neighbourhood" text={t('Navigation.neighbourhood')} link="/anypage" /> */}
                         <NavItem icon="Settings" text={t('Navigation.waterlevelsettings')} link="/waterlevelsettings" />
                         <NavItem icon="Account" text={t('Navigation.account')} link="/account" />
                     </div>
